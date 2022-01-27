@@ -285,7 +285,7 @@
 								<div class="col-sm-6 spacer ">
 									<label for="formaPagamento">Forma de pagamento</label>
 									<!--FAZENDO BUSCA COM FUNÇÂO-->
-									<input type="text" class="form-control" ng-model="formaPagamento" uib-typeahead="teste.nome for teste in getTeste($viewValue)">
+									<input type="text" class="form-control" ng-model="formaPagamento" uib-typeahead="teste.nome for teste in getCondicaoPagamentoERP($viewValue)" typeahead-min-lenght="3">
 								</div>
 
 
@@ -700,6 +700,8 @@ angular
 			return listAllDocs;
 		};
 
+
+
 		$rootScope.changeView = ($dados) => {
 			if($scope.exibeFormulario == false){
 
@@ -805,10 +807,11 @@ angular
 			return result
 		}
 
-		console.log("Atualizou a pagina!TESTE 03")
+		console.log("Atualizou a pagina!TESTE 05")
 
 
-		$scope.getCondicaoPagamentoERP = async (consulta) => {
+		$scope.getCondicaoPagamentoERP = async (consulta) => { 
+			console.log("chegou na função getCondição de pagamento")
 			try{
 				let result = await $scope.executaRequisicaoExterna(
 					{
