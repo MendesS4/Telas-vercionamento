@@ -285,7 +285,7 @@
 								<div class="col-sm-6 spacer ">
 									<label for="formaPagamento">Forma de pagamento</label>
 									<!--FAZENDO BUSCA COM FUNÇÂO-->
-									<input type="text" class="form-control" ng-model="formaPagamento" uib-typehead="teste.nome for teste in getTeste($viewValue)">
+									<input type="text" class="form-control" ng-model="formaPagamento" uib-typeahead="teste.nome for teste in getTeste($viewValue)">
 								</div>
 
 
@@ -805,8 +805,7 @@ angular
 			return result
 		}
 
-		console.log("Atualizou a pagina! novamente")
-
+		console.log("Atualizou a pagina!TESTE 03")
 
 
 		$scope.getCondicaoPagamentoERP = async (consulta) => {
