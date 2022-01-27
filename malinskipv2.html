@@ -285,7 +285,7 @@
 								<div class="col-sm-6 spacer ">
 									<label for="formaPagamento">Forma de pagamento</label>
 									<!--FAZENDO BUSCA COM FUNÇÂO-->
-									<input type="text" class="form-control" ng-model="formaPagamento" uib-typehead="getTeste()">
+									<input type="text" class="form-control" ng-model="formaPagamento" uib-typehead="getTeste($viewValue)">
 								</div>
 
 
@@ -799,7 +799,10 @@ angular
 
 		$scope.getTeste = () => {
 			console.log("Chegou na função")
+			return "chegou"
 		}
+
+		console.log("Atualizou a pagina!")
 
 
 
