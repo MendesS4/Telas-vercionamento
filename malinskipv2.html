@@ -810,7 +810,7 @@ angular
 		}
 
 		//console.log para teste de atualização
-		console.log("ATUALIZOU PARA REQUISIÇÂO NAS REGRAS SLP")
+		console.log("ATUALIZOU PARA REQUISIÇÂO NAS REGRAS SLP cosnulta condPagamento")
 
 
 		$scope.getCondicaoPagamentoERP = async (consulta) => { 
@@ -828,6 +828,8 @@ angular
 						pFilter    : {filtro:{filtroCondPag : consulta}},
 					}
 				);
+
+				//TRATAMENTO PARA DADOS TRAZIDOS DO BACK
 
 				console.log(result.resultado);
 
