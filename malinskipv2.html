@@ -276,15 +276,14 @@
 								<!--CONDIÇÂO DE PAGAMENTO-->
 								<div class="col-sm-6 spacer ">
 									<label for="condicaoPagamento">Condição de pagamento</label>
-									<input type="text" class="form-control" ng-model="condicaoPagamento" uib-typeahead="teste.nome for teste in getCondicaoPagamentoERP($viewValue)" typeahead-min-lenght="2"> >
+									<input type="text" class="form-control" ng-model="condicaoPagamento" uib-typeahead="teste.nome for teste in getCondicaoPagamentoERP($viewValue)" typeahead-min-lenght="2">
 								</div>
-
 
 
 								<!--FORMA DE PAGAMENTO-->
 								<div class="col-sm-6 spacer ">
 									<label for="formaPagamento">Forma de pagamento</label>
-									<input type="text" class="form-control" ng-model="formaPagamento">
+									<input type="text" class="form-control" ng-model="formaPagamento" uib-typehead="testeFP.nome for testeFP in getFormasPagamentoERP($viewValue)" typeahead-min-lenght="3">
 								</div>
 
 
@@ -787,31 +786,10 @@ angular
 			});
 		};
 
-		//SIMULAÇÂO DE RESPOSTA DA REQUISIÇÂO
-		$scope.teste = () =>{
-			let result ={
-				nome: "computador"
-
-			}
-		}
-
-
-		//========================================================
-		// REQUISIÇÂO
-		//consulta no campo de forma de pagamento 
-		$scope.getTeste = (a) => {
-			console.log("Chegou na função")
-			let result = [{
-				nome:"COMPUTADOR"
-			}]
-			//retorna o resultado
-			return result
-		}
-
 		//console.log para teste de atualização
-		console.log("ATUALIZOU")
+		console.log("ATUALIZOU v002")
 
-
+		// ========================================CONDIÇÃO DE PAGAMENTO===============================
 		$scope.getCondicaoPagamentoERP = async (consulta) => { 
 			
 			//tenta receber o resultadno com o try
@@ -848,8 +826,6 @@ angular
 		}
 
 
-		//===========================================================
-
 		$scope.onSelectCond = function ($item, $model, $label) {		
 			$scope.condPagamento = $item;
 		};
@@ -875,14 +851,16 @@ angular
 			}			
 		};
 
+		// =================================FORMA DE PAGAMENTO=====================================
 		$scope.getFormasPagamentoERP = async (consulta) => {
+			console.log("CHEGOU NA FUNÇÂO")
 
 			try{
 				let result = await $scope.executaRequisicaoExterna(
 					{
 						idCvtccnpj : dadosUserLogado.cId,
 						numreg	   : 750,
-						pRotina	   : 'filtrarFormaPagamento',
+						pRotina	   : 'filtrarFormPagamento',
 						pCodCli    : dadosUserLogado.rId,
 						pFilter    : {filtro:{filtroFormaPag : consulta}},
 					}
