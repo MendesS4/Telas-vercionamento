@@ -796,25 +796,31 @@ angular
 			}
 		}
 
+
 		//========================================================
 		// REQUISIÇÂO
-
+		//consulta no campo de forma de pagamento 
 		$scope.getTeste = (a) => {
 			console.log("Chegou na função")
 			let result = [{
 				nome:"COMPUTADOR"
 			}]
+			//retorna o resultado
 			return result
 		}
 
-		console.log("Atualizou a pagina!TESTE 05")
+		//console.log para teste de atualização
+		console.log("ATUALIZOU PARA REQUISIÇÂO NAS REGRAS SLP")
 
 
 		$scope.getCondicaoPagamentoERP = async (consulta) => { 
-			console.log("chegou na função getCondição de pagamento")
+			
+			//tenta receber o resultadno com o try
 			try{
+				//espera a requisição
 				let result = await $scope.executaRequisicaoExterna(
 					{
+						//dados que ele busca
 						idCvtccnpj : dadosUserLogado.cId,
 						numreg	   : 750,
 						pRotina	   : 'filtrarCondPagamento',
@@ -822,8 +828,12 @@ angular
 						pFilter    : {filtro:{filtroCondPag : consulta}},
 					}
 				);
-										
+
+				console.log(result.resultado);
+
+				//se o resultado não for igual a undefined		
 				if(result.resultado != undefined){
+					//executa um retorno para cada item
 					return result.resultado.map((item)=>{
 						return item
 					})
@@ -835,6 +845,7 @@ angular
 			};
 
 		}
+
 
 		//===========================================================
 
