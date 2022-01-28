@@ -276,7 +276,7 @@
 								<!--CONDIÇÂO DE PAGAMENTO-->
 								<div class="col-sm-6 spacer ">
 									<label for="condicaoPagamento">Condição de pagamento</label>
-									<input type="text" class="form-control" ng-model="condicaoPagamento" >
+									<input type="text" class="form-control" ng-model="condicaoPagamento" uib-typeahead="teste.nome for teste in getCondicaoPagamentoERP($viewValue)" typeahead-min-lenght="2"> >
 								</div>
 
 
@@ -284,8 +284,7 @@
 								<!--FORMA DE PAGAMENTO-->
 								<div class="col-sm-6 spacer ">
 									<label for="formaPagamento">Forma de pagamento</label>
-									<!--FAZENDO BUSCA COM FUNÇÂO-->
-									<input type="text" class="form-control" ng-model="formaPagamento" uib-typeahead="teste.nome for teste in getCondicaoPagamentoERP($viewValue)" typeahead-min-lenght="3">
+									<input type="text" class="form-control" ng-model="formaPagamento">
 								</div>
 
 
@@ -810,7 +809,7 @@ angular
 		}
 
 		//console.log para teste de atualização
-		console.log("ATUALIZOU PARA REQUISIÇÂO NAS REGRAS SLP cosnulta condPagamento")
+		console.log("ATUALIZOU")
 
 
 		$scope.getCondicaoPagamentoERP = async (consulta) => { 
@@ -836,7 +835,7 @@ angular
 				//se o resultado não for igual a undefined		
 				if(result.resultado != undefined){
 					//executa um retorno para cada item
-					return result.resultado.map((item)=>{
+					return result.resultado.slice(0,8).map((item)=>{
 						return item
 					})
 				}else{
