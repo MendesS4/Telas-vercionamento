@@ -283,7 +283,7 @@
 								<!--FORMA DE PAGAMENTO-->
 								<div class="col-sm-6 spacer ">
 									<label for="formaPagamento">Forma de pagamento</label>
-									<input type="text" class="form-control" ng-model="formaPagamento" uib-typehead="testeFP.nome for testeFP in getFormasPagamentoERP($viewValue)" typeahead-min-lenght="3">
+									<input type="text" class="form-control" ng-model="formaPagamento" uib-typeahead="teste.nome for teste in getFormasPagamentoERP($viewValue)" typeahead-min-lenght="3">
 								</div>
 
 
@@ -787,7 +787,7 @@ angular
 		};
 
 		//console.log para teste de atualização
-		console.log("ATUALIZOU v002")
+		console.log("ATUALIZOU v003")
 
 		// ========================================CONDIÇÃO DE PAGAMENTO===============================
 		$scope.getCondicaoPagamentoERP = async (consulta) => { 
