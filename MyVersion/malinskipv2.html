@@ -214,7 +214,7 @@
 								<!--Cliente-->
 								<div class="col-sm-6 spacer ">
 									<label for="cliente">Cliente</label>
-									<input type="text" class="form-control" ng-model="getClientes">
+									<input type="text" class="form-control" ng-model="getClientes" uib-typeahead="teste.nome for teste in getClientes($viewValue)" typeahead-min-lenght="2">
 								</div>
 
 								<!--FRETE-->
@@ -278,7 +278,6 @@
 									<label for="condicaoPagamento">Condição de pagamento</label>
 									<input type="text" class="form-control" ng-model="condicaoPagamento" uib-typeahead="teste.nome for teste in getCondicaoPagamentoERP($viewValue)" typeahead-min-lenght="2">
 								</div>
-
 
 								<!--FORMA DE PAGAMENTO-->
 								<div class="col-sm-6 spacer ">
@@ -785,9 +784,6 @@ angular
 				});
 			});
 		};
-
-		//console.log para teste de atualização
-		console.log("ATUALIZOU v003")
 
 		// ========================================CONDIÇÃO DE PAGAMENTO===============================
 		$scope.getCondicaoPagamentoERP = async (consulta) => { 
