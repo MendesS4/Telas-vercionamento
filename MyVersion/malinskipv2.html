@@ -794,16 +794,17 @@ angular
 		// buscar informações e trazer via json 
 		$scope.getInfoTabela = async() => {
 			console.log("chegou na getInfoTabela")
+			console.log("nova versao")
 
 			let result = {
 				nome: "camisa",
 				preco: "14",
 				peso:  "3",
 			}
-
 			console.log(result)
-			adicionarProduto(result)
+			// adicionarProduto(result)
 
+			let result = await $scope.adicionarProduto(result)
 			//executa função para formar o json
 
 			/*
