@@ -311,7 +311,7 @@
 									<div style="padding:0;" class="col-xl-12 spacer">
 										<!--Pre para barra de rolagem inferiorts -->
 									<pre>
-										<table id ="tabelaProdutos" class="table">
+										<table id ="tabelaProdutos" class="inputTable">
 											<thead>
 												<tr>
 													<th>Seq.                  </th>
@@ -356,12 +356,12 @@
 												<tr ng-repeat = "produto in produtos">
 													<td>
 														<div>
-															<input type="number" step="any" min="1" class="inputTable" ng-model="produto.seq">
+															<input type="number" step="any" min="1" class="inputTable" ng-model="produto.seq" margin-right="50px">
 														</div>
 													</td>
 													<td>
 														<div>
-															<input type="text" class="inputTable" ng-model="produto.ocpo">
+															<input type="text" class="inputTable" ng-model="produto.ocpo" margin-right="100px">
 														</div>
 													</td>
 													<td>
