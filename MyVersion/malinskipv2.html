@@ -1291,22 +1291,13 @@ angular
 			};
 		}
 		
-		$scope.adicionarProduto = ($item) =>{
+		$scope.adicionarProduto = (result) =>{
 			console.log("chegou na adicionar produto")
 			$rootScope.produtos.unshift(
 				{ 
-					descricao			: $item.nome,
-					codigoProduto		: $item.id,
-					codVariacao			: $item.codVariacao,
-					codExterno			: $item.codExterno,
-					opcaoDescAcresc		: 'DESCONTO',
-					quantidade			: 1,
-					valorNegociado		: parseFloat($item.preco),
-					precoTabela			: $item.preco,
-					unidMedida			: $item.unimed,
-					estoque				: $item.qtdeEstoque,
-					codTpr				: $item.codTpr,
-					hashDoc				: '',
+					nome		: result.nome,
+					preco		: result.preco,
+					peso		: result.peso,
 				}
 			);
 			
