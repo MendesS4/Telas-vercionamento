@@ -801,10 +801,10 @@ angular
 				preco: "14",
 				peso:  "3",
 			}
-			console.log(result)
+			console.log(resultTest)
 			// adicionarProduto(result)
 
-			let result = await $scope.adicionarProduto(result)
+			let result = await $scope.adicionarProduto(resultTest)
 			//executa função para formar o json
 
 			/*
@@ -1290,13 +1290,13 @@ angular
 			};
 		}
 		
-		$scope.adicionarProduto = (result) =>{
+		$scope.adicionarProduto = (resultTest) =>{
 			console.log("chegou na adicionar produto")
 			$rootScope.produtos.unshift(
 				{ 
-					nome		: result.nome,
-					preco		: result.preco,
-					peso		: result.peso,
+					nome		: resultTest.nome,
+					preco		: resultTest.preco,
+					peso		: resultTest.peso,
 				}
 			);
 			
