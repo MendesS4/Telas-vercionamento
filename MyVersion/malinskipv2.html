@@ -796,7 +796,7 @@ angular
 		$scope.getInfoTabela = async() => {
 			console.log("chegou na getInfoTabela")
 
-			let result = {
+			let resultTest = {
 				nome: "camisa",
 				preco: "14",
 				peso:  "3",
@@ -804,7 +804,7 @@ angular
 			console.log(resultTest)
 			// adicionarProduto(result)
 
-			let result = await $scope.adicionarProduto(resultTest)
+			$scope.adicionarProduto(resultTest)
 			//executa função para formar o json
 
 			/*
@@ -1292,6 +1292,7 @@ angular
 		
 		$scope.adicionarProduto = (resultTest) =>{
 			console.log("chegou na adicionar produto")
+			console.log(resultTest)
 			$rootScope.produtos.unshift(
 				{ 
 					nome		: resultTest.nome,
