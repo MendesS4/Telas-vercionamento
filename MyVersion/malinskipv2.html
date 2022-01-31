@@ -285,8 +285,6 @@
 									<input type="text" class="form-control" ng-model="formaPagamento" uib-typeahead="teste.nome for teste in getFormasPagamentoERP($viewValue)" typeahead-min-lenght="3">
 								</div>
 
-
-
 								<!--OBSERVAÇÂO-->
 								<div class="col-sm-6 spacer ">
 									<label for="observação">Observação</label>
@@ -297,6 +295,12 @@
 								<div class="col-sm-6 spacer ">
 									<label for="numPedCliente">Numero pedido do cliente (OC/PO)</label>
 									<input type="text" class="form-control" ng-model="numPedCliente" >
+								</div>
+
+
+								<!--BOTAO PARA POPULAR TABELA-->
+								<div class="col-sm-12 spacer ">
+									<button class="btn btn_grid btn_cor_padrao" ng-click="getInfoTabela()"> Buscar informações </button>
 								</div>
 
 								<!--ALTERAÇÂO SAMUEL-->
@@ -378,6 +382,7 @@
 													<td>
 														<div>
 															<input type="text" class="inputTable" ng-model="produto.precoVendaFOB">
+								
 														</div>
 													</td>
 													<td>
@@ -426,7 +431,7 @@
 														</div>
 													</td>
 													<td>
-														<div>AAAAA
+														<div>
 															<input type="text" class="inputTable" ng-model="produto.descEmb">
 														</div>
 													</td>
@@ -785,6 +790,37 @@ angular
 			});
 		};
 
+		//===================================Popular tabela=======================================
+		// buscar informações e trazer via json 
+		$scope.getInfoTabela = async() => {
+			console.log("chegou na getInfoTabela")
+
+			let result = {
+				nome: "camisa",
+				preco: "14",
+				peso:  "3",
+			}
+
+			console.log(result)
+			adicionarProduto(result)
+
+			//executa função para formar o json
+
+			/*
+			let result = await $scope.executaRequisicaoExterna(
+				//dados que irao popular a tabela
+				{
+					idCvtccnpj : dadosUserLogado.cId,
+					numreg	   : 750, 
+					pRotina	   : 'filtrarInfoTabela',
+					pCodCli    : dadosUserLogado.rId,
+				}
+			)
+			*/
+
+			// passar como parametro para outra função
+
+		}
 		// ========================================CONDIÇÃO DE PAGAMENTO===============================
 		$scope.getCondicaoPagamentoERP = async (consulta) => { 
 			
@@ -1256,6 +1292,7 @@ angular
 		}
 		
 		$scope.adicionarProduto = ($item) =>{
+			console.log("chegou na adicionar produto")
 			$rootScope.produtos.unshift(
 				{ 
 					descricao			: $item.nome,
