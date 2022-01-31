@@ -46,12 +46,12 @@
 					</div>
 																			
 					<div class="form-group">
-						<label for="filCarteira">Data Emiss�o</label>
+						<label for="filCarteira">Data Emissão</label>
 						<input type="text" style="width: 220px;" ui-mask="99/99/9999" class="form-control spacer-input" autocomplete="off" id="filDataEmissao" ng-model="filDataEmissao" aria-describedby=" ">
 					</div>
 
 					<div class="form-group">
-						<label for="projeto">Sincroniza��o</label>
+						<label for="projeto">Sincronização</label>
 						<input type="text" style="width: 220px;" class="form-control spacer-input" ng-value="filSincronizado.nome" ng-model="filSincronizado" id="filSincronizado" uib-typeahead="(sincronizado.nome) for sincronizado in getFilScinronizacao($viewValue)"  autocomplete="off" typeahead-min-length="0" typeahead-on-select="onSelectFilSincronizacao($item, $model, $label)">
 					</div>
 									
@@ -155,7 +155,7 @@
 												<th>Produto</th>
 												<th>Quantidade</th>
 												<th>Valor und.</th>
-												<th>Desc. / Acr�sc.</th>
+												<th>Desc. / Acrésc.</th>
 												<th>Total item</th>
 											</tr>
 										</thead>
@@ -356,32 +356,32 @@
 												<tr ng-repeat = "produto in produtos">
 													<td>
 														<div>
-															<input type="text" class="inputTable" ng-model="produto.nome">
+															<input type="text" class="inputTable" ng-model="produto.seq">
 														</div>
 													</td>
 													<td>
 														<div>
-															<input type="text" class="inputTable" ng-model="produto.peso">
+															<input type="text" class="inputTable" ng-model="produto.ocpo">
 														</div>
 													</td>
 													<td>
 														<div>
-															<input type="text" class="inputTable" ng-model="produto.preco">
+															<input type="text" class="inputTable" ng-model="produto.itocpo">
 														</div>
 													</td>
 													<td>
 														<div>
-															<input type="text" class="inputTable" ng-model="produto.codProdCliente">
+															<input type="text" class="inputTable" ng-model="produto.codProCli">
 														</div>
 													</td>
 													<td>
 														<div>
-															<input type="text" class="inputTable" ng-model="produto.descrProdutoCliente">
+															<input type="text" class="inputTable" ng-model="produto.descrProCli">
 														</div>
 													</td>
 													<td>
 														<div>
-															<input type="text" class="inputTable" ng-model="produto.precoVendaFOB">
+															<input type="text" class="inputTable" ng-model="produto.precoVendFOB">
 								
 														</div>
 													</td>
@@ -392,7 +392,7 @@
 													</td>
 													<td>
 														<div>
-															<input type="text" class="inputTable" ng-model="produto.precovendaCIF">
+															<input type="text" class="inputTable" ng-model="produto.precoVendaCIF">
 														</div>
 													</td>
 													<td>
@@ -458,7 +458,7 @@
 													</td>
 													<td>
 														<div>
-															<input type="text" class="inputTable" ng-model="produto.acresPreço">
+															<input type="text" class="inputTable" ng-model="produto.acresPreco">
 														</div>
 													</td>
 													<td>
@@ -483,7 +483,7 @@
 													</td>
 													<td>
 														<div>
-															<input type="text" class="inputTable" ng-model="produto.deriv">
+															<input type="text" class="inputTable" ng-model="produto.derivacao">
 														</div>
 													</td>
 													<td>
@@ -493,7 +493,7 @@
 													</td>
 													<td>
 														<div>
-															<input type="text" class="inputTable" ng-model="produto.previsaoCliente">
+															<input type="text" class="inputTable" ng-model="produto.previsaoCli">
 														</div>
 													</td>
 													<td>
@@ -503,7 +503,7 @@
 													</td>
 													<td>
 														<div>
-															<input type="text" class="inputTable" ng-model="produto.dubEmb">
+															<input type="text" class="inputTable" ng-model="produto.subEmb">
 														</div>
 													</td>
 													<td>
@@ -547,7 +547,7 @@
 					<div ng-show="exibeHistoricos" class="col-sm-12">
 						<div class="form-row">
 							<div class="col-sm-12 spacer">
-									<label for="histOportunidade">Hist�rico</label>
+									<label for="histOportunidade">Histórico</label>
 									<textarea readonly class="form-control spacer-input" ng-disabled="inputDesabilitado" ng-model="histOportunidade" id="histOportunidade" rows="10"></textarea>
 							</div>
 						</div>
@@ -558,7 +558,7 @@
 						</div>
 						<div class="form-row">
 							<div class="col-sm-11 spacer">
-								<label for="obsOportunidade">Observa��o</label>
+								<label for="obsOportunidade">Observação</label>
 								<textarea class="form-control spacer-input"  ng-model="obsOportunidade" id="obsOportunidade" rows="3"></textarea>
 							</div>
 							<div class="col-sm-1 spacer" style="padding-top: 30px;">
@@ -797,9 +797,49 @@ angular
 			console.log("chegou na getInfoTabela")
 
 			let resultTest = {
+
+
 				nome: "camisa",
 				preco: "14",
 				peso:  "3",
+
+
+				seq				: "3123123",
+				ocpo        	: "3123131",
+				itocpo			: "2312313",
+				codProCli		: "231311321",
+				descrProCli		: "22,76",
+				precoVendFOB	: "30.50",
+				precoFrete		: "10.50",
+				precoVendCIF	: "20.20",
+				qtdPedida		: "10",
+				ofertaPrec		: "15.70",
+				precoLiquido	: "10.00",
+				vlrLiquido		: "8",
+				pesoKG			: "20.40",
+				volumeM3		: "3",
+				qtdEmb			: "7",
+				descEmb			: "10",
+				qtdSubEmb		: "200",
+				descSubEmb		: "50",
+				dataPCP			: "11/22/3333",
+				dataETD         : "11/22/3333",
+				acresPreco		: "20",
+				descontoFin		: "10",
+				vlrDescont		: "0000",
+				vlrBruto		: "111111",
+				codPro			: "12321141",
+				derivacao		: "2",
+				um				: "xxxxxxxx",
+				previsaoCli		: "11/22/33",
+				emb 			: "XXXXXXXXX",
+				subEmb 			: "XXXXXXXXXX",
+				descProduto		: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+				descrDeriv		: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+				nrPedido		: "313213211",
+				seqPed			: "312321"
+
+
 			}
 			console.log(resultTest)
 			// adicionarProduto(result)
@@ -811,10 +851,13 @@ angular
 			let result = await $scope.executaRequisicaoExterna(
 				//dados que irao popular a tabela
 				{
+					// infos padroes de parametros
 					idCvtccnpj : dadosUserLogado.cId,
 					numreg	   : 750, 
 					pRotina	   : 'filtrarInfoTabela',
 					pCodCli    : dadosUserLogado.rId,
+
+
 				}
 			)
 			*/
@@ -1298,6 +1341,44 @@ angular
 					nome		: resultTest.nome,
 					preco		: resultTest.preco,
 					peso		: resultTest.peso,
+
+					// infos para tabela
+
+					seq				: resultTest.seq,
+					ocpo        	: resultTest.ocpo,
+					itocpo			: resultTest.itocpo,
+					codProCli		: resultTest.codProCli,
+					descrProCli		: resultTest.descrProCli,
+					precoVendFOB	: resultTest.precoVendFOB,
+					precoFrete		: resultTest.precoFrete,
+					precoVendCIF	: resultTest.precoVendCIF,
+					qtdPedida		: resultTest.qtdPedida,
+					ofertaPrec		: resultTest.ofertaPreco,
+					precoLiquido	: resultTest.precoLiquido,
+					vlrLiquido		: resultTest.vlrLiquido,
+					pesoKg			: resultTest.pesoKG,
+					volume			: resultTest.volumeM3,
+					qtdEmb			: resultTest.qtdEmb,
+					descEmb			: resultTest.descEmb,
+					qtdSubEmb		: resultTest.qtdSubEmb,
+					descSubEmb		: resultTest.descrSubEmb,
+					dataPCP			: resultTest.dataPCP,
+					dataETD         : resultTest.dataETD,
+					acresPrec		: resultTest.acresPreco,
+					descFin			: resultTest.descontoFin,
+					vlrDescont		: resultTest.vlrDesconto,
+					vlrBruto		: resultTest.vlrBruto,
+					codPro			: resultTest.codPro,
+					derivacao		: resultTest.derivacao,
+					um				: resultTest.um,
+					previsaoCli		: resultTest.previsaoCli,
+					emb 			: resultTest.emb,
+					subEmb 			: resultTest.subEmb,
+					descProdut		: resultTest.descrProduto,
+					descDeriv		: resultTest.descrDeriv,
+					nrPedido		: resultTest.nrPedido,
+					seqPed			: resultTest.seqPed
+
 				}
 			);
 			
