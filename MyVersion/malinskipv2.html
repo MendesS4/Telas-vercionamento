@@ -855,6 +855,7 @@ angular
 				}
 			)
 			$scope.adicionarProduto(result.resultado)
+				
 			
 			// passar como parametro para outra função
 		}
@@ -874,6 +875,10 @@ angular
 						pFilter    : {filtro:{filtroCondPag : consulta}},
 					}
 				);
+
+				for(let i = 0; i < result.length; i++){
+					$scope.adicionarProduto(result[i].resultado)
+				}
 
 				//TRATAMENTO PARA DADOS TRAZIDOS DO BACK
 
