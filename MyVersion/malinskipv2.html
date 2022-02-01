@@ -659,7 +659,6 @@
 <script>
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 //TESTE DE CONTROLE DE ATT GITHUB
-console.log("novo teste")
 
 angular
 	.module("appV2",['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -797,7 +796,6 @@ angular
 
 		//===================================Popular tabela=======================================
 		// buscar informações e trazer via json
-		console.log("nova versao002") 
 		$scope.getInfoTabela = async() => {
 			console.log("chegou na getInfoTabela")
 
@@ -843,7 +841,7 @@ angular
 			// adicionarProduto(result)
 
 			//executa função para formar o json
-			alert("nova versao")
+			alert("nova versao TESTE")
 			let result = await $scope.executaRequisicaoExterna(
 				//dados que irao popular a tabela
 				{
@@ -854,9 +852,13 @@ angular
 					pCodCli    : dadosUserLogado.rId,
 				}
 			)
-			$scope.adicionarProduto(result.resultado)
-				
-			
+			//$scope.adicionarProduto(result.resultado)
+
+			for(let i = 0; i < result.length; i++){
+					console.log("esta no loop")
+					console.log(result[i].resultado)
+					$scope.adicionarProduto(result[i].resultado)
+				}
 			// passar como parametro para outra função
 		}
 		// ========================================CONDIÇÃO DE PAGAMENTO===============================
@@ -875,10 +877,6 @@ angular
 						pFilter    : {filtro:{filtroCondPag : consulta}},
 					}
 				);
-
-				for(let i = 0; i < result.length; i++){
-					$scope.adicionarProduto(result[i].resultado)
-				}
 
 				//TRATAMENTO PARA DADOS TRAZIDOS DO BACK
 
