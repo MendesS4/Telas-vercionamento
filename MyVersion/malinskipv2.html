@@ -796,7 +796,7 @@ angular
 
 		//===================================Popular tabela=======================================
 		// buscar informações e trazer via json
-		alert("nova versao TESTE YYYY")
+		alert("nova versao TESTE PPPPPP")
 		$scope.getInfoTabela = async() => {
 			console.log("chegou na getInfoTabela")
 
@@ -853,12 +853,14 @@ angular
 				}
 			)
 			console.log(result)
+			let newResult = result.resultado
 			/*for(let i = 0; i < result.length; i++){
 				console.log("esta no loop")
 				console.log(result[i].resultado)
 				$scope.adicionarProduto(result[i].resultado)
 			}*/
-			$scope.adicionarProduto(result.resultado)
+			console.log(newResult)
+			$scope.adicionarProduto(newResult)
 		}
 		// ========================================CONDIÇÃO DE PAGAMENTO===============================
 		$scope.getCondicaoPagamentoERP = async (consulta) => { 
