@@ -318,7 +318,9 @@
 													<th>OC/PO                 </th>
 													<th>it.OC/PO              </th>
 													<th>Cod.Prod.Cliente      </th>
-													<th>Descr.Produto.Cliente </th>
+
+													<th class="descProdCli">Descr.Produto.Cliente </th>
+
 													<th>Preço Venda(FOB)      </th>
 													<th>Preço do Frete        </th>
 													<th>Preço da venda(CIF)   </th>
@@ -1844,6 +1846,10 @@ angular
 	th, td, a{
 		font-size: 12px;
 		white-space: nowrap;
+	}
+
+	.descProdCli{
+		width: 10vh;
 	}
 
 	th{
