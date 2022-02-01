@@ -311,7 +311,7 @@
 									<div style="padding:0;" class="col-xl-12 spacer">
 										<!--Pre para barra de rolagem inferiorts -->
 									<pre>
-										<table id ="tabelaProdutos" class="inputTable">
+										<table id ="tabelaProdutos" class="inputTableBigger">
 											<thead>
 												<tr>
 													<th>Seq.                  </th>
@@ -400,7 +400,7 @@
 													<td>
 														<div>
 															<!--UNICO CAMPO EDITAVEL-->
-															<input type="number" class="inputTable" ng-model="produto.qtdPedida">
+															<input type="text" class="inputTable" ng-model="produto.qtdPedida">
 														</div>
 													</td>
 													<td>
@@ -573,11 +573,8 @@
 						</div>
 					</div>
 				</form>
-				
-			</div>	
-
-			<!-- Capa do pedido -->
-						
+			</div>
+			<!-- Capa do pedido -->		
 			<hr class="divider">
 			<!-- A��es sob o formulario -->
 			<div class="row spacer">
@@ -799,47 +796,6 @@ angular
 		alert("nova versao TESTE QQQQQQ")
 		$scope.getInfoTabela = async() => {
 			console.log("chegou na getInfoTabela")
-
-			//Dados Teste
-			/*let resultTest = {
-				seq				: "3123123",
-				ocpo        	: "3123131",
-				itocpo			: "2312313",
-				codProCli		: "231311321",
-				descrProCli		: "XXXXXXXXXXXXXXXXXXX",
-				precoVendFOB	: "30.50",
-				precoFrete		: "10.50",
-				precoVendaCIF	: "20.20",
-				qtdPedida		: "10",
-				ofertaPreco		: "15.70",
-				precoLiquido	: "10.00",
-				vlrLiquido		: "8",
-				pesoKG			: "20.40",
-				volumeM3		: "3",
-				qtdEmb			: "7",
-				descEmb			: "10",
-				qtdSubEmb		: "200",
-				descrSubEmb		: "50",
-				dataPCP			: "11/22/3333",
-				dataETD         : "11/22/3333",
-				acresPreco		: "20",
-				descontoFin		: "10",
-				vlrDesconto		: "0000",
-				vlrBruto		: "111111",
-				codPro			: "12321141",
-				derivacao		: "2",
-				um				: "xxxxxxxx",
-				previsaoCli		: "11/22/33",
-				emb 			: "XXXXXXXXX",
-				subEmb 			: "XXXXXXXXXX",
-				descrProduto	: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-				descrDeriv		: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-				nrPedido		: "313213211",
-				seqPed			: "312321"
-			}
-			*/
-		//	console.log(result)
-			// adicionarProduto(result)
 
 			//executa função para formar o json
 			let result = await $scope.executaRequisicaoExterna(
@@ -1974,6 +1930,10 @@ angular
 	  color: white;
 	  padding: 10px 15px;
 	  border: none;
+	}
+	.inputTableBigger{
+		padding-top: 0%;
+
 	}
 
 	.inputTable{
