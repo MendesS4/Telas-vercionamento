@@ -801,14 +801,8 @@ angular
 		$scope.getInfoTabela = async() => {
 			console.log("chegou na getInfoTabela")
 
+			//Dados Teste
 			let resultTest = {
-
-
-				nome: "camisa",
-				preco: "14",
-				peso:  "3",
-
-
 				seq				: "3123123",
 				ocpo        	: "3123131",
 				itocpo			: "2312313",
@@ -843,8 +837,6 @@ angular
 				descrDeriv		: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
 				nrPedido		: "313213211",
 				seqPed			: "312321"
-
-
 			}
 			console.log(resultTest)
 			// adicionarProduto(result)
@@ -852,7 +844,7 @@ angular
 			$scope.adicionarProduto(resultTest)
 			//executa função para formar o json
 
-			/*
+			
 			let result = await $scope.executaRequisicaoExterna(
 				//dados que irao popular a tabela
 				{
@@ -861,11 +853,9 @@ angular
 					numreg	   : 750, 
 					pRotina	   : 'filtrarInfoTabela',
 					pCodCli    : dadosUserLogado.rId,
-
-
 				}
 			)
-			*/
+			
 
 			// passar como parametro para outra função
 
@@ -1343,9 +1333,6 @@ angular
 			console.log(resultTest)
 			$rootScope.produtos.unshift(
 				{ 
-					nome		: resultTest.nome,
-					preco		: resultTest.preco,
-					peso		: resultTest.peso,
 
 					// infos para tabela
 
