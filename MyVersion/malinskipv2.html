@@ -802,7 +802,7 @@ angular
 			console.log("chegou na getInfoTabela")
 
 			//Dados Teste
-			let resultTest = {
+			/*let resultTest = {
 				seq				: "3123123",
 				ocpo        	: "3123131",
 				itocpo			: "2312313",
@@ -838,12 +838,11 @@ angular
 				nrPedido		: "313213211",
 				seqPed			: "312321"
 			}
-			console.log(resultTest)
+			*/
+		//	console.log(result)
 			// adicionarProduto(result)
 
-			$scope.adicionarProduto(resultTest)
 			//executa função para formar o json
-
 			
 			let result = await $scope.executaRequisicaoExterna(
 				//dados que irao popular a tabela
@@ -855,10 +854,9 @@ angular
 					pCodCli    : dadosUserLogado.rId,
 				}
 			)
+			$scope.adicionarProduto(result)
 			
-
 			// passar como parametro para outra função
-
 		}
 		// ========================================CONDIÇÃO DE PAGAMENTO===============================
 		$scope.getCondicaoPagamentoERP = async (consulta) => { 
@@ -1333,9 +1331,6 @@ angular
 			console.log(resultTest)
 			$rootScope.produtos.unshift(
 				{ 
-
-					// infos para tabela
-
 					seq				: resultTest.seq,
 					ocpo        	: resultTest.ocpo,
 					itocpo			: resultTest.itocpo,
