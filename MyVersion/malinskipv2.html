@@ -796,7 +796,7 @@ angular
 
 		//===================================Popular tabela=======================================
 		// buscar informações e trazer via json
-		alert("nova versao TESTE HHHHHHH")
+		alert("nova versao TESTE QQQQQQ")
 		$scope.getInfoTabela = async() => {
 			console.log("chegou na getInfoTabela")
 
@@ -855,12 +855,12 @@ angular
 			console.log(result)
 			let newResult = result.resultado
 
-			for(let i = 0; i < result.length; i++){
+			for(let i = 0; i < newResult.length; i++){
 				console.log("esta no loop")
-				console.log(result[i].resultado)
-				$scope.adicionarProduto(result[i].resultado)
+				console.log(newResult[i].resultado)
+				$scope.adicionarProduto(newResult[i])
 			}
-			
+
 			console.log(newResult)
 			//$scope.adicionarProduto(newResult)
 		}
