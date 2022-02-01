@@ -796,7 +796,7 @@ angular
 
 		//===================================Popular tabela=======================================
 		// buscar informações e trazer via json
-		alert("nova versao TESTE 003")
+		alert("nova versao TESTE XXXXX")
 		$scope.getInfoTabela = async() => {
 			console.log("chegou na getInfoTabela")
 
@@ -852,12 +852,13 @@ angular
 					pCodCli    : dadosUserLogado.rId,
 				}
 			)
-			console.log(result)
-			/*for(let i = 0; i < result.length; i++){
+			console.log(result.resultado)
+			for(let i = 0; i < result.length; i++){
 				console.log("esta no loop")
 				console.log(result[i].resultado)
 				$scope.adicionarProduto(result[i].resultado)
-			}*/
+			}
+			
 			$scope.adicionarProduto(result.resultado)
 		}
 		// ========================================CONDIÇÃO DE PAGAMENTO===============================
