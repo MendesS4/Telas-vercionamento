@@ -854,11 +854,13 @@ angular
 			)
 			console.log(result)
 			let newResult = result.resultado
+
 			for(let i = 0; i < result.length; i++){
 				console.log("esta no loop")
 				console.log(result[i].resultado)
 				$scope.adicionarProduto(result[i].resultado)
 			}
+			
 			console.log(newResult)
 			//$scope.adicionarProduto(newResult)
 		}
