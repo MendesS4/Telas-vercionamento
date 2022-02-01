@@ -357,7 +357,7 @@
 											<tbody>
 												<tr ng-repeat = "produto in produtos">
 													<td>
-														<div>
+														<div class="divTextTable">
 															{{produto.seq}}
 														</div>
 													</td>
@@ -387,7 +387,7 @@
 														</div>
 													</td>
 													<td>
-														<div>
+														<div class="divTextTable">
 															{{produto.precoFrete}}
 														</div>
 													</td>
@@ -1935,6 +1935,9 @@ angular
 		padding: 6px;
 	}
 
+	.divTextTable{
+		width: 10vh;
+	}
 	.inputTableBigger{
 		margin-top: -5vh;
 
