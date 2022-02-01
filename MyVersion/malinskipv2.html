@@ -852,13 +852,13 @@ angular
 					pCodCli    : dadosUserLogado.rId,
 				}
 			)
-
-			for(let i = 0; i < result.length; i++){
+			console.log(result)
+			/*for(let i = 0; i < result.length; i++){
 				console.log("esta no loop")
 				console.log(result[i].resultado)
 				$scope.adicionarProduto(result[i].resultado)
-			}
-				//$scope.adicionarProduto(result.resultado)
+			}*/
+			$scope.adicionarProduto(result.resultado)
 		}
 		// ========================================CONDIÇÃO DE PAGAMENTO===============================
 		$scope.getCondicaoPagamentoERP = async (consulta) => { 
