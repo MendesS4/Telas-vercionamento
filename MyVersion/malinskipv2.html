@@ -356,7 +356,7 @@
 												<tr ng-repeat = "produto in produtos">
 													<td>
 														<div>
-															<input type="number" step="any" min="1" class="inputTable" ng-model="produto.seq">
+															<input type="text" readonly step="any" min="1" class="inputTable" ng-model="produto.seq">
 														</div>
 													</td>
 													<td>
@@ -398,7 +398,7 @@
 													<td>
 														<div>
 															<!--UNICO CAMPO EDITAVEL-->
-															<input type="text" class="inputTable" ng-model="produto.qtdPedida">
+															<input type="number" class="inputTable" ng-model="produto.qtdPedida">
 														</div>
 													</td>
 													<td>
@@ -1986,7 +1986,7 @@ angular
 		outline: 0;
 		border-width: 0 0 0.5px;
 		border-color: rgb(184, 184, 184);
-		width: 50%;
+		width: 80%;
 		height: 35px;
 		border-style: dashed;
 	}
