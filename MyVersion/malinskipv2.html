@@ -214,7 +214,7 @@
 								<!--Cliente-->
 								<div class="col-sm-6 spacer ">
 									<label for="cliente">Cliente</label>
-									<input type="text" class="form-control" ng-model="frmCliente" uib-typeahead="teste.nome for teste in getClientes($viewValue)" typeahead-min-lenght="2">
+									<input type="text" class="form-control" ng-model="frmCliente" uib-typeahead="teste.nome for teste in getClientes($viewValue)" typeahead-min-lenght="2" typeahead-on-select="onSelectCli($item, $model, $label)">
 								</div>
 
 								<!--FRETE-->
@@ -799,7 +799,7 @@ angular
 
 		//===================================Popular tabela=======================================
 		// buscar informações e trazer via json
-		alert("Teste009")
+		alert("Teste011")
 		$scope.getInfoTabela = async() => {
 			console.log("chegou na getInfoTabela")
 
@@ -944,9 +944,12 @@ angular
 		};
 
 		$scope.onSelectCli = ($item, $model, $label) => {
-			$rootScope.cliente = $item;	
-			$scope.codigoCliente = $rootScope.cliente.codExterno
+			
+			$rootScope.cliente = $item;
 
+			$scope.codigoCliente = $rootScope.cliente.codExterno
+			console.log($item)
+			console.log($scope.codigoCliente)
 			$scope.getEndEntrega();
 		};
 
