@@ -311,19 +311,19 @@
 									<div style="padding:0;" class="col-xl-12 spacer">
 										<!--Pre para barra de rolagem inferior -->
 									<pre>
-										<table id ="tabelaProdutos" class="table-bordered">
+										<table id ="tabelaProdutos" class="table-striped">
 											<thead>
 												<tr>
-													<th class=>Seq.                  </th>
-													<th class=>OC/PO                 </th>
-													<th class=>it.OC/PO              </th>
-													<th class=>Cod.Prod.Cliente      </th>
+													<th scope="col">Seq.                  </th>
+													<th scope="col">OC/PO                 </th>
+													<th scope="col">it.OC/PO              </th>
+													<th scope="col">Cod.Prod.Cliente      </th>
 
-													<th class=>Descr.Produto.Cliente </th>
+													<th scope="col">Descr.Produto.Cliente </th>
 
-													<th>Preço Venda(FOB)      </th>
-													<th>Preço do Frete        </th>
-													<th>Preço da venda(CIF)   </th>
+													<th scope="col">Preço Venda(FOB)      </th>
+													<th scope="col">Preço do Frete        </th>
+													<th scope="col">Preço da venda(CIF)   </th>
 													<th>QTD.Pedida            </th>
 													<th>%Oferta Preço         </th>
 													<th>Preço Liquido         </th>
@@ -356,7 +356,7 @@
 											</thead>
 											<tbody>
 												<tr ng-repeat = "produto in produtos">
-													<td>
+													<td scope="row">
 														<div>
 															{{produto.seq}}
 														</div>
@@ -791,7 +791,7 @@ angular
 
 		//===================================Popular tabela=======================================
 		// buscar informações e trazer via json
-		alert("Teste004")
+		alert("Teste005")
 		$scope.getInfoTabela = async() => {
 			console.log("chegou na getInfoTabela")
 
@@ -1758,6 +1758,10 @@ angular
 		height: 55px;
 	}
 
+	table{
+		margin-top: -20px;
+	}
+
 	.table>thead>tr>th {
     	vertical-align: inherit;
 	}
@@ -1788,17 +1792,14 @@ angular
 	th, td, a{
 		font-size: 12px;
 		white-space: nowrap;
-	}
-
-	.descProdCli{
-		width: 10vh;
+		padding-right: 2vh;
 	}
 
 	th{
 		background-color: #FAFAFA;
 		border-radius: 2px;
-		padding-right: 0vh;
-		padding-left: 0vh
+		padding-right: 3vh;
+		padding-left: 1vh
 	}
 
 	#tabelaProdutos>th{
