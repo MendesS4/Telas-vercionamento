@@ -238,7 +238,7 @@
 								<div class="col-sm-6 spacer ">
 									<label for="tabPreco">Tabela de preço</label>
 									<input type="text" class="form-control" ng-model="tabPreco" 
-									uib-typeahead="teste.nome for teste in getTabPrecoERP($viewValue)"
+									uib-typeahead="teste.nome for teste in getTabelaPreco($viewValue)"
 									typeahead-min-lenght="2">
 								</div>
 
@@ -799,7 +799,7 @@
 						$scope.endEntrega = {};
 					};
 
-					$scope.getTabPrecoERP = async (consulta) =>	{
+					$scope.getTabelaPreco = async (consulta) =>	{
 						console.log("chegou na função")
 						try{
 							let result = await $scope.executaRequisicaoExterna(
@@ -812,10 +812,9 @@
 								},
 								1000
 							);
-							let newResult = result.resultado
-							console.log(newResult)
-							if(result != undefined && newResult !=undefined){
-								return result.map((item)=>{
+							console.log(result)
+							if(result != undefined && result.resultado !=undefined){
+								return result.resultado.map((item)=>{
 									return item
 								})
 							}else{
