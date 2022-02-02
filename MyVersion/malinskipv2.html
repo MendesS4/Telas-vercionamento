@@ -313,13 +313,13 @@
 									<pre>
 										<table id ="tabelaProdutos" class="inputTableBigger">
 											<thead>
-												<tr>
-													<th>Seq.                  </th>
-													<th>OC/PO                 </th>
-													<th>it.OC/PO              </th>
-													<th>Cod.Prod.Cliente      </th>
+												<tr class="row">
+													<th class="col-4">Seq.                  </th>
+													<th class="col-4">OC/PO                 </th>
+													<th class="col-4">it.OC/PO              </th>
+													<th class="col-4">Cod.Prod.Cliente      </th>
 
-													<th class="col col-lg-2">Descr.Produto.Cliente </th>
+													<th class="col-8">Descr.Produto.Cliente </th>
 
 													<th>Preço Venda(FOB)      </th>
 													<th>Preço do Frete        </th>
@@ -357,7 +357,7 @@
 											<tbody>
 												<tr ng-repeat = "produto in produtos">
 													<td>
-														<div class="divTextTable">
+														<div>
 															{{produto.seq}}
 														</div>
 													</td>
@@ -791,7 +791,7 @@ angular
 
 		//===================================Popular tabela=======================================
 		// buscar informações e trazer via json
-		alert("TELA TESTE")
+		alert("Teste de Tela grid")
 		$scope.getInfoTabela = async() => {
 			console.log("chegou na getInfoTabela")
 
@@ -1797,8 +1797,8 @@ angular
 	th{
 		background-color: #FAFAFA;
 		border-radius: 2px;
-		padding-right: 9vh;
-		padding-left: 1vh
+		padding-right: 0vh;
+		padding-left: 0vh
 	}
 
 	#tabelaProdutos>th{
