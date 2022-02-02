@@ -238,7 +238,7 @@
 								<div class="col-sm-6 spacer ">
 									<label for="tabPreco">Tabela de preço</label>
 									<input type="text" class="form-control" ng-model="tabPreco" 
-									uib-typeahead="teste.nome '-' teste.cod  for teste in getTabelaPreco($viewValue)"
+									uib-typeahead="teste.nome + '-' + teste.cod for teste in getTabelaPreco($viewValue)"
 									typeahead-min-lenght="2">
 								</div>
 
