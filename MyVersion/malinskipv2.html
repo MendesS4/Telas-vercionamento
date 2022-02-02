@@ -399,7 +399,14 @@
 													<td>
 														<div>
 															<!--UNICO CAMPO EDITAVEL-->
-															<input type="text" class="inputTable" ng-model="produto.qtdPedida">
+
+															<input
+															 	type="number"
+																class="inputNumberTable"
+															 	min="0" max="10000"
+																ng-model="produto.qtdPedida"
+    															type = "number"
+																>
 														</div>
 													</td>
 													<td>
@@ -789,9 +796,10 @@ angular
 			});
 		};
 
+
 		//===================================Popular tabela=======================================
 		// buscar informações e trazer via json
-		alert("Teste007")
+		alert("Teste008")
 		$scope.getInfoTabela = async() => {
 			console.log("chegou na getInfoTabela")
 
@@ -2014,4 +2022,11 @@ angular
 	  .sidebar {padding-top: 15px;}
 	  .sidebar a {font-size: 18px;}
 	}
+
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
 	</style>
