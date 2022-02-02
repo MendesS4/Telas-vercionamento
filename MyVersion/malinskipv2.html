@@ -309,17 +309,17 @@
 								<!--ALTERAÇÂO 2-->
 								<div style="margin-top:5px" class="form-group col-md-12">
 									<div style="padding:0;" class="col-xl-12 spacer">
-										<!--Pre para barra de rolagem inferiorts -->
+										<!--Pre para barra de rolagem inferior -->
 									<pre>
-										<table id ="tabelaProdutos" class="inputTableBigger">
+										<table id ="tabelaProdutos" class="table table-striped">
 											<thead>
-												<tr class="row">
-													<th class="col-4">Seq.                  </th>
-													<th class="col-4">OC/PO                 </th>
-													<th class="col-4">it.OC/PO              </th>
-													<th class="col-4">Cod.Prod.Cliente      </th>
+												<tr>
+													<th class=>Seq.                  </th>
+													<th class=>OC/PO                 </th>
+													<th class=>it.OC/PO              </th>
+													<th class=>Cod.Prod.Cliente      </th>
 
-													<th class="col-8">Descr.Produto.Cliente </th>
+													<th class=>Descr.Produto.Cliente </th>
 
 													<th>Preço Venda(FOB)      </th>
 													<th>Preço do Frete        </th>
@@ -387,7 +387,7 @@
 														</div>
 													</td>
 													<td>
-														<div class="divTextTable">
+														<div>
 															{{produto.precoFrete}}
 														</div>
 													</td>
@@ -791,7 +791,7 @@ angular
 
 		//===================================Popular tabela=======================================
 		// buscar informações e trazer via json
-		alert("Teste de Tela grid")
+		alert("Teste de Tela grid with bootstrap")
 		$scope.getInfoTabela = async() => {
 			console.log("chegou na getInfoTabela")
 
