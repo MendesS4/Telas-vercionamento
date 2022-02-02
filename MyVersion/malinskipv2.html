@@ -611,7 +611,7 @@
 					<div class="btn-group">
 						<button class="btn btn_grid btn_cor_padrao"
 							title="O pedido será salvo. Voce ainda poderá editar e finalizar o pedido."
-							ng-disabled="produtos.length == 0 || cadastroPedido.$error.required || isLoading"
+							ng-disabled="cadastroPedido.$error.required || isLoading"
 							ng-click="salvarDocumento(1)"> Salvar </button>
 							<!--"produtos.length == 0--> 
 					</div>
@@ -799,7 +799,7 @@
 						$scope.endEntrega = {};
 					};
 
-					$scope.getTabelaPreco = async (consulta) =>	{
+					$scope.getTabPrecoERP = async (consulta) =>	{
 						console.log("chegou na função")
 						try{
 							let result = await $scope.executaRequisicaoExterna(
