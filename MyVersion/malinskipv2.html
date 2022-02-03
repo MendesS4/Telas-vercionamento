@@ -314,7 +314,7 @@
 								<div class="col-sm-6 spacer ">
 									<label for="observação">Observação</label>
 									<textarea class="form-control spacer-input ng-pristine ng-valid ng-empty ng-touched"
-										ng-model="obsOportunidade" rows="3"></textarea>
+										ng-model="observacao" rows="3"></textarea>
 								</div>
 
 								<div class="col-sm-6 spacer ">
@@ -1414,7 +1414,7 @@
 
 
 					// testando o salvamento do pedido 
-					alert("Teste 002")
+					alert("Teste 003")
 					$scope.salvarDocumento = async (rotina) => {
 						console.log("chegou no salvarDocumento")
 						/*
@@ -1447,8 +1447,8 @@
 							validaOrcamento: $scope.validadeOrcamento,
 							emissaoOrcamento: $scope.emissaoOrcamento,
 							situacao: $scope.situacao,
-							prevEntegraCli: $scope.prevEntregaCli,
-							prevEntregaPcp: $scope.prevEntregaPcp,
+							prevEntregraCli: $scope.prevEntregPcp,
+							prevEntregaPcp: $scope.prevEntregPcp,
 							representante: $scope.representante,
 							condPagamento: $scope.condicaoPagamento,
 							formaPagamento: $scope.formaPagamento,
