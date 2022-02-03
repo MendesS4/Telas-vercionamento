@@ -1414,7 +1414,7 @@
 
 
 					// testando o salvamento do pedido 
-					alert("Teste 001")
+					alert("Teste 002")
 					$scope.salvarDocumento = async (rotina) => {
 						console.log("chegou no salvarDocumento")
 						/*
@@ -1436,8 +1436,24 @@
 							obsOportunidade: $scope.obsOportunidade,
 							histOportunidade: $scope.histOportunidade,
 
+							// infos dos inputs da tela 
+							tipoOrcamento: $scope.tipoOrcamento,
+							filial: $scope.filial,
+							tabelaPreco: $scope.tabPreco,
+							cliente: $scope.cliente,
+							frete: $scope.frete,
+							totalFrete: $scope.totalFrete,
+							tabelaFrete: $scope.tabelaFrete,
+							validaOrcamento: $scope.validadeOrcamento,
+							emissaoOrcamento: $scope.emissaoOrcamento,
+							situacao: $scope.situacao,
+							prevEntegraCli: $scope.prevEntegraCli,
+							prevEntregaPcp: $scope.prevEntregaPcp,
+							representante: $scope.representante,
 							condPagamento: $scope.condPagamento,
 							formaPagamento: $scope.formaPagamento,
+							observacao: $scope.observacao,
+							numPedCli: $scope.numPedCliente,
 
 							endEntrega: $scope.frmEndEntrega,
 							prevEntrega: $scope.prevEntrega != "" || $scope.prevEntrega != undefined ? $scope.prevEntrega : null,
