@@ -853,6 +853,7 @@
 							$scope.adicionarProduto(newResult[i])
 						}
 					}
+
 					$scope.getCondicaoPagamentoERP = async (consulta) => {
 						try {
 							let result = await $scope.executaRequisicaoExterna(
@@ -902,8 +903,8 @@
 							return "";
 						}
 					};
-					$scope.getFormasPagamentoERP = async (consulta) => {
 
+					$scope.getFormasPagamentoERP = async (consulta) => {
 						try {
 							let result = await $scope.executaRequisicaoExterna(
 								{
@@ -914,7 +915,7 @@
 									pFilter: { filtro: { filtroFormaPag: consulta } },
 								}
 							);
-							console.log(result.resultado)
+							console.log(result)
 
 							if (result.resultado != undefined) {
 								return result.resultado.map((item) => {
@@ -1783,6 +1784,10 @@
 		margin-top: -20px;
 	}
 
+	.inputNumberTable{
+		width: 20vh
+	}
+
 	.table>thead>tr>th {
 		vertical-align: inherit;
 	}
@@ -1971,11 +1976,6 @@
 
 	.divTextTable {
 		width: 10vh;
-	}
-
-	.inputTableBigger {
-		margin-top: -5vh;
-
 	}
 
 	.inputTable {
