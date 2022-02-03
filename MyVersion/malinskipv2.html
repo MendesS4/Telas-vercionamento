@@ -866,7 +866,7 @@
 									pFilter: { filtro: { filtroCondPag: consulta } },
 								}
 							);
-	
+								console.log(result)
 							if (result.resultado != undefined) {
 								return result.resultado.map((item) => {
 									return item
@@ -889,8 +889,8 @@
 					}
 
 					$scope.getFormasP = function (val) {
-						if ($scope.condPagamento != null) {
-							return $http.post('/clicVendas/rest/Listas/formaPagamento/' + $scope.condPagamento.id, {
+						if ($scope.formaPagamento != null) {
+							return $http.post('/clicVendas/rest/Listas/formaPagamento/' + $scope.formaPagamento.id, {
 								params: {
 									filtro: val || '',
 									idCvTccnpj: dadosUserLogado.cId
@@ -1483,7 +1483,7 @@
 							prevEntregaCli: $scope.prevEntregCli,
 							prevEntregaPcp: $scope.prevEntregPcp,
 							representante: $scope.representante,
-							condPagamento: $scope.condicaoPagamento,
+							condPagamento: $scope.condPagamento,
 							formaPagamento: $scope.formaPagamento,
 							observacao: $scope.observacao,
 							numPedCli: $scope.numPedCliente,
