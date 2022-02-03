@@ -270,12 +270,12 @@
 
 								<div class="col-sm-6 spacer ">
 									<label for="validadeOrcamento">Validade do orçamento</label>
-									<input type="date" class="form-control" ng-model="validadeOrcamento">
+									<input type="date" class="form-control" ng-model="validadeOrcamento" min="2022-01-01">
 								</div>
 
 								<div class="col-sm-6 spacer ">
 									<label for="emissaoOrcamento">Emissão do orçamento</label>
-									<input type="date" class="form-control" ng-model="emissaoOrcamento">
+									<input type="date" class="form-control" ng-model="emissaoOrcamento" min="2022-01-01">
 								</div>
 
 								<div class="col-sm-6 spacer ">
@@ -285,12 +285,12 @@
 
 								<div class="col-sm-3 spacer ">
 									<label for="prevEntregCli">Previsão de entrega do cliente</label>
-									<input type="date" class="form-control" ng-model="prevEntregCli">
+									<input type="date" class="form-control" ng-model="prevEntregCli" min="2022-01-01">
 								</div>
 
 								<div class="col-sm-3 spacer ">
 									<label for="prevEntregPcp">Data prevista PCP(original)</label>
-									<input type="date" class="form-control" ng-model="prevEntregPcp">
+									<input type="date" class="form-control" ng-model="prevEntregPcp" min="2022-01-01">
 								</div>
 
 								<div class="col-sm-6 spacer ">
@@ -1456,7 +1456,7 @@
 
 
 					// testando o salvamento do pedido 
-					alert("Teste 012")
+					alert("Teste 013")
 					$scope.salvarDocumento = async (rotina) => {
 						console.log("chegou no salvarDocumento")
 						/*
@@ -1490,7 +1490,7 @@
 							emissaoOrcamento: $scope.emissaoOrcamento,
 							situacao: $scope.situacao,
 							prevEntregCli: $scope.prevEntregCli,
-							prevEntregaPcp: $scope.prevEntregPcp,
+							prevEntregPcp: $scope.prevEntregPcp,
 							representante: $scope.representante,
 							condPagamento: $scope.condPagamento,
 							formaPagamento: $scope.formaPagamento,
