@@ -299,8 +299,8 @@
 								</div>
 
 								<div class="col-sm-6 spacer ">
-									<label for="condicaoPagamento">Condição de pagamento</label>
-									<input type="text" class="form-control" ng-model="condicaoPagamento"
+									<label for="condPagamento">Condição de pagamento</label>
+									<input type="text" class="form-control" ng-model="condPagamento"
 										uib-typeahead="teste.nome for teste in getCondicaoPagamentoERP($viewValue)"
 										typeahead-min-lenght="2">
 								</div>
@@ -868,7 +868,7 @@
 							);
 	
 							if (result.resultado != undefined) {
-								return result.resultado.slice(0, 8).map((item) => {
+								return result.resultado.map((item) => {
 									return item
 								})
 							} else {
@@ -916,7 +916,6 @@
 									pFilter: { filtro: { filtroFormaPag: consulta } },
 								}
 							);
-							console.log(result)
 
 							if (result.resultado != undefined) {
 								return result.resultado.map((item) => {
@@ -1170,7 +1169,7 @@
 							$scope.prevEntregCli = '';
 							$scope.prevEntregPcp = '';
 							$scope.representante = '';
-							$scope.condicaoPagamento = '';
+							$scope.condPagamento = '';
 							$scope.formaPagamento = '';
 							$scope.observacao = '';
 							$scope.numPedCliente = '';
@@ -1220,7 +1219,7 @@
 							$scope.prevEntregCli = docs.preventregCli;
 							$scope.prevEntregPcp = docs.prevEntregPcp;
 							$scope.representante = docs.representante;
-							$scope.condicaoPagamento = docs.condicaoPagamento;
+							$scope.condPagamento = docs.condPagamento;
 							$scope.formaPagamento = docs.formaPagamento;
 							$scope.observacao = docs.observacao;
 							$scope.numPedCliente = docs.numPedCliente;
@@ -1448,7 +1447,7 @@
 
 
 					// testando o salvamento do pedido 
-					alert("Teste 008")
+					alert("Teste 009")
 					$scope.salvarDocumento = async (rotina) => {
 						console.log("chegou no salvarDocumento")
 						/*
