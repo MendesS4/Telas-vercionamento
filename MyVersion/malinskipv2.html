@@ -826,6 +826,15 @@
 						};
 					}
 
+					
+					$scope.onSelectTabPreco = function ($item, $model, $label) {
+						$scope.tabPreco = $item;
+					};
+
+					$scope.limpaTabPreco = function () {
+						$scope.tabPreco = "";
+					}
+
 					$scope.getCondicoesP = function (val) {
 						return $http.post('/clicVendas/rest/Listas/condicaoPagamento', {
 							params: {
@@ -1447,7 +1456,7 @@
 
 
 					// testando o salvamento do pedido 
-					alert("Teste 010")
+					alert("Teste 011")
 					$scope.salvarDocumento = async (rotina) => {
 						console.log("chegou no salvarDocumento")
 						/*
@@ -1472,7 +1481,7 @@
 							// infos dos inputs da tela 
 							tipoOrcamento: $scope.tipoOrcamento,
 							filial: $scope.filial,
-							tabelaPreco: $scope.tabPreco,
+							tabPreco: $scope.tabPreco,
 							cliente: $scope.frmCliente,
 							frete: $scope.frete,
 							totalFrete: $scope.totalFrete,
