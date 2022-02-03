@@ -1150,6 +1150,7 @@
 
 						if ($dados == undefined) {
 
+							//para um novo pedido
 							$rootScope.idDocumento = 0;
 							$scope.pedido = 0,
 
@@ -1199,14 +1200,30 @@
 
 						} else {
 
+							//para editar o pedido
 							let docs = $dados.jsonDocs[0];
-
 							$rootScope.hashDoc = docs.docCtrl;
 							$rootScope.idDocumento = $dados.id;
+
 							$rootScope.cliente = docs.cliente;
 
-							$scope.condPagamento = docs.condPagamento;
+							$scope.tipoOrcamento = docs.tipoOrcamento;
+							$scope.filial = docs.filial;
+							$scope.tabPreco = docs.tabPreco;
+							$scope.frmCliente = docs.frmCliente;
+							$scope.frete = docs.frete;
+							$scope.totalFrete = docs.totalFrete;
+							$scope.tabelaFrete = docs.tabelaFrete;
+							$scope.validadeOrcamento = docs.validadeOrcamento;
+							$scope.emissaoOrcamento = docs.emissaoOrcamento;
+							$scope.situacao = docs.Situacao;
+							$scope.prevEntregCli = docs.preventregCli;
+							$scope.prevEntregPcp = docs.prevEntregPcp;
+							$scope.representante = docs.representante;
+							$scope.condicaoPagamento = docs.condicaoPagamento;
 							$scope.formaPagamento = docs.formaPagamento;
+							$scope.observacao = docs.observacao;
+							$scope.numPedCliente = docs.numPedCliente;
 
 							$scope.frmCliente = docs.cliente;
 							$scope.codigoCliente = docs.cliente.codExterno;
