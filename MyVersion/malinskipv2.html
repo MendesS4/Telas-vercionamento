@@ -1388,9 +1388,8 @@
 
 						for (let i = 0; i < strHistorico.length; i++) {
 							$scope.histOportunidade += `
-				
-- Descrição: ${strHistorico[i].item}
-- Registrado em: ${dataAtual.toLocaleDateString('pt-BR')} às ${horas}:${minutos}`
+							- Descrição: ${strHistorico[i].item}
+							- Registrado em: ${dataAtual.toLocaleDateString('pt-BR')} às ${horas}:${minutos}`
 						}
 
 						$scope.obsOportunidade = "";
@@ -1413,6 +1412,9 @@
 						});
 					}
 
+
+					// testando o salvamento do pedido 
+					alert("Teste 001")
 					$scope.salvarDocumento = async (rotina) => {
 						console.log("chegou no salvarDocumento")
 						/*
@@ -1458,6 +1460,8 @@
 
 						}];
 
+
+
 						dados.jsonDocs = JSON.stringify(jsonDocs);
 						/*Recebe dados e para que sejam feitas as alterações necessarias*/
 						var json = JSON.parse(dados.jsonDocs);
@@ -1489,6 +1493,7 @@
 
 						if (id > 0) {
 							dados.jsonDocs = JSON.stringify(json);
+							console.log(jsonDocs)
 							let response = await $http.post('/clicVendas/rest/pedidov2/salvar/' + id, dados);
 
 							if (rotina == 1) {
@@ -1497,6 +1502,7 @@
 							}
 						} else {
 							dados.jsonDocs = JSON.stringify(json);
+							console.log(jsonDoscs)
 							let response = await $http.post('/clicVendas/rest/pedidov2/salvar/', dados);
 
 							if (rotina == 1) {
