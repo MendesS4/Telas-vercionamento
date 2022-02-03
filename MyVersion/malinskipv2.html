@@ -1460,6 +1460,7 @@
 
 						}];
 
+						console.log(jsonDocs)
 
 
 						dados.jsonDocs = JSON.stringify(jsonDocs);
@@ -1502,7 +1503,7 @@
 							}
 						} else {
 							dados.jsonDocs = JSON.stringify(json);
-							console.log(jsonDoscs)
+							console.log(jsonDocs)
 							let response = await $http.post('/clicVendas/rest/pedidov2/salvar/', dados);
 
 							if (rotina == 1) {
