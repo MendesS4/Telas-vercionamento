@@ -307,7 +307,7 @@
 								<div class="col-sm-6 spacer ">
 									<label for="formaPagamento">Forma de pagamento</label>
 									<input type="text" class="form-control" ng-model="formaPagamento"
-										uib-typeahead="teste.nome for teste in getFormasPagamentoERP($viewValue)"
+										uib-typeahead="teste.nome + '-' + teste.codExterno for teste in getFormasPagamentoERP($viewValue)"
 										typeahead-min-lenght="3">
 								</div>
 
