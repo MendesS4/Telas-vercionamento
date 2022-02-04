@@ -228,19 +228,12 @@
 
 								<div class="col-sm-6 spacer ">
 									<label for="tipoOrcamento">Tipo de orçamento</label>
-									<input type="text" class="form-control" ng-model="tipoOrcamento">
+									<input type="text" class="form-control" ng-model="tipoOrcamento" value="1" readonly>
 								</div>
 
 								<div class="col-sm-6 spacer ">
 									<label for="filial">Filial</label>
-									<input type="text" class="form-control" ng-model="filial">
-								</div>
-
-								<div class="col-sm-6 spacer ">
-									<label for="tabPreco">Tabela de preço</label>
-									<input type="text" class="form-control" ng-model="tabPreco" 
-									uib-typeahead="teste.nome + '-' + teste.cod + '-' + teste.tipo for teste in getTabelaPreco($viewValue)"
-									typeahead-min-lenght="2">
+									<input type="text" class="form-control" ng-model="filial" value="8" readonly>
 								</div>
 
 								<div class="col-sm-6 spacer ">
@@ -252,6 +245,18 @@
 								</div>
 
 								<div class="col-sm-6 spacer ">
+									<label for="tabPreco">Tabela de preço</label>
+									<input type="text" class="form-control" ng-model="tabPreco" 
+									uib-typeahead="teste.nome + '-' + teste.cod + '-' + teste.tipo for teste in getTabelaPreco($viewValue)"
+									typeahead-min-lenght="2">
+								</div>
+								
+								<div class="col-sm-3 spacer ">
+									<label for="tabelaFrete">Tabela de frete</label>
+									<input type="text" class="form-control" ng-model="tabelaFrete">
+								</div>
+
+								<div class="col-sm-3 spacer ">
 									<label for="frete">Frete</label>
 									<input type="text" class="form-control" ng-model="frete">
 								</div>
@@ -263,18 +268,13 @@
 
 
 								<div class="col-sm-6 spacer ">
-									<label for="tabelaFrete">Tabela de frete</label>
-									<input type="text" class="form-control" ng-model="tabelaFrete">
-								</div>
-
-								<div class="col-sm-6 spacer ">
 									<label for="validadeOrcamento">Validade do orçamento</label>
 									<input type="date" class="form-control" ng-model="validadeOrcamento" min="2022-01-01">
 								</div>
 
 								<div class="col-sm-6 spacer ">
 									<label for="emissaoOrcamento">Emissão do orçamento</label>
-									<input type="date" class="form-control" ng-model="emissaoOrcamento" min="2022-01-01">
+									<input type="date" class="form-control" ng-model="emissaoOrcamento" min="2022-01-01" id=idDataEmissao>
 								</div>
 
 								<div class="col-sm-6 spacer ">
@@ -294,7 +294,7 @@
 
 								<div class="col-sm-6 spacer ">
 									<label for="representante">Representante</label>
-									<input type="text" class="form-control" ng-model="representante">
+									<input type="text" class="form-control" ng-model="representante" readonly>
 								</div>
 
 								<div class="col-sm-6 spacer ">
@@ -678,6 +678,15 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
+
+		var today = new Date();
+		document.getElementById("idDataEmissao").value = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
+		console.log(today)
+
+		var dataValidade = new Date();
+		document.getElementById("idDataEmissao").value = dataValidade.getFullYear() + '-' + ('0' + (dataValidade.getMonth() + 1)).slice(-2) + '-' + ('30' + dataValidade.getDate()).slice(-2);
+		console.log(dataValidade)
+
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
