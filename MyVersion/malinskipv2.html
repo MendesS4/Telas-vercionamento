@@ -228,12 +228,12 @@
 
 								<div class="col-sm-6 spacer ">
 									<label for="tipoOrcamento">Tipo de orçamento</label>
-									<input type="text" class="form-control" ng-model="tipoOrcamento" value="1" ng-disabled>
+									<input type="text" class="form-control" ng-model="tipoOrcamento" readonly>
 								</div>
 
 								<div class="col-sm-6 spacer ">
 									<label for="filial">Filial</label>
-									<input type="text" class="form-control" ng-model="filial" value="8" readonly>
+									<input type="text" class="form-control" ng-model="filial" readonly>
 								</div>
 
 								<div class="col-sm-6 spacer ">
@@ -1166,8 +1166,8 @@
 							$rootScope.produtos = [];
 
 							// inputs
-							$scope.tipoOrcamento = '';
-							$scope.filial = '';
+							
+
 							$scope.tabPreco = '';
 							$scope.frmCliente = '';
 							$scope.frete = '';
@@ -1191,6 +1191,12 @@
 							$scope.prevEntrega = '';
 
 							$scope.codigoProduto = '';
+
+
+							// codigos padroes da tela malinski
+							$scope.tipoOrcamento = '1';
+
+							$scope.filial = "8"
 
 							$scope.representante = dadosUserLogado.rNome;
 
