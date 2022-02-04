@@ -760,7 +760,7 @@
 							$scope.exibeHistoricos = false;
 						}
 					};
-					alert("teste de tela 04")
+					alert("teste de tela 05")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
@@ -1185,7 +1185,6 @@
 							$scope.totalFrete = '';
 							$scope.tabelaFrete = '';
 							$scope.validadeOrcamento = '';
-							$scope.emissaoOrcamento = '';
 							$scope.prevEntregCli = '';
 							$scope.prevEntregPcp = '';
 							$scope.representante = '';
@@ -1203,6 +1202,8 @@
 							$scope.codigoProduto = '';
 
 							// codigos padroes da tela malinski
+							$scope.emissaoOrcamento = 'AAAAAAAAAAAAA';
+
 							$scope.situacao = '10';
 
 							$scope.tipoOrcamento = '1';
@@ -1211,8 +1212,7 @@
 
 							$scope.representante = dadosUserLogado.rNome;
 
-							$scope.datEmiERP = new Date.toLocaleDateString;
-							console.log(datEmiERP)
+							$scope.datEmiERP = '';
 
 							$scope.obsOportunidade = '';
 							$scope.histOportunidade = '';
