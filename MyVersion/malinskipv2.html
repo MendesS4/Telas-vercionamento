@@ -283,7 +283,7 @@
 
 								<div class="col-sm-6 spacer ">
 									<label for="situacao">Situação</label>
-									<input type="text" class="form-control" ng-model="situacao" value="10">
+									<input type="text" class="form-control" ng-model="situacao" readonly >
 								</div>
 
 
@@ -758,7 +758,7 @@
 							$scope.exibeHistoricos = false;
 						}
 					};
-					alert("teste de tela 001")
+					alert("teste de tela 003")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
@@ -1175,7 +1175,6 @@
 							$scope.tabelaFrete = '';
 							$scope.validadeOrcamento = '';
 							$scope.emissaoOrcamento = '';
-							$scope.situacao = '';
 							$scope.prevEntregCli = '';
 							$scope.prevEntregPcp = '';
 							$scope.representante = '';
@@ -1192,8 +1191,9 @@
 
 							$scope.codigoProduto = '';
 
-
 							// codigos padroes da tela malinski
+							$scope.situacao = '10';
+
 							$scope.tipoOrcamento = '1';
 
 							$scope.filial = "8"
