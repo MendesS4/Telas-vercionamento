@@ -266,15 +266,17 @@
 									<input type="text" class="form-control" ng-model="totalFrete">
 								</div>
 
+								<!--O valor desse campo é a data do sistema que esta rodando-->
+								<div class="col-sm-4 spacer ">
+									<label for="emissaoOrcamento">Emissão do orçamento</label>
+									<input type="date" class="form-control" ng-model="emissaoOrcamento" min="2022-01-01">
+								</div>
+
 								<div class="col-sm-4 spacer ">
 									<label for="validadeOrcamento">Validade do orçamento</label>
 									<input type="date" class="form-control" ng-model="validadeOrcamento" min="2022-01-01">
 								</div>
 
-								<div class="col-sm-4 spacer ">
-									<label for="emissaoOrcamento">Emissão do orçamento</label>
-									<input type="date" class="form-control" ng-model="emissaoOrcamento" min="2022-01-01">
-								</div>
 
 								<div class="col-sm-4 spacer ">
 									<label for="prevEntregCli">Previsão de entrega do cliente</label>
@@ -1209,7 +1211,8 @@
 
 							$scope.representante = dadosUserLogado.rNome;
 
-							$scope.datEmiERP = '';
+							$scope.datEmiERP = new Date.toLocaleDateString;
+							console.log(datEmiERP)
 
 							$scope.obsOportunidade = '';
 							$scope.histOportunidade = '';
@@ -1241,6 +1244,7 @@
 
 							$scope.validadeOrcamento = docs.validadeOrcamento != null ? new Date(docs.validadeOrcamento) : null 
 
+							//emissao de orcamento (date do sistema)
 							$scope.emissaoOrcamento = docs.emissaoOrcamento != null ? new Date(docs.emissaoOrcamento) : null
 
 							$scope.situacao = docs.situacao;
