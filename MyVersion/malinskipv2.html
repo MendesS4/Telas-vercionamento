@@ -801,6 +801,19 @@
 						$scope.endEntrega = {};
 					};
 
+					// pega data atual do sistema 
+					$scope.dataEmissao = function () {
+
+						var today = new Date();
+						document.getElementById("theDate").value = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
+					
+						console.log(today)
+					}
+					
+					dataemissao()
+
+			
+
 					$scope.getTabelaPreco = async (consulta) =>	{
 						console.log("chegou na função")
 						try{
