@@ -313,14 +313,14 @@
 								</div>
 
 								<div class="col-sm-6 spacer ">
-									<label for="observação">Observação</label>
-									<textarea class="form-control spacer-input ng-pristine ng-valid ng-empty ng-touched"
-										ng-model="observacao" rows="3"></textarea>
-								</div>
-
-								<div class="col-sm-6 spacer ">
 									<label for="numPedCliente">Numero pedido do cliente (OC/PO)</label>
 									<input type="text" class="form-control" ng-model="numPedCliente">
+								</div>
+
+								<div class="col-sm-12 spacer ">
+									<label for="observação">Observação</label>
+									<textarea class="form-control spacer-input ng-pristine ng-valid ng-empty ng-touched"
+										ng-model="observacao" rows="1"></textarea>
 								</div>
 
 								<div class="col-sm-12 spacer ">
@@ -1442,7 +1442,7 @@
 
 						$scope.obsOportunidade = "";
 					};
-					alert("teste001")
+					alert("teste002")
 					$scope.finalizarDocumento = () => {
 
 						bootbox.confirm({
