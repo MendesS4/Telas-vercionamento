@@ -228,12 +228,12 @@
 
 								<div class="col-sm-6 spacer ">
 									<label for="tipoOrcamento">Tipo de orçamento</label>
-									<input type="text" class="form-control" ng-model="tipoOrcamento" value="1">
+									<input type="text" class="form-control" ng-model="tipoOrcamento" value="1" readonly>
 								</div>
 
 								<div class="col-sm-6 spacer ">
 									<label for="filial">Filial</label>
-									<input type="text" class="form-control" ng-model="filial" value="8">
+									<input type="text" class="form-control" ng-model="filial" value="8" readonly>
 								</div>
 
 								<div class="col-sm-6 spacer ">
@@ -250,13 +250,8 @@
 									uib-typeahead="teste.nome + '-' + teste.cod + '-' + teste.tipo for teste in getTabelaPreco($viewValue)"
 									typeahead-min-lenght="2">
 								</div>
-								
-								<div class="col-sm-3 spacer ">
-									<label for="tabelaFrete">Tabela de frete</label>
-									<input type="text" class="form-control" ng-model="tabelaFrete">
-								</div>
 
-								<div class="col-sm-3 spacer ">
+								<div class="col-sm-6 spacer ">
 									<label for="frete">Frete</label>
 									<input type="text" class="form-control" ng-model="frete">
 								</div>
@@ -268,18 +263,23 @@
 
 
 								<div class="col-sm-6 spacer ">
+									<label for="tabelaFrete">Tabela de frete</label>
+									<input type="text" class="form-control" ng-model="tabelaFrete">
+								</div>
+
+								<div class="col-sm-6 spacer ">
 									<label for="validadeOrcamento">Validade do orçamento</label>
 									<input type="date" class="form-control" ng-model="validadeOrcamento" min="2022-01-01">
 								</div>
 
 								<div class="col-sm-6 spacer ">
 									<label for="emissaoOrcamento">Emissão do orçamento</label>
-									<input type="date" class="form-control" ng-model="emissaoOrcamento" min="2022-01-01" id>
+									<input type="date" class="form-control" ng-model="emissaoOrcamento" min="2022-01-01">
 								</div>
 
 								<div class="col-sm-6 spacer ">
 									<label for="situacao">Situação</label>
-									<input type="text" class="form-control" ng-model="situacao" value="8" readonly>
+									<input type="text" class="form-control" ng-model="situacao">
 								</div>
 
 								<div class="col-sm-3 spacer ">
@@ -287,9 +287,14 @@
 									<input type="date" class="form-control" ng-model="prevEntregCli" min="2022-01-01">
 								</div>
 
+								<div class="col-sm-3 spacer ">
+									<label for="prevEntregPcp">Data prevista PCP(original)</label>
+									<input type="date" class="form-control" ng-model="prevEntregPcp" min="2022-01-01">
+								</div>
+
 								<div class="col-sm-6 spacer ">
 									<label for="representante">Representante</label>
-									<input type="text" class="form-control" ng-model="representante" readonly>
+									<input type="text" class="form-control" ng-model="representante">
 								</div>
 
 								<div class="col-sm-6 spacer ">
@@ -418,12 +423,7 @@
 													</td>
 													<td>
 														<div>
-															<input
-															type="number"
-														   class="inputNumberTable"
-															min="0" max="10000"
-														   ng-model="produto.qtdPedida"
-														   type = "number">
+															{{produto.ofertaPreco}}
 														</div>
 													</td>
 													<td>
@@ -678,15 +678,6 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-
-		var today = new Date();
-		document.getElementById("idDataEmissao").value = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
-		console.log(today)
-
-		var dataValidade = new Date();
-		document.getElementById("idDataEmissao").value = dataValidade.getFullYear() + '-' + ('0' + (dataValidade.getMonth() + 1)).slice(-2) + '-' + ('30' + dataValidade.getDate()).slice(-2);
-		console.log(dataValidade)
-
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
@@ -766,6 +757,7 @@
 							$scope.exibeHistoricos = false;
 						}
 					};
+					alert("teste de tela 001")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
