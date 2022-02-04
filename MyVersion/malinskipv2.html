@@ -760,7 +760,7 @@
 							$scope.exibeHistoricos = false;
 						}
 					};
-					alert("teste de tela 09")
+					alert("teste de tela 10")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
@@ -803,14 +803,6 @@
 						$scope.endEntrega = {};
 					};
 
-					// pega data atual do sistema 
-					$scope.dataEmissao = function () {
-
-						var today = new Date();
-						document.getElementById("theDate").value = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
-					
-						console.log(today)
-					}
 
 					$scope.getTabelaPreco = async (consulta) =>	{
 						console.log("chegou na função")
@@ -1218,7 +1210,7 @@
 
 							$scope.representante = dadosUserLogado.rNome;
 
-							$scope.datEmiERP = '';
+							$scope.datEmiERP = today;
 
 							$scope.obsOportunidade = '';
 							$scope.histOportunidade = '';
