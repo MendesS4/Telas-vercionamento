@@ -273,7 +273,8 @@
 
 								<div class="col-sm-4 spacer ">
 									<label for="emissaoOrcamento">Emissão do orçamento</label>
-									<input type="date" class="form-control" ng-model="emissaoOrcamento" min="2022-01-01">
+									<input type="date" class="form-control" ng-model="emissaoOrcamento" min="2022-01-01"
+									uib-typeahead="emissaoOrcamento($viewValue)">
 								</div>
 
 								<div class="col-sm-4 spacer ">
@@ -809,10 +810,6 @@
 					
 						console.log(today)
 					}
-					
-					dataemissao()
-
-			
 
 					$scope.getTabelaPreco = async (consulta) =>	{
 						console.log("chegou na função")
