@@ -228,12 +228,12 @@
 
 								<div class="col-sm-6 spacer ">
 									<label for="tipoOrcamento">Tipo de orçamento</label>
-									<input type="text" class="form-control" ng-model="tipoOrcamento" value="1" ng-disabled>
+									<input type="text" class="form-control" ng-model="tipoOrcamento" value="1">
 								</div>
 
 								<div class="col-sm-6 spacer ">
 									<label for="filial">Filial</label>
-									<input type="text" class="form-control" ng-model="filial" value="8" ng-disabled>
+									<input type="text" class="form-control" ng-model="filial" value="8">
 								</div>
 
 								<div class="col-sm-6 spacer ">
@@ -274,7 +274,7 @@
 
 								<div class="col-sm-6 spacer ">
 									<label for="emissaoOrcamento">Emissão do orçamento</label>
-									<input type="date" class="form-control" ng-model="emissaoOrcamento" min="2022-01-01" id=idDataEmissao>
+									<input type="date" class="form-control" ng-model="emissaoOrcamento" min="2022-01-01" id>
 								</div>
 
 								<div class="col-sm-6 spacer ">
@@ -285,11 +285,6 @@
 								<div class="col-sm-3 spacer ">
 									<label for="prevEntregCli">Previsão de entrega do cliente</label>
 									<input type="date" class="form-control" ng-model="prevEntregCli" min="2022-01-01">
-								</div>
-
-								<div class="col-sm-3 spacer ">
-									<label for="prevEntregPcp">Data prevista PCP(original)</label>
-									<input type="date" class="form-control" ng-model="prevEntregPcp" min="2022-01-01">
 								</div>
 
 								<div class="col-sm-6 spacer ">
@@ -423,7 +418,12 @@
 													</td>
 													<td>
 														<div>
-															{{produto.ofertaPreco}}
+															<input
+															type="number"
+														   class="inputNumberTable"
+															min="0" max="10000"
+														   ng-model="produto.qtdPedida"
+														   type = "number">
 														</div>
 													</td>
 													<td>
