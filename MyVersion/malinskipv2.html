@@ -760,7 +760,7 @@
 							$scope.exibeHistoricos = false;
 						}
 					};
-					alert("teste de tela 10")
+					alert("teste de tela 11")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
@@ -1210,7 +1210,7 @@
 
 							$scope.representante = dadosUserLogado.rNome;
 
-							$scope.datEmiERP = today;
+							$scope.datEmiERP = new Date(date);
 
 							$scope.obsOportunidade = '';
 							$scope.histOportunidade = '';
@@ -1248,8 +1248,6 @@
 							$scope.situacao = docs.situacao;
 
 							$scope.prevEntregCli = docs.prevEntregCli != null ? new Date(docs.prevEntregCli) : null
-
-							$scope.prevEntregPcp = docs.prevEntregPcp != null ? new Date(docs.prevEntregPcp) : null
 
 							$scope.representante = docs.representante;
 							$scope.condPagamento = docs.condPagamento;
