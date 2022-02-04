@@ -760,7 +760,7 @@
 							$scope.exibeHistoricos = false;
 						}
 					};
-					alert("teste de tela 08")
+					alert("teste de tela 09")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
@@ -1168,6 +1168,12 @@
 
 					$scope.abreFormulario = ($dados) => {
 
+						var today = new Date();
+
+						var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+
+						console.log(date)
+
 						if ($dados == undefined) {
 
 							//para um novo pedido
@@ -1202,7 +1208,7 @@
 							$scope.codigoProduto = '';
 
 							// codigos padroes da tela malinski
-							$scope.emissaoOrcamento = new Date().toDateInputValue();
+							$scope.emissaoOrcamento = 
 
 							$scope.situacao = '10';
 
