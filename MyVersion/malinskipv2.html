@@ -1222,11 +1222,17 @@
 							$scope.frete = docs.frete;
 							$scope.totalFrete = docs.totalFrete;
 							$scope.tabelaFrete = docs.tabelaFrete;
-							$scope.validadeOrcamento = docs.validadeOrcamento;
-							$scope.emissaoOrcamento = docs.emissaoOrcamento;
+
+							$scope.validadeOrcamento = docs.validadeOrcamento != null ? new Date(docs.validadeOrcamento) : null 
+
+							$scope.emissaoOrcamento = docs.emissaoOrcamento != null ? new Date(docs.emissaoOrcamento) : null
+
 							$scope.situacao = docs.situacao;
-							$scope.prevEntregCli = docs.prevEntregCli;
-							$scope.prevEntregPcp = docs.prevEntregPcp;
+
+							$scope.prevEntregCli = docs.prevEntregCli != null ? new Date(docs.prevEntregCli) : null
+
+							$scope.prevEntregPcp = docs.prevEntregPcp != null ? new Date(docs.prevEntregPcp) : null
+
 							$scope.representante = docs.representante;
 							$scope.condPagamento = docs.condPagamento;
 							$scope.formaPagamento = docs.formaPagamento;
@@ -1436,7 +1442,7 @@
 
 						$scope.obsOportunidade = "";
 					};
-
+					alert("teste001")
 					$scope.finalizarDocumento = () => {
 
 						bootbox.confirm({
