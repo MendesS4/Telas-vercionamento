@@ -412,8 +412,7 @@
 															 	type="number"
 																class="inputNumberTable"
 															 	min="0" max="10000"
-																ng-model="produtos.qtdPedida"
-																value="0">
+																ng-model="produtos.qtdPedida">
 														</div>
 													</td>
 													<td>
@@ -756,7 +755,7 @@
 							$scope.exibeHistoricos = false;
 						}
 					};
-					alert("teste de tela 25")
+					alert("teste de tela 26")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
@@ -1526,8 +1525,6 @@
 							//Produtos
 							// verificação de quantidade de produtos
 							produtos: $rootScope.produtos.filter(doc => doc && doc.jsonDocs[0].qtdPedida > 0),
-
-							produtos: $rootScope.produtos,
 
 							valorTotal: parseFloat($scope.valorTotal),
 							//Cliente
