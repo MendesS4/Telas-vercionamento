@@ -755,7 +755,7 @@
 							$scope.exibeHistoricos = false;
 						}
 					};
-					alert("teste de tela 29")
+					alert("teste de tela 30")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
@@ -1372,10 +1372,8 @@
 								precoVendFOB: resultTest.precoVendFOB,
 								precoFrete: resultTest.precoFrete,
 								precoVendaCIF: resultTest.precoVendaCIF,
-
 								//verificação de quantidade, se não for colocado uma qtd > 0 não salva 
 								qtdPedida: resultTest.qtdPedida,
-
 								ofertaPreco: resultTest.ofertaPreco,
 								precoLiquido: resultTest.precoLiquido,
 								vlrLiquido: resultTest.vlrLiquido,
@@ -1524,7 +1522,9 @@
 
 							//Produtos
 							// verificação de quantidade de produtos
-							produtos: $rootScope.produtos.filter(doc => doc && doc.qtdPedida > 0),
+							produtos: $rootScope.produtos,
+
+							//produtos: $rootScope.produtos.filter(doc => doc && doc.qtdPedida > 0),
 
 							valorTotal: parseFloat($scope.valorTotal),
 							//Cliente
