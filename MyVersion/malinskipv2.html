@@ -255,7 +255,7 @@
 								<div class="col-sm-4 spacer ">
 									<label for="frete">Tipo de frete</label>
 									<input type="text" class="form-control" ng-model="frete"
-									uib-typeahead="teste.tipo + '-' + teste.desc + for teste in getTabelaFrete($viewValue)"
+									uib-typeahead="teste.tipo + '-' + teste.desc for teste in getTabelaFrete($viewValue)"
 									typeahead-min-lenght="2"
 									ng-blur="FUNCAO">
 								</div>
@@ -757,7 +757,7 @@
 							$scope.exibeHistoricos = false;
 						}
 					};
-					alert("teste de tela 41")
+					alert("teste de tela 42")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
