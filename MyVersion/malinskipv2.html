@@ -755,7 +755,7 @@
 							$scope.exibeHistoricos = false;
 						}
 					};
-					alert("teste de tela 26")
+					alert("teste de tela 27")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
@@ -873,7 +873,7 @@
 									pFilter: { filtro: { filtroCondPag: consulta } },
 								}
 							);
-							console.log(result)
+							//console.log(result)
 							if (result.resultado != undefined) {
 								return result.resultado.map((item) => {
 									return item
@@ -1524,7 +1524,7 @@
 
 							//Produtos
 							// verificação de quantidade de produtos
-							produtos: $rootScope.produtos.filter(doc => doc && doc.jsonDocs[0].qtdPedida > 0),
+							produtos: $rootScope.produtos.filter(doc => doc && doc.jsonDocs[0].produtos.qtdPedida > 0),
 
 							valorTotal: parseFloat($scope.valorTotal),
 							//Cliente
