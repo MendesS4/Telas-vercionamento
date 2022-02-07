@@ -755,7 +755,7 @@
 							$scope.exibeHistoricos = false;
 						}
 					};
-					alert("teste de tela 27")
+					alert("teste de tela 28")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
@@ -1524,7 +1524,7 @@
 
 							//Produtos
 							// verificação de quantidade de produtos
-							produtos: $rootScope.produtos.filter(doc => doc && doc.jsonDocs[0].produtos.qtdPedida > 0),
+							produtos: $rootScope.produtos.filter(doc => doc && doc.qtdPedida > 0),
 
 							valorTotal: parseFloat($scope.valorTotal),
 							//Cliente
