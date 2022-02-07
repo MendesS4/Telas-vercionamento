@@ -420,7 +420,7 @@
 															<input
 															type="number"
 															class="inputNumberTable"
-															 min="0" max="10000"
+															min="0" max="10000"
 															ng-model="produto.ofertaPreco">
 														</div>
 													</td>
@@ -755,7 +755,7 @@
 							$scope.exibeHistoricos = false;
 						}
 					};
-					alert("teste de tela 14")
+					alert("teste de tela 15")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
@@ -800,7 +800,6 @@
 
 
 					$scope.getTabelaPreco = async (consulta) =>	{
-						console.log("chegou na função")
 						try{
 							let result = await $scope.executaRequisicaoExterna(
 								{
@@ -812,7 +811,6 @@
 								},
 								1000
 							);
-							console.log(result)
 							if(result != undefined && result.resultado !=undefined){
 								return result.resultado.map((item)=>{
 									return item
@@ -874,7 +872,6 @@
 									pFilter: { filtro: { filtroCondPag: consulta } },
 								}
 							);
-								console.log(result)
 							if (result.resultado != undefined) {
 								return result.resultado.map((item) => {
 									return item
@@ -966,8 +963,6 @@
 						$rootScope.cliente = $item;
 
 						$scope.codigoCliente = $rootScope.cliente.codExterno
-						console.log($item)
-						console.log($scope.codigoCliente)
 						$scope.getEndEntrega();
 					};
 
@@ -1161,8 +1156,6 @@
 						var today = new Date();
 
 						var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-
-						console.log(date)
 
 						if ($dados == undefined) {
 
@@ -1368,8 +1361,6 @@
 					}
 
 					$scope.adicionarProduto = (resultTest) => {
-						console.log("chegou na adicionar produto")
-						console.log(resultTest)
 						$rootScope.produtos.unshift(
 							{
 								seq: resultTest.seq,
@@ -1477,7 +1468,6 @@
 
 					// testando o salvamento do pedido 
 					$scope.salvarDocumento = async (rotina) => {
-						console.log("chegou no salvarDocumento")
 						/*
 						Rotinas:
 							1 - Salvar (Mantém apenas no ClicVenda)
@@ -1533,19 +1523,17 @@
 
 							//Produtos
 							// verificação de quantidade de produtos
-							produtos: $rootScope.produtos.filter(doc => doc && doc.jsonDocs[0].qtdPedida > 0),
+							// produtos: $rootScope.produtos.filter(doc => doc && doc.jsonDocs[0].qtdPedida > 0),
 
-							// produtos: $rootScope.produtos,
+							produtos: $rootScope.produtos,
+
 							valorTotal: parseFloat($scope.valorTotal),
-							
 							//Cliente
 							cliente: { id: $rootScope.cliente.id, codExterno: $rootScope.cliente.codExterno, nome: $rootScope.cliente.nome, cpfCnpjFormat: $rootScope.cliente.cpfCnpjFormat },
 
 						}];
 
-
 						console.log(produtos)
-
 
 						dados.jsonDocs = JSON.stringify(jsonDocs);
 						/*Recebe dados e para que sejam feitas as alterações necessarias*/
@@ -1578,7 +1566,6 @@
 
 						if (id > 0) {
 							dados.jsonDocs = JSON.stringify(json);
-							console.log(jsonDocs)
 							let response = await $http.post('/clicVendas/rest/pedidov2/salvar/' + id, dados);
 
 							if (rotina == 1) {
@@ -1587,7 +1574,6 @@
 							}
 						} else {
 							dados.jsonDocs = JSON.stringify(json);
-							console.log(jsonDocs)
 							let response = await $http.post('/clicVendas/rest/pedidov2/salvar/', dados);
 
 							if (rotina == 1) {
