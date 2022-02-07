@@ -756,7 +756,7 @@
 							$scope.exibeHistoricos = false;
 						}
 					};
-					alert("teste de tela 22")
+					alert("teste de tela 23")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
@@ -1166,9 +1166,8 @@
 							$scope.pedido = 0,
 
 							$rootScope.produtos = [];
-
 							// inputs
-							
+
 							$scope.tabPreco = '';
 							$scope.frmCliente = '';
 							$scope.frete = '';
@@ -1195,7 +1194,7 @@
 							$scope.emissaoOrcamento =  new Date(date)
 
 							//produtos
-							$rootScope.produtos = produtos.qtdPedida = 0;
+							$rootScope.produtos = $rootScope.produtos.qtdPedida = 0;
 
 							$scope.situacao = 'Em digitação';
 
