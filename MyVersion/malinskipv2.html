@@ -262,12 +262,12 @@
 
 								<div class="col-sm-4 spacer ">
 									<label for="tabelaFrete">Tabela de frete</label>
-									<input type="text" class="form-control" ng-model="tabelaFrete" ng-disabled="!habili">
+									<input type="text" class="form-control" ng-model="tabelaFrete" ng-disabled="!habilitado">
 								</div>
 
 								<div class="col-sm-4 spacer ">
 									<label for="totalFrete">Total de frete</label>
-									<input type="text" class="form-control" ng-model="totalFrete">
+									<input type="text" class="form-control" ng-model="totalFrete"  ng-disabled="!habilitado">
 								</div>
 
 								<!--O valor desse campo é a data do sistema que esta rodando-->
@@ -757,7 +757,7 @@
 							$scope.exibeHistoricos = false;
 						}
 					};
-					alert("teste de tela 42")
+					alert("teste de tela 44")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
@@ -798,7 +798,6 @@
 						$scope.endEntrega = {};
 					};
 
-
 					$scope.getTabelaFrete = async (consulta) => {
 						console.log("chegou no getTabelaFrete")
 						try{
@@ -810,10 +809,8 @@
 								pCodCli	   : dadosUserLogado.rId,
 								pFilter    : {filtro:{filtrotabPreco : consulta}}
 							},
-							1000
 						);
-
-							console.log(result)
+						console.log(result)
 						$scope.inputsControl(consulta)
 
 						if(result != undefined && result.resultado !=undefined){
