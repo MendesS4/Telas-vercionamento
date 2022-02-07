@@ -755,7 +755,7 @@
 							$scope.exibeHistoricos = false;
 						}
 					};
-					alert("teste de tela 38")
+					alert("teste de tela 39")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
@@ -810,6 +810,9 @@
 							},
 							1000
 						);
+
+						$scope.inputsControl(consulta)
+
 						if(result != undefined && result.resultado !=undefined){
 							return result.resultado.map((item)=>{
 								return item
@@ -821,7 +824,7 @@
 							console.log("ocorreu em erro na requisição ", err);
 						};
 
-						$scope.inputsControl(consulta)
+						
 					}
 					$scope.onSelectTabFrete = function ($item, $model, $label){
 						$scope.tabFrete = $item;
@@ -1127,7 +1130,7 @@
 
 						$rootScope.isLoading = true;
 
-						let result = await $scope.executaRequisicaoExterna(
+						let result = await $scope.get(
 							{
 								idCvtccnpj: dadosUserLogado.cId,
 								numreg: 752,
