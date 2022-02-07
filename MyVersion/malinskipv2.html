@@ -412,7 +412,8 @@
 															 	type="number"
 																class="inputNumberTable"
 															 	min="0" max="10000"
-																ng-model="produtos.qtdPedida">
+																ng-model="produtos.qtdPedida"
+																value="0">
 														</div>
 													</td>
 													<td>
@@ -755,7 +756,7 @@
 							$scope.exibeHistoricos = false;
 						}
 					};
-					alert("teste de tela 20")
+					alert("teste de tela 21")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
@@ -1192,6 +1193,10 @@
 
 							// codigos padroes da tela malinski
 							$scope.emissaoOrcamento =  new Date(date)
+
+							//produtos
+							$rootScope.produtos = docs.produtos;
+							$scope.codigoProduto = docs.produtos.qtdPedida = 0;
 
 							$scope.situacao = 'Em digitação';
 
