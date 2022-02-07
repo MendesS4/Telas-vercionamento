@@ -242,7 +242,8 @@
 										uib-typeahead="teste.nome for teste in getClientes($viewValue)"
 										typeahead-min-lenght="2"
 										typeahead-on-select="onSelectCli($item, $model, $label)">
-								</div>
+								<!-- ng-disabled para desabilitar campos  -->
+									</div>
 
 								<div class="col-sm-6 spacer ">
 									<label for="tabPreco">Tabela de preço</label>
@@ -255,12 +256,13 @@
 									<label for="frete">Tipo de frete</label>
 									<input type="text" class="form-control" ng-model="frete"
 									uib-typeahead="teste.nome + '-' + teste.cod + '-' + teste.tipo for teste in getTabelaFrete($viewValue)"
-									typeahead-min-lenght="2">
+									typeahead-min-lenght="2"
+									ng-blur="FUNCAO">
 								</div>
 
 								<div class="col-sm-4 spacer ">
 									<label for="tabelaFrete">Tabela de frete</label>
-									<input type="text" class="form-control" ng-model="tabelaFrete">
+									<input type="text" class="form-control" ng-model="tabelaFrete" ng-disabled="!habili">
 								</div>
 
 								<div class="col-sm-4 spacer ">
@@ -755,7 +757,7 @@
 							$scope.exibeHistoricos = false;
 						}
 					};
-					alert("teste de tela 39")
+					alert("teste de tela 40")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
@@ -804,13 +806,14 @@
 							{
 								idCvtccnpj : dadosUserLogado.cId,
 								numreg	   : 750,
-								pRotina    : 'filtrarTabelaFrete',
+								pRotina    : 'getTabelaFrete',
 								pCodCli	   : dadosUserLogado.rId,
 								pFilter    : {filtro:{filtrotabPreco : consulta}}
 							},
 							1000
 						);
 
+							console.log(result)
 						$scope.inputsControl(consulta)
 
 						if(result != undefined && result.resultado !=undefined){
@@ -832,10 +835,17 @@
 					$scope.limpaTabFrete = function ($item, $model, $label){
 						$scope.tabFrete = ""
 					};
+
 					$scope.inputsControl = function (consulta){
+
 						console.log(consulta)
 						console.log("chegou no inputsControl")
+
+
 					}
+
+
+
 
 
 					$scope.getTabelaPreco = async (consulta) =>	{
@@ -1194,6 +1204,8 @@
 						var today = new Date();
 
 						var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+
+						$scope.habilitarFrete = false
 
 						if ($dados == undefined) {
 
