@@ -409,15 +409,15 @@
 													<td>
 														<div>
 															<input
-															 	type="text"
-																class="inputNumberTable"
-																ng-model="produto.qtdPedida">
+															type="number"
+															class="inputNumberTable"
+															ng-model="produto.qtdPedida">
 														</div>
 													</td>
 													<td>
 														<div>
 															<input
-															type="text"
+															type="number"
 															class="inputNumberTable"
 															ng-model="produto.ofertaPreco">
 														</div>
@@ -753,7 +753,7 @@
 							$scope.exibeHistoricos = false;
 						}
 					};
-					alert("teste de tela 34")
+					alert("teste de tela 35")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
@@ -821,7 +821,6 @@
 						};
 					}
 
-					
 					$scope.onSelectTabPreco = function ($item, $model, $label) {
 						$scope.tabPreco = $item;
 					};
@@ -1525,7 +1524,7 @@
 							//produtos: $rootScope.produtos,
 
 							//FILTRO 
-							produtos: $rootScope.produtos.filter(doc => doc && doc.qtdPedida && parseInt(doc.qtdPedida) > 0),
+							produtos: $rootScope.produtos.filter(doc => doc && doc.qtdPedida && doc.qtdPedida > 0),
 
 							valorTotal: parseFloat($scope.valorTotal),
 							//Cliente
@@ -2139,16 +2138,3 @@
 		margin: 0;
 	}
 </style>
-© 2022 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Loading complete
