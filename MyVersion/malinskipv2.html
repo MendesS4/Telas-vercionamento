@@ -253,7 +253,9 @@
 
 								<div class="col-sm-4 spacer ">
 									<label for="frete">Tipo de frete</label>
-									<input type="text" class="form-control" ng-model="frete">
+									<input type="text" class="form-control" ng-model="frete"
+									uib-typeahead="teste.nome + '-' + teste.cod + '-' + teste.tipo for teste in getTabelaFrete($viewValue)"
+									typeahead-min-lenght="2">
 								</div>
 
 								<div class="col-sm-4 spacer ">
@@ -753,7 +755,7 @@
 							$scope.exibeHistoricos = false;
 						}
 					};
-					alert("teste de tela 35")
+					alert("teste de tela 36")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
@@ -786,14 +788,44 @@
 								});
 						}
 					};
-
 					$scope.onSelectEE = function ($item, $model, $label) {
 						$scope.endEntrega = $item;
 					};
-
 					$scope.limpaEndEntrega = function () {
 						$scope.frmEndEntrega = "";
 						$scope.endEntrega = {};
+					};
+
+
+					$scope.getTabelaFrete = async (consulta) => {
+						console.log("chegou no getTabelaFrete")
+						try{
+							let result = await $scope.executaRequisicaoExterna(
+							{
+								idCvtccnpj : dadosUserLogado.cId,
+								numreg	   : 750,
+								pRotina    : 'filtrarTabelaFrete',
+								pCodCli	   : dadosUserLogado.rId,
+								pFilter    : {filtro:{filtrotabPreco : consulta}}
+							},
+							1000
+						);
+						if(result != undefined && result.resultado !=undefined){
+							return result.resultado.map((item)=>{
+								return item
+							})
+						}else{
+							return []
+						}
+						}catch(err){
+							console.log("ocorreu em erro na requisição ", err);
+						};
+					}
+					$scope.onSelectTabFrete = function ($item, $model, $label){
+						$scope.tabFrete = $item;
+					};
+					$scope.limpaTabFrete = function ($item, $model, $label){
+						$scope.tabFrete = ""
 					};
 
 
@@ -1165,7 +1197,7 @@
 
 							$scope.tabPreco = '';
 							$scope.frmCliente = '';
-							$scope.frete = '';
+							
 							$scope.totalFrete = '';
 							$scope.tabelaFrete = '';
 							$scope.validadeOrcamento = '';
@@ -1189,6 +1221,7 @@
 							$scope.emissaoOrcamento =  new Date(date)
 
 							//produtos
+							$scope.frete = 'X - Sem frete';
 
 							$scope.situacao = 'Em digitação';
 
