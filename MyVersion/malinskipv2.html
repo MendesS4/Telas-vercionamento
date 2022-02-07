@@ -755,7 +755,7 @@
 							$scope.exibeHistoricos = false;
 						}
 					};
-					alert("teste de tela 32")
+					alert("teste de tela 33")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
@@ -1527,7 +1527,7 @@
 							//produtos: $rootScope.produtos,
 
 							//FILTRO 
-							produtos: $rootScope.produtos.filter(doc => doc &&  doc.qtdPedida && parseInt(doc.qtdPedida) > 0),
+							produtos: $rootScope.produtos.filter(doc => doc &&  console.log(doc.qtdPedida) && parseInt(doc.qtdPedida) > 0),
 
 							valorTotal: parseFloat($scope.valorTotal),
 							//Cliente
