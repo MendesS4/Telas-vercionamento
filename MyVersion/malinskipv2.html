@@ -257,7 +257,7 @@
 									<input type="text" class="form-control" ng-model="frete"
 									uib-typeahead="teste.tipo + '-' + teste.desc for teste in getTabelaFrete($viewValue)"
 									typeahead-min-lenght="2"
-									ng-blur="FUNCAO">
+									ng-blur="inputsControl($viewValue)">
 								</div>
 
 								<div class="col-sm-4 spacer ">
@@ -757,7 +757,7 @@
 							$scope.exibeHistoricos = false;
 						}
 					};
-					alert("teste de tela 45")
+					alert("teste de tela 46")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
@@ -811,7 +811,7 @@
 							},
 						);
 						console.log(result)
-						$scope.inputsControl(consulta)
+						//$scope.inputsControl(consulta)
 
 						if(result != undefined && result.resultado !=undefined){
 							return result.resultado.map((item)=>{
