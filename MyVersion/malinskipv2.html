@@ -755,7 +755,7 @@
 							$scope.exibeHistoricos = false;
 						}
 					};
-					alert("teste de tela 13")
+					alert("teste de tela 14")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
@@ -1521,7 +1521,10 @@
 
 							//Metodos
 							docCtrl: hashDoc,
+
+							// pedido final
 							pedido: $scope.pedido,
+							
 							sincronizado: $scope.sincronizado == "DOCUMENTO_SINCRONIZADO" ? "DOCUMENTO_SINCRONIZADO" : "DOCUMENTO_NAO_SINCRONIZADO",
 
 							representante: { rId: dadosUserLogado.rId, nome: dadosUserLogado.rNome },
@@ -1529,17 +1532,19 @@
 							datEmiERP: $scope.datEmiERP,
 
 							//Produtos
-							produtos: $rootScope.produtos,
-							//++++++++++++++++++++++++++++++++++++++++++++++++++
+							// verificação de quantidade de produtos
+							produtos: $rootScope.produtos.filter(doc => doc && doc.jsonDocs[0].qtdPedida > 0),
+
+							// produtos: $rootScope.produtos,
 							valorTotal: parseFloat($scope.valorTotal),
-							//++++++++++++++++++++++++++++++++++++++++++++++++++
+							
 							//Cliente
 							cliente: { id: $rootScope.cliente.id, codExterno: $rootScope.cliente.codExterno, nome: $rootScope.cliente.nome, cpfCnpjFormat: $rootScope.cliente.cpfCnpjFormat },
 
 						}];
 
 
-						console.log(jsonDocs)
+						console.log(produtos)
 
 
 						dados.jsonDocs = JSON.stringify(jsonDocs);
