@@ -252,13 +252,13 @@
 								</div>
 
 								<div class="col-sm-4 spacer ">
-									<label for="tabelaFrete">Tabela de frete</label>
-									<input type="text" class="form-control" ng-model="tabelaFrete">
+									<label for="frete">Tipo de frete</label>
+									<input type="text" class="form-control" ng-model="frete">
 								</div>
 
 								<div class="col-sm-4 spacer ">
-									<label for="frete">Tipo de frete</label>
-									<input type="text" class="form-control" ng-model="frete">
+									<label for="tabelaFrete">Tabela de frete</label>
+									<input type="text" class="form-control" ng-model="tabelaFrete">
 								</div>
 
 								<div class="col-sm-4 spacer ">
@@ -277,7 +277,6 @@
 									<input type="date" class="form-control" ng-model="validadeOrcamento" min="2022-01-01">
 								</div>
 
-
 								<div class="col-sm-4 spacer ">
 									<label for="prevEntregCli">Previsão de entrega do cliente</label>
 									<input type="date" class="form-control" ng-model="prevEntregCli" min="2022-01-01">
@@ -287,7 +286,6 @@
 									<label for="situacao">Situação</label>
 									<input type="text" class="form-control" ng-model="situacao" readonly >
 								</div>
-
 
 								<div class="col-sm-6 spacer ">
 									<label for="representante">Representante</label>
@@ -414,8 +412,7 @@
 															 	type="number"
 																class="inputNumberTable"
 															 	min="0" max="10000"
-																ng-model="produto.qtdPedida"
-    															type = "number">
+																ng-model="produto.qtdPedida">
 														</div>
 													</td>
 													<td>
@@ -424,9 +421,7 @@
 															type="number"
 															class="inputNumberTable"
 															 min="0" max="10000"
-															ng-model="produto.ofertaPreco"
-															type = "number">
-
+															ng-model="produto.ofertaPreco">
 														</div>
 													</td>
 													<td>
@@ -1033,7 +1028,10 @@
 
 					$scope.consultaPedidosERP = async () => {
 
+						// FILTRO PARA QTD DE PRODUTOS
 						let pedidosGravadosERP = $rootScope.dadosGrid.filter(doc => doc && Number(doc.jsonDocs[0].pedido) > 0);
+						//==============================
+
 						let consulta = [];
 						/*Ira consultar com base apenas no numero do pedido*/
 						for (i = 0; i < pedidosGravadosERP.length; i++) {
@@ -1202,11 +1200,11 @@
 							// codigos padroes da tela malinski
 							$scope.emissaoOrcamento =  new Date(date)
 
-							$scope.situacao = '10';
+							$scope.situacao = 'Em digitação';
 
-							$scope.tipoOrcamento = '1';
+							$scope.tipoOrcamento = 'Normal 1';
 
-							$scope.filial = "8"
+							$scope.filial = "Filial 8"
 
 							$scope.representante = dadosUserLogado.rNome;
 
@@ -1382,7 +1380,10 @@
 								precoVendFOB: resultTest.precoVendFOB,
 								precoFrete: resultTest.precoFrete,
 								precoVendaCIF: resultTest.precoVendaCIF,
+
+								//verificação de quantidade, se não for colocado uma qtd > 0 não salva 
 								qtdPedida: resultTest.qtdPedida,
+
 								ofertaPreco: resultTest.ofertaPreco,
 								precoLiquido: resultTest.precoLiquido,
 								vlrLiquido: resultTest.vlrLiquido,
@@ -1529,12 +1530,14 @@
 
 							//Produtos
 							produtos: $rootScope.produtos,
+							//++++++++++++++++++++++++++++++++++++++++++++++++++
 							valorTotal: parseFloat($scope.valorTotal),
-
+							//++++++++++++++++++++++++++++++++++++++++++++++++++
 							//Cliente
 							cliente: { id: $rootScope.cliente.id, codExterno: $rootScope.cliente.codExterno, nome: $rootScope.cliente.nome, cpfCnpjFormat: $rootScope.cliente.cpfCnpjFormat },
 
 						}];
+
 
 						console.log(jsonDocs)
 
