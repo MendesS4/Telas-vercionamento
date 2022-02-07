@@ -267,7 +267,7 @@
 
 								<div class="col-sm-4 spacer ">
 									<label for="totalFrete">Total de frete</label>
-									<input type="text" class="form-control" ng-model="totalFrete"  ng-disabled="!habilitado">
+									<input type="text" class="form-control" ng-model="totalFrete" ng-disabled="!habilitado">
 								</div>
 
 								<!--O valor desse campo é a data do sistema que esta rodando-->
@@ -757,7 +757,7 @@
 							$scope.exibeHistoricos = false;
 						}
 					};
-					alert("teste de tela 44")
+					alert("teste de tela 45")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
@@ -837,6 +837,23 @@
 
 						console.log(consulta)
 						console.log("chegou no inputsControl")
+						let campoValor = consulta 
+						console.log(campoValor)
+
+						switch (campoValor) {
+							case 'X-Sem Frete':
+								console.log("case X sem frete");
+								break;
+							case 'C-CIF': 
+								console.log("case C-CIF");
+								break;
+							case 'F-FOB':
+								console.log("case F-FOB")
+								break;
+							default:
+								console.log("Não atendeu nenhuma das alternativas")
+
+						}
 
 
 					}
