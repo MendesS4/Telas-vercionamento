@@ -755,7 +755,7 @@
 							$scope.exibeHistoricos = false;
 						}
 					};
-					alert("teste de tela 37")
+					alert("teste de tela 38")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
@@ -820,7 +820,8 @@
 						}catch(err){
 							console.log("ocorreu em erro na requisição ", err);
 						};
-						$scope.inputsControl()
+
+						$scope.inputsControl(consulta)
 					}
 					$scope.onSelectTabFrete = function ($item, $model, $label){
 						$scope.tabFrete = $item;
@@ -828,7 +829,8 @@
 					$scope.limpaTabFrete = function ($item, $model, $label){
 						$scope.tabFrete = ""
 					};
-					$scope.inputsControl = function (){
+					$scope.inputsControl = function (consulta){
+						console.log(consulta)
 						console.log("chegou no inputsControl")
 					}
 
