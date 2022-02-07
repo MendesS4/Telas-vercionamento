@@ -755,7 +755,7 @@
 							$scope.exibeHistoricos = false;
 						}
 					};
-					alert("teste de tela 16")
+					alert("teste de tela 17")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
@@ -872,6 +872,7 @@
 									pFilter: { filtro: { filtroCondPag: consulta } },
 								}
 							);
+							console.log(result)
 							if (result.resultado != undefined) {
 								return result.resultado.map((item) => {
 									return item
@@ -882,7 +883,6 @@
 						} catch (err) {
 							console.log("Ocorreu um erro na requisição: ", err);
 						};
-
 					}
 
 					$scope.onSelectCond = function ($item, $model, $label) {
@@ -1167,7 +1167,6 @@
 
 							// inputs
 							
-
 							$scope.tabPreco = '';
 							$scope.frmCliente = '';
 							$scope.frete = '';
@@ -1533,7 +1532,7 @@
 
 						}];
 
-						//console.log(produtos)
+						console.log(produtos)
 
 						dados.jsonDocs = JSON.stringify(jsonDocs);
 						/*Recebe dados e para que sejam feitas as alterações necessarias*/
