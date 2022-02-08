@@ -249,14 +249,15 @@
 									<label for="tabPreco">Tabela de preço</label>
 									<input type="text" class="form-control" ng-model="tabPreco" 
 									uib-typeahead="teste.nome + '-' + teste.cod + '-' + teste.tipo for teste in getTabelaPreco($viewValue)"
-									typeahead-min-lenght="2">
+									typeahead-min-lenght="2"
+									ng-blur="inputsControl($viewValue)">
 								</div>
 
 								<div class="col-sm-4 spacer ">
 									<label for="frete">Tipo de frete</label>
 									<input type="text" class="form-control" ng-model="frete"
 									uib-typeahead="teste.tipo + '-' + teste.desc for teste in getTabelaFrete($viewValue)"
-									typeahead-min-lenght="0" ng-keypress="inputsControl($viewValue)">
+									typeahead-min-lenght="0">
 								</div>
 
 								<div class="col-sm-4 spacer ">
@@ -756,7 +757,7 @@
 							$scope.exibeHistoricos = false;
 						}
 					};
-					alert("teste de tela 53")
+					alert("teste de tela 54")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
@@ -834,14 +835,7 @@
 
 					$scope.inputsControl = function (consulta){
 
-						console.log("chegou no inputsControl")
-
-						console.log(consulta)
-
-						let campoValor = consulta 
-						console.log(campoValor)
-
-						switch (campoValor) {
+						switch (consulta) {
 							case 'X-Sem Frete':
 							    $scope.habilitado = true
 								console.log("case X sem frete");
@@ -856,7 +850,6 @@
 								break;
 							default:
 								console.log("Não atendeu nenhuma das alternativas")
-
 						}
 
 					}
@@ -1255,7 +1248,7 @@
 							$scope.emissaoOrcamento =  new Date(date)
 
 							//produtos
-							$scope.frete = 'X - Sem frete';
+							$scope.frete = 'X-Sem Frete';
 
 							$scope.situacao = 'Em digitação';
 
