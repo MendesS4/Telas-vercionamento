@@ -756,7 +756,7 @@
 							$scope.exibeHistoricos = false;
 						}
 					};
-					alert("teste de tela 48")
+					alert("teste de tela 50")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
@@ -840,18 +840,18 @@
 						console.log(campoValor)
 
 						switch (campoValor) {
-							case 'X-Sem Frete':
-							    !$scope.habilitado 
+							case 'X-Sem Frete ':
+							    $scope.habilitado = true
 								console.log("case X sem frete");
 								console.log(habilitado)
 								break;
-							case 'C-CIF':
-								$scope.habilitado
+							case 'C-CIF ':
+								$scope.habilitado = false
 								console.log("case C-CIF");
 								console.log(habilitado)
 								break;
-							case 'F-FOB':
-								!$scope.habilitado
+							case 'F-FOB ':
+								$scope.habilitado = true
 								console.log("case F-FOB");
 								console.log(habilitado)
 								break;
