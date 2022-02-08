@@ -758,7 +758,7 @@
 						}
 					};
 
-					alert("teste de tela 57")
+					alert("teste de tela 58")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
@@ -837,8 +837,9 @@
 	
 					$scope.inputsControl = function ($item, $model, $label){
 						console.log("esta na funcao")
+						console.log($item)
 
-						switch (consulta) {
+						switch ($item) {
 							case 'X-Sem Frete':
 							    $scope.habilitado = true
 								console.log("case X sem frete");
