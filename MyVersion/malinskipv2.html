@@ -763,7 +763,7 @@
 						}
 					};
 
-					alert("teste de tela 64")
+					alert("teste de tela 65")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
@@ -843,6 +843,8 @@
 						switch ($item.desc) {
 							case 'Sem Frete':
 							    $scope.habilitado = false
+								$scope.tabelaFrete = ''
+								$scope.totalFrete = '';
 								console.log("case X sem frete");
 								break;
 							case 'CIF':
@@ -851,6 +853,8 @@
 								break;
 							case 'FOB':
 								$scope.habilitado = false
+								$scope.tabelaFrete = ''
+								$scope.totalFrete = '';
 								console.log("case F-FOB");
 								break;
 							default:
