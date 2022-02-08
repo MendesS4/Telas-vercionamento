@@ -758,7 +758,7 @@
 						}
 					};
 
-					alert("teste de tela 59")
+					alert("teste de tela 60")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
@@ -841,15 +841,15 @@
 
 						switch ($item.desc) {
 							case 'Sem Frete':
-							    $scope.habilitado = true
+							    $scope.habilitado = false
 								console.log("case X sem frete");
 								break;
 							case 'CIF':
-								$scope.habilitado = false
+								$scope.habilitado = true
 								console.log("case C-CIF");
 								break;
 							case 'FOB':
-								$scope.habilitado = true
+								$scope.habilitado = false
 								console.log("case F-FOB");
 								break;
 							default:
