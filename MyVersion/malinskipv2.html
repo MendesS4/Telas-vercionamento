@@ -256,8 +256,7 @@
 									<label for="frete">Tipo de frete</label>
 									<input type="text" class="form-control" ng-model="frete"
 									uib-typeahead="teste.tipo + '-' + teste.desc for teste in getTabelaFrete($viewValue)"
-									typeahead-min-lenght="1"
-									ng-blur="FUNCAO">
+									typeahead-min-lenght="0">
 								</div>
 
 								<div class="col-sm-4 spacer ">
@@ -757,7 +756,7 @@
 							$scope.exibeHistoricos = false;
 						}
 					};
-					alert("teste de tela 47")
+					alert("teste de tela 48")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
@@ -842,25 +841,26 @@
 
 						switch (campoValor) {
 							case 'X-Sem Frete':
+							    !$scope.habilitado 
 								console.log("case X sem frete");
+								console.log(habilitado)
 								break;
-							case 'C-CIF': 
+							case 'C-CIF':
+								$scope.habilitado
 								console.log("case C-CIF");
+								console.log(habilitado)
 								break;
 							case 'F-FOB':
-								console.log("case F-FOB")
+								!$scope.habilitado
+								console.log("case F-FOB");
+								console.log(habilitado)
 								break;
 							default:
 								console.log("Não atendeu nenhuma das alternativas")
 
 						}
 
-
 					}
-
-
-
-
 
 					$scope.getTabelaPreco = async (consulta) =>	{
 						try{
