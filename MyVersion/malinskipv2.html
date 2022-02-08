@@ -254,7 +254,7 @@
 
 								<div class="col-sm-4 spacer ">
 									<label for="frete">Tipo de frete</label>
-									<div class="input-group spacer">
+									<div class="input-button">
 										<input type="text" class="form-control" ng-model="frete"
 										uib-typeahead="teste.tipo + '-' + teste.desc for teste in getTabelaFrete($viewValue)"
 										typeahead-min-lenght="0"
@@ -2050,6 +2050,10 @@
 	.titulo {
 		font-size: 14px;
 		font-weight: bolder;
+	}
+
+	.input-button{
+		display: table;
 	}
 
 	.vcenter {
