@@ -815,8 +815,6 @@
 							},
 						);
 						console.log(result)
-						//$scope.inputsControl(consulta)
-
 						if(result != undefined && result.resultado !=undefined){
 							return result.resultado.map((item)=>{
 								return item
@@ -827,8 +825,6 @@
 						}catch(err){
 							console.log("ocorreu em erro na requisição ", err);
 						};
-
-						
 					}
 					$scope.onSelectTabFrete = function ($item, $model, $label){
 						$scope.frete = $item;
@@ -1067,6 +1063,7 @@
 					});
 
 					$scope.executaRequisicaoExterna = async ($json, timeLimit = 15) => {
+						console.log($json)
 						try {
 							let response;
 
@@ -1076,6 +1073,7 @@
 
 							}, timeLimit * 1000); // limite em segundos
 
+							console.log(response.data)
 							return response.data;
 						} catch (err) {
 							$scope.geraNotificacao("Não foi possível se comunicar com o ERP. " + err + "", 5000, 'danger')
