@@ -258,6 +258,7 @@
 									uib-typeahead="teste.tipo + '-' + teste.desc for teste in getTabelaFrete($viewValue)"
 									typeahead-min-lenght="0"
 									typeahead-on-select="inputsControl($item, $model, $label)">
+									<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaTabFrete()"><i class="glyphicon glyphicon-remove"></i></span>
 								</div>
 
 								<div class="col-sm-4 spacer ">
@@ -758,7 +759,7 @@
 						}
 					};
 
-					alert("teste de tela 60")
+					alert("teste de tela 61")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
