@@ -238,12 +238,15 @@
 
 								<div class="col-sm-6 spacer ">
 									<label for="cliente">Cliente</label>
-									<input type="text" class="form-control" ng-model="frmCliente"
+									<div class = "input-button">
+										<input type="text" class="form-control" ng-model="frmCliente"
 										uib-typeahead="teste.nome for teste in getClientes($viewValue)"
 										typeahead-min-lenght="2"
 										typeahead-on-select="onSelectCli($item, $model, $label)">
-								<!-- ng-disabled para desabilitar campos  -->
+										<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaTabPreco()"><i class="glyphicon glyphicon-remove"></i></span>
 									</div>
+								<!-- ng-disabled para desabilitar campos  -->
+								</div>
 
 								<div class="col-sm-6 spacer ">
 									<label for="tabPreco">Tabela de preço</label>
@@ -687,7 +690,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 79")
+		alert("teste de tela 80")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
