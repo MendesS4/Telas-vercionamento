@@ -686,7 +686,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 72")
+		alert("teste de tela 73")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -907,13 +907,13 @@
 
 						switch ($item) {
 							case '':
-							    $scope.habilitado = false
-								$scope.tabelaFrete = ''
-								$scope.totalFrete = '';
+							    $scope.habilitadoCli = false
+								$scope.tabelaFrete = '';
 								console.log("case campo vazio");
 								break;
 							default:
-								console.log("Não atendeu nenhuma das alternativas")
+								$scope.habilitadoCli = true
+								console.log("tem algo no campo")
 						}
 
 					}
