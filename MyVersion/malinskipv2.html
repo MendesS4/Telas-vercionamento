@@ -248,7 +248,7 @@
 								<div class="col-sm-6 spacer ">
 									<label for="tabPreco">Tabela de preço</label>
 									<input type="text" class="form-control" ng-model="tabPreco" 
-									uib-typeahead="teste.cod for teste in getTabelaPreco($viewValue)"
+									uib-typeahead="teste.codCli for teste in getTabelaPreco($viewValue)"
 									typeahead-min-lenght="0">
 								</div>
 
@@ -763,7 +763,7 @@
 						}
 					};
 
-					alert("teste de tela 68")
+					alert("teste de tela 69")
 
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
@@ -863,8 +863,9 @@
 
 					}
 
-					$scope.getTabelaPreco = async (consulta) =>	{
+					$scope.getTabelaPreco = async (consulta, codCli) =>	{
 						console.log("chegou na getTabelade Preco")
+						let codCli = $scope.codigoCliente
 						try{
 							let result = await $scope.executaRequisicaoExterna(
 								{
@@ -872,7 +873,7 @@
 									numreg	   : 750,
 									pRotina    : 'filtrarTabelaPreco',
 									pCodCli    : dadosUserLogado.rId,
-									pFilter    : {filtro:{filtroTabPreco : consulta}}, 
+									pFilter    : {filtro:{filtroTabPreco : consulta , filtroCli : codCli}}, 
 								},
 								1000
 							);
