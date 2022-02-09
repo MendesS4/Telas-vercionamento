@@ -690,7 +690,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 87")
+		alert("teste de tela 88")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -873,6 +873,7 @@
 					$scope.getTabelaPreco = async (consulta) =>	{
 						console.log("chegou na getTabelade Preco")
 						let codCli = $scope.codigoCliente
+						let tabPreco = $scope.tabPreco
 						try{
 							let result = await $scope.executaRequisicaoExterna(
 								{
@@ -880,7 +881,7 @@
 									numreg	   : 750,
 									pRotina    : 'filtrarTabelaPreco',
 									pCodCli    : dadosUserLogado.rId,
-									pFilter    : {filtro:{filtroTabPreco : consulta , filtroCli : codCli}}, 
+									pFilter    : {filtro:{filtroTabPreco : tabPreco , filtroCli : codCli}}, 
 								},
 								1000
 							);
@@ -891,7 +892,6 @@
 								})
 							}else{
 								return []
-								codCli = ''
 							}
 						}catch(err){
 							console.log("ocorreu um erro na requisição ", err);
@@ -936,6 +936,8 @@
 					};
 
 					$scope.getInfoTabela = async () => {
+						let codCli = $scope.codigoCliente
+						let  = $scope.codigoCliente
 						console.log("chegou no getInfoTabela")
 						let result = await $scope.executaRequisicaoExterna(
 							{
@@ -943,6 +945,7 @@
 								numreg: 750,
 								pRotina: 'filtrarInfoTabela',
 								pCodCli: dadosUserLogado.rId,
+								pFilter    : {filtro:{filtroTabProdutos : consulta , filtroCli : codCli}}
 							}
 						)
 						let newResult = result.resultado
