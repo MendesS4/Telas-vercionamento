@@ -241,7 +241,7 @@
 									<input type="text" class="form-control" ng-model="frmCliente"
 										uib-typeahead="teste.nome for teste in getClientes($viewValue)"
 										typeahead-on-select="inputsControlCliente($item, $model, $label)"
-										typeahead-min-lenght="1"
+										typeahead-min-lenght="2"
 										typeahead-on-select="onSelectCli($item, $model, $label)">
 								<!-- ng-disabled para desabilitar campos  -->
 									</div>
@@ -250,7 +250,7 @@
 									<label for="tabPreco">Tabela de preço</label>
 									<input type="text" class="form-control" ng-model="tabPreco" 
 									uib-typeahead="teste.codCli for teste in getTabelaPreco($viewValue)"
-									typeahead-min-lenght="0"
+									typeahead-min-lenght="2"
 									ng-disabled="!habilitadoCli">
 								</div>
 
@@ -686,7 +686,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 74")
+		alert("teste de tela 75")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
