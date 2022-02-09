@@ -253,7 +253,9 @@
 									<div class="input-button">
 										<input type="text" class="form-control" ng-model="tabPreco" 
 										uib-typeahead="teste.cod + ' - ' + teste.nome for teste in getTabelaPreco($viewValue)"
-										typeahead-min-lenght="2">
+										typeahead-min-lenght="2"
+										ng-disabled="!habilitadoCli" 
+										uib-typeahead="inputsControlCliente($viewValue)">
 										<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaTabPreco()"><i class="glyphicon glyphicon-remove"></i></span>
 									</div>
 								</div>
@@ -690,7 +692,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 80")
+		alert("teste de tela 81")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -909,7 +911,6 @@
 					$scope.inputsControlCliente = function ($item, $model, $label){
 						console.log("esta na funcao de controle de cliente")
 						console.log($item)
-
 						switch ($item) {
 							case '':
 							    $scope.habilitadoCli = false
