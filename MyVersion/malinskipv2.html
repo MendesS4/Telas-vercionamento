@@ -690,7 +690,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 88")
+		alert("teste de tela 89")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -936,8 +936,8 @@
 					};
 
 					$scope.getInfoTabela = async () => {
-						let codCli = $scope.codigoCliente
-						let  = $scope.codigoCliente
+						let codCli    = $scope.codigoCliente
+						let tabPreco = $scope.codigoCliente
 						console.log("chegou no getInfoTabela")
 						let result = await $scope.executaRequisicaoExterna(
 							{
@@ -945,7 +945,7 @@
 								numreg: 750,
 								pRotina: 'filtrarInfoTabela',
 								pCodCli: dadosUserLogado.rId,
-								pFilter    : {filtro:{filtroTabProdutos : consulta , filtroCli : codCli}}
+								pFilter    : {filtro:{filtroTabPreco : tabPreco , filtroCli : codCli}}
 							}
 						)
 						let newResult = result.resultado
