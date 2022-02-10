@@ -692,7 +692,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 96")
+		alert("teste de tela 97")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -845,6 +845,8 @@
 					};
 
 					$scope.inputsControlPreco = function ($item, $model, $label){
+						let valorCliente = $scope.frmCliente
+						console.log(valorCliente)
 						console.log("esta na funcao")
 						console.log($item)
 					}
