@@ -253,7 +253,8 @@
 									<div class="input-button">
 										<input type="text" class="form-control" ng-model="tabPreco" 
 										uib-typeahead="teste.cod + ' - ' + teste.nome for teste in getTabelaPreco($viewValue)"
-										typeahead-min-lenght="2">
+										typeahead-min-lenght="2"
+										ng-disabled = "codigoCliente == undefined || codigoCliente == '' ">
 										<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaTabPreco()"><i class="glyphicon glyphicon-remove"></i></span>
 									</div>
 								</div>
@@ -1104,13 +1105,10 @@
 						console.log($json)
 						try {
 							let response;
-
 							await setAsyncTimeout(async done => {
 								response = await $http.post(dadosUserLogado.cContextIntegracao + '/rest/Listas/executarRequisicaoExterna', $json);
 								done();/*Aguarda a requisição - Se estourar o tempo, gera erro.*/
-
 							}, timeLimit * 1000); // limite em segundos
-
 							console.log(response.data)
 							return response.data;
 						} catch (err) {
