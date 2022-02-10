@@ -242,7 +242,7 @@
 										<input type="text" class="form-control" ng-model="frmCliente"
 										uib-typeahead		 = "teste.nome for teste in getClientes($viewValue)"
 										typeahead-on-select  = "onSelectCli($item, $model, $label)"
-										typeahead-min-lenght = "2">
+										typeahead-min-lenght = "1">
 										<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaCliente()"><i class="glyphicon glyphicon-remove"></i></span>
 									</div>
 								<!-- ng-disabled para desabilitar campos  -->
@@ -252,10 +252,9 @@
 									<label for="tabPreco">Tabela de preço</label>
 									<div class="input-button">
 										<input type="text" class="form-control" ng-model="tabPreco" 
-										uib-typeahead="teste.cod + ' - ' + teste.nome for teste in getTabelaPreco($viewValue)"
-										typeahead-min-lenght="2"
-										ng-disabled = "codigoCliente == undefined || codigoCliente == ''"
-										typeahead-on-select="inputsControlPreco($item, $model, $label)">
+										uib-typeahead			= "teste.cod + ' - ' + teste.nome for teste in getTabelaPreco($viewValue)"
+										typeahead-min-lenght	= "1"
+										ng-disabled 			= "codigoCliente == undefined || codigoCliente == ''">
 										<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaTabPreco()"><i class="glyphicon glyphicon-remove"></i></span>
 									</div>
 								</div>
