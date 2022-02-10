@@ -691,7 +691,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 99")
+		alert("teste de tela 100")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1475,12 +1475,13 @@
 					}
 
 					$scope.adicionarProduto = (resultTest) => {
+						console.log(resultTest)
 						$rootScope.produtos.unshift(
 							{
 								seq: resultTest.seq,
 								ocpo: resultTest.ocpo,
 								itocpo: resultTest.itocpo,
-								codProCli: resultTest.codProCli,
+								codProCli: resultTest.usu_procli,
 								descrProCli: resultTest.descrProCli,
 								precoVendFOB: resultTest.precoVendFOB,
 								precoFrete: resultTest.precoFrete,
