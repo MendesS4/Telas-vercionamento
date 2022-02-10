@@ -693,7 +693,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 104")
+		alert("teste de tela 105")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1275,6 +1275,10 @@
 
 						var DateTest = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+(today.getDate()+30);
 						console.log(DateTest)
+
+
+						var dataVencimento = date.setDate(date.getDate()+30)
+						console.log(dataVencimento)
 
 						$scope.habilitarFrete = false
 
