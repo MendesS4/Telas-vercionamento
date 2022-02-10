@@ -240,9 +240,10 @@
 									<label for="cliente">Cliente</label>
 									<div class ="input-button">
 										<input type="text" class="form-control" ng-model="frmCliente"
-										uib-typeahead="teste.nome for teste in getClientes($viewValue)"
-										typeahead-on-select="onSelectCli($item, $model, $label)"
-										typeahead-min-lenght="2">
+										uib-typeahead		 = "teste.nome for teste in getClientes($viewValue)"
+										typeahead-on-select  = "onSelectCli($item, $model, $label)"
+										typeahead-min-lenght = "2"
+										typeahead-on-select  = "inputsControlCliente($item, $model, $label)">
 										<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaCliente()"><i class="glyphicon glyphicon-remove"></i></span>
 									</div>
 								<!-- ng-disabled para desabilitar campos  -->
@@ -690,7 +691,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 90")
+		alert("teste de tela 91")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -909,7 +910,8 @@
 					$scope.inputsControlCliente = function ($item, $model, $label){
 						console.log("esta na funcao de controle de cliente")
 						console.log($item)
-						switch ($item) {
+						/*
+							switch ($item) {
 							case '':
 							    $scope.habilitadoCli = false
 								$scope.tabelaFrete = '';
@@ -919,7 +921,7 @@
 								$scope.habilitadoCli = true
 								console.log("tem algo no campo")
 						}
-
+						*/
 					}
 
 					$scope.getCondicoesP = function (val) {
