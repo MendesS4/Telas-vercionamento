@@ -242,8 +242,7 @@
 										<input type="text" class="form-control" ng-model="frmCliente"
 										uib-typeahead		 = "teste.nome for teste in getClientes($viewValue)"
 										typeahead-on-select  = "onSelectCli($item, $model, $label)"
-										typeahead-min-lenght = "2"
-										typeahead-on-select  = "inputsControlCliente($item, $model, $label)">
+										typeahead-min-lenght = "2">
 										<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaCliente()"><i class="glyphicon glyphicon-remove"></i></span>
 									</div>
 								<!-- ng-disabled para desabilitar campos  -->
@@ -691,7 +690,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 92")
+		alert("teste de tela 93")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1061,6 +1060,9 @@
 
 						$scope.codigoCliente = $rootScope.cliente.codExterno
 						$scope.getEndEntrega();
+
+						$scope.inputsControlCliente($item, $model, $label)
+						console.log($item, $model, $label)
 					};
 
 					$scope.limpaCliente = () => {
