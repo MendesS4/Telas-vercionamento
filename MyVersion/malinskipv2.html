@@ -693,7 +693,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 107")
+		alert("teste de tela 108")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1269,9 +1269,11 @@
 
 						var today = new Date();
 						console.log(today)
-
+						
 						var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 						console.log(date)
+
+						console.log(today.getDate())
 
 						var DateTest = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+(today.getDate()+30);
 						console.log(DateTest)
@@ -1279,7 +1281,8 @@
 						var today = today.setDate(today.getDate()+30)
 						console.log(today)
 
-						formatDate(date)
+						//formatDate(date)
+						
 
 						console.log(date)
 
