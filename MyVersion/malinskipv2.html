@@ -339,6 +339,7 @@
 									<div style="padding:0;" class="col-xl-12 spacer">
 										<!--Pre para barra de rolagem inferior -->
 										<pre>
+										<div class="scroll-div">
 										<table id ="tabelaProdutos" class="table-bordered">
 											<thead>
 												<tr>
@@ -523,7 +524,7 @@
 													</td>
 													<td>
 														<div>
-															produto.previsaoCli
+															{{produto.previsaoCli}}
 														</div>
 													</td>
 													<td>
@@ -559,6 +560,7 @@
 												</tr>
 											</tbody>
 										</table>
+									</div>
 
 									</pre>
 
@@ -691,7 +693,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 101")
+		alert("teste de tela 102")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -964,8 +966,9 @@
 								pRotina		: 	'filtrarInfoTabela',
 								pCodCli		: 	dadosUserLogado.rId,
 								pFilter		: 	{filtro:{filtroTab : tabPreco , filtroCli : codCli}}
-							}
-						)
+							},
+						);
+							
 						let newResult = result.resultado
 						console.log(newResult)
 						for (let i = 0; i < newResult.length; i++) {
@@ -2258,5 +2261,9 @@
 	input::-webkit-inner-spin-button {
 		-webkit-appearance: none;
 		margin: 0;
+	}
+
+	.scroll-div{
+		overflow-y: scroll;
 	}
 </style>
