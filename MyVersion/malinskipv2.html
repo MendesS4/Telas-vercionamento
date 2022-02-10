@@ -1040,6 +1040,7 @@
 					}
 
 					$scope.getClientes = function (val) {
+						console.log("chegou no get Clientes")
 						var idRep = dadosUserLogado.rId;
 
 						return $http.post('/clicVendas/rest/Listas/cliente', {
