@@ -693,7 +693,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 109")
+		alert("teste de tela 110")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1282,16 +1282,14 @@
 						console.log(today)
 
 						var future = new Date();
-						
-						console.log(today.setDate(today.getDate() + 30));
+						let newDate = today.setDate(today.getDate() + 30);
 
-						//var inThirtyDays = moment().add('days', 30);
+						console.log(newDate)
+
+
+
+						var inThirtyDays = moment().add('days', 30);
 						console.log(today)
-
-						//formatDate(date)
-						
-
-						//console.log(date)
 
 						$scope.habilitarFrete = false
 
