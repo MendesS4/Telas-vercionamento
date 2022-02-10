@@ -693,7 +693,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 113")
+		alert("teste de tela 114")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1280,6 +1280,10 @@
 
 						let newDate = today.setDate(today.getDate() + 30);
 						console.log("linha 1282" , newDate)
+
+						var novaData = newDate.toLocaleDateString('pt-br')
+
+						console.log(novadata , "novadata")
 
 						$scope.habilitarFrete = false
 
