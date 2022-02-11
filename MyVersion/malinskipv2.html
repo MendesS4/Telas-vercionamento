@@ -693,7 +693,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 126")
+		alert("teste de tela 127")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1065,7 +1065,8 @@
 							params: {
 								filtro: val,
 								rId: idRep
-							}
+							}.
+							$scope.getTabelaPreco(val)
 						}).then(function (response) {
 							return response.data.map(function (item) {
 								return item;
@@ -1074,7 +1075,7 @@
 							console.log(response)
 							console.log(responde.data)
 						});
-						$scope.getTabelaPreco(val)
+						
 					};
 
 					$scope.onSelectCli = ($item, $model, $label) => {
