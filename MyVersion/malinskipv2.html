@@ -693,7 +693,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 119")
+		alert("teste de tela 120")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1284,6 +1284,8 @@
 						var future = new Date();
 						future.setDate(future.getDate()+30)
 						console.log(future)
+						var dataEmissao = future.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+						console.log(dataEmissao)
 
 
 						//var novaData = newDate.toLocaleDateString('pt-br')
