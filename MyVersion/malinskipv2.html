@@ -693,7 +693,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 130")
+		alert("teste de tela 131")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1058,7 +1058,7 @@
 					}
 
 					$scope.getClientes = function (val) {
-						//console.log("chegou no get Clientes")
+						console.log("chegou no get Clientes")
 						var idRep = dadosUserLogado.rId;
 
 						return $http.post('/clicVendas/rest/Listas/cliente', {
@@ -1068,8 +1068,8 @@
 							}
 						}).then(function (response) {
 							//console.log(response)
-							console.log(responde.data)
-							$scope.getTabelaPreco(response)
+							//console.log(responde.data)
+							$scope.getTabelaPreco(response.data)
 							return response.data.map(function (item) {
 								return item;
 								console.log(item)
