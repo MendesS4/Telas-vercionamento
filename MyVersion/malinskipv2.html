@@ -693,7 +693,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 138")
+		alert("teste de tela 139")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -918,6 +918,7 @@
 
 					$scope.onSelectTabPreco = function ($item, $model, $label) {
 						$scope.tabPreco = $item;
+						console.log($item)
 					};
 
 					$scope.limpaTabPreco = function () {
@@ -1627,7 +1628,9 @@
 							// infos dos inputs da tela 
 							tipoOrcamento: $scope.tipoOrcamento,
 							filial: $scope.filial,
+
 							tabPreco: $scope.tabPreco,
+
 							cliente: $scope.frmCliente,
 							frete: $scope.frete,
 							totalFrete: $scope.totalFrete,
