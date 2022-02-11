@@ -693,7 +693,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 140")
+		alert("teste de tela 141")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -909,6 +909,7 @@
 								if(opcao && opcao != undefined){
 									console.log("if 001")
 									$scope.tabPreco = result.resultado[0]
+									console.log($scope.tabPreco)
 								}else{
 									console.lo("else")
 									return result.resultado.map((item)=>{
@@ -1075,10 +1076,7 @@
 								rId: idRep
 							}
 						}).then(function (response) {
-							//console.log(response)
-							//$scope.getTabelaPreco(response.data)
 							return response.data.map(function (item) {
-								//console.log(responde)
 								console.log(item.codExterno)
 								return item;
 							});
@@ -1088,7 +1086,6 @@
 					};
 
 					$scope.onSelectCli = ($item, $model, $label) => {
-						//console.log("chegou no on Select Cli")
 						$rootScope.cliente = $item;
 						$scope.codigoCliente = $rootScope.cliente.codExterno
 						$scope.getTabelaPreco(null,1)
