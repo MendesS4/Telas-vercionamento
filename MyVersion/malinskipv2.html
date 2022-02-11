@@ -263,7 +263,7 @@
 									<label for="frete">Tipo de frete</label>
 									<div class="input-button">
 										<input type="text" class="form-control" ng-model="frete"
-										uib-typeahead="teste.tipo + ' - ' + teste.desc for teste in getTabelaFrete($viewValue)"
+										uib-typeahead="teste.tipo + ' - ' + teste.desc for teste in getTipoFrete($viewValue)"
 										typeahead-min-lenght="0"
 										typeahead-on-select="inputsControlFrete($item, $model, $label)">
 										<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaTabFrete()"><i class="glyphicon glyphicon-remove"></i></span>	
@@ -321,8 +321,8 @@
 								</div>
 
 								<div class="col-sm-6 spacer ">
-									<label for="numPedCliente">Numero pedido do cliente (OC/PO)</label>
-									<input type="text" class="form-control" ng-model="numPedCliente">
+									<label for="numPedClienteOCPO">Numero pedido do cliente (OC/PO)</label>
+									<input type="text" class="form-control" ng-model="numPedClienteOCPO">
 								</div>
 
 								<div class="col-sm-6 spacer ">
@@ -388,6 +388,7 @@
 													</td>
 													<td>
 														<div>
+															<!--VALOR VEM DO INPUT A-->
 															{{produto.ocpo}}
 														</div>
 													</td>
@@ -424,6 +425,7 @@
 													<td>
 														<div>
 															<input
+															value="0"
 															type="number"
 															class="inputNumberTable"
 															ng-model="produto.qtdPedida">
@@ -693,7 +695,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 142")
+		alert("teste de tela 143")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -814,16 +816,16 @@
 						$scope.endEntrega = {};
 					};
 
-					$scope.getTabelaFrete = async (consulta) => {
-						console.log("chegou no getTabelaFrete")
+					$scope.getTipoFrete = async (consulta) => {
+						console.log("chegou no getTipoFrete")
 						try{
 							let result = await $scope.executaRequisicaoExterna(
 							{
 								idCvtccnpj : dadosUserLogado.cId,
 								numreg	   : 750,
-								pRotina    : 'getTabelaFrete',
+								pRotina    : 'getTipoFrete',
 								pCodCli	   : dadosUserLogado.rId,
-								pFilter    : {filtro:{filtrotabPreco : consulta}}
+								pFilter    : {filtro:{filtrotipFrete : consulta}}
 							},
 						);
 						console.log(result)
@@ -966,7 +968,7 @@
 					$scope.getInfoTabela = async () => {
 						console.log("chegou no getInfoTabela")
 						let codCli   = $scope.codigoCliente
-						let tabPreco = $scope.tabPreco
+						let tabPreco = $scope.tabPreco.cod
 						let result = await $scope.executaRequisicaoExterna(
 							{
 								idCvtccnpj	: 	dadosUserLogado.cId,
@@ -1315,7 +1317,7 @@
 							$scope.condPagamento = '';
 							$scope.formaPagamento = '';
 							$scope.observacao = '';
-							$scope.numPedCliente = '';
+							$scope.numPedClienteOCPO = '';
 
 							$scope.frmCliente = '';
 							$scope.codigoCliente = '';
@@ -1381,7 +1383,7 @@
 							$scope.condPagamento = docs.condPagamento;
 							$scope.formaPagamento = docs.formaPagamento;
 							$scope.observacao = docs.observacao;
-							$scope.numPedCliente = docs.numPedCliente;
+							$scope.numPedClienteOCPO = docs.numPedClienteOCPO;
 
 							$scope.frmCliente = docs.cliente;
 							$scope.codigoCliente = docs.cliente.codExterno;
@@ -1646,7 +1648,7 @@
 							condPagamento: $scope.condPagamento,
 							formaPagamento: $scope.formaPagamento,
 							observacao: $scope.observacao,
-							numPedCliente: $scope.numPedCliente,
+							numPedClienteOCPO: $scope.numPedClienteOCPO,
 
 							endEntrega: $scope.frmEndEntrega,
 							prevEntrega: $scope.prevEntrega != "" || $scope.prevEntrega != undefined ? $scope.prevEntrega : null,
