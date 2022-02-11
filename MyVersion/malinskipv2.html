@@ -693,7 +693,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 116")
+		alert("teste de tela 117")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1128,7 +1128,7 @@
 								response = await $http.post(dadosUserLogado.cContextIntegracao + '/rest/Listas/executarRequisicaoExterna', $json);
 								done();/*Aguarda a requisição - Se estourar o tempo, gera erro.*/
 							}, timeLimit * 1000); // limite em segundos
-							console.log(response.data)
+							console.log(response)
 							return response.data;
 						} catch (err) {
 							$scope.geraNotificacao("Não foi possível se comunicar com o ERP. " + err + "", 5000, 'danger')
@@ -1281,11 +1281,13 @@
 						let newDate = today.setDate(today.getDate() + 30);
 						console.log("linha 1282" , newDate)
 
-						//var novaData = newDate.toLocaleDateString('pt-br')
 
-						//console.log(novadata , "novadata")
+						var novaData = newDate.toLocaleDateString('pt-br')
+
+						console.log(novaData , "novadata")
 
 						$scope.habilitarFrete = false
+
 
 						if ($dados == undefined) {
 
