@@ -694,7 +694,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 147")
+		alert("teste de tela 148")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -967,7 +967,8 @@
 					$scope.getInfoTabela = async () => {
 						console.log("chegou no getInfoTabela")
 						let codCli   = $scope.codigoCliente
-						let tabPreco = $scope.tabPreco
+						let tabPreco = $scope.tabPreco.cod
+						console.log(tabPreco)
 						let result = await $scope.executaRequisicaoExterna(
 							{
 								idCvtccnpj	: 	dadosUserLogado.cId,
@@ -1514,7 +1515,7 @@
 								precoVendaCIF: resultTest.precoVendaCIF,
 
 								//verificação de quantidade, se não for colocado uma qtd > 0 não salva 
-								qtdPedida: 0,
+								qtdPedida: resultTest.qtdPedida,
 
 								ofertaPreco: resultTest.ofertaPreco,
 								precoLiquido: resultTest.precoLiquido,
@@ -1670,7 +1671,7 @@
 							//produtos: $rootScope.produtos,
 
 							//FILTRO 
-							produtos: $rootScope.produtos.filter(doc => doc && doc.qtdPedida && doc.qtdPedida > 00),
+							produtos: $rootScope.produtos.filter(doc => doc && doc.qtdPedida && doc.qtdPedida > 0),
 
 							valorTotal: parseFloat($scope.valorTotal),
 							//Cliente
