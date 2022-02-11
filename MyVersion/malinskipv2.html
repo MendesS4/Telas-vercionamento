@@ -889,7 +889,7 @@
 
 					}
 
-					$scope.getTabelaPreco = async (consulta) =>	{
+					$scope.getTabelaPreco = async (consulta, opcao) =>	{
 						console.log("chegou na getTabelade Preco")
 						let codCli = $scope.codigoCliente
 						let tabPreco = $scope.tabPreco
@@ -904,10 +904,17 @@
 								},
 							);
 							console.log(result)
+							
 							if(result != undefined && result.resultado !=undefined){
-								return result.resultado.map((item)=>{
+								if(opcao && opcao != undefined){
+									console.log("if 001")
+									$scope.tabPreco = result.resultado[0]
+								}else{
+									console.lo("else")
+									return result.resultado.map((item)=>{
 									return item
-								})
+								})		
+								}
 							}else{
 								return []
 							}
@@ -1082,11 +1089,9 @@
 
 					$scope.onSelectCli = ($item, $model, $label) => {
 						//console.log("chegou no on Select Cli")
-
 						$rootScope.cliente = $item;
-
 						$scope.codigoCliente = $rootScope.cliente.codExterno
-						$scope.getTabelaPreco()
+						$scope.getTabelaPreco(_,1)
 						$scope.getEndEntrega();
 						console.log($item, $model, $label)
 					};
