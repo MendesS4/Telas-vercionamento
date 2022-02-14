@@ -245,7 +245,7 @@
 										ng-model			 = "frmCliente"
 										uib-typeahead		 = "teste.nome for teste in getClientesERP($viewValue)"
 										typeahead-on-select  = "onSelectCli($item, $model, $label)"
-										typeahead-min-lenght = "0">
+										typeahead-min-lenght = "3">
 										<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaCliente()"><i class="glyphicon glyphicon-remove"></i></span>
 									</div>
 								<!-- ng-disabled para desabilitar campos  -->
@@ -697,7 +697,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 152")
+		alert("teste de tela 153")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1107,12 +1107,11 @@
 					}
 
 					$scope.onSelectCli = ($item, $model, $label) => {
-						$rootScope.cliente = $item;
-						$scope.codigoCliente = $rootScope.cliente.codExterno
-						$scope.getFormasPagamentoERP(null,1)
-						//$scope.getCondicaoPagamentoERP(null,1)
-						$scope.getTabelaPreco(null,1)
-						//$scope.getEndEntrega();
+						$rootScope.cliente	 	= $item;
+						$scope.codigoCliente 	= $rootScope.cliente.codExterno
+						$scope.tabPreco 	 	= {}
+						$scope.formaPagamento	= {}
+						$scope.condPagamento 	= {}
 						console.log($item, $model, $label)
 					};
 
