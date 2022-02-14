@@ -240,7 +240,7 @@
 									<label for="cliente">Cliente</label>
 									<div class ="input-button">
 										<input type="text" class="form-control" ng-model="frmCliente"
-										uib-typeahead		 = "cliente.nome for teste in getClientes($viewValue)"
+										uib-typeahead		 = "cliente.nome for cliente in getClientes($viewValue)"
 										typeahead-on-select  = "onSelectCli($item, $model, $label)"
 										typeahead-min-lenght = "3">
 										<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaCliente()"><i class="glyphicon glyphicon-remove"></i></span>
