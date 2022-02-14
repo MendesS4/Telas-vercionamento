@@ -697,7 +697,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 156")
+		alert("teste de tela 157")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1079,7 +1079,7 @@
 
 					//clientes
 					$scope.getClientesERP = async (consulta) => {
-						console.log("chegou no get Clientes")
+						console.log("chegou no get Clientes e ERP")
 					try{
 						let result = await $scope.executaRequisicaoExterna(
 							{
@@ -1093,7 +1093,6 @@
 						);
 						console.log(result)
 						if(result != undefined && result.resultado != undefined){
-
 							return result.resultado.map((item)=>{
 								console.log(item);
 								return item
@@ -1132,7 +1131,7 @@
 						console.log("chegou no onSelectCli")
 						$rootScope.cliente	 	= $item;
 						$scope.codigoCliente 	= $rootScope.cliente.codExterno
-						$scope.tabPreco 	 	= {}
+						$scope.tabPreco 	 	= {cod : $scope.cliente.codTpr, nome : "TESTES"}
 						$scope.formaPagamento	= {}
 						$scope.condPagamento 	= {}
 						console.log($item, $model, $label)
