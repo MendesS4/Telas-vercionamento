@@ -239,10 +239,13 @@
 								<div class="col-sm-6 spacer ">
 									<label for="cliente">Cliente</label>
 									<div class ="input-button">
-										<input type="text" class="form-control" ng-model="frmCliente"
-										uib-typeahead		 = "teste.nome for teste in getClientes($viewValue)"
+										<input 
+										type				 = "text" 
+										class				 = "form-control" 
+										ng-model			 = "frmCliente"
+										uib-typeahead		 = "teste.nome for teste in getClientesERP($viewValue)"
 										typeahead-on-select  = "onSelectCli($item, $model, $label)"
-										typeahead-min-lenght = "3">
+										typeahead-min-lenght = "0">
 										<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaCliente()"><i class="glyphicon glyphicon-remove"></i></span>
 									</div>
 								<!-- ng-disabled para desabilitar campos  -->
@@ -694,7 +697,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 150")
+		alert("teste de tela 152")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1046,10 +1049,17 @@
 								}
 							);
 
-							if (result.resultado != undefined) {
-								return result.resultado.map((item) => {
-									return item
-								})
+							if (result != undefined && result.resultado != undefined) {
+								if(opcao && opcao != undefined){
+									console.log("if formPag001")
+									$scope.formaPagamento = result.resultado[0]
+									console.log($scope.formaPagamento)
+								}else{
+									console.log("else conFormPag")
+									return result.resultado.map((item)=>{
+										return item
+									})
+								}
 							} else {
 								return [];
 							}
@@ -1067,29 +1077,39 @@
 						$scope.formaPagamento = "";
 					}
 
-					$scope.getClientes = function (val) {
+					//clientes
+					$scope.getClientesERP = async (consulta) => {
 						console.log("chegou no get Clientes")
-						var idRep = dadosUserLogado.rId;
+					try{
+						let result = await $scope.executaRequisicaoExterna(
+							{
+								idCvtccnpj : dadosUserLogado.cId,
+								numreg	   : 750,
+								pRotina	   : 'filtrarCliente',
+								pCodCli    : dadosUserLogado.rId,
+								pFilter    : {filtro:{filtroCliente : consulta}},
+							},
+							1000
+						);
 
-						return $http.post('/clicVendas/rest/Listas/cliente', {
-							params: {
-								filtro: val,
-								rId: idRep
-							}
-						}).then(function (response) {
-							return response.data.map(function (item) {
-								console.log(item.codExterno)
-								return item;
-							});
-
-						});
-						
+						if(result != undefined && result.resultado != undefined){
+							return result.resultado.map((item)=>{
+								console.log(item);
+								return item
+							})
+						}else{
+							return [];
+						}
+					}catch(err){
+						console.log("Ocorreu um erro na requisição: ", err);
 					};
+
+					}
 
 					$scope.onSelectCli = ($item, $model, $label) => {
 						$rootScope.cliente = $item;
 						$scope.codigoCliente = $rootScope.cliente.codExterno
-						//$scope.getFormasPagamentoERP(null,1)
+						$scope.getFormasPagamentoERP(null,1)
 						//$scope.getCondicaoPagamentoERP(null,1)
 						$scope.getTabelaPreco(null,1)
 						//$scope.getEndEntrega();
