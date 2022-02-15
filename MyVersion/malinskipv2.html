@@ -688,7 +688,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 178")
+		alert("teste de tela 179")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -932,6 +932,9 @@
 									$scope.tabPreco = result.resultado[0]
 									console.log($scope.tabPreco)
 								}else{
+									console.log("caiu no else")
+									console.log(result.resultado)
+									alert(result.resultado)
 									return result.resultado.map((item)=>{
 									return item
 								})		
