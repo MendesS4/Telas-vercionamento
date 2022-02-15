@@ -702,7 +702,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 198")
+		alert("teste de tela 199")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1104,7 +1104,8 @@
 							1000
 						);
 						if(result != undefined && result.resultado != undefined){
-							console.log(result.resultado.codTpr)
+							console.log(result.resultado.item)
+							console.log(result.resultado)
 							return result.resultado.map((item)=>{
 								return item
 							})
@@ -1138,8 +1139,11 @@
 					}
 
 					$scope.onSelectCli = ($item, $model, $label) => {
+						let codTabPreco = ''
 						$rootScope.cliente	 	= $item;
 						$scope.codigoCliente 	= $rootScope.cliente.codExterno
+						codTabPreco		= $item.codTpr
+						console.log(codTabPreco)
 						$scope.tabPreco 	 	= {nome : $scope.cliente.desTpr}
 						$scope.formaPagamento	= {codExterno : $scope.cliente.codFpg, nome : $scope.cliente.desFpg}
 						
