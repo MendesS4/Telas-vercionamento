@@ -702,7 +702,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 195")
+		alert("teste de tela 196")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -998,13 +998,11 @@
 								pFilter		: 	{filtro:{filtroTab : tabPreco , filtroCli : codCli}}
 							},
 						);	
-
 						let newResult = result.resultado
 						for (let i = 0; i < newResult.length; i++) {
 							$scope.adicionarProduto(newResult[i])
 						}
 					}
-
 					$scope.getCondicaoPagamentoERP = async (consulta) => {
 						try {
 							let result = await $scope.executaRequisicaoExterna(
@@ -1103,8 +1101,7 @@
 								pCodRep		: dadosUserLogado.rCod,
 								pFilter    : {filtro:{filtroCliente : consulta}},
 							},
-							1000,
-							console.log(result.resultado)
+							1000
 						);
 						if(result != undefined && result.resultado != undefined){
 							return result.resultado.map((item)=>{
@@ -1116,7 +1113,6 @@
 					}catch(err){
 						console.log("Ocorreu um erro na requisição: ", err);
 					};
-
 					}
 
 					$scope.getClientes = function (val) {
