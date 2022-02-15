@@ -273,12 +273,13 @@
 									ng-model="tabelaFrete" 
 									ng-disabled="!habilitado"
 									uib-typeahead = "frete.nom for frete in getTabelaFrete($viewValue)"
+									typeahead-on-select  = "onSelectTabFrete($item, $model, $label)"
 									typeahead-min-lenght="0">
 								</div>
 
 								<div class="col-sm-4 spacer ">
 									<label for="totalFrete">Total de frete</label>
-									<input type="text" class="form-control" ng-model="totalFrete" ng-disabled="!habilitado">
+									<input type="text" class="form-control" ng-model="totalFrete" readonly>
 								</div>
 
 								<!--O valor desse campo é a data do sistema que esta rodando-->
@@ -695,7 +696,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 185")
+		alert("teste de tela 186")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -961,6 +962,7 @@
 					};
 
 					$scope.limpaTabPreco = function () {
+						console.log("chegou no limpa TabPreco")
 						$scope.tabPreco = "";
 						var tabPrecLIMPA = angular.element(document.querySelector('#frmTabelaPreco'));
 						$timeout(function () {
@@ -1159,7 +1161,12 @@
 
 
 
-
+					$scope.onSelectTabFrete = ($item, $model, $label) => {
+						console.log("chegou no on Select Frete")
+						$rootScope.cliente	 	= $item;
+						console.log($item)
+						$scope.totalFrete		= {valor: $scope.cliente.valor}
+					}
 
 					$scope.onSelectCli = ($item, $model, $label) => {
 						console.log("chegou no onSelectCli")
