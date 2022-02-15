@@ -240,10 +240,11 @@
 									<label for="tabPreco">Tabela de preço</label>
 									<div class="input-button">
 										<input 
+										id						= "frmTabelaPreco"
 										type					= "text" 
 										class					= "form-control" 
 										ng-model				= "tabPreco"
-										ng-click				= "  for teste in getTabelaPreco()" 
+										ng-click				= "getTabelaPreco()"
 										uib-typeahead			= "teste.nome for teste in getTabelaPreco($viewValue)"
 										typeahead-min-lenght	= "0"
 										ng-disabled 			= "codigoCliente == undefined || codigoCliente == ''">
@@ -695,7 +696,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 183")
+		alert("teste de tela 184")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -963,6 +964,10 @@
 
 					$scope.limpaTabPreco = function () {
 						$scope.tabPreco = "";
+						var tabPrecLIMPA = angular.element(document.querySelector('#frmTabelaPreco'));
+						$timeout(function () {
+							tabPrecLIMPA.focus();
+						}, 200);
 					}
 
 					$scope.inputsControlCliente = function ($item, $model, $label){
@@ -1187,7 +1192,7 @@
 					$scope.limpaCliente = () => {
 						$scope.frmCliente = '';
 						$scope.codigoCliente = '';
-						var cCliente = angular.element(document.querySelector('#frmCliente'));
+						var cCliente = angular.element(document.querySelector('#frmTabelaPrec'));
 
 						$timeout(function () {
 							cCliente.focus();
