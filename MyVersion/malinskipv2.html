@@ -702,7 +702,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 193")
+		alert("teste de tela 194")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -987,6 +987,8 @@
 					$scope.getInfoTabela = async () => {
 						let codCli   = $scope.codigoCliente
 						let tabPreco = $scope.tabPreco.cod
+						console.log(tabPreco)
+						console.log(codCli)
 						let result = await $scope.executaRequisicaoExterna(
 							{
 								idCvtccnpj	: 	dadosUserLogado.cId,
@@ -996,6 +998,7 @@
 								pFilter		: 	{filtro:{filtroTab : tabPreco , filtroCli : codCli}}
 							},
 						);	
+
 						let newResult = result.resultado
 						for (let i = 0; i < newResult.length; i++) {
 							$scope.adicionarProduto(newResult[i])
