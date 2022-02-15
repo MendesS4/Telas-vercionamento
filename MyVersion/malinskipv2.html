@@ -697,7 +697,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 163")
+		alert("teste de tela 164")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1131,12 +1131,20 @@
 
 					$scope.onSelectCli = ($item, $model, $label) => {
 						console.log("chegou no onSelectCli")
+						console.log($item)
 						$rootScope.cliente	 	= $item;
 						$scope.codigoCliente 	= $rootScope.cliente.codExterno
 						$scope.tabPreco 	 	= {cod : $scope.cliente.codTpr, nome : $scope.cliente.desTpr}
 						$scope.formaPagamento	= {codExterno : $scope.cliente.codFpg, nome : $scope.cliente.desFpg}
+
 						$scope.condPagamento 	= {codExterno : $scope.cliente.codCpg, nome : $scope.cliente.desCpg}
 						console.log($item, $model, $label)
+
+						//se o valor vir vazio deixa campo vazio
+						if ($scope.formaPagamento.codFpg == ""){
+							$scope.formaPagamento = ""
+							console.log("teste if ")
+						}
 					};
 
 					$scope.limpaCliente = () => {
