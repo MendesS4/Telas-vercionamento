@@ -255,7 +255,7 @@
 									<label for="tabPreco">Tabela de preço</label>
 									<div class="input-button">
 										<input type="text" class="form-control" ng-model="tabPreco" 
-										uib-typeahead			= "teste.cod + ' - ' + teste.nome for teste in getTabelaPreco($viewValue)"
+										uib-typeahead			= "teste.nome for teste in getTabelaPreco($viewValue)"
 										typeahead-min-lenght	= "0"
 										ng-disabled 			= "codigoCliente == undefined || codigoCliente == ''">
 										<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaTabPreco()"><i class="glyphicon glyphicon-remove"></i></span>
@@ -697,7 +697,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 169")
+		alert("teste de tela 170")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1135,7 +1135,7 @@
 						console.log($item.codFpg)
 						$rootScope.cliente	 	= $item;
 						$scope.codigoCliente 	= $rootScope.cliente.codExterno
-						$scope.tabPreco 	 	= {cod : $scope.cliente.codTpr, nome : $scope.cliente.desTpr}
+						$scope.tabPreco 	 	= {nome : $scope.cliente.desTpr}
 						$scope.formaPagamento	= {codExterno : $scope.cliente.codFpg, nome : $scope.cliente.desFpg}
 						
 						if ($item.codFpg == "0"){
