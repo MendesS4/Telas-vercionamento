@@ -244,7 +244,6 @@
 										type					= "text" 
 										class					= "form-control" 
 										ng-model				= "tabPreco"
-										ng-click				= "getTabelaPreco()"
 										uib-typeahead			= "teste.nome for teste in getTabelaPreco($viewValue)"
 										typeahead-min-lenght	= "0"
 										ng-disabled 			= "codigoCliente == undefined || codigoCliente == ''">
@@ -696,7 +695,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 184")
+		alert("teste de tela 185")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -944,7 +943,6 @@
 								}else{
 									console.log("caiu no else")
 									console.log(result.resultado)
-									alert(result.resultado.nome)
 									return result.resultado.map((item)=>{
 									return item
 								})		
