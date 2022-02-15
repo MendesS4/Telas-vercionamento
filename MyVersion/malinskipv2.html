@@ -243,7 +243,7 @@
 										type					= "text" 
 										class					= "form-control" 
 										ng-model				= "tabPreco"
-										ng-click				= "getTabelaPreco()" 
+										ng-click				= "  for teste in getTabelaPreco()" 
 										uib-typeahead			= "teste.nome for teste in getTabelaPreco($viewValue)"
 										typeahead-min-lenght	= "0"
 										ng-disabled 			= "codigoCliente == undefined || codigoCliente == ''">
@@ -254,7 +254,10 @@
 								<div class="col-sm-4 spacer ">
 									<label for="frete">Tipo de frete</label>
 									<div class="input-button">
-										<input type="text" class="form-control" ng-model="frete"
+										<input 
+										type="text" 
+										class="form-control" 
+										ng-model="frete"
 										uib-typeahead="teste.tipo + ' - ' + teste.desc for teste in getTipoFrete($viewValue)"
 										typeahead-min-lenght="0"
 										typeahead-on-select="inputsControlFrete($item, $model, $label)">
@@ -264,7 +267,11 @@
 
 								<div class="col-sm-4 spacer ">
 									<label for="tabelaFrete">Tabela de frete</label>
-									<input type="text" class="form-control" ng-model="tabelaFrete" ng-disabled="!habilitado"
+									<input 
+									type="text" 
+									class="form-control" 
+									ng-model="tabelaFrete" 
+									ng-disabled="!habilitado"
 									uib-typeahead = "   for teste in getTabelaFrete($viewValue)"
 									typeahead-min-lenght="0">
 								</div>
@@ -688,7 +695,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 181")
+		alert("teste de tela 182")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
