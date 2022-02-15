@@ -105,10 +105,9 @@
 						<button class="btn btn_acao_header btn_cor_padrao" ng-click="changeView()"><span
 								class="glyphicon glyphicon-menu-left"></span> Voltar</button>
 						<button style="text-align: center; width: 120px;" class="btn btn_acao_header btn_cor_padrao"
-							ng-hide="exibeHistoricos" ng-click="abreHistoricos()"><span
+								ng-hide="exibeHistoricos" ng-click="abreHistoricos()"><span
 								class="glyphicon glyphicon-list-alt"></span> Histórico </button>
 					</div>
-
 					<div class="col-sm-6">
 						<h5 style="margin-top: 0; margin-left:-15%; font-size: 14px;">{{tipoFormulario}}</h5>
 					</div>
@@ -118,15 +117,10 @@
 
 			<!-- Capa do pedido -->
 			<div class="row">
-
 				<form name="cadastroPedido">
-
 					<div ng-hide="exibeHistoricos" class="col-sm-12 spacer">
-
 						<!-- Informações resumidas do pedido -->
-
 						<div class="row">
-
 							<div ng-show="sincronizado === 'DOCUMENTO_SINCRONIZADO'" class="form-group col-md-12">
 								<div style="background-color: #FBFBFB">
 									<div class="col-sm-6">
@@ -164,9 +158,7 @@
 										<h5>Representante</h5>
 										<p>{{representante}}</p>
 									</div>
-
 								</div>
-
 								<div style="margin-top: 2%; padding:0;" class="col-sm-12 spacer">
 									<table style="margin-top: 1%;" id="tabelaProdutos" class="table">
 										<thead>
@@ -212,7 +204,6 @@
 														ng-show="produto.opcaoDescAcresc === 'ACRESCIMO' && produto.descAcresc != undefined">
 														+ {{produto.descAcresc}}%</p>
 													<p ng-show="produto.descAcresc == undefined"></p>
-
 												</td>
 												<td>
 													{{produto.valorTotalItem | currency:'R$ '}}
@@ -222,20 +213,16 @@
 									</table>
 								</div>
 							</div>
-
 							<div style="margin-top:-25px" ng-show="sincronizado != 'DOCUMENTO_SINCRONIZADO' "
 								class="form-group col-md-12">
-
 								<div class="col-sm-6 spacer ">
 									<label for="tipoOrcamento">Tipo de orçamento</label>
 									<input type="text" class="form-control" ng-model="tipoOrcamento" readonly>
 								</div>
-
 								<div class="col-sm-6 spacer ">
 									<label for="filial">Filial</label>
 									<input type="text" class="form-control" ng-model="filial" readonly>
 								</div>
-
 								<div class="col-sm-6 spacer ">
 									<label for="cliente">Cliente</label>
 									<div class ="input-button">
@@ -248,9 +235,7 @@
 										typeahead-min-lenght = "0">
 										<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaCliente()"><i class="glyphicon glyphicon-remove"></i></span>
 									</div>
-								<!-- ng-disabled para desabilitar campos  -->
 								</div>
-
 								<div class="col-sm-6 spacer ">
 									<label for="tabPreco">Tabela de preço</label>
 									<div class="input-button">
@@ -258,7 +243,7 @@
 										type					= "text" 
 										class					= "form-control" 
 										ng-model				= "tabPreco"
-										ng-blur					= "teste.nome for teste in getTabelaPreco()" 
+										ng-blur					= "getTabelaPreco($viewValue)" 
 										uib-typeahead			= "teste.nome for teste in getTabelaPreco($viewValue)"
 										typeahead-min-lenght	= "0"
 										ng-disabled 			= "codigoCliente == undefined || codigoCliente == ''">
@@ -703,7 +688,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 172")
+		alert("teste de tela 173")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
