@@ -698,7 +698,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 190")
+		alert("teste de tela 191")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1170,10 +1170,9 @@
 
 					$scope.onSelectTabFrete = ($item, $model, $label) => {
 						console.log("chegou no on Select Frete")
-						$rootScope.cliente	 	= $item;
 						console.log($item)
 						console.log($item.valor)
-						$scope.totalFrete		= item.valor
+						$scope.totalFrete = $item.valor
 					}
 
 					$scope.onSelectCli = ($item, $model, $label) => {
