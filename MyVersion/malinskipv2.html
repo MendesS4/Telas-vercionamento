@@ -319,7 +319,7 @@
 								<div class="col-sm-6 spacer ">
 									<label for="formaPagamento">Forma de pagamento</label>
 									<input type="text" class="form-control" ng-model="formaPagamento"
-										uib-typeahead="teste.nome + '-' + teste.codExterno for teste in getFormasPagamentoERP($viewValue)"
+										uib-typeahead="teste.codExterno + ' - ' + teste.nome for teste in getFormasPagamentoERP($viewValue)"
 										typeahead-min-lenght="3">
 								</div>
 
@@ -697,7 +697,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 162")
+		alert("teste de tela 163")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
