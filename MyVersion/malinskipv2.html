@@ -702,10 +702,11 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 192")
+		alert("teste de tela 193")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
+			//boa sorte :D
 			.controller("MainController",
 				function (DTOptionsBuilder, DTColumnDefBuilder, DTColumnBuilder, DTDefaultOptions, $scope, $rootScope, $compile, $http, $timeout, $window) {
 
@@ -824,7 +825,6 @@
 					};
 
 					$scope.getTipoFrete = async (consulta) => {
-						console.log("chegou no getTipoFrete")
 						try{
 							let result = await $scope.executaRequisicaoExterna(
 							{
@@ -835,7 +835,6 @@
 								pFilter    : {filtro:{filtrotipFrete : consulta}}
 							},
 						);
-						console.log(result)
 						if(result != undefined && result.resultado !=undefined){
 							return result.resultado.map((item)=>{
 								return item
@@ -870,7 +869,6 @@
 
 
 					$scope.getTabelaFrete = async (consulta) => {
-						console.log("chegou no getTabelaFrete")
 						try{
 							let result = await $scope.executaRequisicaoExterna(
 							{
@@ -881,8 +879,6 @@
 								pFilter    : {filtro:{filtroTabelaFrete : consulta}}
 							},
 						);
-						console.log(result)
-						console.log(result.resultado.valor)
 						if(result != undefined && result.resultado !=undefined){
 							return result.resultado.map((item)=>{
 								$scope.precoFrete = result.resultado.valor
@@ -900,40 +896,28 @@
 					$scope.inputsControlPreco = function ($item, $model, $label){
 						let valorCliente = $scope.frmCliente
 						let inputTabPreco = $scope.tabPreco
-						console.log(valorCliente)
-						console.log("esta na funcao control preco")
-						console.log($item)
 
 						if (valorCliente == ''){
-							console.log("chegou no if ")
 							inputTabPreco = ""
-						}else{
-							console.log("chegou no else")
-						}
-
+						}else{}
 					}
 
 
 					$scope.inputsControlFrete = function ($item, $model, $label){
-						console.log("esta na funcao")
-						console.log($item)
 
 						switch ($item.desc) {
 							case 'Sem Frete':
 							    $scope.habilitado = false
 								$scope.tabelaFrete = ''
 								$scope.totalFrete = '';
-								console.log("case X sem frete");
 								break;
 							case 'CIF':
 								$scope.habilitado = true
-								console.log("case C-CIF");
 								break;
 							case 'FOB':
 								$scope.habilitado = false
 								$scope.tabelaFrete = ''
 								$scope.totalFrete = '';
-								console.log("case F-FOB");
 								break;
 							default:
 								console.log("Não atendeu nenhuma das alternativas")
@@ -942,7 +926,6 @@
 					}
 
 					$scope.getTabelaPreco = async (consulta, opcao) =>	{
-						console.log("chegou na getTabela de Preco")
 						let codCli = $scope.codigoCliente
 						let tabPreco = $scope.tabPreco
 						try{
@@ -958,12 +941,8 @@
 							
 							if(result != undefined && result.resultado !=undefined){
 								if(opcao && opcao != undefined){
-									console.log("if 001")
 									$scope.tabPreco = result.resultado[0]
-									console.log($scope.tabPreco)
 								}else{
-									console.log("caiu no else")
-									console.log(result.resultado)
 									return result.resultado.map((item)=>{
 									return item
 								})		
@@ -978,11 +957,9 @@
 
 					$scope.onSelectTabPreco = function ($item, $model, $label) {
 						$scope.tabPreco = $item;
-						console.log($item)
 					};
 
 					$scope.limpaTabPreco = function () {
-						console.log("chegou no limpa TabPreco")
 						$scope.tabPreco = "";
 						var tabPrecLIMPA = angular.element(document.querySelector('#frmTabelaPreco'));
 						$timeout(function () {
@@ -991,20 +968,7 @@
 					}
 
 					$scope.inputsControlCliente = function ($item, $model, $label){
-						console.log("esta na funcao de controle de cliente")
-						console.log($item)
-						/*
-							switch ($item) {
-							case '':
-							    $scope.habilitadoCli = false
-								$scope.tabelaFrete = '';
-								console.log("case campo vazio");
-								break;
-							default:
-								$scope.habilitadoCli = true
-								console.log("tem algo no campo")
-						}
-						*/
+
 					}
 
 					$scope.getCondicoesP = function (val) {
@@ -1021,10 +985,8 @@
 					};
 
 					$scope.getInfoTabela = async () => {
-						console.log("chegou no getInfoTabela")
 						let codCli   = $scope.codigoCliente
 						let tabPreco = $scope.tabPreco.cod
-						console.log(tabPreco)
 						let result = await $scope.executaRequisicaoExterna(
 							{
 								idCvtccnpj	: 	dadosUserLogado.cId,
@@ -1033,10 +995,8 @@
 								pCodCli		: 	dadosUserLogado.rId,
 								pFilter		: 	{filtro:{filtroTab : tabPreco , filtroCli : codCli}}
 							},
-						);
-							
+						);	
 						let newResult = result.resultado
-						console.log(newResult)
 						for (let i = 0; i < newResult.length; i++) {
 							$scope.adicionarProduto(newResult[i])
 						}
@@ -1053,7 +1013,6 @@
 									pFilter: { filtro: { filtroCondPag: consulta } },
 								}
 							);
-							//console.log(result)
 							if (result.resultado != undefined) {
 								return result.resultado.map((item) => {
 									return item
@@ -1105,11 +1064,9 @@
 
 							if (result != undefined && result.resultado != undefined) {
 								if(opcao && opcao != undefined){
-									console.log("if formPag001")
 									$scope.formaPagamento = result.resultado[0]
 									console.log($scope.formaPagamento)
 								}else{
-									console.log("else conFormPag")
 									return result.resultado.map((item)=>{
 										return item
 									})
@@ -1133,7 +1090,6 @@
 
 					//clientes
 					$scope.getClientesERP = async (consulta) => {
-						console.log("chegou no get Clientes e ERP")
 					try{
 						let result = await $scope.executaRequisicaoExterna(
 							{
@@ -1146,11 +1102,8 @@
 							},
 							1000
 						);
-						console.log(dadosUserLogado)
-						console.log(result)
 						if(result != undefined && result.resultado != undefined){
 							return result.resultado.map((item)=>{
-								console.log(item);
 								return item
 							})
 						}else{
@@ -1163,7 +1116,6 @@
 					}
 
 					$scope.getClientes = function (val) {
-						console.log("chegou no get Clientes")
 						var idRep = dadosUserLogado.rId;
 						return $http.post('/clicVendas/rest/Listas/cliente', {
 							params: {
@@ -1172,7 +1124,6 @@
 							}
 						}).then(function (response) {
 							return response.data.map(function (item) {
-								console.log(item.codExterno)
 								return item;
 							});
 						});
@@ -1182,35 +1133,23 @@
 
 
 					$scope.onSelectTabFrete = ($item, $model, $label) => {
-						console.log("chegou no on Select Frete")
-						console.log($item)
-						console.log($item.valor)
 						$scope.totalFrete = $item.valor
 					}
 
 					$scope.onSelectCli = ($item, $model, $label) => {
-						console.log("chegou no onSelectCli")
-						console.log($item)
-						console.log($item.codFpg)
 						$rootScope.cliente	 	= $item;
 						$scope.codigoCliente 	= $rootScope.cliente.codExterno
 						$scope.tabPreco 	 	= {nome : $scope.cliente.desTpr}
 						$scope.formaPagamento	= {codExterno : $scope.cliente.codFpg, nome : $scope.cliente.desFpg}
 						
 						if ($item.codFpg == "0"){
-							console.log($item.codFpg)
 							$scope.formaPagamento = ""
-							console.log("teste if ")
 						}
-
 						if($item.codTpr == " "){
 							$scope.tabPreco = ""
 						}
 
 						$scope.condPagamento 	= {codExterno : $scope.cliente.codCpg, nome : $scope.cliente.desCpg}
-						console.log($item, $model, $label)
-
-						//se o valor vir vazio deixa campo vazio
 
 					};
 
@@ -1255,7 +1194,6 @@
 					});
 
 					$scope.executaRequisicaoExterna = async ($json, timeLimit = 15) => {
-						//console.log($json)
 						try {
 							let response;
 							await setAsyncTimeout(async done => {
@@ -1409,13 +1347,8 @@
 						future.setDate(future.getDate()+30)
 						var dataEmissao = future.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 
-
 						//var novaData = newDate.toLocaleDateString('pt-br')
-
-						//console.log(novaData , "novadata")
-
 						$scope.habilitarFrete = false
-
 
 						if ($dados == undefined) {
 
@@ -1623,7 +1556,6 @@
 					}
 
 					$scope.adicionarProduto = (resultTest) => {
-						console.log(resultTest)
 						$rootScope.produtos.unshift(
 							{
 								seq: resultTest.seq,
@@ -1788,9 +1720,6 @@
 
 							//Produtos
 							// verificação de quantidade de produtos
-
-							//produtos: $rootScope.produtos,
-
 							//FILTRO 
 							produtos: $rootScope.produtos.filter(doc => doc && doc.qtdPedida && doc.qtdPedida > 0),
 
@@ -1799,8 +1728,6 @@
 							cliente: { id: $rootScope.cliente.id, codExterno: $rootScope.cliente.codExterno, nome: $rootScope.cliente.nome, cpfCnpjFormat: $rootScope.cliente.cpfCnpjFormat },
 
 						}];
-
-						console.log(jsonDocs)
 
 						dados.jsonDocs = JSON.stringify(jsonDocs);
 						/*Recebe dados e para que sejam feitas as alterações necessarias*/
