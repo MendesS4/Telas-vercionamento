@@ -258,7 +258,7 @@
 										type					= "text" 
 										class					= "form-control" 
 										ng-model				= "tabPreco"
-										ng-blur					= "getTabelaPreco()" 
+										ng-blur					= "teste.nome for teste in getTabelaPreco()" 
 										uib-typeahead			= "teste.nome for teste in getTabelaPreco($viewValue)"
 										typeahead-min-lenght	= "0"
 										ng-disabled 			= "codigoCliente == undefined || codigoCliente == ''">
@@ -703,7 +703,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 171")
+		alert("teste de tela 172")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
