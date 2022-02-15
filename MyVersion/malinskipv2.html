@@ -226,7 +226,8 @@
 								<div class="col-sm-6 spacer ">
 									<label for="cliente">Cliente</label>
 									<div class ="input-button">
-										<input 
+										<input
+										id					 ="frmCliente" 
 										type				 = "text" 
 										class				 = "form-control" 
 										ng-model			 = "frmCliente"
@@ -255,6 +256,7 @@
 									<label for="frete">Tipo de frete</label>
 									<div class="input-button">
 										<input 
+										id="frmFrete"
 										type="text" 
 										class="form-control" 
 										ng-model="frete"
@@ -696,7 +698,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 189")
+		alert("teste de tela 190")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -846,6 +848,11 @@
 					};
 					$scope.limpaTipoFrete = function ($item, $model, $label){
 						$scope.frete = ""
+
+						var tabTipoFrete = angular.element(document.querySelector('#tabTipoFrete'));
+						$timeout(function () {
+							tabTipoFrete.focus();
+						}, 200);
 					};
 
 
@@ -1198,7 +1205,7 @@
 					$scope.limpaCliente = () => {
 						$scope.frmCliente = '';
 						$scope.codigoCliente = '';
-						var cCliente = angular.element(document.querySelector('#frmTabelaPrec'));
+						var cCliente = angular.element(document.querySelector('#frmCliente'));
 
 						$timeout(function () {
 							cCliente.focus();
