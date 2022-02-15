@@ -697,7 +697,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 167")
+		alert("teste de tela 168")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1136,12 +1136,12 @@
 						$rootScope.cliente	 	= $item;
 						$scope.codigoCliente 	= $rootScope.cliente.codExterno
 						$scope.tabPreco 	 	= {cod : $scope.cliente.codTpr, nome : $scope.cliente.desTpr}
+						$scope.formaPagamento	= {codExterno : $scope.cliente.codFpg, nome : $scope.cliente.desFpg}
 						if ($item.codFpg == "0"){
 							console.log($item.codFpg)
 							$scope.formaPagamento = ""
 							console.log("teste if ")
 						}
-						$scope.formaPagamento	= {codExterno : $scope.cliente.codFpg, nome : $scope.cliente.desFpg}
 						$scope.condPagamento 	= {codExterno : $scope.cliente.codCpg, nome : $scope.cliente.desCpg}
 						console.log($item, $model, $label)
 
