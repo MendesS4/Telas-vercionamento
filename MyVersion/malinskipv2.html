@@ -697,7 +697,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 165")
+		alert("teste de tela 166")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1132,6 +1132,7 @@
 					$scope.onSelectCli = ($item, $model, $label) => {
 						console.log("chegou no onSelectCli")
 						console.log($item)
+						console.log($item.codFpg)
 						$rootScope.cliente	 	= $item;
 						$scope.codigoCliente 	= $rootScope.cliente.codExterno
 						$scope.tabPreco 	 	= {cod : $scope.cliente.codTpr, nome : $scope.cliente.desTpr}
