@@ -702,7 +702,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 200")
+		alert("teste de tela 201")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -986,7 +986,7 @@
 
 					$scope.getInfoTabela = async () => {
 						let codCli   = $scope.codigoCliente
-						let tabPreco = $scope.tabPreco.cod
+						let codTabPreco = $scope.tabPreco
 						console.log(tabPreco)
 						console.log(codCli)
 						let result = await $scope.executaRequisicaoExterna(
@@ -1105,7 +1105,6 @@
 						);
 						if(result != undefined && result.resultado != undefined){
 							console.log(result.resultado)
-							console.log(result.resultado)
 							return result.resultado.map((item)=>{
 								return item
 							})
@@ -1139,12 +1138,14 @@
 					}
 
 					$scope.onSelectCli = ($item, $model, $label) => {
-						let codTabPreco = ''
+						//let codTabPreco = ''
 						$rootScope.cliente	 	= $item;
 						$scope.codigoCliente 	= $rootScope.cliente.codExterno
-						codTabPreco		= $item.codTpr
+						//codTabPreco		= $item.codTpr
 						console.log(codTabPreco)
-						$scope.tabPreco 	 	= {nome : $scope.cliente.desTpr}
+						//$scope.tabPreco 	 	= {nome : $scope.cliente.desTpr}
+
+						$scope.tabPreco = $item.codTpr
 						$scope.formaPagamento	= {codExterno : $scope.cliente.codFpg, nome : $scope.cliente.desFpg}
 						
 						if ($item.codFpg == "0"){
