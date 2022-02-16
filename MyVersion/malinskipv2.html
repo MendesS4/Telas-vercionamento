@@ -439,7 +439,10 @@
 															<input
 															type="number"
 															class="inputNumberTable"
-															ng-model="produto.qtdPedida">
+															ng-model="produto.qtdPedida"
+															uib-typeahead = "calculos($viewValue)"
+															typeahead-min-lenght = "1">
+															>
 														</div>
 													</td>
 													<td>
@@ -706,7 +709,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 210 - calculos valores produtos")
+		alert("teste de tela 211 - calculos valores produtos")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -991,6 +994,7 @@
 					$scope.getInfoTabela = async () => {
 						let codCli   	= $scope.codigoCliente
 						let tabPreco 	= $scope.codTpr
+						// para fazer o calculo
 						let precoFrete 	= $scope.totalFrete
 						console.log(tabPreco)
 						console.log(codCli)
@@ -1009,14 +1013,25 @@
 						for (let i = 0; i < newResult.length; i++) {
 							// preco liquido é o FOB (newResult.precoLiquido)
 							// CIF é o valor de frete nos itens / valor de frete + valor de produtos(quantidade de itens)  
+
+
+							// CALCULAR O VALOR LIQUIDO / PESO / VOLUME
+							// produto + frete
 							// QTD de produtos é definida no campo da tabela
 							// volume = o calculo é a multiplicacão da quantidade pedida informada * usu_qtdm3
 							// peso = é o resultado do volume * o valor de 790
-							$scope.adicionarProduto(newResult[i])
+							QtdM3 = newResult[i].qtdm3
+							console.log(QtdM3)
 
+							$scope.adicionarProduto(newResult[i])
 							console.log(newResult[i].precoLiquido)
-							console.log(newResult[i].qtdm3)
+							
 						}
+					}
+
+					$scope.calculos = function (numero){
+						console.log("chegou nos calculos")
+						console.log(numero)
 					}
 
 					$scope.getCondicaoPagamentoERP = async (consulta) => {
