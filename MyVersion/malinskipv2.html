@@ -708,7 +708,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 218 - calculos valores produtos")
+		alert("teste de tela 219 - calculos valores produtos")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1020,7 +1020,8 @@
 							// QTD de produtos é definida no campo da tabela
 							// volume = o calculo é a multiplicacão da quantidade pedida informada * usu_qtdm3
 							// peso = é o resultado do volume * o valor de 790
-							$scope.qtdM3 = newResult[i].qtdm3
+							let qtdm3 = newResult[i].qtdm3
+							$scope.qtdM3 = qtdm3
 							console.log($scope.qtdM3)
 
 							$scope.adicionarProduto(newResult[i])
