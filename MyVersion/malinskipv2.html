@@ -708,7 +708,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 235 - versoes finais ")
+		alert("teste de tela 236 - versoes finais ")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -995,7 +995,7 @@
 					$scope.calcularProdutos = (consulta) =>{		
 						console.log("chegou no calcular produtos")
 						console.log(consulta)
-						let qtd = consulta 
+						let qtd = parseFloat(consulta) 
 						console.log(qtd)
 						let valorTotalCalc 	= 0;
 						let valorTotalItem 	= 0;
@@ -1011,7 +1011,7 @@
 								console.log(qtd)
 								console.log(typeof(volumeM3))
 								console.log(typeof(qtd))
-								volumeM3 	= parseFloat(qtd) * parseFloat($rootScope.produtos[i].qtdm3)
+								volumeM3 	= qtd * parseFloat($rootScope.produtos[i].qtdm3)
 								/*Grava o valor total do volume */
 								$rootScope.produtos[i].volumeM3 = volumeM3;
 								console.log(volumeM3)
