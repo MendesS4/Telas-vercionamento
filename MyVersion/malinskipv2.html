@@ -243,6 +243,7 @@
 									<div class="input-button">
 										<input 
 										id					 = "frmTabelaPreco"
+										autocomplete		 = "off"
 										type				 = "text" 
 										class				 = "form-control" 
 										ng-model			 = "tabPreco"
@@ -258,6 +259,7 @@
 									<div class="input-button">
 										<input 
 										id="frmFrete"
+										autocomplete		 = "off"
 										type="text" 
 										class="form-control" 
 										ng-model="frete"
@@ -272,7 +274,8 @@
 									<label for="tabelaFrete">Tabela de frete</label>
 									<div class = "input-button">
 										<input 
-										id = "#tabTabelaFrete"
+										id = "tabTabelaFrete"
+										autocomplete		 = "off"
 										type="text" 
 										class="form-control" 
 										ng-model="tabelaFrete" 
@@ -703,7 +706,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 200 - teste de carregar produtos")
+		alert("teste de tela 201 - teste de carregar produtos")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
