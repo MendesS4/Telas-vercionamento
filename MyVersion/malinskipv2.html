@@ -706,7 +706,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 205 - teste de carregar produtos")
+		alert("teste de tela 206 - teste de carregar produtos")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1004,6 +1004,7 @@
 						);	
 						console.log(result)
 						let newResult = result.resultado
+						console.log(newResult)
 						for (let i = 0; i < newResult.length; i++) {
 							$scope.adicionarProduto(newResult[i])
 						}
@@ -1216,7 +1217,7 @@
 								response = await $http.post(dadosUserLogado.cContextIntegracao + '/rest/Listas/executarRequisicaoExterna', $json);
 								done();/*Aguarda a requisição - Se estourar o tempo, gera erro.*/
 							}, timeLimit * 1000); // limite em segundos
-							console.log(response)
+							//console.log(response)
 							return response.data;
 						} catch (err) {
 							$scope.geraNotificacao("Não foi possível se comunicar com o ERP. " + err + "", 5000, 'danger')
@@ -1576,41 +1577,45 @@
 					$scope.adicionarProduto = (resultTest) => {
 						$rootScope.produtos.unshift(
 							{
-								seq: resultTest.seq,
-								ocpo: resultTest.ocpo,
-								itocpo: resultTest.itocpo,
-								codProCli: resultTest.usu_procli,
-								descrProCli: resultTest.desProdCli,
-								precoVendFOB: resultTest.usu_preliq,
-								precoFrete: resultTest.precoFrete,
-								precoVendaCIF: resultTest.precoVendaCIF,
-								qtdPedida: resultTest.qtdPedida,
-								ofertaPreco: resultTest.ofertaPreco,
-								precoLiquido: resultTest.precoLiquido,
-								vlrLiquido: resultTest.vlrLiquido,
-								pesoKG: resultTest.pesoKG,
-								volumeM3: resultTest.volumeM3,
-								qtdEmb: resultTest.usu_qtdemb,
-								descEmb: resultTest.descEmb,
-								qtdSubEmb: resultTest.qtdSubEmb,
-								descrSubEmb: resultTest.descrSubEmb,
-								dataPCP: resultTest.dataPCP,
-								dataETD: resultTest.dataETD,
-								acresPreco: resultTest.acresPreco,
-								descontoFin: resultTest.descontoFin,
-								vlrDesconto: resultTest.vlrDesconto,
-								vlrBruto: resultTest.vlrBruto,
-								codPro: resultTest.usu_codpro,
-								derivacao: resultTest.usu_codder,
-								um: resultTest.um,
-								previsaoCli: resultTest.previsaoCli,
-								emb: resultTest.emb,
-								subEmb: resultTest.usu_subemb,
-								descrProduto: resultTest.descrProd,
-								descrDeriv: resultTest.descDeriv,
-								nrPedido: resultTest.nrPedido,
-								seqPed: resultTest.seqPed
 
+								// valor liquido é o calculo de QTD * VLR LQD
+								// peso é o calculo de QTD * 790
+								// volume usu_qtdm3 * QTD
+
+								seq				: resultTest.seq,
+								ocpo			: resultTest.ocpo,
+								itocpo			: resultTest.itocpo,
+								codProCli		: resultTest.usu_procli,
+								descrProCli		: resultTest.desProdCli,
+								precoVendFOB	: resultTest.usu_preliq,
+								precoFrete		: resultTest.precoFrete,
+								precoVendaCIF	: resultTest.precoVendaCIF,
+								qtdPedida		: resultTest.qtdPedida,
+								ofertaPreco		: resultTest.ofertaPreco,
+								precoLiquido	: resultTest.precoLiquido,
+								vlrLiquido		: resultTest.vlrLiquido,
+								pesoKG			: resultTest.pesoKG,
+								volumeM3		: resultTest.volumeM3,
+								qtdEmb			: resultTest.usu_qtdemb,
+								descEmb			: resultTest.descEmb,
+								qtdSubEmb		: resultTest.qtdSubEmb,
+								descrSubEmb		: resultTest.descrSubEmb,
+								dataPCP			: resultTest.dataPCP,
+								dataETD			: resultTest.dataETD,
+								acresPreco		: resultTest.acresPreco,
+								descontoFin		: resultTest.descontoFin,
+								vlrDesconto		: resultTest.vlrDesconto,
+								vlrBruto		: resultTest.vlrBruto,
+								codPro			: resultTest.usu_codpro,
+								derivacao		: resultTest.usu_codder,
+								um				: resultTest.um,
+								previsaoCli		: resultTest.previsaoCli,
+								emb				: resultTest.emb,
+								subEmb			: resultTest.usu_subemb,
+								descrProduto	: resultTest.descrProd,
+								descrDeriv		: resultTest.descDeriv,
+								nrPedido		: resultTest.nrPedido,
+								seqPed 			: resultTest.seqPed
 							}
 						);
 
