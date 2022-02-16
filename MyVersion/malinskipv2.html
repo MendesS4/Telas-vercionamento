@@ -439,7 +439,7 @@
 															<input
 															type="number"
 															class="inputNumberTable"
-															ng-change="calcularProdutos()"
+															ng-change="calcularProdutos($viewvalue)"
 															ng-model="produto.qtdPedida"
 															typeahead-min-lenght = "1">
 														</div>
@@ -708,7 +708,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 226 - calculos valores produtos ")
+		alert("teste de tela 227 - calculos valores produtos ")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -992,8 +992,9 @@
 					//======
 
 
-					$scope.calcularProdutos = () =>{		
+					$scope.calcularProdutos = (consulta) =>{		
 						console.log("chegou no calcular produtos")
+						console.log(consulta)
 						let valorTotalCalc 	= 0;
 						let valorTotalItem 	= 0;
 						let volumeM3 = 0;
@@ -1004,6 +1005,7 @@
 						for(let i=0; i < $rootScope.produtos.length; i++){
 							console.log($rootScope.produtos[i].qtdPedida)
 							console.log($rootScope.produtos[i].qtdm3)
+
 							if(($rootScope.produtos[i].qtdPedida != null && $rootScope.produtos[i].qtdPedida > 0) && $rootScope.produtos[i].qtdm3 != null){
 								volumeM3 	= parseFloat($rootScope.produtos[i].qtdPedida) * parseFloat($rootScope.produtos[i].qtdm3)
 							
