@@ -708,7 +708,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 233 - versoes finais ")
+		alert("teste de tela 234 - versoes finais ")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1008,6 +1008,9 @@
 							console.log($rootScope.produtos[i].qtdm3)
 
 							if((qtd != null && qtd > 0) && $rootScope.produtos[i].qtdm3 != null){
+								console.log(qtd)
+								console.log(typeof(volumeM3))
+								console.log(typeof(qtd))
 								volumeM3 	= parseFloat(qtd) * parseFloat($rootScope.produtos[i].qtdm3)
 								/*Grava o valor total do volume */
 								$rootScope.produtos[i].volumeM3 = volumeM3;
