@@ -708,7 +708,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 224 - calculos valores produtos ")
+		alert("teste de tela 225 - calculos valores produtos ")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1003,13 +1003,13 @@
 
 						for(let i=0; i < $rootScope.produtos.length; i++){
 
-							if(($rootScope.produtos[i].quantidade != null && $rootScope.produtos[i].quantidade > 0) && $rootScope.produtos[i].qtdm3 != null){
-								volumeM3 	= parseFloat($rootScope.produtos[i].quantidade) * parseFloat($rootScope.produtos[i].qtdm3)
+							if(($rootScope.produtos[i].qtdPedida != null && $rootScope.produtos[i].qtdPedida > 0) && $rootScope.produtos[i].qtdm3 != null){
+								volumeM3 	= parseFloat($rootScope.produtos[i].qtdPedida) * parseFloat($rootScope.produtos[i].qtdm3)
 							
 								/*Grava o valor total do volume */
 								$rootScope.produtos[i].volumeM3 = volumeM3;
+								console.log(volumeM3)
 							} 
-
 
 						}
 						
