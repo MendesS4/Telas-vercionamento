@@ -702,7 +702,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 198 - teste de carregar produtos")
+		alert("teste de tela 199 - teste de carregar produtos")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -986,7 +986,7 @@
 
 					$scope.getInfoTabela = async () => {
 						let codCli   = $scope.codigoCliente
-						let tabPreco = $scope.tabPreco
+						let tabPreco = $scope.codTpr
 						console.log(tabPreco)
 						console.log(codCli)
 						let result = await $scope.executaRequisicaoExterna(
