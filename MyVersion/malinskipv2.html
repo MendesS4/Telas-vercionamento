@@ -708,7 +708,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 228 - calculos valores produtos ")
+		alert("teste de tela 229 - calculos valores produtos ")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1829,6 +1829,7 @@
 								json[0].sincronizado = "ERRO: " + $rootScope.pedidoAprovado.erro;
 								json[0].pedido = 0;
 							} else {
+								console.log(sendToERP[0])
 								$rootScope.documentoERP = await $scope.gravaDocumentoERP(sendToERP[0]);
 
 								/*Atualiza numero do pedido*/
