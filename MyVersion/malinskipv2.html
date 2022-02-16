@@ -702,7 +702,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 197 - teste de carregar produtos")
+		alert("teste de tela 198 - teste de carregar produtos")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -986,7 +986,7 @@
 
 					$scope.getInfoTabela = async () => {
 						let codCli   = $scope.codigoCliente
-						let tabPreco = $scope.tabPreco.cod
+						let tabPreco = $scope.tabPreco
 						console.log(tabPreco)
 						console.log(codCli)
 						let result = await $scope.executaRequisicaoExterna(
@@ -1140,9 +1140,13 @@
 					}
 
 					$scope.onSelectCli = ($item, $model, $label) => {
-						
+
 						console.log($item.codTpr)
 						$rootScope.cliente	 	= $item;
+
+						$scope.codTpr = $item.codTpr
+
+						console.log($scope.codTpr)
 
 						$scope.codigoCliente 	= $rootScope.cliente.codExterno
 						$scope.tabPreco 	 	= {nome : $scope.cliente.desTpr}
@@ -1155,7 +1159,7 @@
 							$scope.tabPreco = ""
 						}
 
-						$scope.tabPreco = $item.codTpr
+						//$scope.tabPreco = $item.codTpr
 
 						$scope.condPagamento 	= {codExterno : $scope.cliente.codCpg, nome : $scope.cliente.desCpg}
 
@@ -1366,6 +1370,7 @@
 
 							$rootScope.produtos = [];
 							// inputs
+							$scope.codTpr = '';
 
 							$scope.tabPreco = '';
 							$scope.frmCliente = '';
@@ -1427,6 +1432,7 @@
 							$scope.tipoOrcamento = docs.tipoOrcamento;
 							$scope.filial = docs.filial;
 							$scope.tabPreco = docs.tabPreco;
+							$scope.codTpr = docs.codTpr
 							$scope.frmCliente = docs.frmCliente;
 							$scope.frete = docs.frete;
 							$scope.totalFrete = docs.totalFrete;
@@ -1695,6 +1701,8 @@
 							filial: $scope.filial,
 
 							tabPreco: $scope.tabPreco,
+
+							codTpr: $scope.codTpr,
 
 							cliente: $scope.frmCliente,
 							frete: $scope.frete,
