@@ -708,7 +708,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 212 - calculos valores produtos")
+		alert("teste de tela 213 - calculos valores produtos")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1015,6 +1015,7 @@
 
 
 							// CALCULAR O VALOR LIQUIDO / PESO / VOLUME
+							// valor liquido(FOB) = quantidade *  
 							// produto + frete
 							// QTD de produtos é definida no campo da tabela
 							// volume = o calculo é a multiplicacão da quantidade pedida informada * usu_qtdm3
@@ -1028,7 +1029,8 @@
 						}
 					}
 
-					$scope.calculos = function (numero){
+					$scope.calculos = function ($item, $model, $label){
+						console.log($item)
 						console.log("chegou nos calculos")
 						console.log(numero)
 					}
