@@ -708,7 +708,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 219 - calculos valores produtos")
+		alert("teste de tela 220 - calculos valores produtos")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -993,6 +993,7 @@
 					$scope.getInfoTabela = async () => {
 						let codCli   	= $scope.codigoCliente
 						let tabPreco 	= $scope.codTpr
+						let qtdm3 = 0
 						// para fazer o calculo
 						let precoFrete 	= $scope.totalFrete
 						console.log(tabPreco)
@@ -1020,7 +1021,7 @@
 							// QTD de produtos é definida no campo da tabela
 							// volume = o calculo é a multiplicacão da quantidade pedida informada * usu_qtdm3
 							// peso = é o resultado do volume * o valor de 790
-							let qtdm3 = newResult[i].qtdm3
+							qtdm3 = newResult[i].qtdm3
 							$scope.qtdM3 = qtdm3
 							console.log($scope.qtdM3)
 
@@ -1614,7 +1615,7 @@
 								// valor liquido é o calculo de QTD * VLR LQD
 								// peso é o calculo de QTD * 790
 								// volume usu_qtdm3 * QTD
-
+								qtdm3 			: resultTest.qtdm3,
 								seq				: resultTest.seq,
 								ocpo			: resultTest.ocpo,
 								itocpo			: resultTest.itocpo,
