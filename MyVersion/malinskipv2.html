@@ -439,8 +439,8 @@
 															<input
 															type="number"
 															class="inputNumberTable"
+															ng-change="calcularProdutos()"
 															ng-model="produto.qtdPedida"
-															uib-typeahead = "valor.qtd for valor in calculos($viewValue)"
 															typeahead-min-lenght = "1">
 														</div>
 													</td>
@@ -708,7 +708,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 223 - calculos valores produtos ")
+		alert("teste de tela 224 - calculos valores produtos ")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -989,6 +989,32 @@
 							});
 						});
 					};
+					//======
+
+
+					$scope.calcularProdutos = () =>{		
+						console.log("chegou no calcular produtos")
+						let valorTotalCalc 	= 0;
+						let valorTotalItem 	= 0;
+						let volumeM3 = 0;
+						let peso = 0
+						let descontoAcresc 	= 0;
+						let calcDescAcresc	= 0;
+
+						for(let i=0; i < $rootScope.produtos.length; i++){
+
+							if(($rootScope.produtos[i].quantidade != null && $rootScope.produtos[i].quantidade > 0) && $rootScope.produtos[i].qtdm3 != null){
+								volumeM3 	= parseFloat($rootScope.produtos[i].quantidade) * parseFloat($rootScope.produtos[i].qtdm3)
+							
+								/*Grava o valor total do volume */
+								$rootScope.produtos[i].volumeM3 = volumeM3;
+							} 
+
+
+						}
+						
+					}
+
 
 					$scope.getInfoTabela = async () => {
 						let codCli   	= $scope.codigoCliente
@@ -1033,8 +1059,10 @@
 					$scope.calculos = function (consulta){
 						console.log("chegou nos calculos")
 						console.log(consulta)
-						console.log($scope.qtdm3)
-						let qtdm3 = $scope.qtdm3
+
+						let qtdm3 = $rootScope.produtos.qtdm3
+						console.log(qtdm3)
+
 						let quantidade = consulta 
 						let volume = quantidade * qtdm3
 						console.log(volume)
@@ -1528,7 +1556,7 @@
 
 					};
 
-					$scope.calcularProdutos = () => {
+					/*$scope.calcularProdutos = () => {
 
 						let valorTotalCalc = 0;
 						let valorTotalItem = 0;
@@ -1540,14 +1568,14 @@
 							if (($rootScope.produtos[i].quantidade != null && $rootScope.produtos[i].quantidade > 0) && $rootScope.produtos[i].valorNegociado != null) {
 								valorTotalItem = parseFloat($rootScope.produtos[i].quantidade) * parseFloat($rootScope.produtos[i].valorNegociado)
 
-								/*Verifica se há desconto*/
+								/*Verifica se há desconto
 								if ($rootScope.produtos[i].descAcresc != undefined || $rootScope.produtos[i].descAcresc != null) {
 									descontoAcresc = parseFloat($rootScope.produtos[i].descAcresc) / 100;
 									calcDescAcresc = valorTotalItem * descontoAcresc;
 									valorTotalItem = $rootScope.produtos[i].opcaoDescAcresc === 'DESCONTO' ? valorTotalItem - calcDescAcresc : valorTotalItem + calcDescAcresc;
 								}
 
-								/*Grava o valor total do item*/
+								/*Grava o valor total do item
 								$rootScope.produtos[i].valorTotalItem = valorTotalItem;
 
 								valorTotalCalc += $rootScope.produtos[i].valorTotalItem
@@ -1564,7 +1592,9 @@
 							$('#valorTotalPedido').css({ 'font-weight': '600', 'color': '#787878', 'fontSize': '17px', }).fadeIn(300)
 						}, 350)
 
-					}
+					}	*/
+
+					
 
 					$scope.calculoValidacaoProdutoERP = async ($dados) => {
 
@@ -1615,6 +1645,7 @@
 								// peso é o calculo de QTD * 790
 								// volume usu_qtdm3 * QTD
 								qtdm3 			: resultTest.qtdm3,
+
 								seq				: resultTest.seq,
 								ocpo			: resultTest.ocpo,
 								itocpo			: resultTest.itocpo,
@@ -1628,7 +1659,9 @@
 								precoLiquido	: resultTest.precoLiquido,
 								vlrLiquido		: resultTest.vlrLiquido,
 								pesoKG			: resultTest.pesoKG,
+
 								volumeM3		: resultTest.volumeM3,
+
 								qtdEmb			: resultTest.usu_qtdemb,
 								descEmb			: resultTest.descEmb,
 								qtdSubEmb		: resultTest.qtdSubEmb,
