@@ -708,7 +708,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 227 - calculos valores produtos ")
+		alert("teste de tela 228 - calculos valores produtos ")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1350,7 +1350,7 @@
 
 						$rootScope.isLoading = true;
 
-						let result = await $scope.get(
+						let result = await $scope.executaRequisicaoExterna(
 							{
 								idCvtccnpj: dadosUserLogado.cId,
 								numreg: 752,
