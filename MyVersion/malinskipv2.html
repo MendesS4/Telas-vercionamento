@@ -702,7 +702,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 202")
+		alert("teste de tela 195 - teste de carregar prosutos")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -986,8 +986,8 @@
 
 					$scope.getInfoTabela = async () => {
 						let codCli   = $scope.codigoCliente
-						let codTabPreco = $scope.tabPreco
-						console.log(codtabPreco)
+						let tabPreco = $scope.tabPreco.cod
+						console.log(tabPreco)
 						console.log(codCli)
 						let result = await $scope.executaRequisicaoExterna(
 							{
@@ -998,11 +998,13 @@
 								pFilter		: 	{filtro:{filtroTab : tabPreco , filtroCli : codCli}}
 							},
 						);	
+
 						let newResult = result.resultado
 						for (let i = 0; i < newResult.length; i++) {
 							$scope.adicionarProduto(newResult[i])
 						}
 					}
+
 					$scope.getCondicaoPagamentoERP = async (consulta) => {
 						try {
 							let result = await $scope.executaRequisicaoExterna(
@@ -1104,7 +1106,6 @@
 							1000
 						);
 						if(result != undefined && result.resultado != undefined){
-							console.log(result.resultado)
 							return result.resultado.map((item)=>{
 								return item
 							})
@@ -1114,6 +1115,7 @@
 					}catch(err){
 						console.log("Ocorreu um erro na requisição: ", err);
 					};
+
 					}
 
 					$scope.getClientes = function (val) {
@@ -1138,14 +1140,9 @@
 					}
 
 					$scope.onSelectCli = ($item, $model, $label) => {
-						//let codTabPreco = ''
 						$rootScope.cliente	 	= $item;
 						$scope.codigoCliente 	= $rootScope.cliente.codExterno
-						//codTabPreco		= $item.codTpr
-						///console.log(codTabPreco)
-						//$scope.tabPreco 	 	= {nome : $scope.cliente.desTpr}
-
-						$scope.tabPreco = $item.codTpr
+						$scope.tabPreco 	 	= {nome : $scope.cliente.desTpr}
 						$scope.formaPagamento	= {codExterno : $scope.cliente.codFpg, nome : $scope.cliente.desFpg}
 						
 						if ($item.codFpg == "0"){
@@ -1206,7 +1203,7 @@
 								response = await $http.post(dadosUserLogado.cContextIntegracao + '/rest/Listas/executarRequisicaoExterna', $json);
 								done();/*Aguarda a requisição - Se estourar o tempo, gera erro.*/
 							}, timeLimit * 1000); // limite em segundos
-							//console.log(response)
+							console.log(response)
 							return response.data;
 						} catch (err) {
 							$scope.geraNotificacao("Não foi possível se comunicar com o ERP. " + err + "", 5000, 'danger')
