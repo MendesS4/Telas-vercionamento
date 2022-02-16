@@ -708,7 +708,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 217 - calculos valores produtos")
+		alert("teste de tela 218 - calculos valores produtos")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1032,6 +1032,7 @@
 					$scope.calculos = function (consulta){
 						console.log("chegou nos calculos")
 						console.log(consulta)
+						console.log($scope.qtdm3)
 						let qtdm3 = $scope.qtdm3
 						let quantidade = consulta 
 						let volume = quantidade * qtdm3
