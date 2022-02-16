@@ -708,7 +708,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 221 - calculos valores produtos ")
+		alert("teste de tela 222 - calculos valores produtos ")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -993,7 +993,6 @@
 					$scope.getInfoTabela = async () => {
 						let codCli   	= $scope.codigoCliente
 						let tabPreco 	= $scope.codTpr
-						let qtdm3 = 0
 						// para fazer o calculo
 						let precoFrete 	= $scope.totalFrete
 						console.log(tabPreco)
@@ -1025,6 +1024,8 @@
 							$scope.adicionarProduto(newResult[i])
 							console.log(newResult[i].precoLiquido)
 							console.log(newResult[i].qtdm3)
+
+							$scope.qtdm3 = newResult[i].qtdm3
 							
 						}
 					}
