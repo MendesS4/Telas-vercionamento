@@ -708,7 +708,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 229 - versoes finais ")
+		alert("teste de tela 230 - versoes finais ")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1358,8 +1358,10 @@
 								pCodCli: dadosUserLogado.rId,
 								pDocumento: { documento: $item }
 							},
-							20//limite tempo		
+							20//limite tempo
+									
 						);
+						console.log(result)
 
 						$rootScope.isLoading = false;
 
