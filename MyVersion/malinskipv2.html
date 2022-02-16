@@ -1001,9 +1001,9 @@
 								pCodCli		: 	dadosUserLogado.rId,
 								pFilter		: 	{filtro:{filtroTab : tabPreco , filtroCli : codCli}}
 							},
-							console.log(result)
+							
 						);	
-						
+						console.log(result)
 						let newResult = result.resultado
 						for (let i = 0; i < newResult.length; i++) {
 							$scope.adicionarProduto(newResult[i])
