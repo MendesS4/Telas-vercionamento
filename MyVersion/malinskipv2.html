@@ -708,7 +708,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 225 - calculos valores produtos ")
+		alert("teste de tela 223 - calculos valores produtos ")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1002,7 +1002,8 @@
 						let calcDescAcresc	= 0;
 
 						for(let i=0; i < $rootScope.produtos.length; i++){
-
+							console.log(qtdPedida)
+							console.log(qtdm3)
 							if(($rootScope.produtos[i].qtdPedida != null && $rootScope.produtos[i].qtdPedida > 0) && $rootScope.produtos[i].qtdm3 != null){
 								volumeM3 	= parseFloat($rootScope.produtos[i].qtdPedida) * parseFloat($rootScope.produtos[i].qtdm3)
 							
@@ -1060,12 +1061,6 @@
 						console.log("chegou nos calculos")
 						console.log(consulta)
 
-						let qtdm3 = $rootScope.produtos.qtdm3
-						console.log(qtdm3)
-
-						let quantidade = consulta 
-						let volume = quantidade * qtdm3
-						console.log(volume)
 					}
 
 					$scope.getCondicaoPagamentoERP = async (consulta) => {
