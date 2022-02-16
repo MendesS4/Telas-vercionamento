@@ -708,7 +708,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 216 - calculos valores produtos")
+		alert("teste de tela 217 - calculos valores produtos")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1020,8 +1020,8 @@
 							// QTD de produtos é definida no campo da tabela
 							// volume = o calculo é a multiplicacão da quantidade pedida informada * usu_qtdm3
 							// peso = é o resultado do volume * o valor de 790
-							QtdM3 = newResult[i].qtdm3
-							console.log(QtdM3)
+							$scope.qtdM3 = newResult[i].qtdm3
+							console.log($scope.qtdM3)
 
 							$scope.adicionarProduto(newResult[i])
 							console.log(newResult[i].precoLiquido)
@@ -1032,7 +1032,10 @@
 					$scope.calculos = function (consulta){
 						console.log("chegou nos calculos")
 						console.log(consulta)
-
+						let qtdm3 = $scope.qtdm3
+						let quantidade = consulta 
+						let volume = quantidade * qtdm3
+						console.log(volume)
 					}
 
 					$scope.getCondicaoPagamentoERP = async (consulta) => {
@@ -1402,6 +1405,8 @@
 							// inputs
 							$scope.codTpr = '';
 
+							$scope.qtdm3 = '';
+
 							$scope.tabPreco = '';
 							$scope.frmCliente = '';
 							
@@ -1463,6 +1468,7 @@
 							$scope.filial = docs.filial;
 							$scope.tabPreco = docs.tabPreco;
 							$scope.codTpr = docs.codTpr
+							$scope.qtdm3 = docs.qtdm3
 							$scope.frmCliente = docs.frmCliente;
 							$scope.frete = docs.frete;
 							$scope.totalFrete = docs.totalFrete;
@@ -1734,6 +1740,7 @@
 							tabPreco: $scope.tabPreco,
 
 							codTpr: $scope.codTpr,
+							qtdm3: $scope.qtdm3,
 
 							cliente: $scope.frmCliente,
 							frete: $scope.frete,
