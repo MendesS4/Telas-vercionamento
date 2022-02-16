@@ -706,7 +706,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 208 - teste de carregar produtos")
+		alert("teste de tela 209 - teste de carregar produtos")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -989,10 +989,12 @@
 					};
 
 					$scope.getInfoTabela = async () => {
-						let codCli   = $scope.codigoCliente
-						let tabPreco = $scope.codTpr
+						let codCli   	= $scope.codigoCliente
+						let tabPreco 	= $scope.codTpr
+						let precoFrete 	= $scope.precoFrete
 						console.log(tabPreco)
 						console.log(codCli)
+						console.log(precoFrete)
 						let result = await $scope.executaRequisicaoExterna(
 							{
 								idCvtccnpj	: 	dadosUserLogado.cId,
@@ -1005,8 +1007,15 @@
 						console.log(result)
 						let newResult = result.resultado
 						for (let i = 0; i < newResult.length; i++) {
+							// preco liquido é o FOB (newResult.precoLiquido)
+							// CIF é o valor de frete nos itens / valor de frete + valor de produtos(quantidade de itens)  
+							// QTD de produtos é definida no campo da tabela
+							// volume = o calculo é a multiplicacão da quantidade pedida informada * usu_qtdm3
+							// peso = é o resultado do volume * o valor de 790
 							$scope.adicionarProduto(newResult[i])
+
 							console.log(newResult[i].precoLiquido)
+							console.log(newResult[i].qtdm3)
 						}
 					}
 
