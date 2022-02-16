@@ -440,7 +440,7 @@
 															type="number"
 															class="inputNumberTable"
 															ng-model="produto.qtdPedida"
-															uib-typeahead = "calculos($viewValue)"
+															uib-typeahead = "valot.qtd for valor in ($viewValue)"
 															typeahead-min-lenght = "1">
 														</div>
 													</td>
@@ -708,7 +708,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 213 - calculos valores produtos")
+		alert("teste de tela 215 - calculos valores produtos")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1029,10 +1029,10 @@
 						}
 					}
 
-					$scope.calculos = function ($item, $model, $label){
-						console.log($item)
+					$scope.calculos = function (consulta){
 						console.log("chegou nos calculos")
-						console.log(numero)
+						console.log(consulta)
+
 					}
 
 					$scope.getCondicaoPagamentoERP = async (consulta) => {
