@@ -706,7 +706,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 207 - teste de carregar produtos")
+		alert("teste de tela 208 - teste de carregar produtos")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1004,9 +1004,9 @@
 						);	
 						console.log(result)
 						let newResult = result.resultado
-						console.log(newResult[1].precoLiquido)
 						for (let i = 0; i < newResult.length; i++) {
 							$scope.adicionarProduto(newResult[i])
+							console.log(newResult[i].precoLiquido)
 						}
 					}
 
