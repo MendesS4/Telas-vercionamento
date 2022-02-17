@@ -131,27 +131,35 @@
 					<div class="tab-content">
 						<div role="tabpanel" class="tab-pane active" id="docAdd-cliente-tab">
 							<div id="docAdd-cliente" class="form-row">
+
 								<div class="form-group col-md-12">
 									
-									<div class="col-sm-7 spacer">
-										<label for="nomeCliente">Nome Cliente</label>
+									<div class="col-sm-4 spacer">
+										<label for="projeto">Projeto</label>
 										<div class="input-group spacer">
-											<input type="text" ng-disabled="inputDesabilitado" ng-model="frmCliente" name="frmCliente" id="frmCliente" placeholder="Informe o cliente" uib-typeahead="(cliente.nome + ' (' + cliente.cpfCnpjFormat + ')') for cliente in getClientes($viewValue)" typeahead-loading="loadingCli" typeahead-no-results="noResultsCli"  typeahead-on-select="onSelectCli($item, $model, $label)" class="form-control" required="true" autocomplete="off" typeahead-min-length="0" >
-											<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaCliente()"><i class="glyphicon glyphicon-remove"></i></span>
+											<input type="text" ng-disabled="inputDesabilitado" ng-model="frmProjeto" name="frmProjeto" id="frmProjeto" placeholder="Informe o projeto" uib-typeahead="" typeahead-loading="loadingProjeto" typeahead-no-results="noResultsProjetos"  typeahead-on-select="" class="form-control" required="true" autocomplete="off" typeahead-min-length="0" >
+											<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaProjeto()"><i class="glyphicon glyphicon-remove"></i></span>
 										</div>
 									</div>
 									
-									<div class="col-sm-2 spacer">
-										<label for="codigoCliente">Cód. do Cliente</label>
+									<div class="col-sm-3 spacer">
+										<label for="ano">ANO</label>
 										<div class="spacer">
-											<input type="text" readonly class="form-control" ng-model="codigoCliente" id="codigoCliente">
+											<input type="text" readonly class="form-control" ng-model="ano" id="ano">
 										</div>
 									</div>
 
 									<div class="col-sm-3 spacer ">
-										<label for="vendedor">Vendedor</label>
+										<label for="trimestre">Trimestre</label>
 										<div class="spacer">
-											<input type="text" readonly class="form-control" ng-value="vendedor.nome" ng-model="vendedor" id="vendedor">
+											<input type="text" readonly class="form-control" ng-value ng-model="trimestre" id="trimestre">
+										</div>
+									</div>
+
+									<div class="col-sm-3 spacer ">
+										<label for="propFechamento">% Probabilidade de fechamento</label>
+										<div class="spacer">
+											<input type="text" readonly class="form-control" ng-value ng-model="propFechamento" id="propFechamento">
 										</div>
 									</div>
 								</div>
@@ -304,8 +312,8 @@
 				
 							<div class="form-row " >
 								<div class="form-group col-md-12">
-									<div class="col-sm-4 spacer">
-										<label for="codigoCliente">Projeto</label>
+									<div class="col-sm-2 spacer">
+										<label for="codigoCliente">Cód. do Cliente</label>
 										<input type="text" ng-disabled="inputDesabilitado" class="form-control spacer-input" ng-model="codigoCliente" id="codigoCliente">
 									</div>
 									<div class="col-sm-6 spacer">
@@ -665,7 +673,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	alert("Teste de tela 007 - campos")
+	alert("Teste de tela 010 - campos")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 
