@@ -708,7 +708,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 251 - versoes finais ")
+		alert("teste de tela 252 - versoes finais ")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1005,11 +1005,11 @@
 							//valor do BD
 							let qtdm3 = parseFloat($rootScope.produtos[i].qtdm3.replace(',','.'))
 							//preco liquido de produto
-							let precoLiquido = parseFloat($rootScope.produtos[i].usu_preliq)
+							let precoLiquido = parseFloat($rootScope.produtos[i].precoLiquido)
 
 							if((qtd != null && qtd > 0) && $rootScope.produtos[i].qtdm3 != null){
 
-								console.log($rootScope.produtos[i].usu_preliq)
+								console.log($rootScope.produtos[i].precoLiquido)
 
 								vlrLiquido = qtd * precoLiquido
 								$rootScope.produtos[i].vlrLiquido = vlrLiquido
