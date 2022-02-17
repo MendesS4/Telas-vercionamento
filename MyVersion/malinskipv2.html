@@ -437,6 +437,7 @@
 													<td>
 														<div>
 															<input
+															ng-change="calcularProdutos()"
 															type="number"
 															class="inputNumberTable"
 															ng-model="produto.qtdPedida"
@@ -707,7 +708,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 245 - versoes finais ")
+		alert("teste de tela 246 - versoes finais ")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -999,6 +1000,7 @@
 						let peso = 0
 
 						for(let i=0; i < $rootScope.produtos.length; i++){
+
 							let qtd = parseFloat($rootScope.produtos[i].qtdPedida)
 							console.log($rootScope.produtos[i].qtdm3)
 							let qtdm3 = parseFloat($rootScope.produtos[i].qtdm3.replace(',','.'))
