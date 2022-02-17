@@ -708,7 +708,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 252 - versoes finais ")
+		//alert("teste de tela 252 - versoes finais ")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1013,16 +1013,16 @@
 								console.log($rootScope.produtos[i].precoLiquido)
 
 								vlrLiquido = qtd * precoLiquido
-								$rootScope.produtos[i].vlrLiquido = vlrLiquido.toFixed('4');
+								$rootScope.produtos[i].vlrLiquido = vlrLiquido.toFixed('2');
 
 								// calculando volume
 								volumeM3 = qtd * qtdm3
-								$rootScope.produtos[i].volumeM3 = volumeM3.toFixed('4');
+								$rootScope.produtos[i].volumeM3 = volumeM3.toFixed('3');
 
 								//calculando peso 
 								peso = volumeM3 * 790
 								console.log(peso)
-								$rootScope.produtos[i].pesoKG = peso.toFixed('4')
+								$rootScope.produtos[i].pesoKG = peso.toFixed('3')
 
 
 							} 
