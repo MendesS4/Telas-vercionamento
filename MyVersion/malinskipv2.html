@@ -708,7 +708,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 249 - versoes finais ")
+		alert("teste de tela 251 - versoes finais ")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1000,20 +1000,30 @@
 
 						for(let i=0; i < $rootScope.produtos.length; i++){
 
+							//quantidade
 							let qtd = parseFloat($rootScope.produtos[i].qtdPedida)
+							//valor do BD
 							let qtdm3 = parseFloat($rootScope.produtos[i].qtdm3.replace(',','.'))
+							//preco liquido de produto
 							let precoLiquido = parseFloat($rootScope.produtos[i].usu_preliq)
 
 							if((qtd != null && qtd > 0) && $rootScope.produtos[i].qtdm3 != null){
 
 								console.log($rootScope.produtos[i].usu_preliq)
+
 								vlrLiquido = qtd * precoLiquido
-								console.log(vlrLiquido)
 								$rootScope.produtos[i].vlrLiquido = vlrLiquido
 
+								// calculando volume
 								volumeM3 = qtd * qtdm3
-								/*Grava o valor total do volume */
 								$rootScope.produtos[i].volumeM3 = volumeM3.toFixed('4');
+
+								//calculando peso 
+								peso = volumeM3 * 790
+								console.log(peso)
+								$rootScope.produtos[i].pesoKG = peso.toFixed('4')
+
+
 							} 
 
 							if ((qtd != null && qtd > 0) && $rootScope.produtos[i].usu_preliq != null){
