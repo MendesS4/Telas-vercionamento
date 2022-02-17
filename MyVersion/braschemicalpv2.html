@@ -134,9 +134,17 @@
 								<div class="form-group col-md-12">
 									
 									<div class="col-sm-7 spacer">
-										<label for="nomeCliente">Nome Cliente</label>
+										<label for="Projeto">Projeto</label>
 										<div class="input-group spacer">
-											<input type="text" ng-disabled="inputDesabilitado" ng-model="frmCliente" name="frmCliente" id="frmCliente" placeholder="Informe o cliente" uib-typeahead="(cliente.nome + ' (' + cliente.cpfCnpjFormat + ')') for cliente in getClientes($viewValue)" typeahead-loading="loadingCli" typeahead-no-results="noResultsCli"  typeahead-on-select="onSelectCli($item, $model, $label)" class="form-control" required="true" autocomplete="off" typeahead-min-length="0" >
+											<input type="text" ng-disabled="inputDesabilitado"
+											ng-model="frmProjeto"
+											name="frmProjeto" 
+											id="frmProjeto" 
+											placeholder="Informe o Projeto" 
+											class="form-control" 
+											required="true" 
+											autocomplete="off" 
+											typeahead-min-length="0">
 											<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaCliente()"><i class="glyphicon glyphicon-remove"></i></span>
 										</div>
 									</div>
@@ -665,7 +673,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	alert("Teste de tela 005 - campos ")
+	alert("Teste de tela 007 - campos ")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 
