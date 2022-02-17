@@ -993,7 +993,7 @@
 
 
 					$scope.calcularProdutos = () =>{		
-						console.log("chegou no calcular produtos")
+						
 						let volumeM3 = 0;
 						let peso = 0
 						let vlrLiquido = 0
@@ -1010,7 +1010,6 @@
 
 							if((qtd != null && qtd > 0) && $rootScope.produtos[i].qtdm3 != null){
 
-								console.log($rootScope.produtos[i].precoLiquido)
 
 								vlrLiquido = qtd * precoLiquido
 								$rootScope.produtos[i].vlrLiquido = vlrLiquido.toFixed('2');
@@ -1021,19 +1020,10 @@
 
 								//calculando peso 
 								peso = volumeM3 * 790
-								console.log(peso)
 								$rootScope.produtos[i].pesoKG = peso.toFixed('3')
 
 
 							} 
-
-							if ((qtd != null && qtd > 0) && $rootScope.produtos[i].usu_preliq != null){
-								console.log("chegou no segundo if ")
-
-
-								//$rootScope.produtos[i].vlrLiquido = vlrLiquido.toFixed('4');
-								// quantidade * preco 
-							}
 
 						}
 						
@@ -1045,9 +1035,7 @@
 						let tabPreco 	= $scope.codTpr
 						// para fazer o calculo
 						let precoFrete 	= $scope.totalFrete
-						console.log(tabPreco)
-						console.log(codCli)
-						console.log(precoFrete)
+
 						let result = await $scope.executaRequisicaoExterna(
 							{
 								idCvtccnpj	: 	dadosUserLogado.cId,
@@ -1057,7 +1045,6 @@
 								pFilter		: 	{filtro:{filtroTab : tabPreco , filtroCli : codCli}}
 							},
 						);	
-						console.log(result)
 						let newResult = result.resultado
 						for (let i = 0; i < newResult.length; i++) {
 							// preco liquido é o FOB (newResult.precoLiquido)
@@ -1072,19 +1059,12 @@
 							// peso = é o resultado do volume * o valor de 790
 
 							$scope.adicionarProduto(newResult[i])
-							console.log(newResult[i].precoLiquido)
-							console.log(newResult[i].qtdm3)
 
 							$scope.qtdm3 = newResult[i].qtdm3
 							
 						}
 					}
 
-					$scope.calculos = function (consulta){
-						console.log("chegou nos calculos")
-						console.log(consulta)
-
-					}
 
 					$scope.getCondicaoPagamentoERP = async (consulta) => {
 						try {
@@ -1149,7 +1129,6 @@
 							if (result != undefined && result.resultado != undefined) {
 								if(opcao && opcao != undefined){
 									$scope.formaPagamento = result.resultado[0]
-									console.log($scope.formaPagamento)
 								}else{
 									return result.resultado.map((item)=>{
 										return item
@@ -1222,12 +1201,11 @@
 
 					$scope.onSelectCli = ($item, $model, $label) => {
 
-						console.log($item.codTpr)
+						
 						$rootScope.cliente	 	= $item;
 
 						$scope.codTpr = $item.codTpr
 
-						console.log($scope.codTpr)
 
 						$scope.codigoCliente 	= $rootScope.cliente.codExterno
 						$scope.tabPreco 	 	= {nome : $scope.cliente.desTpr}
@@ -1382,7 +1360,6 @@
 							20//limite tempo
 									
 						);
-						console.log(result)
 
 						$rootScope.isLoading = false;
 
@@ -1851,7 +1828,6 @@
 								json[0].sincronizado = "ERRO: " + $rootScope.pedidoAprovado.erro;
 								json[0].pedido = 0;
 							} else {
-								console.log(sendToERP[0])
 								$rootScope.documentoERP = await $scope.gravaDocumentoERP(sendToERP[0]);
 
 								/*Atualiza numero do pedido*/
