@@ -439,7 +439,6 @@
 															<input
 															type="number"
 															class="inputNumberTable"
-															uib-typeahead = "valor.qtd for valor in calcularProdutos($viewValue)"
 															ng-model="produto.qtdPedida"
 															typeahead-min-lenght = "1">
 														</div>
@@ -708,7 +707,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 244 - versoes finais ")
+		alert("teste de tela 245 - versoes finais ")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -992,18 +991,15 @@
 					//======
 
 
-					$scope.calcularProdutos = (consulta) =>{		
+					$scope.calcularProdutos = () =>{		
 						console.log("chegou no calcular produtos")
-						console.log(consulta)
-						let qtd = parseFloat(consulta) 
-						
-						console.log(qtd)
 						let valorTotalCalc 	= 0;
 						let valorTotalItem 	= 0;
 						let volumeM3 = 0;
 						let peso = 0
 
 						for(let i=0; i < $rootScope.produtos.length; i++){
+							let qtd = parseFloat($rootScope.produtos[i].qtdPedida)
 							console.log($rootScope.produtos[i].qtdm3)
 							let qtdm3 = parseFloat($rootScope.produtos[i].qtdm3.replace(',','.'))
 							let precoLiquido = parseFloat($rootScope.produtos[i].usu_preliq)
