@@ -708,7 +708,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 246 - versoes finais ")
+		alert("teste de tela 247 - versoes finais ")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -994,36 +994,27 @@
 
 					$scope.calcularProdutos = () =>{		
 						console.log("chegou no calcular produtos")
-						let valorTotalCalc 	= 0;
-						let valorTotalItem 	= 0;
 						let volumeM3 = 0;
 						let peso = 0
+						let vlrLiquido = 0
 
 						for(let i=0; i < $rootScope.produtos.length; i++){
 
 							let qtd = parseFloat($rootScope.produtos[i].qtdPedida)
-							console.log($rootScope.produtos[i].qtdm3)
 							let qtdm3 = parseFloat($rootScope.produtos[i].qtdm3.replace(',','.'))
 							let precoLiquido = parseFloat($rootScope.produtos[i].usu_preliq)
-							console.log(precoLiquido)
-							console.log(typeof(qtdm3))
-							console.log(typeof($rootScope.produtos[i].qtdm3))
 
 							if((qtd != null && qtd > 0) && $rootScope.produtos[i].qtdm3 != null){
-								console.log(qtd)
-								console.log(volumeM3)
-								console.log(qtdm3)
-								console.log(typeof(qtd))
 								volumeM3 = qtd * qtdm3
-								console.log(volumeM3)
 								/*Grava o valor total do volume */
 								$rootScope.produtos[i].volumeM3 = volumeM3.toFixed('4');
-								console.log(volumeM3)
 							} 
 
 							if ((qtd != null && qtd > 0) && $rootScope.produtos[i].usu_preliq != null){
 								console.log("chegou no segundo if ")
-								console.log()
+								console.log($rootScope.produtos[i].usu_preliq)
+								valrLiquido = qtd * precoLiquido
+
 								//$rootScope.produtos[i].vlrLiquido = vlrLiquido.toFixed('4');
 								// quantidade * preco 
 							}
