@@ -182,7 +182,33 @@
 										</div>
 									</div>
 
+
+									<div class="col-sm-12 spacer">
+
+										<div class="col-sm-3 spacer">
+											<label for="codigoCliente">(kg) Local Ano</label>
+											<div class="spacer">
+												<input type="text" readonly class="form-control" ng-model="codigoCliente" id="codigoCliente">
+											</div>
+										</div>
+	
+										<div class="col-sm-3 spacer ">
+											<label for="vendedor">(kg) Indet Ano </label>
+											<div class="spacer">
+												<input type="text" readonly class="form-control" ng-value="vendedor.nome" ng-model="vendedor" id="vendedor">
+											</div>
+										</div>
+
+										<div class="col-sm-3 spacer ">
+											<label for="vendedor">Mês de inicio</label>
+											<div class="spacer">
+												<input type="text" readonly class="form-control" ng-value="vendedor.nome" ng-model="vendedor" id="vendedor">
+											</div>
+										</div>
 									</div>
+
+
+								</div>
 								
 								<div class="form-group col-md-12">
 									
@@ -693,7 +719,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	alert("Teste de tela 009 - campos ")
+	alert("Teste de tela 010 - campos ")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 
@@ -2384,6 +2410,7 @@ angular
 
 	.spacer{
 		margin-top:20px;
+		padding-left: 1px;
 	}
 
 	.spacer-input{
