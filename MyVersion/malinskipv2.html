@@ -1013,7 +1013,7 @@
 								console.log($rootScope.produtos[i].precoLiquido)
 
 								vlrLiquido = qtd * precoLiquido
-								$rootScope.produtos[i].vlrLiquido = vlrLiquido
+								$rootScope.produtos[i].vlrLiquido = vlrLiquido.toFixed('4');
 
 								// calculando volume
 								volumeM3 = qtd * qtdm3
@@ -1823,7 +1823,7 @@
 							
 							sincronizado: $scope.sincronizado == "DOCUMENTO_SINCRONIZADO" ? "DOCUMENTO_SINCRONIZADO" : "DOCUMENTO_NAO_SINCRONIZADO",
 
-							representante: { rId: dadosUserLogado.rId, nome: dadosUserLogado.rNome },
+							representante: { rId: dadosUserLogado.rCod, nome: dadosUserLogado.rNome },
 
 							datEmiERP: $scope.datEmiERP,
 
