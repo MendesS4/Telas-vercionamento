@@ -696,7 +696,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 258 - versoes finais ")
+		alert("teste de tela 259 - versoes finais ")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -844,6 +844,12 @@
 					//limpa campo
 					$scope.limpaTipoFrete = function ($item, $model, $label){
 						$scope.frete = ""
+						$scope.tabelaFrete = ""
+						$scope.totalFrete = ""
+
+						//desabilita o campo de tabela de frete
+						$scope.habilitado = false
+
 						//volta o foco para o input
 						var tabTipoFrete = angular.element(document.querySelector('#tabTipoFrete'));
 						$timeout(function () {
