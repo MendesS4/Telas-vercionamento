@@ -696,7 +696,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 256 - versoes finais ")
+		alert("teste de tela 257 - versoes finais ")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -886,6 +886,10 @@
 						}, 200);
 					};
 
+					$scope.onSelectTabFrete = ($item, $model, $label) => {
+						$scope.totalFrete = $item.valor
+					}
+
 					//controla inputs com base no tipo de frete
 					$scope.inputsControlFrete = function ($item, $model, $label){
 						switch ($item.desc) {
@@ -938,49 +942,24 @@
 							console.log("ocorreu um erro na requisição ", err);
 						};
 					}
-
+					//lista
 					$scope.onSelectTabPreco = function ($item, $model, $label) {
 						$scope.tabPreco = $item;
 					};
-
+					//limpa o campo
 					$scope.limpaTabPreco = function () {
 						$scope.tabPreco = "";
+						//volta o foco para input
 						var tabPrecLIMPA = angular.element(document.querySelector('#frmTabelaPreco'));
 						$timeout(function () {
 							tabPrecLIMPA.focus();
 						}, 200);
 					}
 
-					$scope.inputsControlPreco = function ($item, $model, $label){
-						let valorCliente = $scope.frmCliente
-						let inputTabPreco = $scope.tabPreco
 
-						if (valorCliente == ''){
-							inputTabPreco = ""
-						}else{}
-					}
-
-					$scope.inputsControlCliente = function ($item, $model, $label){
-
-					}
-
-					$scope.getCondicoesP = function (val) {
-						return $http.post('/clicVendas/rest/Listas/condicaoPagamento', {
-							params: {
-								filtro: val || '',
-								idCvTccnpj: dadosUserLogado.cId
-							}
-						}).then(function (response) {
-							return response.data.map(function (item) {
-								return item;
-							});
-						});
-					};
-					//======
-
-
+					// faz o calculo na tabela de produtos para calculo de peso/volume/valorLiquido
 					$scope.calcularProdutos = () =>{		
-						
+		
 						let volumeM3 = 0;
 						let peso = 0
 						let vlrLiquido = 0
@@ -997,7 +976,7 @@
 
 							if((qtd != null && qtd > 0) && $rootScope.produtos[i].qtdm3 != null){
 
-
+								//calculando valor liquido
 								vlrLiquido = qtd * precoLiquido
 								$rootScope.produtos[i].vlrLiquido = vlrLiquido.toFixed('2');
 
@@ -1016,7 +995,7 @@
 						
 					}
 
-
+					//carrega os produtos na tabela
 					$scope.getInfoTabela = async () => {
 						let codCli   	= $scope.codigoCliente
 						let tabPreco 	= $scope.codTpr
@@ -1034,25 +1013,12 @@
 						);	
 						let newResult = result.resultado
 						for (let i = 0; i < newResult.length; i++) {
-							// preco liquido é o FOB (newResult.precoLiquido)
-							// CIF é o valor de frete nos itens / valor de frete + valor de produtos(quantidade de itens)  
-
-
-							// CALCULAR O VALOR LIQUIDO / PESO / VOLUME
-							// valor liquido(FOB) = quantidade *  
-							// produto + frete
-							// QTD de produtos é definida no campo da tabela
-							// volume = o calculo é a multiplicacão da quantidade pedida informada * usu_qtdm3
-							// peso = é o resultado do volume * o valor de 790
-
 							$scope.adicionarProduto(newResult[i])
-
 							$scope.qtdm3 = newResult[i].qtdm3
-							
 						}
 					}
 
-
+					//requisicao para condicao de pagamento
 					$scope.getCondicaoPagamentoERP = async (consulta) => {
 						try {
 							let result = await $scope.executaRequisicaoExterna(
@@ -1084,23 +1050,7 @@
 						$scope.condPagamento = "";
 					}
 
-					$scope.getFormasP = function (val) {
-						if ($scope.formaPagamento != null) {
-							return $http.post('/clicVendas/rest/Listas/formaPagamento/' + $scope.formaPagamento.id, {
-								params: {
-									filtro: val || '',
-									idCvTccnpj: dadosUserLogado.cId
-								}
-							}).then(function (response) {
-								return response.data.map(function (item) {
-									return item;
-								});
-							});
-						} else {
-							return "";
-						}
-					};
-
+					//requisicao para forma de pagamento
 					$scope.getFormasPagamentoERP = async (consulta) => {
 						try {
 							let result = await $scope.executaRequisicaoExterna(
@@ -1138,7 +1088,7 @@
 						$scope.formaPagamento = "";
 					}
 
-					//clientes
+					//requisicao para busca de clientes
 					$scope.getClientesERP = async (consulta) => {
 					try{
 						let result = await $scope.executaRequisicaoExterna(
@@ -1150,7 +1100,6 @@
 								pCodRep		: dadosUserLogado.rCod,
 								pFilter    : {filtro:{filtroCliente : consulta}},
 							},
-							1000
 						);
 						if(result != undefined && result.resultado != undefined){
 							return result.resultado.map((item)=>{
@@ -1165,63 +1114,36 @@
 
 					}
 
-					$scope.getClientes = function (val) {
-						var idRep = dadosUserLogado.rId;
-						return $http.post('/clicVendas/rest/Listas/cliente', {
-							params: {
-								filtro: val,
-								rId: idRep
-							}
-						}).then(function (response) {
-							return response.data.map(function (item) {
-								return item;
-							});
-						});
-						
-					};
-
-
-
-					$scope.onSelectTabFrete = ($item, $model, $label) => {
-						$scope.totalFrete = $item.valor
-					}
-
+					//funcao para atribuir valores vindo da requisição de clientes 
 					$scope.onSelectCli = ($item, $model, $label) => {
-
-						
 						$rootScope.cliente	 	= $item;
-
 						$scope.codTpr = $item.codTpr
-
-
 						$scope.codigoCliente 	= $rootScope.cliente.codExterno
 						$scope.tabPreco 	 	= {nome : $scope.cliente.desTpr}
 						$scope.formaPagamento	= {codExterno : $scope.cliente.codFpg, nome : $scope.cliente.desFpg}
 						
+						//validacao de valores vindos
 						if ($item.codFpg == "0"){
 							$scope.formaPagamento = ""
 						}
 						if($item.codTpr == " "){
 							$scope.tabPreco = ""
 						}
-
-						//$scope.tabPreco = $item.codTpr
-
 						$scope.condPagamento 	= {codExterno : $scope.cliente.codCpg, nome : $scope.cliente.desCpg}
 
 					};
 
+					//limpa campo
 					$scope.limpaCliente = () => {
 						$scope.frmCliente = '';
 						$scope.codigoCliente = '';
-						var cCliente = angular.element(document.querySelector('#frmCliente'));
 
+						//volta o foco
+						var cCliente = angular.element(document.querySelector('#frmCliente'));
 						$timeout(function () {
 							cCliente.focus();
 						}, 200);
 					};
-
-
 
 					$scope.getFilScinronizacao = () => {
 						$scope.listaFilSincronizacao = [
@@ -1267,11 +1189,8 @@
 					};
 
 					$scope.consultaPedidosERP = async () => {
-
 						// FILTRO PARA QTD DE PRODUTOS
 						let pedidosGravadosERP = $rootScope.dadosGrid.filter(doc => doc && Number(doc.jsonDocs[0].pedido) > 0);
-						//==============================
-
 						let consulta = [];
 						/*Ira consultar com base apenas no numero do pedido*/
 						for (i = 0; i < pedidosGravadosERP.length; i++) {
@@ -1385,27 +1304,18 @@
 						};
 					}
 
-					$scope.limpaProduto = (acao) => {
-						$scope.itemProd = '';
-
-						var produto = angular.element(document.querySelector('#itemProd'));
-
-						$timeout(function () {
-							produto.focus();
-						}, 200);
-
-					};
-
 					$scope.abreFormulario = ($dados) => {
 
+						//data do dia / data de emissao 
 						var today = new Date();
 						var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 						let newDate = today.setDate(today.getDate() + 30);
+
+						//data fotura +30 dias data de vencimento
 						var future = new Date();
 						future.setDate(future.getDate()+30)
 						var dataEmissao = future.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 
-						//var novaData = newDate.toLocaleDateString('pt-br')
 						$scope.habilitarFrete = false
 
 						if ($dados == undefined) {
