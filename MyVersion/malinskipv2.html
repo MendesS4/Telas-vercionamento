@@ -312,12 +312,14 @@
 								<div class="col-sm-6 spacer ">
 									<label for="condPagamento">Condição de pagamento</label>
 									<input type="text" required class="form-control" ng-model="condPagamento"
+										required
 										uib-typeahead="teste.nome for teste in getCondicaoPagamentoERP($viewValue)"
 										typeahead-min-lenght="2">
 								</div>
 								<div class="col-sm-6 spacer ">
 									<label for="formaPagamento">Forma de pagamento</label>
 									<input type="text" required class="form-control" ng-model="formaPagamento"
+										required
 										uib-typeahead="teste.codExterno + ' - ' + teste.nome for teste in getFormasPagamentoERP($viewValue)"
 										typeahead-min-lenght="3">
 								</div>
@@ -696,7 +698,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 259 - versoes finais ")
+		alert("teste de tela 260 - versoes finais ")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
