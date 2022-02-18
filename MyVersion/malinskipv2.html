@@ -254,91 +254,77 @@
 										<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaTabPreco()"><i class="glyphicon glyphicon-remove"></i></span>
 									</div>
 								</div>
-
 								<div class="col-sm-4 spacer ">
 									<label for="frete">Tipo de frete</label>
 									<div class="input-button">
 										<input 
-										id="frmFrete"
+										id					 = "frmFrete"
 										autocomplete		 = "off"
-										type="text" 
-										class="form-control" 
-										ng-model="frete"
-										uib-typeahead="teste.tipo + ' - ' + teste.desc for teste in getTipoFrete($viewValue)"
-										typeahead-min-lenght="0"
-										typeahead-on-select="inputsControlFrete($item, $model, $label)">
-										<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaTipoFrete()"><i class="glyphicon glyphicon-remove"></i></span>	
+										type				 = "text" 
+										class				 = "form-control" 
+										ng-model             = "frete"
+										uib-typeahead        = "teste.tipo + ' - ' + teste.desc for teste in getTipoFrete($viewValue)"
+										typeahead-min-lenght = "0"
+										typeahead-on-select	 = "inputsControlFrete($item, $model, $label)">
+										<span class	="input-group-addon" style="cursor: pointer;" ng-click="limpaTipoFrete()"><i class="glyphicon glyphicon-remove"></i></span>	
 									</div>
 								</div>
-
 								<div class="col-sm-4 spacer ">
 									<label for="tabelaFrete">Tabela de frete</label>
 									<div class = "input-button">
 										<input 
-										required
-										id = "tabTabelaFrete"
+										id 					 = "tabTabelaFrete"
 										autocomplete		 = "off"
-										type="text" 
-										class="form-control" 
-										ng-model="tabelaFrete" 
-										ng-disabled="!habilitado"
-										uib-typeahead = "frete.nom for frete in getTabelaFrete($viewValue)"
+										type				 = "text" 
+										class                = "form-control" 
+										ng-model             = "tabelaFrete" 
+										ng-disabled          = "!habilitado"
+										uib-typeahead        = "frete.nom for frete in getTabelaFrete($viewValue)"
 										typeahead-on-select  = "onSelectTabFrete($item, $model, $label)"
-										typeahead-min-lenght="0">
+										typeahead-min-lenght = "0">
 										<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaTabelaFrete()"><i class="glyphicon glyphicon-remove"></i></span>
 									</div>
 								</div>
-
 								<div class="col-sm-4 spacer ">
 									<label for="totalFrete">Total de frete</label>
 									<input type="text" class="form-control" ng-model="totalFrete" readonly>
 								</div>
-
-								<!--O valor desse campo é a data do sistema que esta rodando-->
 								<div class="col-sm-4 spacer ">
 									<label for="emissaoOrcamento">Emissão do orçamento</label>
 									<input type="date" class="form-control" ng-model="emissaoOrcamento" min="2022-01-01">
 								</div>
-
 								<div class="col-sm-4 spacer ">
 									<label for="validadeOrcamento">Validade do orçamento</label>
 									<input type="date" class="form-control" ng-model="validadeOrcamento" min="2022-01-01">
 								</div>
-
 								<div class="col-sm-4 spacer ">
 									<label for="prevEntregCli">Previsão de entrega do cliente</label>
 									<input type="date" class="form-control" ng-model="prevEntregCli" min="2022-01-01">
 								</div>
-
 								<div class="col-sm-6 spacer ">
 									<label for="situacao">Situação</label>
 									<input type="text" class="form-control" ng-model="situacao" readonly >
 								</div>
-
 								<div class="col-sm-6 spacer ">
 									<label for="representante">Representante</label>
 									<input type="text" class="form-control" ng-model="representante" readonly>
 								</div>
-
 								<div class="col-sm-6 spacer ">
 									<label for="condPagamento">Condição de pagamento</label>
-									<input type="text" class="form-control" ng-model="condPagamento"
+									<input type="text" required class="form-control" ng-model="condPagamento"
 										uib-typeahead="teste.nome for teste in getCondicaoPagamentoERP($viewValue)"
 										typeahead-min-lenght="2">
 								</div>
-
 								<div class="col-sm-6 spacer ">
 									<label for="formaPagamento">Forma de pagamento</label>
-									<input type="text" class="form-control" ng-model="formaPagamento"
+									<input type="text" required class="form-control" ng-model="formaPagamento"
 										uib-typeahead="teste.codExterno + ' - ' + teste.nome for teste in getFormasPagamentoERP($viewValue)"
 										typeahead-min-lenght="3">
 								</div>
-
 								<div class="col-sm-6 spacer ">
 									<label for="numPedClienteOCPO">Numero pedido do cliente (OC/PO)</label>
 									<input type="text" class="form-control" ng-model="numPedClienteOCPO">
 								</div>
-
 								<div class="col-sm-6 spacer ">
 									<label for="observação">Observação</label>
 									<textarea class="form-control spacer-input ng-pristine ng-valid ng-empty ng-touched"
@@ -710,7 +696,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 255 - versoes finais ")
+		alert("teste de tela 256 - versoes finais ")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -721,9 +707,7 @@
 					$scope.exibeFormulario = false;
 					$scope.exibeListaDocumentos = true;
 					$scope.exibeHistoricos = false;
-
 					$rootScope.isLoading = false;
-
 					$rootScope.subdomain = dadosUserLogado.cSubdominio;
 
 					/* Inicializa filtros */
@@ -791,8 +775,6 @@
 						}
 					};
 
-
-
 					$scope.abreHistoricos = (acao) => {
 						$scope.exibeHistoricos = true;
 					};
@@ -832,6 +814,7 @@
 						$scope.endEntrega = {};
 					};
 
+					//requisicao para tipo de frete
 					$scope.getTipoFrete = async (consulta) => {
 						try{
 							let result = await $scope.executaRequisicaoExterna(
@@ -854,28 +837,21 @@
 							console.log("ocorreu em erro na requisição ", err);
 						};
 					}
+					//lista
 					$scope.onSelectTipoFrete = function ($item, $model, $label){
 						$scope.frete = $item;
 					};
+					//limpa campo
 					$scope.limpaTipoFrete = function ($item, $model, $label){
 						$scope.frete = ""
-
+						//volta o foco para o input
 						var tabTipoFrete = angular.element(document.querySelector('#tabTipoFrete'));
 						$timeout(function () {
 							tabTipoFrete.focus();
 						}, 200);
 					};
 
-
-					$scope.limpaTabelaFrete = function ($item, $model, $label){
-						$scope.tabelaFrete = ""
-						var tabFrete = angular.element(document.querySelector('#tabTabelaFrete'));
-						$timeout(function () {
-							tabFrete.focus();
-						}, 200);
-					};
-
-
+					//requisicao para tabela de frete
 					$scope.getTabelaFrete = async (consulta) => {
 						try{
 							let result = await $scope.executaRequisicaoExterna(
@@ -900,19 +876,18 @@
 						};
 					}
 
+					//limpa o campo
+					$scope.limpaTabelaFrete = function ($item, $model, $label){
+						$scope.tabelaFrete = ""
+						//volta o foco para o input
+						var tabFrete = angular.element(document.querySelector('#tabTabelaFrete'));
+						$timeout(function () {
+							tabFrete.focus();
+						}, 200);
+					};
 
-					$scope.inputsControlPreco = function ($item, $model, $label){
-						let valorCliente = $scope.frmCliente
-						let inputTabPreco = $scope.tabPreco
-
-						if (valorCliente == ''){
-							inputTabPreco = ""
-						}else{}
-					}
-
-
+					//controla inputs com base no tipo de frete
 					$scope.inputsControlFrete = function ($item, $model, $label){
-
 						switch ($item.desc) {
 							case 'Sem Frete':
 							    $scope.habilitado = false
@@ -933,6 +908,7 @@
 
 					}
 
+					// requisicao para tabela de preco
 					$scope.getTabelaPreco = async (consulta, opcao) =>	{
 						let codCli = $scope.codigoCliente
 						let tabPreco = $scope.tabPreco
@@ -973,6 +949,15 @@
 						$timeout(function () {
 							tabPrecLIMPA.focus();
 						}, 200);
+					}
+
+					$scope.inputsControlPreco = function ($item, $model, $label){
+						let valorCliente = $scope.frmCliente
+						let inputTabPreco = $scope.tabPreco
+
+						if (valorCliente == ''){
+							inputTabPreco = ""
+						}else{}
 					}
 
 					$scope.inputsControlCliente = function ($item, $model, $label){
