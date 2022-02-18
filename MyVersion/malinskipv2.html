@@ -1488,6 +1488,8 @@
 							$rootScope.hashDoc = docs.docCtrl;
 							$rootScope.idDocumento = $dados.id;
 
+							//dois clientes
+
 							$rootScope.cliente = docs.cliente;
 
 							$scope.tipoOrcamento = docs.tipoOrcamento;
@@ -1515,9 +1517,11 @@
 							$scope.observacao = docs.observacao;
 							$scope.numPedClienteOCPO = docs.numPedClienteOCPO;
 
+							//dois clientes
 							$scope.frmCliente = docs.cliente;
+
 							$scope.codigoCliente = docs.cliente.codExterno;
-							$scope.nomeCliente = docs.cliente.nome
+							$scope.nomeCliente = docs.cliente.nome;
 
 							$scope.representante = docs.representante.nome;
 
@@ -1637,11 +1641,7 @@
 						$rootScope.produtos.unshift(
 							{
 
-								// valor liquido é o calculo de QTD * VLR LQD
-								// peso é o calculo de QTD * 790
-								// volume usu_qtdm3 * QTD
 								qtdm3 			: resultTest.qtdm3,
-
 								seq				: resultTest.seq,
 								ocpo			: resultTest.ocpo,
 								itocpo			: resultTest.itocpo,
@@ -1655,9 +1655,7 @@
 								precoLiquido	: resultTest.precoLiquido,
 								vlrLiquido		: resultTest.vlrLiquido,
 								pesoKG			: resultTest.pesoKG,
-
 								volumeM3		: resultTest.volumeM3,
-
 								qtdEmb			: resultTest.usu_qtdemb,
 								descEmb			: resultTest.descEmb,
 								qtdSubEmb		: resultTest.qtdSubEmb,
@@ -1763,16 +1761,12 @@
 							/*Historico*/
 							obsOportunidade: $scope.obsOportunidade,
 							histOportunidade: $scope.histOportunidade,
-
 							// infos dos inputs da tela 
 							tipoOrcamento: $scope.tipoOrcamento,
 							filial: $scope.filial,
-
 							tabPreco: $scope.tabPreco,
-
 							codTpr: $scope.codTpr,
 							qtdm3: $scope.qtdm3,
-
 							cliente: $scope.frmCliente,
 							frete: $scope.frete,
 							totalFrete: $scope.totalFrete,

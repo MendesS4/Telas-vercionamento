@@ -132,209 +132,28 @@
 						<div role="tabpanel" class="tab-pane active" id="docAdd-cliente-tab">
 							<div id="docAdd-cliente" class="form-row">
 								<div class="form-group col-md-12">
-
-									<div class="col-sm-12 spacer">
-										<p>
-											Atualização status da amostra
-										</p>
-										<div class="col-sm-4 spacer">
-											<label for="situacaoAmostra">Situação da Amostra</label>
-											<div class="spacer">
-												<input type="text"
-												 class="form-control" 
-												 ng-model="situacaoAmostra"
-												 id="situacaoAmostra"
-												 placeholder="Informe a situação da amostra"
-												 autocomplete="off">
-											</div>
-										</div>
-										<div class="col-sm-4 spacer">
-											<label for="justificativa">Justificativa</label>
-											<div class="spacer">
-												<input type="text"
-												class="form-control" 
-												ng-model="justificativa" 
-												id="justificativa"
-												placeholder="informe a justificativa"
-												autocomplete="off">
-											</div>
-										</div>
-									</div>
-
-									<div class="col-sm-4 spacer">
-										<label for="Projeto">Projeto</label>
+									
+									<div class="col-sm-7 spacer">
+										<label for="nomeCliente">Nome Cliente</label>
 										<div class="input-group spacer">
-											<input type="text" 
-											ng-disabled="inputDesabilitado"
-											ng-model="frmProjeto"
-											name="frmProjeto" 
-											id="frmProjeto" 
-											placeholder="Informe o Projeto" 
-											class="form-control" 
-											required="true" 
-											autocomplete="off" 
-											typeahead-min-length="0">
+											<input type="text" ng-disabled="inputDesabilitado" ng-model="frmCliente" name="frmCliente" id="frmCliente" placeholder="Informe o cliente" uib-typeahead="(cliente.nome + ' (' + cliente.cpfCnpjFormat + ')') for cliente in getClientes($viewValue)" typeahead-loading="loadingCli" typeahead-no-results="noResultsCli"  typeahead-on-select="onSelectCli($item, $model, $label)" class="form-control" required="true" autocomplete="off" typeahead-min-length="0" >
 											<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaCliente()"><i class="glyphicon glyphicon-remove"></i></span>
 										</div>
 									</div>
-
-									<div class="col-sm-12 spacer">
-
-										<p>
-											PRIORIDADE
-										</p>
-
-										<div class="col-sm-4 spacer">
-											<label for="ano">ANO</label>
-											<div class="spacer">
-												<input type="text"  
-												class="form-control" 
-												ng-model="ano" 
-												id="ano"
-												autocomplete="off">
-											</div>
-										</div>
-	
-										<div class="col-sm-4 spacer ">
-											<label for="trimestre">TRIMESTRE</label>
-											<div class="spacer">
-												<input type="text"  
-												class="form-control" 
-												ng-model="trimestre" 
-												id="trimestre"
-												autocomplete="off">
-											</div>
-										</div>
-
-										<div class="col-sm-4 spacer ">
-											<label for="probFechamento">% Probabilidade de Fechamento</label>
-											<div class="spacer">
-												<input type="text"  
-												class="form-control"  
-												ng-model="probFechamento" 
-												id="probFechamento"
-												autocomplete="off">
-											</div>
+									
+									<div class="col-sm-2 spacer">
+										<label for="codigoCliente">Cód. do Cliente</label>
+										<div class="spacer">
+											<input type="text" readonly class="form-control" ng-model="codigoCliente" id="codigoCliente">
 										</div>
 									</div>
 
-
-									<div class="col-sm-12 spacer">
-
-										<p>
-											POTENCIAL DO CLIENTE
-										</p>
-										<div class="col-sm-4 spacer ">
-											<label for="volumeKG"> Volume (Kg/ano) </label>
-											<div class="spacer">
-												<input type="text"  
-												class="form-control" 
-												ng-model="volumeKG" 
-												id="volumeKG"
-												autocomplete="off">
-											</div>
+									<div class="col-sm-3 spacer ">
+										<label for="vendedor">Vendedor</label>
+										<div class="spacer">
+											<input type="text" readonly class="form-control" ng-value="vendedor.nome" ng-model="vendedor" id="vendedor">
 										</div>
 									</div>
-
-
-									<div class="col-sm-12 spacer">
-
-										<p>
-											PREVISÂO DE CONSUMO
-										</p>
-
-										<div class="col-sm-4 spacer">
-											<label for="localAno">(kg) Local Ano</label>
-											<div class="spacer">
-												<input type="text" 
-												class="form-control" 
-												ng-model="localAno" 
-												id="localAno"
-												autocomplete="off">
-											</div>
-										</div>
-	
-										<div class="col-sm-4 spacer ">
-											<label for="indetAno">(kg) Indet Ano </label>
-											<div class="spacer">
-												<input type="text" 
-												class="form-control" 
-												ng-model="indetAno" 
-												id="indetAno"
-												autocomplete="off">
-											</div>
-										</div>
-
-										<div class="col-sm-4 spacer ">
-											<label for="mesInicio">Mês de inicio</label>
-											<div class="spacer">
-												<input type="text"  
-												class="form-control" 
-												ng-model="mesInicio" 
-												id="mesInicio"
-												autocomplete="off">
-											</div>
-										</div>
-									</div>
-
-
-									<div class="col-sm-12 spacer">
-
-										<p>
-											OUTRAS INFORMAÇÔES
-										</p>
-
-										<div class="col-sm-8 spacer">
-											<label for="concorencia">Concorrência</label>
-											<div class="spacer">
-												<input type="text"  
-												class="form-control" 
-												ng-model="concorencia" 
-												id="concorencia"
-												autocomplete="off">
-											</div>
-										</div>
-	
-										<div class="col-sm-4 spacer ">
-											<label for="precoDolarNet">Preço (Dolar NET)</label>
-											<div class="spacer">
-												<input type="text"  
-												class="form-control"  
-												ng-model="precoDolarNet" 
-												id="precoDolarNet"
-												autocomplete="off">
-											</div>
-										</div>
-
-									</div>
-
-									<div class="col-sm-12 spacer">
-
-										<div class="col-sm-8 spacer">
-											<label for="acoes">Ações</label>
-											<div class="spacer">
-												<input type="text"  
-												class="form-control" 
-												ng-model="acoes" 
-												id="acoes"
-												autocomplete="off">
-											</div>
-										</div>
-	
-										<div class="col-sm-4 spacer ">
-											<label for="statusAcao">Status da Ação</label>
-											<div class="spacer">
-												<input type="text"  
-												class="form-control" 
-												ng-model="statusAcao" 
-												id="statusAcao"
-												autocomplete="off">
-											</div>
-										</div>
-
-									</div>
-
-
 								</div>
 								
 								<div class="form-group col-md-12">
@@ -485,8 +304,8 @@
 				
 							<div class="form-row " >
 								<div class="form-group col-md-12">
-									<div class="col-sm-4 spacer">
-										<label for="codigoCliente">Projeto</label>
+									<div class="col-sm-2 spacer">
+										<label for="codigoCliente">Cód. do Cliente</label>
 										<input type="text" ng-disabled="inputDesabilitado" class="form-control spacer-input" ng-model="codigoCliente" id="codigoCliente">
 									</div>
 									<div class="col-sm-6 spacer">
@@ -644,67 +463,90 @@
 					
 							<div class="form-row ">
 								<div class="form-group col-md-12">
-									<div class="col-sm-2 spacer ">
-										<label for="projeto">Projeto</label>
-										<input type="text" class="form-control spacer-input" ng-model="projeto" id="projeto" uib-typeahead="(projetos.nome) for projetos in getProjetos($viewValue)"  autocomplete="off" typeahead-min-length="0" typeahead-on-select="onSelectProjeto($item, $model, $label)">
+									<div class="col-sm-12 spacer">
+										<p>
+											Atualização status da amostra
+										</p>
+										<div class="col-sm-3 spacer">
+											<label for="situacao">Situação Amostra</label>
+											<input type="text" class="form-control spacer-input" ng-model="situacaoAmostra" id="situacaoAmostra" uib-typeahead="situacao.nome for situacao in getSituacaoAmostra($viewValue)" typeahead-loading="loadingProd" typeahead-no-results="noResultsIV"  typeahead-on-select="onSelectSituacaoAmostra($item, $model, $label)" class="form-control" autocomplete="off" typeahead-min-length="0">
+										</div>
+										<div class="col-sm-7 spacer">
+											<label for="justificativa">Justificativa</label>
+											<textarea type="text" class="form-control spacer-input" ng-model="justificativa" id="justificativa"></textarea>
+										</div>		
 									</div>
-									<!-- <div class="col-sm-2 spacer ">
-										<label for="responsavel">Responsável</label>
-										<input type="text" class="form-control spacer-input" ng-model="responsavel" id="responsavel" >
-									</div> -->
-									<div class="col-sm-2 spacer">
-										<label for="prioridade">Ano</label>
-										<input type="text" class="form-control spacer-input" ng-value="anoAmostra.nome" ng-model="anoAmosta" id="anoAmosta" uib-typeahead="(ano.nome) for ano in getAnoAmostra($viewValue)"  autocomplete="off" typeahead-min-length="0" typeahead-on-select="onSelectAnoAmostra($item, $model, $label)">
+
+									<div class="col-sm-12 spacer">
+										<div class="col-sm-4 spacer">
+											<label for="projeto">Projeto</label>
+											<input type="text" class="form-control spacer-input" ng-model="projeto" id="projeto" uib-typeahead="(projetos.nome) for projetos in getProjetos($viewValue)"  autocomplete="off" typeahead-min-length="0" typeahead-on-select="onSelectProjeto($item, $model, $label)">
+										</div>
 									</div>
-									<div class="col-sm-2 spacer">
-										<label for="prioridade">Trimestre</label>
-										<input type="text" class="form-control spacer-input" ng-value="trimestreAmostra.nome" ng-model="trimestreAmostra" id="trimestreAmostra" uib-typeahead="(trimestre.nome) for trimestre in getTrimestreAmostra($viewValue)"  autocomplete="off" typeahead-min-length="0" typeahead-on-select="onSelectTrimestreAmostra($item, $model, $label)">
-									</div>				  
-									<div class="col-sm-2 spacer">
-										<label for="potencial">Potencial</label>
-										<input type="text" class="form-control spacer-input" ng-model="potencial0XCM" id="potencial0XCM" >
+
+									<div class="col-sm-12 spacer">
+
+										<p>
+											PRIORIDADE
+										</p>
+
+										<div class="col-sm-4 spacer">
+											<label for="prioridade">Ano</label>
+											<input type="text" class="form-control spacer-input" ng-value="anoAmostra.nome" ng-model="anoAmosta" id="anoAmosta" uib-typeahead="(ano.nome) for ano in getAnoAmostra($viewValue)"  autocomplete="off" typeahead-min-length="0" typeahead-on-select="onSelectAnoAmostra($item, $model, $label)">
+										</div>
+										<div class="col-sm-4 spacer">
+											<label for="prioridade">Trimestre</label>
+											<input type="text" class="form-control spacer-input" ng-value="trimestreAmostra.nome" ng-model="trimestreAmostra" id="trimestreAmostra" uib-typeahead="(trimestre.nome) for trimestre in getTrimestreAmostra($viewValue)"  autocomplete="off" typeahead-min-length="0" typeahead-on-select="onSelectTrimestreAmostra($item, $model, $label)">
+										</div>				  
+										<div class="col-sm-4 spacer">
+											<label for="probFechamento">% Probabilidade de Fechamento</label>
+											<input type="text" class="form-control spacer-input" ng-model="probFechamento" id="probFechamento" >
+										</div>
 									</div>
-									<div class="col-sm-2 spacer">
-										<label for="consumoAg">Consumo Ano Ger.</label>
-										<input type="text" class="form-control spacer-input" ng-model="consumoAg" id="consumoAg">
+
+									<div class="col-sm-12 sapcer">
+										<p>
+											POTENCIAL DO CLIENTE
+										</p>
+										<div class="col-sm-4 spacer">
+											<label for="Volume">Volume (kg/ano)</label>
+											<input type="text" class="form-control spacer-input" ng-model="Volume" id="Volume" >
+										</div>
 									</div>
-									<div class="col-sm-2 spacer">
-										<label for="con2021Ident">Consumo indent</label>
-										<input type="text" class="form-control spacer-input" ng-model="conIndent" id="conIndent">
-									</div>	
-									<div class="col-sm-2 spacer">
-										<label for="conLocal">Consumo local</label>
-										<input type="text" class="form-control spacer-input" ng-model="conLocal" id="conLocal" >
-									</div>		
-									<div class="col-sm-2 spacer">
-										<label for="mesIniConsumo">Mes Início Consumo</label>
-										<input type="text" class="form-control spacer-input" ng-model="mesIniConsumo" id="mesIniConsumo" >
-									</div>											
-									<div class="col-sm-2 spacer">
-										<label for="probFechamento">% Prob. Fec.</label>
-										<input type="text" class="form-control spacer-input" ng-model="probFechamento" id="probFechamento" >
-									</div>			  
-									<div class="col-sm-2 spacer">
-										<label for="concorrencia">Concorrência</label>
-										<input type="text" class="form-control spacer-input" ng-model="concorrencia" id="concorrencia" >
-									</div>			  
-									<div class="col-sm-2 spacer">
-										<label for="precoConc">Preço Conc. US$</label>
-										<input type="text" class="form-control spacer-input" ng-model="precoConc" id="precoConc" >
+
+									<div class="col-sm-12 spacer">
+										<p>
+											PREVISÂO DE CONSUMO
+										</p>
+										<div class="col-sm-4 spacer">
+											<label for="localAno">(kg) Local Ano</label>
+											<input type="text" class="form-control spacer-input" ng-model="localAno" id="localAno">
+										</div>
+										<div class="col-sm-4 spacer">
+											<label for="indentAno">(kg) Indent Ano</label>
+											<input type="text" class="form-control spacer-input" ng-model="indentAno" id="indentAno">
+										</div>
+										<div class="col-sm-4 spacer">
+											<label for="mesInicio">Mês de Inicio</label>
+											<input type="text" class="form-control spacer-input" ng-model="mesInicio" id="mesInicio">
+										</div>	
 									</div>
-									<div class="col-sm-2 spacer hidden">
-										<label for="dataAtu">Data Atualização</label>
-										<input type="date" class="form-control spacer-input" ng-model="dataAtu" id="dataAtu" >
+
+									<div class="col-sm-12 spacer">
+										<p>
+											OUTRAS INFORMAÇÔES
+										</p>
+										<div class="col-sm-6 spacer">
+											<label for="concorrencia">Concorrência</label>
+											<input type="text" class="form-control spacer-input" ng-model="concorrencia" id="concorrencia" >
+										</div>
+
+										<div class="col-sm-6 spacer">
+											<label for="precoDolarNet">Preço (Dolar NET)</label>
+											<input type="text" class="form-control spacer-input" ng-model="precoDolarNet" id="precoDolarNet" >
+										</div>	
+
 									</div>
-									
-									<div class="col-sm-2 spacer">
-										<label for="situacao">Situação Amostra</label>
-										<input type="text" class="form-control spacer-input" ng-model="situacaoAmostra" id="situacaoAmostra" uib-typeahead="situacao.nome for situacao in getSituacaoAmostra($viewValue)" typeahead-loading="loadingProd" typeahead-no-results="noResultsIV"  typeahead-on-select="onSelectSituacaoAmostra($item, $model, $label)" class="form-control" autocomplete="off" typeahead-min-length="0">
-									</div>
-									<div class="col-sm-8 spacer">
-										<label for="justificativa">Justificativa</label>
-										<textarea type="text" class="form-control spacer-input" ng-model="justificativa" id="justificativa"></textarea>
-									</div>		
 								</div>
 							</div>
 							
@@ -846,10 +688,9 @@
 <!-- Scripts importados -->	
 
 <script>
-	alert("Teste de tela 020 - campos ")
+
+	alert("teste de tela 020 - inputs")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
-
-
 
 angular
 	.module("appV2",['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -2457,14 +2298,6 @@ angular
 		border-radius: 2px;
 	}
 
-	
-	p {
-    	padding-top: 3vh;
-    	font-weight: 700;
-    	color: #1a6c95;
-	}
-	
-
 	.dataTables_wrapper .dataTables_info{
 		font-size: 12px;
 	}
@@ -2544,8 +2377,7 @@ angular
 	}
 
 	.spacer{
-		margin-top:9px;
-		padding-left: 1px;
+		margin-top:20px;
 	}
 
 	.spacer-input{
@@ -2563,7 +2395,6 @@ angular
 	}
 
 	.vcenter {
-		padding-top: 9px;
 		display: flex;
 		align-items: center;
 	}
