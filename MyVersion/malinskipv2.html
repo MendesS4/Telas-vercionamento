@@ -274,7 +274,7 @@
 									<label for="tabelaFrete">Tabela de frete</label>
 									<div class = "input-button">
 										<input 
-										ng-required			 = "!requiredTabFrete" 
+										ng-required			 = "requiredTabFrete" 
 										id 					 = "tabTabelaFrete"
 										autocomplete		 = "off"
 										type				 = "text" 
@@ -700,7 +700,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 265 - versoes finais ")
+		alert("teste de tela 267 - versoes finais ")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -905,15 +905,17 @@
 					$scope.inputsControlFrete = function ($item, $model, $label){
 						switch ($item.desc) {
 							case 'Sem Frete':
+							$scope.requiredTabFrete = false
 							    $scope.habilitado = false
 								$scope.tabelaFrete = ''
 								$scope.totalFrete = '';
 								break;
 							case 'CIF':
-								$scope.requiredTabFrete = false
+								$scope.requiredTabFrete = true
 								$scope.habilitado = true
 								break;
 							case 'FOB':
+							$scope.requiredTabFrete = false
 								$scope.habilitado = false
 								$scope.tabelaFrete = ''
 								$scope.totalFrete = '';
