@@ -275,6 +275,7 @@
 									<label for="tabelaFrete">Tabela de frete</label>
 									<div class = "input-button">
 										<input 
+										required
 										id = "tabTabelaFrete"
 										autocomplete		 = "off"
 										type="text" 
@@ -345,7 +346,7 @@
 								</div>
 
 								<div class="col-sm-12 spacer ">
-									<button class="btn btn_grid btn_cor_padrao" ng-click="getInfoTabela()"> Carregar Produtos </button>
+									<button class="btn btn_grid btn_cor_padrao" ng-click="getInfoTabela()" required> Carregar Produtos </button>
 								</div>
 
 								<div style="margin-top:5px" class="form-group col-md-12">
@@ -709,7 +710,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 254 - versoes finais ")
+		alert("teste de tela 255 - versoes finais ")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
