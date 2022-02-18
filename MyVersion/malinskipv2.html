@@ -700,7 +700,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 263 - versoes finais ")
+		alert("teste de tela 264 - versoes finais ")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1715,14 +1715,12 @@
 								$scope.geraNotificacao($scope.messageNotific, 1500, 'success');
 							}
 						} else {
-							console.log('SALVANDO NOVO');
-							console.log(json);
+
 							
 							dados.jsonDocs = JSON.stringify(json);
 							let response = await $http.post('/clicVendas/rest/pedidov2/salvar/', dados);
 							
-							console.log('ROTINA');
-							console.log(rotina);
+
 							
 							if (rotina == 1) {
 								$scope.messageNotific = 'Registro inserido com sucesso';
@@ -1781,7 +1779,6 @@
 									};
 									d.param = param;
 									d.filter = filter;
-									console.log(JSON.stringify(d));
 									return JSON.stringify(d);
 								},
 								dataSrc: function (json) {
@@ -1790,7 +1787,6 @@
 										Atualiza tabela com valores do ERP quando o pedido há número
 									*/
 									if (modo != 1) {
-										console.log(json.data);
 										$rootScope.dadosGrid = json.data;
 
 										for (ped of $rootScope.dadosGrid) {
