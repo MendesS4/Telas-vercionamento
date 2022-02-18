@@ -274,6 +274,7 @@
 									<label for="tabelaFrete">Tabela de frete</label>
 									<div class = "input-button">
 										<input 
+										ng-required			 = "false" 
 										id 					 = "tabTabelaFrete"
 										autocomplete		 = "off"
 										type				 = "text" 
@@ -699,7 +700,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 261 - versoes finais ")
+		alert("teste de tela 262 - versoes finais ")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -849,6 +850,7 @@
 						$scope.frete = ""
 						$scope.tabelaFrete = ""
 						$scope.totalFrete = ""
+				
 
 						//desabilita o campo de tabela de frete
 						$scope.habilitado = false
@@ -1008,6 +1010,10 @@
 					$scope.getInfoTabela = async () => {
 						let codCli   	= $scope.codigoCliente
 						let tabPreco 	= $scope.codTpr
+
+						if (codCli == "" && tapPreco == ""){
+							alert("Prencha os campos de cliente e tabela e preco corretamente")
+						}
 						// para fazer o calculo
 						let precoFrete 	= $scope.totalFrete
 
