@@ -696,7 +696,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 257 - versoes finais ")
+		alert("teste de tela 258 - versoes finais ")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1137,6 +1137,7 @@
 					$scope.limpaCliente = () => {
 						$scope.frmCliente = '';
 						$scope.codigoCliente = '';
+						$scope.tabPreco = '';
 
 						//volta o foco
 						var cCliente = angular.element(document.querySelector('#frmCliente'));
@@ -1384,11 +1385,7 @@
 							let docs = $dados.jsonDocs[0];
 							$rootScope.hashDoc = docs.docCtrl;
 							$rootScope.idDocumento = $dados.id;
-
-							//dois clientes
-
 							$rootScope.cliente = docs.cliente;
-
 							$scope.tipoOrcamento = docs.tipoOrcamento;
 							$scope.filial = docs.filial;
 							$scope.tabPreco = docs.tabPreco;
@@ -1398,9 +1395,7 @@
 							$scope.frete = docs.frete;
 							$scope.totalFrete = docs.totalFrete;
 							$scope.tabelaFrete = docs.tabelaFrete;
-
 							$scope.validadeOrcamento = docs.validadeOrcamento != null ? new Date(docs.validadeOrcamento) : null 
-
 							//emissao de orcamento (date do sistema)
 							$scope.emissaoOrcamento = docs.emissaoOrcamento != null ? new Date(docs.emissaoOrcamento) : null
 
@@ -1453,46 +1448,7 @@
 
 					};
 
-					/*$scope.calcularProdutos = () => {
-
-						let valorTotalCalc = 0;
-						let valorTotalItem = 0;
-						let descontoAcresc = 0;
-						let calcDescAcresc = 0;
-
-						for (let i = 0; i < $rootScope.produtos.length; i++) {
-
-							if (($rootScope.produtos[i].quantidade != null && $rootScope.produtos[i].quantidade > 0) && $rootScope.produtos[i].valorNegociado != null) {
-								valorTotalItem = parseFloat($rootScope.produtos[i].quantidade) * parseFloat($rootScope.produtos[i].valorNegociado)
-
-								/*Verifica se há desconto
-								if ($rootScope.produtos[i].descAcresc != undefined || $rootScope.produtos[i].descAcresc != null) {
-									descontoAcresc = parseFloat($rootScope.produtos[i].descAcresc) / 100;
-									calcDescAcresc = valorTotalItem * descontoAcresc;
-									valorTotalItem = $rootScope.produtos[i].opcaoDescAcresc === 'DESCONTO' ? valorTotalItem - calcDescAcresc : valorTotalItem + calcDescAcresc;
-								}
-
-								/*Grava o valor total do item
-								$rootScope.produtos[i].valorTotalItem = valorTotalItem;
-
-								valorTotalCalc += $rootScope.produtos[i].valorTotalItem
-							} else {
-								$scope.geraNotificacao('Informe o valor e quantidade do produto.', 2000, 'warning')
-								valorTotalCalc = parseFloat($scope.valorTotal);
-							}
-						}
-
-						$scope.valorTotal = valorTotalCalc.toFixed(2);
-
-						$('#valorTotalPedido').css({ 'font-weight': '800', 'color': 'black', 'fontSize': '19px', }).fadeOut(400)
-						setTimeout(() => {
-							$('#valorTotalPedido').css({ 'font-weight': '600', 'color': '#787878', 'fontSize': '17px', }).fadeIn(300)
-						}, 350)
-
-					}	*/
-
-					
-
+			
 					$scope.calculoValidacaoProdutoERP = async ($dados) => {
 
 						try {
