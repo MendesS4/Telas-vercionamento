@@ -471,12 +471,11 @@
 											<label for="situacao">Situação Amostra</label>
 											<input type="text" class="form-control spacer-input" ng-model="situacaoAmostra" id="situacaoAmostra" uib-typeahead="situacao.nome for situacao in getSituacaoAmostra($viewValue)" typeahead-loading="loadingProd" typeahead-no-results="noResultsIV"  typeahead-on-select="onSelectSituacaoAmostra($item, $model, $label)" class="form-control" autocomplete="off" typeahead-min-length="0">
 										</div>
-										<div class="col-sm-6 spacer">
+										<div class="col-sm-8 spacer">
 											<label for="justificativa">Justificativa</label>
 											<input type="text" class="form-control spacer-input" ng-model="justificativa" id="justificativa">
 										</div>		
 									</div>
-
 									<div class="col-sm-12 spacer">
 										<div class="col-sm-4 spacer">
 											<label for="projeto">Projeto</label>
@@ -504,7 +503,7 @@
 										</div>
 									</div>
 
-									<div class="col-sm-12 sapcer">
+									<div class="col-sm-12 spacer">
 										<p class="titleBlue">
 											POTENCIAL DO CLIENTE
 										</p>
@@ -689,7 +688,7 @@
 
 <script>
 
-	alert("teste de tela 024 - inputs")
+	alert("teste de tela 025 - inputs")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -2258,7 +2257,7 @@ angular
 	.titleBlue{
 		color: #1a6c95;
 		font-weight: 750;
-		margin-left: 17px;
+		margin-left: 22px;
     	padding-top: 10px;
 		margin-bottom: -10px;
 	}
