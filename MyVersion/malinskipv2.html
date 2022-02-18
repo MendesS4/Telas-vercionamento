@@ -632,7 +632,7 @@
 					<div class="btn-group">
 						<button class="btn btn_grid btn_cor_padrao"
 							title="O pedido será salvo. Voce ainda poderá editar e finalizar o pedido."
-							ng-disabled="cadastroPedido.$error.required || isLoading"
+							ng-disabled="cadastroPedido.$error.required || isLoading" 
 							ng-click="salvarDocumento(1)"> Salvar </button>
 							<!--"produtos.length == 0--> 
 					</div>
@@ -700,7 +700,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		alert("teste de tela 264 - versoes finais ")
+		alert("teste de tela 265 - versoes finais ")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -910,7 +910,7 @@
 								$scope.totalFrete = '';
 								break;
 							case 'CIF':
-								$scope.requiredTabFrete = true
+								$scope.requiredTabFrete = false
 								$scope.habilitado = true
 								break;
 							case 'FOB':
