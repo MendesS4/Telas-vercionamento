@@ -630,7 +630,7 @@
 			<div class="row spacer">
 				<div class="pull-right" style="padding-right: 10px;">
 					<div class="btn-group">
-						<button class="btn btn_grid btn-success" title="O pedido ser� finalizado e enviado ao ERP"
+						<button class="btn btn_grid btn-success" title="O pedido ser? finalizado e enviado ao ERP"
 							ng-disabled="produtos.length == 0 || cadastroPedido.$error.required || isLoading"
 							ng-show="pedido == 0 " ng-click="finalizarDocumento()"> Finalizar </button>
 					</div>
@@ -708,7 +708,7 @@
 	<!-- Scripts importados -->
 	<script>
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		//alert("teste de tela 252 - versoes finais ")
+		alert("teste de tela 253 - versoes finais ")
 		//TESTE DE CONTROLE DE ATT GITHUB
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1846,9 +1846,15 @@
 								$scope.geraNotificacao($scope.messageNotific, 1500, 'success');
 							}
 						} else {
+							console.log('SALVANDO NOVO');
+							console.log(json);
+							
 							dados.jsonDocs = JSON.stringify(json);
 							let response = await $http.post('/clicVendas/rest/pedidov2/salvar/', dados);
-
+							
+							console.log('ROTINA');
+							console.log(rotina);
+							
 							if (rotina == 1) {
 								$scope.messageNotific = 'Registro inserido com sucesso';
 								$scope.geraNotificacao($scope.messageNotific, 1500, 'success');
@@ -1898,7 +1904,7 @@
 										fil4: $scope.filSincronizado.send,
 										fil5: "",
 										fil6: $scope.filDataEmissao,
-										fil7: dadosUserLogado.rId, /*Lista pedidos apenas do representante que o fez*/
+										fil7: dadosUserLogado.rCod, /*Lista pedidos apenas do representante que o fez*/
 										fil8: dadosUserLogado.rNome,/*Lista pedidos apenas do representante que o fez*/
 										fil9: "",
 										fil10: "",
@@ -1906,6 +1912,7 @@
 									};
 									d.param = param;
 									d.filter = filter;
+									console.log(JSON.stringify(d));
 									return JSON.stringify(d);
 								},
 								dataSrc: function (json) {
@@ -1914,6 +1921,7 @@
 										Atualiza tabela com valores do ERP quando o pedido há número
 									*/
 									if (modo != 1) {
+										console.log(json.data);
 										$rootScope.dadosGrid = json.data;
 
 										for (ped of $rootScope.dadosGrid) {
