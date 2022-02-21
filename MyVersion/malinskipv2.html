@@ -703,7 +703,7 @@
 	<!-- Scripts importados -->
 	<script>
 
-		alert("teste 271 - alterações de layout")
+		alert("teste 272 - alterações de layout")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		//alert("teste de tela 267 - versoes finais ")
 		//TESTE DE CONTROLE DE ATT GITHUB
@@ -910,17 +910,14 @@
 					$scope.inputsControlFrete = function ($item, $model, $label){
 						switch ($item.desc) {
 							case 'Sem Frete':
-							$scope.requiredTabFrete = false
 							    $scope.habilitado = false
 								$scope.tabelaFrete = ''
 								$scope.totalFrete = '';
 								break;
 							case 'CIF':
-								$scope.requiredTabFrete = true
 								$scope.habilitado = true
 								break;
 							case 'FOB':
-							$scope.requiredTabFrete = false
 								$scope.habilitado = false
 								$scope.tabelaFrete = ''
 								$scope.totalFrete = '';
@@ -1516,7 +1513,6 @@
 					$scope.adicionarProduto = (resultTest) => {
 						$rootScope.produtos.unshift(
 							{
-
 								qtdm3 			: resultTest.qtdm3,
 								seq				: resultTest.seq,
 								ocpo			: resultTest.ocpo,
