@@ -416,7 +416,6 @@
 														<div>
 															<input
 															value="0"
-															required
 															ng-change="calcularProdutos()"
 															type="number"
 															class="inputNumberTable"
@@ -712,7 +711,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 299 - alterações de layout")
+		alert("teste 301 - alterações de layout")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1883,10 +1882,13 @@
 
 						montaColunas.push(DTColumnBuilder.newColumn(null).withTitle('Data emissão').withOption('sortable', false).withClass('colBtn').withOption('sWidth', '150px').renderWith(function (data, type, row) {
 							var btnhtmlData = '';
+							dataFormatadaBr
 
 							let dataFormat = row.jsonDocs[0].emissaoOrcamento != undefined ? row.jsonDocs[0].emissaoOrcamento.substr(0, 10) : ""
 
-							btnhtmlData += "<div style='font-size:1.0em; color:black;  display:inline-block; vertical-align: middle; cursor:pointer;'>" + dataFormat + "</div>";
+							dataFormatadaBr = dataFormat.toLocaleDateString('pt-br', {timeZone: 'UTC'})
+
+							btnhtmlData += "<div style='font-size:1.0em; color:black;  display:inline-block; vertical-align: middle; cursor:pointer;'>" + dataFormatadaBr + "</div>";
 
 							return btnhtmlData;
 						}));
