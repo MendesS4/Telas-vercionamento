@@ -711,7 +711,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 288 - alterações de layout")
+		alert("teste 289 - alterações de layout")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1014,11 +1014,9 @@
 								//calculando valor liquido
 								vlrLiquido = qtd * precoLiquido
 								$rootScope.produtos[i].vlrLiquido = vlrLiquido.toFixed('2');
-								console.log(vlrLiquido)
 
 								//calculando o desconto com a oferta de preco
 								vlrLiquido = vlrLiquido - (vlrLiquido * (valorOfertaPreco / 100))
-								console.log(vlrLiquido)
 
 								// calculando volume
 								volumeM3 = qtd * qtdm3
@@ -1034,7 +1032,7 @@
 								valorCalculoQuantidadeTotal += qtd;
 							}
 						}
-						console.log(vlrLiquido)
+
 						$scope.valorPrecoTotal 		= valorCalculoPrecoTotal.toFixed('2')
 						$scope.valorPesoTotal 		= valorCalculoPesoTotal.toFixed('3')
 						$scope.valorVolumeTotal 	= valorCalculoVolumeTotal.toFixed('3')
@@ -1368,14 +1366,11 @@
 						$scope.habilitarFrete = false
 
 						if ($dados == undefined) {
-
 							//para um novo pedido
+
 							$rootScope.idDocumento = 0;
-
 							$scope.pedido = 0,
-
 							$rootScope.produtos = [];
-
 							// inputs
 							$scope.codTpr = '';
 							$scope.qtdm3 = '';
@@ -1398,6 +1393,11 @@
 							// codigos padroes da tela malinski
 							$scope.emissaoOrcamento = new Date(date)
 							$scope.validadeOrcamento = new Date(dataEmissao);
+
+							$scope.valorPrecoTotal 		= ''
+							$scope.valorPesoTotal 		= ''
+							$scope.valorVolumeTotal 	= ''
+							$scope.valorQuantidadeTotal = ''
 							//produtos
 							$scope.frete = 'X-Sem Frete';
 
@@ -1419,6 +1419,8 @@
 							// $scope.dataEmissaoErpFormatada	= "";
 
 							$scope.valorTotal = 0;
+
+
 
 						} else {
 
