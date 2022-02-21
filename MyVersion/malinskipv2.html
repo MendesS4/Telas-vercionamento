@@ -732,7 +732,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 311 - alterações de layout")
+		alert("teste 312 - alterações de layout")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1962,7 +1962,7 @@
 							var btnhtml = '';
 							btnhtml += "<div class='glyphicon glyphicon-edit' style='font-size:1.5em; color:var(--cor_principal);  display:inline-block; vertical-align: middle; cursor:pointer;' title='Editar' ng-click='abreFormulario(" + JSON.stringify(row) + ")'></div>";
 							btnhtml += "<div class='glyphicon glyphicon-ban-circle' style='font-size:1.5em; padding-left:4px; color:var(--cor_principal); display:inline-block; vertical-align: middle; cursor:pointer;' title='Cancelar item' ng-click='removerDocumento(" + JSON.stringify(row) + ")' ></div>";
-							btnhtml += "<div class='glyphicon glyphicon-print' style='font-size:1.5em; color:var(--cor_principal);  display:inline-block; vertical-align: middle; cursor:pointer;' title='Editar' ng-click='imprimeOrcamento(" + JSON.stringify(row) + ")'></div>";
+							btnhtml += "<div class='glyphicon glyphicon-print' style='font-size:1.5em; color:var(--cor_principal);  display:inline-block;  vertical-align: middle; cursor:pointer;' title='Editar'; margin-left:3vh ng-click='imprimeOrcamento(" + JSON.stringify(row) + ")'></div>";
 
 							return btnhtml;
 						}));
