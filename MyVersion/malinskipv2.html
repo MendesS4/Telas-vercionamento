@@ -710,7 +710,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 285 - alterações de layout")
+		alert("teste 286 - alterações de layout")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1000,6 +1000,8 @@
 
 							//quantidade
 							let qtd = parseFloat($rootScope.produtos[i].qtdPedida)
+							//oferta de preco
+							let valorOfertaPreco = parseFloat($rootScope.produtos[i].ofertaPreco)
 							//valor do BD
 							let qtdm3 = parseFloat($rootScope.produtos[i].qtdm3.replace(',', '.'))
 							//preco liquido de produto
@@ -1012,6 +1014,9 @@
 								vlrLiquido = qtd * precoLiquido
 								$rootScope.produtos[i].vlrLiquido = vlrLiquido.toFixed('2');
 
+								//calculando o desconto com a oferta de preco
+								vlrLiquido = vlrLiquido - (vlrLiquido * (valorOfertaPreco / 100))
+
 								// calculando volume
 								volumeM3 = qtd * qtdm3
 								$rootScope.produtos[i].volumeM3 = volumeM3.toFixed('3');
@@ -1020,13 +1025,13 @@
 								peso = volumeM3 * 790
 								$rootScope.produtos[i].pesoKG = peso.toFixed('3')
 
-
 								valorCalculoPrecoTotal		+= vlrLiquido;
 								valorCalculoVolumeTotal 	+= volumeM3;
 								valorCalculoPesoTotal 		+= peso;
 								valorCalculoQuantidadeTotal += qtd;
 							}
 						}
+						console.log(vlrLiquido)
 						$scope.valorPrecoTotal 		= valorCalculoPrecoTotal.toFixed('2')
 						$scope.valorPesoTotal 		= valorCalculoPesoTotal.toFixed('3')
 						$scope.valorVolumeTotal 	= valorCalculoVolumeTotal.toFixed('3')
