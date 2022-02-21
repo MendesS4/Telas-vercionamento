@@ -558,40 +558,42 @@
 									</div>
 									</pre>	
 									<div class="panel panel-default">
-										<table>
-											<thead>
-												<tr>
-													<th>
-													 	Valor total:
-													</th>
-													<th>
-														Quantidade:
-													</th>
-													<th>
-														Peso:
-													</th>
-													<th>
-														Volume:
-													</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>
-														{{valorPrecoTotal}}
-													</td>
-													<td>
-														{{valorQuantidadeTotal}}
-													</td>
-													<td>
-														{{valorPesoTotal}}
-													</td>
-													<td>
-														{{valorVolumeTotal}}
-													</td>
-												</tr>
-											</tbody>
-										</table>
+										<div class="panel-heading">
+											<table>
+												<thead>
+													<tr>
+														<th>
+															 Valor total:
+														</th>
+														<th>
+															Quantidade:
+														</th>
+														<th>
+															Peso:
+														</th>
+														<th>
+															Volume:
+														</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>
+															{{valorPrecoTotal}}
+														</td>
+														<td>
+															{{valorQuantidadeTotal}}
+														</td>
+														<td>
+															{{valorPesoTotal}}
+														</td>
+														<td>
+															{{valorVolumeTotal}}
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -712,7 +714,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 292 - alterações de layout")
+		alert("teste 293 - alterações de layout")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
