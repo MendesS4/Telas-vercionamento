@@ -634,7 +634,7 @@
 							<button 
 								class = "btn" 
 								ng-disabled="produtos.length == 0 || cadastroPedido.$error.required || isLoading"
-								ng-click="ImprimirOrçamento">
+								ng-click="imprimeOrcamento()">
 								Imprimir Orçamento
 							</button>
 						</div>
@@ -731,7 +731,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 308 - alterações de layout")
+		alert("teste 309 - alterações de layout")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -779,6 +779,8 @@
 					};
 
 					$rootScope.changeView = ($dados) => {
+						$scope.pedidoInfos = $dados
+
 						if ($scope.exibeFormulario == false) {
 
 							$scope.exibeFormulario = true;
@@ -953,6 +955,28 @@
 						}
 
 					}
+
+					$scope.imprimeOrcamento = async() => {
+						console.log("Chegou no impreme Orcamento")
+						let dados = $scope.pedidoInfos 
+						console.log(dados)
+						try {
+							let result = await $scope.executaRequisicaoExterna(
+								{
+									idCvtccnpj: dadosUserLogado.cId,
+									numreg: 750,
+									pRotina: 'imprimeRelatorio',
+									pCodCli: dadosUserLogado.rId,
+									pFilter: { filtro: {dados} },
+								},
+							);
+
+						} catch (err){
+							console.log("ocorreu um erro na requisição ", err);
+							
+						};
+					}
+
 
 					// requisicao para tabela de preco
 					$scope.getTabelaPreco = async (consulta, opcao) => {
@@ -1247,7 +1271,6 @@
 								response = await $http.post(dadosUserLogado.cContextIntegracao + '/rest/Listas/executarRequisicaoExterna', $json);
 								done();/*Aguarda a requisição - Se estourar o tempo, gera erro.*/
 							}, timeLimit * 1000); // limite em segundos
-							//console.log(response)
 							return response.data;
 						} catch (err) {
 							$scope.geraNotificacao("Não foi possível se comunicar com o ERP. " + err + "", 5000, 'danger')
@@ -1884,7 +1907,6 @@
 							]);
 
 
-						console.log($rootScope.dadosGrid)
 						defPD = {
 							'id': { i: 0, vsbl: true, tlt: 'Nº Pedido', width: '' },
 							'jsonDocs[0].pedido': { i: 1, vsbl: true, tlt: 'Nº Pedido ERP', width: '' },
@@ -1905,12 +1927,9 @@
 							let dataFormatadaBr = '';
 
 							let dataFormat = row.jsonDocs[0].emissaoOrcamento != undefined ? row.jsonDocs[0].emissaoOrcamento.substr(0, 10) : ""
-							console.log(dataFormat)
-
+							
 							dataFormatadaBr = dataFormat.split('-').reverse().join('/');
-							console.log(dataFormatadaBr)
-
-
+							
 							btnhtmlData += "<div style='font-size:1.0em; color:black;  display:inline-block; vertical-align: middle; cursor:pointer;'>" + dataFormatadaBr + "</div>";
 
 							return btnhtmlData;
