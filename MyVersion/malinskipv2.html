@@ -576,16 +576,16 @@
 											<tbody>
 												<tr>
 													<td>
-														{{produto.valorTotal}}
+														{{valorTotal}}
 													</td>
 													<td>
 														{{valorQuantidadeTotal}}
 													</td>
 													<td>
-														{{produto.valorPesoTotal}}
+														{{valorPesoTotal}}
 													</td>
 													<td>
-														{{produto.valorVolumeTotal}}
+														{{valorVolumeTotal}}
 													</td>
 												</tr>
 											</tbody>
@@ -710,7 +710,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 281 - alterações de layout")
+		alert("teste 282 - alterações de layout")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1026,7 +1026,8 @@
 								valorCalculoQuantidadeTotal += qtd;
 							}
 						}
-						console.log(valorCalculoPesoTotal)
+						$scope.valorPesoTotal = valorCalculoPesoTotal 
+						console.log($scope.valorPesoTotal)
 						console.log(valorCalculoQuantidadeTotal)
 						console.log(valorCalculoVolumeTotal)
 
