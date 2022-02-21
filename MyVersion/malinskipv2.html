@@ -556,81 +556,74 @@
 											</tbody>
 										</table>
 									</div>
-									</pre>	
-									<div class="panel panel-default">
-										<div class="panel-heading">
-											VALORES TOTAIS DOS PRODUTOS
-										</div>
-										<div class="panel-body">
-											<table>
-												<thead>
-													<tr>
-														<th>
-															 Valor total:
-														</th>
-														<th>
-															Quantidade:
-														</th>
-														<th>
-															Peso:
-														</th>
-														<th>
-															Volume:
-														</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>
-															{{valorPrecoTotal}}
-														</td>
-														<td>
-															{{valorQuantidadeTotal}}
-														</td>
-														<td>
-															{{valorPesoTotal}}
-														</td>
-														<td>
-															{{valorVolumeTotal}}
-														</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
+									</pre>
+										<table>
+											<thead>
+												<tr>
+													<th>
+														Valor total:
+													</th>
+													<th>
+														Quantidade:
+													</th>
+													<th>
+														Peso:
+													</th>
+													<th>
+														Volume:
+													</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>
+														{{valorPrecoTotal}}
+													</td>
+													<td>
+														{{valorQuantidadeTotal}}
+													</td>
+													<td>
+														{{valorPesoTotal}}
+													</td>
+													<td>
+														{{valorVolumeTotal}}
+													</td>
+												</tr>
+											</tbody>
+										</table>
 									</div>
 								</div>
-							</div>
 
-							<div ng-show="exibeHistoricos" class="col-sm-12">
-								<div class="form-row">
-									<div class="col-sm-12 spacer">
-										<label for="histOportunidade">Histórico</label>
-										<textarea readonly class="form-control spacer-input"
-											ng-disabled="inputDesabilitado" ng-model="histOportunidade"
-											id="histOportunidade" rows="10"></textarea>
+								<div ng-show="exibeHistoricos" class="col-sm-12">
+									<div class="form-row">
+										<div class="col-sm-12 spacer">
+											<label for="histOportunidade">Histórico</label>
+											<textarea readonly class="form-control spacer-input"
+												ng-disabled="inputDesabilitado" ng-model="histOportunidade"
+												id="histOportunidade" rows="10"></textarea>
+										</div>
 									</div>
-								</div>
-								<div class="form-row">
-									<div class="col-sm-12 spacer">
-										<hr class="divider">
+									<div class="form-row">
+										<div class="col-sm-12 spacer">
+											<hr class="divider">
+										</div>
 									</div>
-								</div>
-								<div class="form-row">
-									<div class="col-sm-11 spacer">
-										<label for="obsOportunidade">Observação</label>
-										<textarea class="form-control spacer-input" ng-model="obsOportunidade"
-											id="obsOportunidade" rows="3"></textarea>
-									</div>
-									<div class="col-sm-1 spacer" style="padding-top: 30px;">
-										<label for="obsOportunidade"> </label>
-										<div class="btn-group">
-											<button class="btn btn_grid btn_cor_padrao"
-												ng-disabled="obsOportunidade=='' || obsOportunidade==undefined || isLoading"
-												ng-click="addObservacaoHistorico()"> Incluir </button>
+									<div class="form-row">
+										<div class="col-sm-11 spacer">
+											<label for="obsOportunidade">Observação</label>
+											<textarea class="form-control spacer-input" ng-model="obsOportunidade"
+												id="obsOportunidade" rows="3"></textarea>
+										</div>
+										<div class="col-sm-1 spacer" style="padding-top: 30px;">
+											<label for="obsOportunidade"> </label>
+											<div class="btn-group">
+												<button class="btn btn_grid btn_cor_padrao"
+													ng-disabled="obsOportunidade=='' || obsOportunidade==undefined || isLoading"
+													ng-click="addObservacaoHistorico()"> Incluir </button>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
 				</form>
 				<hr class="divider">
 				<!-- Ações sob o formulario -->
@@ -717,7 +710,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 296 - alterações de layout")
+		alert("teste 297 - alterações de layout")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -996,12 +989,12 @@
 						// valor total 
 						let valorCalculoPrecoTotal = 0
 						// peso total
-						let valorCalculoPesoTotal = 0 
+						let valorCalculoPesoTotal = 0
 						// volume
 						let valorCalculoVolumeTotal = 0
 						// quantidade 
 						let valorCalculoQuantidadeTotal = 0
-						
+
 						//loop para percorrer os produtos na tabela
 						for (let i = 0; i < $rootScope.produtos.length; i++) {
 
@@ -1032,16 +1025,16 @@
 								peso = volumeM3 * 790
 								$rootScope.produtos[i].pesoKG = peso.toFixed('3')
 
-								valorCalculoPrecoTotal		+= vlrLiquido;
-								valorCalculoVolumeTotal 	+= volumeM3;
-								valorCalculoPesoTotal 		+= peso;
+								valorCalculoPrecoTotal += vlrLiquido;
+								valorCalculoVolumeTotal += volumeM3;
+								valorCalculoPesoTotal += peso;
 								valorCalculoQuantidadeTotal += qtd;
 							}
 						}
 
-						$scope.valorPrecoTotal 		= valorCalculoPrecoTotal.toFixed('2')
-						$scope.valorPesoTotal 		= valorCalculoPesoTotal.toFixed('3')
-						$scope.valorVolumeTotal 	= valorCalculoVolumeTotal.toFixed('3')
+						$scope.valorPrecoTotal = valorCalculoPrecoTotal.toFixed('2')
+						$scope.valorPesoTotal = valorCalculoPesoTotal.toFixed('3')
+						$scope.valorVolumeTotal = valorCalculoVolumeTotal.toFixed('3')
 						$scope.valorQuantidadeTotal = valorCalculoQuantidadeTotal.toFixed('0')
 
 					}
@@ -1376,7 +1369,7 @@
 
 							$rootScope.idDocumento = 0;
 							$scope.pedido = 0,
-							$rootScope.produtos = [];
+								$rootScope.produtos = [];
 							// inputs
 							$scope.codTpr = '';
 							$scope.qtdm3 = '';
@@ -1400,9 +1393,9 @@
 							$scope.emissaoOrcamento = new Date(date)
 							$scope.validadeOrcamento = new Date(dataEmissao);
 
-							$scope.valorPrecoTotal 		= ''
-							$scope.valorPesoTotal 		= ''
-							$scope.valorVolumeTotal 	= ''
+							$scope.valorPrecoTotal = ''
+							$scope.valorPesoTotal = ''
+							$scope.valorVolumeTotal = ''
 							$scope.valorQuantidadeTotal = ''
 							//produtos
 							$scope.frete = 'X-Sem Frete';
@@ -1684,7 +1677,7 @@
 							numPedClienteOCPO: $scope.numPedClienteOCPO,
 
 							valorPrecoTotal: $scope.valorPrecoTotal,
-						
+
 							endEntrega: $scope.frmEndEntrega,
 							prevEntrega: $scope.prevEntrega != "" || $scope.prevEntrega != undefined ? $scope.prevEntrega : null,
 
@@ -1873,9 +1866,9 @@
 						console.log($rootScope.dadosGrid)
 						defPD = {
 							'id': { i: 0, vsbl: true, tlt: 'Nº Pedido', width: '' },
-							'jsonDocs[0].pedido'				: { i: 1, vsbl: true, tlt: 'Nº Pedido ERP', 	width: '' },
-							'jsonDocs[0].cliente.nome'			: { i: 2, vsbl: true, tlt: 'Cliente',		 	width: '' },
-							'jsonDocs[0].valorPrecoTotal'		: { i: 3, vsbl: true, tlt: 'Valor Total ', 		width: '' }
+							'jsonDocs[0].pedido': { i: 1, vsbl: true, tlt: 'Nº Pedido ERP', width: '' },
+							'jsonDocs[0].cliente.nome': { i: 2, vsbl: true, tlt: 'Cliente', width: '' },
+							'jsonDocs[0].valorPrecoTotal': { i: 3, vsbl: true, tlt: 'Valor Total ', width: '' }
 						};
 
 
@@ -2076,11 +2069,12 @@
 		border-radius: 8px;
 	}
 
-	
 
-	.panel{
+
+	.panel {
 		width: 68vh;
 	}
+
 	th,
 	td,
 	a {
@@ -2168,7 +2162,7 @@
 		margin-left: 0px;
 	}
 
-	table{
+	table {
 		margin-top: -2px;
 	}
 
