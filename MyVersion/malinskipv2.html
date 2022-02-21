@@ -576,7 +576,7 @@
 											<tbody>
 												<tr>
 													<td>
-														{{valorTotal}}
+														{{valorPrecoTotal}}
 													</td>
 													<td>
 														{{valorQuantidadeTotal}}
@@ -987,7 +987,7 @@
 
 						// valores totais para mostrar na tabela inferior
 						// valor total 
-						let valorCalculoTotal = 0
+						let valorCalculoPrecoTotal = 0
 						// peso total
 						let valorCalculoPesoTotal = 0 
 						// volume
@@ -1021,18 +1021,16 @@
 								$rootScope.produtos[i].pesoKG = peso.toFixed('3')
 
 
+								valorCalculoPrecoTotal		+= vlrLiquido;
 								valorCalculoVolumeTotal 	+= volumeM3;
 								valorCalculoPesoTotal 		+= peso;
 								valorCalculoQuantidadeTotal += qtd;
 							}
 						}
-						$scope.valorPesoTotal = valorCalculoPesoTotal 
-						$scope.valorVolumeTotal = valorCalculoVolumeTotal
-						$scope.valorQuantidadeTotal = valorCalculoQuantidadeTotal
-
-						console.log($scope.valorPesoTotal)
-						console.log(valorCalculoQuantidadeTotal)
-						console.log(valorCalculoVolumeTotal)
+						$scope.valorPrecoTotal = valorCalculoPrecoTotal.tofixed('2')
+						$scope.valorPesoTotal = valorCalculoPesoTotal.toFixed('3')
+						$scope.valorVolumeTotal = valorCalculoVolumeTotal.toFixed('3')
+						$scope.valorQuantidadeTotal = valorCalculoQuantidadeTotal('2')
 
 					}
 
