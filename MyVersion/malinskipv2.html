@@ -732,7 +732,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 315 - alterações de layout")
+		alert("teste 316 - alterações de layout")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1078,10 +1078,10 @@
 							}
 						}
 
-						$scope.valorPrecoTotal = valorCalculoPrecoTotal.toFixed('2')
-						$scope.valorPesoTotal = valorCalculoPesoTotal.toFixed('3')
-						$scope.valorVolumeTotal = valorCalculoVolumeTotal.toFixed('3')
-						$scope.valorQuantidadeTotal = valorCalculoQuantidadeTotal.toFixed('0')
+						$scope.valorPrecoTotal = valorCalculoPrecoTotal.toFixed('2');
+						$scope.valorPesoTotal = valorCalculoPesoTotal.toFixed('3');
+						$scope.valorVolumeTotal = valorCalculoVolumeTotal.toFixed('3');
+						$scope.valorQuantidadeTotal = valorCalculoQuantidadeTotal.toFixed('0');
 
 					}
 
@@ -1438,10 +1438,10 @@
 							$scope.emissaoOrcamento = new Date(date)
 							$scope.validadeOrcamento = new Date(dataEmissao);
 
-							$scope.valorPrecoTotal = ''
-							$scope.valorPesoTotal = ''
-							$scope.valorVolumeTotal = ''
-							$scope.valorQuantidadeTotal = ''
+							$scope.valorPrecoTotal = '';
+							$scope.valorPesoTotal = '';
+							$scope.valorVolumeTotal = '';
+							$scope.valorQuantidadeTotal = '';
 							//produtos
 							$scope.frete = 'X-Sem Frete';
 
@@ -1727,6 +1727,10 @@
 							numPedClienteOCPO: $scope.numPedClienteOCPO,
 
 							valorPrecoTotal: $scope.valorPrecoTotal,
+							valorPesoTotal: $scope.valorPesoTotal,
+							valorVolumeTotal:  $scope.valorVolumeTotal,
+							valorQuantidadeTotal: $scope.valorQuantidadeTotal,
+
 
 							endEntrega: $scope.frmEndEntrega,
 							prevEntrega: $scope.prevEntrega != "" || $scope.prevEntrega != undefined ? $scope.prevEntrega : null,
