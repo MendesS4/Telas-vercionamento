@@ -579,7 +579,7 @@
 														{{produto.valorTotal}}
 													</td>
 													<td>
-														{{produto.valorQuantidadeTotal}}
+														{{valorQuantidadeTotal}}
 													</td>
 													<td>
 														{{produto.valorPesoTotal}}
@@ -710,7 +710,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 278 - alterações de layout")
+		alert("teste 279 - alterações de layout")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1034,7 +1034,7 @@
 						let codCli = $scope.codigoCliente
 						let tabPreco = $scope.codTpr
 
-						if (codCli == "" && tapPreco == "") {
+						if (codCli == "" && tabPreco == "") {
 							alert("Prencha os campos de cliente e tabela e preco corretamente")
 						}
 						// para fazer o calculo
