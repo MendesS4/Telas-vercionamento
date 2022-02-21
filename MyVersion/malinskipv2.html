@@ -710,7 +710,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 279 - alterações de layout")
+		alert("teste 280 - alterações de layout")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -987,13 +987,13 @@
 
 						// valores totais para mostrar na tabela inferior
 						// valor total 
-						let valorTotal = 0
+						let valorCalculoTotal = 0
 						// peso total
-						let valorPesoTotal = 0 
+						let valorCalculoPesoTotal = 0 
 						// volume
-						let valorVolumeTotal = 0
+						let valorCalculoVolumeTotal = 0
 						// quantidade 
-						let valorQuantidadeTotal = 0
+						let valorCalculoQuantidadeTotal = 0
 						
 						//loop para percorrer os produtos na tabela
 						for (let i = 0; i < $rootScope.produtos.length; i++) {
@@ -1020,10 +1020,15 @@
 								peso = volumeM3 * 790
 								$rootScope.produtos[i].pesoKG = peso.toFixed('3')
 
-								valorQuantidadeTotal += qtd;
+
+								valorCalculoVolumeTotal 	+= volumeM3;
+								valorCalculoPesoTotal 		+= peso;
+								valorCalculoQuantidadeTotal += qtd;
 
 							}
-							console.log(valorQuantidadeTotal)
+							console.log(valorCalculoPesoTotal)
+							console.log(valorCalculoQuantidadeTotal)
+							console.log(valorCalculoVolumeTotal)
 
 						}
 
@@ -1361,20 +1366,18 @@
 
 							//para um novo pedido
 							$rootScope.idDocumento = 0;
+
 							$scope.pedido = 0,
 
-								$rootScope.produtos = [];
+							$rootScope.produtos = [];
+
 							// inputs
 							$scope.codTpr = '';
-
 							$scope.qtdm3 = '';
-
 							$scope.tabPreco = '';
 							$scope.frmCliente = '';
-
 							$scope.totalFrete = '';
 							$scope.tabelaFrete = '';
-
 							$scope.prevEntregCli = '';
 							$scope.prevEntregPcp = '';
 							$scope.representante = '';
@@ -1382,19 +1385,14 @@
 							$scope.formaPagamento = '';
 							$scope.observacao = '';
 							$scope.numPedClienteOCPO = '';
-
 							$scope.frmCliente = '';
 							$scope.codigoCliente = '';
 							$scope.frmEndEntrega = '';
-
 							$scope.prevEntrega = '';
-
 							$scope.codigoProduto = '';
-
 							// codigos padroes da tela malinski
 							$scope.emissaoOrcamento = new Date(date)
 							$scope.validadeOrcamento = new Date(dataEmissao);
-
 							//produtos
 							$scope.frete = 'X-Sem Frete';
 
@@ -1541,6 +1539,7 @@
 								precoFrete: resultTest.precoFrete,
 								precoVendaCIF: resultTest.precoVendaCIF,
 								qtdPedida: resultTest.qtdPedida,
+
 								ofertaPreco: resultTest.ofertaPreco,
 								precoLiquido: resultTest.precoLiquido,
 								vlrLiquido: resultTest.vlrLiquido,
