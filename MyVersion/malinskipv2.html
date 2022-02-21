@@ -710,7 +710,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 283 - alterações de layout")
+		alert("teste 284 - alterações de layout")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1027,10 +1027,10 @@
 								valorCalculoQuantidadeTotal += qtd;
 							}
 						}
-						$scope.valorPrecoTotal = valorCalculoPrecoTotal.tofixed('2')
-						$scope.valorPesoTotal = valorCalculoPesoTotal.toFixed('3')
-						$scope.valorVolumeTotal = valorCalculoVolumeTotal.toFixed('3')
-						$scope.valorQuantidadeTotal = valorCalculoQuantidadeTotal('2')
+						$scope.valorPrecoTotal 		= valorCalculoPrecoTotal.toFixed('2')
+						$scope.valorPesoTotal 		= valorCalculoPesoTotal.toFixed('3')
+						$scope.valorVolumeTotal 	= valorCalculoVolumeTotal.toFixed('3')
+						$scope.valorQuantidadeTotal = valorCalculoQuantidadeTotal.toFixed('2')
 
 					}
 
@@ -1039,9 +1039,6 @@
 						let codCli = $scope.codigoCliente
 						let tabPreco = $scope.codTpr
 
-						if (codCli == "" && tabPreco == "") {
-							alert("Prencha os campos de cliente e tabela e preco corretamente")
-						}
 						// para fazer o calculo
 						let precoFrete = $scope.totalFrete
 
