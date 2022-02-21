@@ -630,11 +630,10 @@
 				<!-- Ações sob o formulario -->
 				<div class="row spacer">
 					<div class="pull-right" style="padding-right: 10px;">
-						<div>
+						<div class="btn-group">
 							<button class = "btn" ng-disabled="produtos.length == 0 || cadastroPedido.$error.required || isLoading"
-							ng-click="ImprimirOrçamento">
-								Imprimir Orçamento
-							</button>
+								ng-click="ImprimirOrçamento">
+								Imprimir Orçamento</button>
 						</div>
 						<div class="btn-group">
 							<button class=" btn_grid btn-success" title="O pedido será finalizado e enviado ao ERP"
@@ -717,7 +716,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 306 - alterações de layout")
+		alert("teste 307 - alterações de layout")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
