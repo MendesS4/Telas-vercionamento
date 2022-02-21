@@ -711,7 +711,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 302 - alterações de layout")
+		alert("teste 303 - alterações de layout")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1885,8 +1885,11 @@
 							let dataFormatadaBr = '';
 
 							let dataFormat = row.jsonDocs[0].emissaoOrcamento != undefined ? row.jsonDocs[0].emissaoOrcamento.substr(0, 10) : ""
+							console.log(dataFormat)
 
-							dataFormatadaBr = dataFormat.toLocaleDateString('pt-br', {timeZone: 'UTC'})
+							dataFormatadaBr = dataFormat.toLocaleDateString('pt-BR')
+							console.log(dataFormatadaBr)
+
 
 							btnhtmlData += "<div style='font-size:1.0em; color:black;  display:inline-block; vertical-align: middle; cursor:pointer;'>" + dataFormatadaBr + "</div>";
 
