@@ -732,7 +732,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 314 - alterações de layout")
+		alert("teste 315 - alterações de layout")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1525,6 +1525,11 @@
 							$scope.codigoProduto = docs.produtos.codigoProduto;
 							$scope.descricao = docs.produtos.descricao;
 							$scope.codExternoProduto = docs.produtos.codExterno;
+
+							$scope.valorPrecoTotal = docs.valorPrecoTotal;
+							$scope.valorPesoTotal = docs.valorPesoTotal;
+							$scope.valorVolumeTotal = docs.valorVolumeTotal;
+							$scope.valorQuantidadeTotal = docs.valorQuantidadeTotal;
 
 
 							$scope.dataPrevEntregaFormatada = new Date($scope.prevEntrega);
