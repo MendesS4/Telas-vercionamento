@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html ng-app="appV2">
 
@@ -105,7 +104,7 @@
 						<button class="btn btn_acao_header btn_cor_padrao" ng-click="changeView()"><span
 								class="glyphicon glyphicon-menu-left"></span> Voltar</button>
 						<button style="text-align: center; width: 120px;" class="btn btn_acao_header btn_cor_padrao"
-								ng-hide="exibeHistoricos" ng-click="abreHistoricos()"><span
+							ng-hide="exibeHistoricos" ng-click="abreHistoricos()"><span
 								class="glyphicon glyphicon-list-alt"></span> Histórico </button>
 					</div>
 					<div class="col-sm-6">
@@ -225,66 +224,53 @@
 								</div>
 								<div class="col-sm-6 spacer ">
 									<label for="cliente">Cliente</label>
-									<div class ="input-button">
-										<input
-										required
-										id					 ="frmCliente" 
-										autocomplete		 = "off"
-										type				 = "text" 
-										class				 = "form-control" 
-										ng-model			 = "frmCliente"
-										uib-typeahead		 = "teste.nome for teste in getClientesERP($viewValue)"
-										typeahead-on-select  = "onSelectCli($item, $model, $label)"
-										typeahead-min-lenght = "0">
-										<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaCliente()"><i class="glyphicon glyphicon-remove"></i></span>
+									<div class="input-button">
+										<input required id="frmCliente" autocomplete="off" type="text"
+											class="form-control" ng-model="frmCliente"
+											uib-typeahead="teste.nome for teste in getClientesERP($viewValue)"
+											typeahead-on-select="onSelectCli($item, $model, $label)"
+											typeahead-min-lenght="0">
+										<span class="input-group-addon" style="cursor: pointer;"
+											ng-click="limpaCliente()"><i class="glyphicon glyphicon-remove"></i></span>
 									</div>
 								</div>
 								<div class="col-sm-6 spacer ">
 									<label for="tabPreco">Tabela de preço</label>
 									<div class="input-button">
-										<input 
-										id					 = "frmTabelaPreco"
-										autocomplete		 = "off"
-										type				 = "text" 
-										class				 = "form-control" 
-										ng-model			 = "tabPreco"
-										uib-typeahead		 = "teste.nome for teste in getTabelaPreco($viewValue)"
-										typeahead-min-lenght = "0"
-										ng-disabled 		 = "codigoCliente == undefined || codigoCliente == ''">
-										<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaTabPreco()"><i class="glyphicon glyphicon-remove"></i></span>
+										<input id="frmTabelaPreco" autocomplete="off" type="text" class="form-control"
+											ng-model="tabPreco"
+											uib-typeahead="teste.nome for teste in getTabelaPreco($viewValue)"
+											typeahead-min-lenght="0"
+											ng-disabled="codigoCliente == undefined || codigoCliente == ''">
+										<span class="input-group-addon" style="cursor: pointer;"
+											ng-click="limpaTabPreco()"><i class="glyphicon glyphicon-remove"></i></span>
 									</div>
 								</div>
 								<div class="col-sm-4 spacer ">
 									<label for="frete">Tipo de frete</label>
 									<div class="input-button">
-										<input 
-										required
-										id					 = "frmFrete"
-										autocomplete		 = "off"
-										type				 = "text" 
-										class				 = "form-control" 
-										ng-model             = "frete"
-										uib-typeahead        = "teste.tipo + ' - ' + teste.desc for teste in getTipoFrete($viewValue)"
-										typeahead-min-lenght = "0"
-										typeahead-on-select	 = "inputsControlFrete($item, $model, $label)">
-										<span class	="input-group-addon" style="cursor: pointer;" ng-click="limpaTipoFrete()"><i class="glyphicon glyphicon-remove"></i></span>	
+										<input required id="frmFrete" autocomplete="off" type="text"
+											class="form-control" ng-model="frete"
+											uib-typeahead="teste.tipo + ' - ' + teste.desc for teste in getTipoFrete($viewValue)"
+											typeahead-min-lenght="0"
+											typeahead-on-select="inputsControlFrete($item, $model, $label)">
+										<span class="input-group-addon" style="cursor: pointer;"
+											ng-click="limpaTipoFrete()"><i
+												class="glyphicon glyphicon-remove"></i></span>
 									</div>
 								</div>
 								<div class="col-sm-4 spacer ">
 									<label for="tabelaFrete">Tabela de frete</label>
-									<div class = "input-button">
-										<input 
-										ng-required			 = "requiredTabFrete" 
-										id 					 = "tabTabelaFrete"
-										autocomplete		 = "off"
-										type				 = "text" 
-										class                = "form-control" 
-										ng-model             = "tabelaFrete" 
-										ng-disabled          = "!habilitado"
-										uib-typeahead        = "frete.nom for frete in getTabelaFrete($viewValue)"
-										typeahead-on-select  = "onSelectTabFrete($item, $model, $label)"
-										typeahead-min-lenght = "0">
-										<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaTabelaFrete()"><i class="glyphicon glyphicon-remove"></i></span>
+									<div class="input-button">
+										<input ng-required="requiredTabFrete" id="tabTabelaFrete" autocomplete="off"
+											type="text" class="form-control" ng-model="tabelaFrete"
+											ng-disabled="!habilitado"
+											uib-typeahead="frete.nom for frete in getTabelaFrete($viewValue)"
+											typeahead-on-select="onSelectTabFrete($item, $model, $label)"
+											typeahead-min-lenght="0">
+										<span class="input-group-addon" style="cursor: pointer;"
+											ng-click="limpaTabelaFrete()"><i
+												class="glyphicon glyphicon-remove"></i></span>
 									</div>
 								</div>
 								<div class="col-sm-4 spacer ">
@@ -293,11 +279,13 @@
 								</div>
 								<div class="col-sm-4 spacer ">
 									<label for="emissaoOrcamento">Emissão do orçamento</label>
-									<input type="date" class="form-control" ng-model="emissaoOrcamento" min="2022-01-01" readonly>
+									<input type="date" class="form-control" ng-model="emissaoOrcamento" min="2022-01-01"
+										readonly>
 								</div>
 								<div class="col-sm-4 spacer ">
 									<label for="validadeOrcamento">Validade do orçamento</label>
-									<input type="date" class="form-control" ng-model="validadeOrcamento" min="2022-01-01">
+									<input type="date" class="form-control" ng-model="validadeOrcamento"
+										min="2022-01-01">
 								</div>
 								<div class="col-sm-4 spacer ">
 									<label for="prevEntregCli">Previsão de entrega do cliente</label>
@@ -305,7 +293,7 @@
 								</div>
 								<div class="col-sm-6 spacer ">
 									<label for="situacao">Situação</label>
-									<input type="text" class="form-control" ng-model="situacao" readonly >
+									<input type="text" class="form-control" ng-model="situacao" readonly>
 								</div>
 								<div class="col-sm-6 spacer ">
 									<label for="representante">Representante</label>
@@ -313,15 +301,13 @@
 								</div>
 								<div class="col-sm-6 spacer ">
 									<label for="condPagamento">Condição de pagamento</label>
-									<input type="text" required class="form-control" ng-model="condPagamento"
-										required
+									<input type="text" required class="form-control" ng-model="condPagamento" required
 										uib-typeahead="teste.nome for teste in getCondicaoPagamentoERP($viewValue)"
 										typeahead-min-lenght="2">
 								</div>
 								<div class="col-sm-6 spacer ">
 									<label for="formaPagamento">Forma de pagamento</label>
-									<input type="text" required class="form-control" ng-model="formaPagamento"
-										required
+									<input type="text" required class="form-control" ng-model="formaPagamento" required
 										uib-typeahead="teste.codExterno + ' - ' + teste.nome for teste in getFormasPagamentoERP($viewValue)"
 										typeahead-min-lenght="3">
 								</div>
@@ -336,7 +322,8 @@
 								</div>
 
 								<div class="col-sm-12 spacer ">
-									<button class="btn btn_grid btn_cor_padrao" ng-click="getInfoTabela()" required> Carregar Produtos </button>
+									<button class="btn btn_grid btn_cor_padrao" ng-click="getInfoTabela()" required>
+										Carregar Produtos </button>
 								</div>
 
 								<div style="margin-top:5px" class="form-group col-md-12">
@@ -568,91 +555,87 @@
 											</tbody>
 										</table>
 									</div>
-
 									</pre>
+										<div>
+											<div class="col-sm-12 spacer">
+												<h5>
+													Total:
+												</h5>
+												{{valorTotal | currency:'R$ '}}
+												<h5>
+													Valor Liquido:
+												</h5>
+												<h5>
+													Peso:
+												</h5>
+												<h5>
+													Quantidade:
+												</h5>
+												<h5>
+													Volume:
+												</h5>
+											</div>
+										</div>
 
 									</div>
-										<div class="col-sm-12 spacer">
-										<h5>
-											Total:
-										</h5>
-											{{valorTotal | currency:'R$ '}}
-										<h5>
-											Valor Liquido:
-										</h5>
-										<h5>
-											Peso:
-										</h5>
-										<h5>
-											Quantidade:
-										</h5>
-										<h5>
-											Volume:
-										</h5>
+
+								</div>
+							</div>
+
+							<div ng-show="exibeHistoricos" class="col-sm-12">
+								<div class="form-row">
+									<div class="col-sm-12 spacer">
+										<label for="histOportunidade">Histórico</label>
+										<textarea readonly class="form-control spacer-input"
+											ng-disabled="inputDesabilitado" ng-model="histOportunidade"
+											id="histOportunidade" rows="10"></textarea>
 									</div>
 								</div>
-
-							</div>
-
-						</div>
-					</div>
-
-					<div ng-show="exibeHistoricos" class="col-sm-12">
-						<div class="form-row">
-							<div class="col-sm-12 spacer">
-								<label for="histOportunidade">Histórico</label>
-								<textarea readonly class="form-control spacer-input" ng-disabled="inputDesabilitado"
-									ng-model="histOportunidade" id="histOportunidade" rows="10"></textarea>
-							</div>
-						</div>
-						<div class="form-row">
-							<div class="col-sm-12 spacer">
-								<hr class="divider">
-							</div>
-						</div>
-						<div class="form-row">
-							<div class="col-sm-11 spacer">
-								<label for="obsOportunidade">Observação</label>
-								<textarea class="form-control spacer-input" ng-model="obsOportunidade"
-									id="obsOportunidade" rows="3"></textarea>
-							</div>
-							<div class="col-sm-1 spacer" style="padding-top: 30px;">
-								<label for="obsOportunidade"> </label>
-								<div class="btn-group">
-									<button class="btn btn_grid btn_cor_padrao"
-										ng-disabled="obsOportunidade=='' || obsOportunidade==undefined || isLoading"
-										ng-click="addObservacaoHistorico()"> Incluir </button>
+								<div class="form-row">
+									<div class="col-sm-12 spacer">
+										<hr class="divider">
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="col-sm-11 spacer">
+										<label for="obsOportunidade">Observação</label>
+										<textarea class="form-control spacer-input" ng-model="obsOportunidade"
+											id="obsOportunidade" rows="3"></textarea>
+									</div>
+									<div class="col-sm-1 spacer" style="padding-top: 30px;">
+										<label for="obsOportunidade"> </label>
+										<div class="btn-group">
+											<button class="btn btn_grid btn_cor_padrao"
+												ng-disabled="obsOportunidade=='' || obsOportunidade==undefined || isLoading"
+												ng-click="addObservacaoHistorico()"> Incluir </button>
+										</div>
+									</div>
 								</div>
 							</div>
-						</div>
-					</div>
 				</form>
 				<hr class="divider">
-			<!-- Ações sob o formulario -->
-			<div class="row spacer">
-				<div class="pull-right" style="padding-right: 10px;">
-					<div class="btn-group">
-						<button class="btn btn_grid btn-success" 
-							title="O pedido será finalizado e enviado ao ERP"
-							ng-disabled="produtos.length == 0 || cadastroPedido.$error.required || isLoading"
-							ng-show="pedido == 0 " 
-							ng-click="finalizarDocumento()"> Finalizar </button>
-					</div>
-					<div class="btn-group">
-						<button class="btn" 
-						ng-click="changeView()"> Cancelar </button>
-					</div>
-					<div class="btn-group">
-						<button class="btn btn_grid btn_cor_padrao"
-							title="O pedido será salvo. Voce ainda poderá editar e finalizar o pedido."
-							ng-disabled="cadastroPedido.$error.required || isLoading" 
-							ng-click="salvarDocumento(1)"> Salvar </button>
-							<!--"produtos.length == 0--> 
+				<!-- Ações sob o formulario -->
+				<div class="row spacer">
+					<div class="pull-right" style="padding-right: 10px;">
+						<div class="btn-group">
+							<button class="btn btn_grid btn-success" title="O pedido será finalizado e enviado ao ERP"
+								ng-disabled="produtos.length == 0 || cadastroPedido.$error.required || isLoading"
+								ng-show="pedido == 0 " ng-click="finalizarDocumento()"> Finalizar </button>
+						</div>
+						<div class="btn-group">
+							<button class="btn" ng-click="changeView()"> Cancelar </button>
+						</div>
+						<div class="btn-group">
+							<button class="btn btn_grid btn_cor_padrao"
+								title="O pedido será salvo. Voce ainda poderá editar e finalizar o pedido."
+								ng-disabled="cadastroPedido.$error.required || isLoading" ng-click="salvarDocumento(1)">
+								Salvar </button>
+							<!--"produtos.length == 0-->
+						</div>
 					</div>
 				</div>
-			</div>
-			<!-- Açõees sob o formulario -->
-			<hr class="divider">
+				<!-- Açõees sob o formulario -->
+				<hr class="divider">
 			</div>
 			<!-- Capa do pedido -->
 		</div>
@@ -715,7 +698,7 @@
 	<!-- Scripts importados -->
 	<script>
 
-		alert("teste 275 - alterações de layout")
+		alert("teste 276 - alterações de layout")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		//alert("teste de tela 267 - versoes finais ")
 		//TESTE DE CONTROLE DE ATT GITHUB
@@ -837,37 +820,37 @@
 
 					//requisicao para tipo de frete
 					$scope.getTipoFrete = async (consulta) => {
-						try{
+						try {
 							let result = await $scope.executaRequisicaoExterna(
-							{
-								idCvtccnpj : dadosUserLogado.cId,
-								numreg	   : 750,
-								pRotina    : 'getTipoFrete',
-								pCodCli	   : dadosUserLogado.rId,
-								pFilter    : {filtro:{filtrotipFrete : consulta}}
-							},
-						);
-						if(result != undefined && result.resultado !=undefined){
-							return result.resultado.map((item)=>{
-								return item
-							})
-						}else{
-							return []
-						}
-						}catch(err){
+								{
+									idCvtccnpj: dadosUserLogado.cId,
+									numreg: 750,
+									pRotina: 'getTipoFrete',
+									pCodCli: dadosUserLogado.rId,
+									pFilter: { filtro: { filtrotipFrete: consulta } }
+								},
+							);
+							if (result != undefined && result.resultado != undefined) {
+								return result.resultado.map((item) => {
+									return item
+								})
+							} else {
+								return []
+							}
+						} catch (err) {
 							console.log("ocorreu em erro na requisição ", err);
 						};
 					}
 					//lista
-					$scope.onSelectTipoFrete = function ($item, $model, $label){
+					$scope.onSelectTipoFrete = function ($item, $model, $label) {
 						$scope.frete = $item;
 					};
 					//limpa campo
-					$scope.limpaTipoFrete = function ($item, $model, $label){
+					$scope.limpaTipoFrete = function ($item, $model, $label) {
 						$scope.frete = ""
 						$scope.tabelaFrete = ""
 						$scope.totalFrete = ""
-				
+
 
 						//desabilita o campo de tabela de frete
 						$scope.habilitado = false
@@ -881,31 +864,31 @@
 
 					//requisicao para tabela de frete
 					$scope.getTabelaFrete = async (consulta) => {
-						try{
+						try {
 							let result = await $scope.executaRequisicaoExterna(
-							{
-								idCvtccnpj : dadosUserLogado.cId,
-								numreg	   : 750,
-								pRotina    : 'getTabelaFrete',
-								pCodCli	   : dadosUserLogado.rId,
-								pFilter    : {filtro:{filtroTabelaFrete : consulta}}
-							},
-						);
-						if(result != undefined && result.resultado !=undefined){
-							return result.resultado.map((item)=>{
-								$scope.precoFrete = result.resultado.valor
-								return item
-							})
-						}else{
-							return []
-						}
-						}catch(err){
+								{
+									idCvtccnpj: dadosUserLogado.cId,
+									numreg: 750,
+									pRotina: 'getTabelaFrete',
+									pCodCli: dadosUserLogado.rId,
+									pFilter: { filtro: { filtroTabelaFrete: consulta } }
+								},
+							);
+							if (result != undefined && result.resultado != undefined) {
+								return result.resultado.map((item) => {
+									$scope.precoFrete = result.resultado.valor
+									return item
+								})
+							} else {
+								return []
+							}
+						} catch (err) {
 							console.log("ocorreu em erro na requisição ", err);
 						};
 					}
 
 					//limpa o campo
-					$scope.limpaTabelaFrete = function ($item, $model, $label){
+					$scope.limpaTabelaFrete = function ($item, $model, $label) {
 						$scope.tabelaFrete = ""
 						//volta o foco para o input
 						var tabFrete = angular.element(document.querySelector('#tabTabelaFrete'));
@@ -919,10 +902,10 @@
 					}
 
 					//controla inputs com base no tipo de frete
-					$scope.inputsControlFrete = function ($item, $model, $label){
+					$scope.inputsControlFrete = function ($item, $model, $label) {
 						switch ($item.desc) {
 							case 'Sem Frete':
-							    $scope.habilitado = false
+								$scope.habilitado = false
 								$scope.tabelaFrete = ''
 								$scope.totalFrete = '';
 								break;
@@ -941,32 +924,32 @@
 					}
 
 					// requisicao para tabela de preco
-					$scope.getTabelaPreco = async (consulta, opcao) =>	{
+					$scope.getTabelaPreco = async (consulta, opcao) => {
 						let codCli = $scope.codigoCliente
 						let tabPreco = $scope.tabPreco
-						try{
+						try {
 							let result = await $scope.executaRequisicaoExterna(
 								{
-									idCvtccnpj : dadosUserLogado.cId,
-									numreg	   : 750,
-									pRotina    : 'filtrarTabelaPreco',
-									pCodCli    : dadosUserLogado.rId,
-									pFilter    : {filtro:{filtroTabPreco : tabPreco , filtroCli : codCli}}, 
+									idCvtccnpj: dadosUserLogado.cId,
+									numreg: 750,
+									pRotina: 'filtrarTabelaPreco',
+									pCodCli: dadosUserLogado.rId,
+									pFilter: { filtro: { filtroTabPreco: tabPreco, filtroCli: codCli } },
 								},
 							);
-							
-							if(result != undefined && result.resultado !=undefined){
-								if(opcao && opcao != undefined){
+
+							if (result != undefined && result.resultado != undefined) {
+								if (opcao && opcao != undefined) {
 									$scope.tabPreco = result.resultado[0]
-								}else{
-									return result.resultado.map((item)=>{
-									return item
-								})		
+								} else {
+									return result.resultado.map((item) => {
+										return item
+									})
 								}
-							}else{
+							} else {
 								return []
 							}
-						}catch(err){
+						} catch (err) {
 							console.log("ocorreu um erro na requisição ", err);
 						};
 					}
@@ -986,23 +969,23 @@
 
 
 					// faz o calculo na tabela de produtos para calculo de peso/volume/valorLiquido
-					$scope.calcularProdutos = () =>{		
-		
+					$scope.calcularProdutos = () => {
+
 						let volumeM3 = 0;
 						let peso = 0
 						let vlrLiquido = 0
 
-						for(let i=0; i < $rootScope.produtos.length; i++){
+						for (let i = 0; i < $rootScope.produtos.length; i++) {
 
 							//quantidade
 							let qtd = parseFloat($rootScope.produtos[i].qtdPedida)
 							//valor do BD
-							let qtdm3 = parseFloat($rootScope.produtos[i].qtdm3.replace(',','.'))
+							let qtdm3 = parseFloat($rootScope.produtos[i].qtdm3.replace(',', '.'))
 							//preco liquido de produto
-							let precoLiquido = parseFloat($rootScope.produtos[i].precoLiquido.replace(',','.'))
+							let precoLiquido = parseFloat($rootScope.produtos[i].precoLiquido.replace(',', '.'))
 
 
-							if((qtd != null && qtd > 0) && $rootScope.produtos[i].qtdm3 != null){
+							if ((qtd != null && qtd > 0) && $rootScope.produtos[i].qtdm3 != null) {
 
 								//calculando valor liquido
 								vlrLiquido = qtd * precoLiquido
@@ -1017,32 +1000,32 @@
 								$rootScope.produtos[i].pesoKG = peso.toFixed('3')
 
 
-							} 
+							}
 
 						}
-						
+
 					}
 
 					//carrega os produtos na tabela
 					$scope.getInfoTabela = async () => {
-						let codCli   	= $scope.codigoCliente
-						let tabPreco 	= $scope.codTpr
+						let codCli = $scope.codigoCliente
+						let tabPreco = $scope.codTpr
 
-						if (codCli == "" && tapPreco == ""){
+						if (codCli == "" && tapPreco == "") {
 							alert("Prencha os campos de cliente e tabela e preco corretamente")
 						}
 						// para fazer o calculo
-						let precoFrete 	= $scope.totalFrete
+						let precoFrete = $scope.totalFrete
 
 						let result = await $scope.executaRequisicaoExterna(
 							{
-								idCvtccnpj	: 	dadosUserLogado.cId,
-								numreg		: 	750,
-								pRotina		: 	'filtrarInfoTabela',
-								pCodCli		: 	dadosUserLogado.rId,
-								pFilter		: 	{filtro:{filtroTab : tabPreco , filtroCli : codCli}}
+								idCvtccnpj: dadosUserLogado.cId,
+								numreg: 750,
+								pRotina: 'filtrarInfoTabela',
+								pCodCli: dadosUserLogado.rId,
+								pFilter: { filtro: { filtroTab: tabPreco, filtroCli: codCli } }
 							},
-						);	
+						);
 						let newResult = result.resultado
 						for (let i = 0; i < newResult.length; i++) {
 							$scope.adicionarProduto(newResult[i])
@@ -1096,10 +1079,10 @@
 							);
 
 							if (result != undefined && result.resultado != undefined) {
-								if(opcao && opcao != undefined){
+								if (opcao && opcao != undefined) {
 									$scope.formaPagamento = result.resultado[0]
-								}else{
-									return result.resultado.map((item)=>{
+								} else {
+									return result.resultado.map((item) => {
 										return item
 									})
 								}
@@ -1122,46 +1105,46 @@
 
 					//requisicao para busca de clientes
 					$scope.getClientesERP = async (consulta) => {
-					try{
-						let result = await $scope.executaRequisicaoExterna(
-							{
-								idCvtccnpj : dadosUserLogado.cId,
-								numreg	   : 750,
-								pRotina	   : 'filtrarCliente',
-								pCodCli    : dadosUserLogado.rId,
-								pCodRep		: dadosUserLogado.rCod,
-								pFilter    : {filtro:{filtroCliente : consulta}},
-							},
-						);
-						if(result != undefined && result.resultado != undefined){
-							return result.resultado.map((item)=>{
-								return item
-							})
-						}else{
-							return [];
-						}
-					}catch(err){
-						console.log("Ocorreu um erro na requisição: ", err);
-					};
+						try {
+							let result = await $scope.executaRequisicaoExterna(
+								{
+									idCvtccnpj: dadosUserLogado.cId,
+									numreg: 750,
+									pRotina: 'filtrarCliente',
+									pCodCli: dadosUserLogado.rId,
+									pCodRep: dadosUserLogado.rCod,
+									pFilter: { filtro: { filtroCliente: consulta } },
+								},
+							);
+							if (result != undefined && result.resultado != undefined) {
+								return result.resultado.map((item) => {
+									return item
+								})
+							} else {
+								return [];
+							}
+						} catch (err) {
+							console.log("Ocorreu um erro na requisição: ", err);
+						};
 
 					}
 
 					//funcao para atribuir valores vindo da requisição de clientes 
 					$scope.onSelectCli = ($item, $model, $label) => {
-						$rootScope.cliente	 	= $item;
+						$rootScope.cliente = $item;
 						$scope.codTpr = $item.codTpr
-						$scope.codigoCliente 	= $rootScope.cliente.codExterno
-						$scope.tabPreco 	 	= {nome : $scope.cliente.desTpr}
-						$scope.formaPagamento	= {codExterno : $scope.cliente.codFpg, nome : $scope.cliente.desFpg}
-						
+						$scope.codigoCliente = $rootScope.cliente.codExterno
+						$scope.tabPreco = { nome: $scope.cliente.desTpr }
+						$scope.formaPagamento = { codExterno: $scope.cliente.codFpg, nome: $scope.cliente.desFpg }
+
 						//validacao de valores vindos
-						if ($item.codFpg == "0"){
+						if ($item.codFpg == "0") {
 							$scope.formaPagamento = ""
 						}
-						if($item.codTpr == " "){
+						if ($item.codTpr == " ") {
 							$scope.tabPreco = ""
 						}
-						$scope.condPagamento 	= {codExterno : $scope.cliente.codCpg, nome : $scope.cliente.desCpg}
+						$scope.condPagamento = { codExterno: $scope.cliente.codCpg, nome: $scope.cliente.desCpg }
 
 					};
 
@@ -1297,7 +1280,7 @@
 								pDocumento: { documento: $item }
 							},
 							20//limite tempo
-									
+
 						);
 
 						$rootScope.isLoading = false;
@@ -1341,13 +1324,13 @@
 
 						//data do dia / data de emissao 
 						var today = new Date();
-						var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+						var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 						let newDate = today.setDate(today.getDate() + 30);
 
 						//data fotura +30 dias data de vencimento
 						var future = new Date();
-						future.setDate(future.getDate()+30)
-						var dataEmissao = future.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+						future.setDate(future.getDate() + 30)
+						var dataEmissao = future.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 
 						$scope.habilitarFrete = false
 
@@ -1357,7 +1340,7 @@
 							$rootScope.idDocumento = 0;
 							$scope.pedido = 0,
 
-							$rootScope.produtos = [];
+								$rootScope.produtos = [];
 							// inputs
 							$scope.codTpr = '';
 
@@ -1365,10 +1348,10 @@
 
 							$scope.tabPreco = '';
 							$scope.frmCliente = '';
-							
+
 							$scope.totalFrete = '';
 							$scope.tabelaFrete = '';
-							
+
 							$scope.prevEntregCli = '';
 							$scope.prevEntregPcp = '';
 							$scope.representante = '';
@@ -1386,7 +1369,7 @@
 							$scope.codigoProduto = '';
 
 							// codigos padroes da tela malinski
-							$scope.emissaoOrcamento =  new Date(date)
+							$scope.emissaoOrcamento = new Date(date)
 							$scope.validadeOrcamento = new Date(dataEmissao);
 
 							//produtos
@@ -1427,7 +1410,7 @@
 							$scope.frete = docs.frete;
 							$scope.totalFrete = docs.totalFrete;
 							$scope.tabelaFrete = docs.tabelaFrete;
-							$scope.validadeOrcamento = docs.validadeOrcamento != null ? new Date(docs.validadeOrcamento) : null 
+							$scope.validadeOrcamento = docs.validadeOrcamento != null ? new Date(docs.validadeOrcamento) : null
 							//emissao de orcamento (date do sistema)
 							$scope.emissaoOrcamento = docs.emissaoOrcamento != null ? new Date(docs.emissaoOrcamento) : null
 
@@ -1480,7 +1463,7 @@
 
 					};
 
-			
+
 					$scope.calculoValidacaoProdutoERP = async ($dados) => {
 
 						try {
@@ -1525,41 +1508,41 @@
 					$scope.adicionarProduto = (resultTest) => {
 						$rootScope.produtos.unshift(
 							{
-								qtdm3 			: resultTest.qtdm3,
-								seq				: resultTest.seq,
-								ocpo			: resultTest.ocpo,
-								itocpo			: resultTest.itocpo,
-								codProCli		: resultTest.usu_procli,
-								descrProCli		: resultTest.desProdCli,
-								precoVendFOB	: resultTest.usu_preliq,
-								precoFrete		: resultTest.precoFrete,
-								precoVendaCIF	: resultTest.precoVendaCIF,
-								qtdPedida		: resultTest.qtdPedida,
-								ofertaPreco		: resultTest.ofertaPreco,
-								precoLiquido	: resultTest.precoLiquido,
-								vlrLiquido		: resultTest.vlrLiquido,
-								pesoKG			: resultTest.pesoKG,
-								volumeM3		: resultTest.volumeM3,
-								qtdEmb			: resultTest.usu_qtdemb,
-								descEmb			: resultTest.descEmb,
-								qtdSubEmb		: resultTest.qtdSubEmb,
-								descrSubEmb		: resultTest.descrSubEmb,
-								dataPCP			: resultTest.dataPCP,
-								dataETD			: resultTest.dataETD,
-								acresPreco		: resultTest.acresPreco,
-								descontoFin		: resultTest.descontoFin,
-								vlrDesconto		: resultTest.vlrDesconto,
-								vlrBruto		: resultTest.vlrBruto,
-								codPro			: resultTest.usu_codpro,
-								derivacao		: resultTest.usu_codder,
-								um				: resultTest.um,
-								previsaoCli		: resultTest.previsaoCli,
-								emb				: resultTest.emb,
-								subEmb			: resultTest.usu_subemb,
-								descrProduto	: resultTest.descrProd,
-								descrDeriv		: resultTest.descDeriv,
-								nrPedido		: resultTest.nrPedido,
-								seqPed 			: resultTest.seqPed
+								qtdm3: resultTest.qtdm3,
+								seq: resultTest.seq,
+								ocpo: resultTest.ocpo,
+								itocpo: resultTest.itocpo,
+								codProCli: resultTest.usu_procli,
+								descrProCli: resultTest.desProdCli,
+								precoVendFOB: resultTest.usu_preliq,
+								precoFrete: resultTest.precoFrete,
+								precoVendaCIF: resultTest.precoVendaCIF,
+								qtdPedida: resultTest.qtdPedida,
+								ofertaPreco: resultTest.ofertaPreco,
+								precoLiquido: resultTest.precoLiquido,
+								vlrLiquido: resultTest.vlrLiquido,
+								pesoKG: resultTest.pesoKG,
+								volumeM3: resultTest.volumeM3,
+								qtdEmb: resultTest.usu_qtdemb,
+								descEmb: resultTest.descEmb,
+								qtdSubEmb: resultTest.qtdSubEmb,
+								descrSubEmb: resultTest.descrSubEmb,
+								dataPCP: resultTest.dataPCP,
+								dataETD: resultTest.dataETD,
+								acresPreco: resultTest.acresPreco,
+								descontoFin: resultTest.descontoFin,
+								vlrDesconto: resultTest.vlrDesconto,
+								vlrBruto: resultTest.vlrBruto,
+								codPro: resultTest.usu_codpro,
+								derivacao: resultTest.usu_codder,
+								um: resultTest.um,
+								previsaoCli: resultTest.previsaoCli,
+								emb: resultTest.emb,
+								subEmb: resultTest.usu_subemb,
+								descrProduto: resultTest.descrProd,
+								descrDeriv: resultTest.descDeriv,
+								nrPedido: resultTest.nrPedido,
+								seqPed: resultTest.seqPed
 							}
 						);
 
@@ -1674,7 +1657,7 @@
 
 							// pedido final
 							pedido: $scope.pedido,
-							
+
 							sincronizado: $scope.sincronizado == "DOCUMENTO_SINCRONIZADO" ? "DOCUMENTO_SINCRONIZADO" : "DOCUMENTO_NAO_SINCRONIZADO",
 
 							representante: { rId: dadosUserLogado.rCod, nome: dadosUserLogado.rNome },
@@ -1731,12 +1714,12 @@
 							}
 						} else {
 
-							
+
 							dados.jsonDocs = JSON.stringify(json);
 							let response = await $http.post('/clicVendas/rest/pedidov2/salvar/', dados);
-							
 
-							
+
+
 							if (rotina == 1) {
 								$scope.messageNotific = 'Registro inserido com sucesso';
 								$scope.geraNotificacao($scope.messageNotific, 1500, 'success');
@@ -2024,7 +2007,7 @@
 		margin-top: -20px;
 	}
 
-	.inputNumberTable{
+	.inputNumberTable {
 		width: 20vh
 	}
 
@@ -2149,7 +2132,7 @@
 		font-weight: bolder;
 	}
 
-	.input-button{
+	.input-button {
 		display: table;
 	}
 
@@ -2306,7 +2289,7 @@
 		margin: 0;
 	}
 
-	.scroll-div{
+	.scroll-div {
 		overflow-y: scroll;
 		height: 50vh;
 	}
