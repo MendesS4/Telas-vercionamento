@@ -415,6 +415,7 @@
 													<td>
 														<div>
 															<input
+															required
 															ng-change="calcularProdutos()"
 															type="number"
 															class="inputNumberTable"
@@ -559,16 +560,13 @@
 											<thead>
 												<tr>
 													<th>
-														Total:
-													</th>
-													<th>
-														Valor Liquido:
-													</th>
-													<th>
-														Peso:
+													 	Valor total:
 													</th>
 													<th>
 														Quantidade:
+													</th>
+													<th>
+														Peso:
 													</th>
 													<th>
 														Volume:
@@ -578,22 +576,18 @@
 											<tbody>
 												<tr>
 													<td>
-														XXXXXXXXX
+														{{produto.valorTotal}}
 													</td>
 													<td>
-														XXXXXXXXX
+														{{produto.valorQuantidadeTotal}}
 													</td>
 													<td>
-														XXXXXXXXX
+														{{produto.valorPesoTotal}}
 													</td>
 													<td>
-														XXXXXXXXX
-													</td>
-													<td>
-														XXXXXXXXX
+														{{produto.valorVolumeTotal}}
 													</td>
 												</tr>
-
 											</tbody>
 										</table>
 									</div>
@@ -715,11 +709,9 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-
-		alert("teste 277 - alterações de layout")
-		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
-		//alert("teste de tela 267 - versoes finais ")
 		//TESTE DE CONTROLE DE ATT GITHUB
+		alert("teste 278 - alterações de layout")
+		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
 			//boa sorte :D
@@ -993,6 +985,17 @@
 						let peso = 0
 						let vlrLiquido = 0
 
+						// valores totais para mostrar na tabela inferior
+						// valor total 
+						let valorTotal = 0
+						// peso total
+						let valorPesoTotal = 0 
+						// volume
+						let valorVolumeTotal = 0
+						// quantidade 
+						let valorQuantidadeTotal = 0
+						
+						//loop para percorrer os produtos na tabela
 						for (let i = 0; i < $rootScope.produtos.length; i++) {
 
 							//quantidade
@@ -1017,8 +1020,10 @@
 								peso = volumeM3 * 790
 								$rootScope.produtos[i].pesoKG = peso.toFixed('3')
 
+								valorQuantidadeTotal += qtd;
 
 							}
+							console.log(valorQuantidadeTotal)
 
 						}
 
@@ -1578,7 +1583,6 @@
 							$("table tbody tr:first-child").removeClass("new-row-enter");
 						}, 1000)
 
-						//$scope.calcularProdutos();
 					};
 
 					$scope.removerProduto = ($item) => {
