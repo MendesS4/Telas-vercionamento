@@ -633,8 +633,9 @@
 						<div class="btn-group">
 							<button 
 								class = "btn" 
-								ng-disabled="produtos.length == 0 || cadastroPedido.$error.required || isLoading"
-								ng-click="imprimeOrcamento()">
+								ng-disabled="produtos.length == 0 || cadastroPedido.$error.required || isLoading "
+								ng-click="imprimeOrcamento()"
+								ng-show="idDocumento > 0">
 								Imprimir Orçamento
 							</button>
 						</div>
@@ -731,7 +732,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 309 - alterações de layout")
+		alert("teste 310 - alterações de layout")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
