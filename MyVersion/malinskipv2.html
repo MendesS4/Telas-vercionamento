@@ -733,7 +733,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 334 ")
+		alert("teste 335 ")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1714,6 +1714,11 @@
 
 						dados.cnpj = { id: dadosUserLogado.cId };
 
+						if ($scope.prevEntregCli == null || $scope.prevEntregCli == undefined){
+							$scope.prevEntregCli = ""
+						}
+						console.log($scope.prevEntregCli)
+
 						jsonDocs = [{
 							/*Historico*/
 							obsOportunidade: $scope.obsOportunidade,
@@ -1732,7 +1737,7 @@
 							emissaoOrcamento: $scope.emissaoOrcamento,
 							situacao: $scope.situacao,
 
-							prevEntregCli: $scope.prevEntregCli == null ? $scope.prevEntregCli : "",
+							prevEntregCli: $scope.prevEntregCli,
 
 							prevEntregPcp: $scope.prevEntregPcp,
 							representante: $scope.representante,
