@@ -1734,7 +1734,9 @@
 							validadeOrcamento: $scope.validadeOrcamento,
 							emissaoOrcamento: $scope.emissaoOrcamento,
 							situacao: $scope.situacao,
-							prevEntregCli: $scope.prevEntregCli,
+
+							prevEntregCli: $scope.prevEntregCli != "" || $scope.prevEntregCli != undefined ? $scope.prevEntregCli : null,
+
 							prevEntregPcp: $scope.prevEntregPcp,
 							representante: $scope.representante,
 							condPagamento: $scope.condPagamento,
