@@ -733,7 +733,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 350 ")
+		alert("teste 351")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -995,8 +995,6 @@
 					// faz o calculo na tabela de produtos para calculo de peso/volume/valorLiquido
 					$scope.calcularProdutos = () => {
 
-
-
 						let volumeM3 = 0;
 						let peso = 0
 						let vlrLiquido = 0
@@ -1016,8 +1014,6 @@
 						//loop para percorrer os produtos na tabela
 						for (let i = 0; i < $rootScope.produtos.length; i++) {
 
-
-
 							$rootScope.produtos[i].emb = 0
 
 							//quantidade
@@ -1025,8 +1021,10 @@
 							//oferta de preco
 							valorOfertaPreco = parseFloat($rootScope.produtos[i].ofertaPreco)
 
-							if (valorOfertaPreco == ''){
-								console.log("campo vazio")
+							if (isNaN(valorOfertaPreco)){
+								console.log("nao é um numero / campo vazio")
+							}else{
+								console.log("campo com numero")
 							}
 							//valor do BD
 							let qtdm3 = parseFloat($rootScope.produtos[i].qtdm3.replace(',', '.'))
