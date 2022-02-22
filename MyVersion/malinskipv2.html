@@ -733,7 +733,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 346 ")
+		alert("teste 347 ")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1015,9 +1015,6 @@
 						for (let i = 0; i < $rootScope.produtos.length; i++) {
 
 
-							if ($rootScope.produtos[i].ofertaPreco == ''){
-								console.log("o valor do input esta nulo")
-							}
 
 							$rootScope.produtos[i].emb = 0
 
@@ -1054,6 +1051,9 @@
 								valorCalculoQuantidadeTotal += qtd;
 							}
 						}
+
+						$scope.ofertaPreco = valorOfertaPreco
+
 						$scope.valorPrecoTotal = valorCalculoPrecoTotal.toFixed('2');
 						$scope.valorPrecoTotal = $scope.valorPrecoTotal.replace('.',',')
 						$scope.valorPesoTotal = valorCalculoPesoTotal.toFixed('3');
@@ -1419,6 +1419,7 @@
 
 							$scope.habilitado = false
 
+							$scope.ofertaPreco = 0; 
 							$scope.valorPrecoTotal = 0;
 							$scope.valorPesoTotal = 0;
 							$scope.valorVolumeTotal = 0;
@@ -1504,6 +1505,7 @@
 							$scope.descricao = docs.produtos.descricao;
 							$scope.codExternoProduto = docs.produtos.codExterno;
 
+							$scope.ofertaPreco = docs.ofertaPreco;
 							$scope.valorPrecoTotal = docs.valorPrecoTotal;
 							$scope.valorPesoTotal = docs.valorPesoTotal;
 							$scope.valorVolumeTotal = docs.valorVolumeTotal;
@@ -1572,6 +1574,7 @@
 								precoVendFOB: resultTest.usu_preliq,
 								precoFrete: resultTest.precoFrete,
 								precoVendaCIF: resultTest.precoVendaCIF,
+
 								qtdPedida: resultTest.qtdPedida,
 
 								seqvpp: resultTest.seqvpp,
@@ -1718,6 +1721,7 @@
 							observacao: $scope.observacao,
 							numPedClienteOCPO: $scope.numPedClienteOCPO,
 							valorPrecoTotal: $scope.valorPrecoTotal,
+							ofertaPreco : $scope.ofertaPreco, 
 							valorPesoTotal: $scope.valorPesoTotal,
 							valorVolumeTotal:  $scope.valorVolumeTotal,
 							valorQuantidadeTotal: $scope.valorQuantidadeTotal,
