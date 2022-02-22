@@ -733,7 +733,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 335 ")
+		alert("teste 336 ")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -959,7 +959,7 @@
 					}
 
 					$scope.imprimeOrcamento = async($item) => {
-						console.log("Chegou no impreme Orcamento")
+						//console.log("Chegou no impreme Orcamento")
 						let dados = $item != undefined ? $item : $scope.pedidoInfos
 						console.log(dados)
 						try {
@@ -1781,6 +1781,19 @@
 
 						if (rotina == 2) {
 							let sendToERP = JSON.parse(dados.jsonDocs);
+
+
+							let result = await $scope.executaRequisicaoExterna(
+								{
+									idCvtccnpj 	 : dadosUserLogado.cId,
+									numreg	   	 : 750,
+									pRotina	   	 : 'criarPedidoNovo',
+									pCodCli    	 : dadosUserLogado.rId,
+									pDocumento 	 : sendToERP,
+								},
+							);
+
+							console.log(result)
 
 							$rootScope.pedidoAprovado = await $scope.calculoValidacaoProdutoERP(sendToERP[0]);
 
