@@ -733,7 +733,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 344 ")
+		alert("teste 345 ")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1739,11 +1739,12 @@
 						}];
 
 						dados.jsonDocs = JSON.stringify(jsonDocs);
-						console.log(dados.jsonDocs)
+						
 						/*Recebe dados e para que sejam feitas as alterações necessarias*/
 						var json = JSON.parse(dados.jsonDocs);
 
 						if (rotina == 2) {
+							console.log(dados.jsonDocs)
 							let sendToERP = JSON.parse(dados.jsonDocs);
 
 
