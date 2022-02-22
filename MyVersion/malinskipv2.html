@@ -216,109 +216,188 @@
 								class="form-group col-md-12">
 								<div class="col-sm-6 spacer ">
 									<label for="tipoOrcamento">Tipo de orçamento</label>
-									<input type="text" class="form-control" ng-model="tipoOrcamento" readonly>
+									<input 
+										type="text" 
+										class="form-control" 
+										ng-model="tipoOrcamento" 
+										readonly>
 								</div>
 								<div class="col-sm-6 spacer ">
 									<label for="filial">Filial</label>
-									<input type="text" class="form-control" ng-model="filial" readonly>
+									<input 
+										type="text" 
+										class="form-control" 
+										ng-model="filial" 
+										readonly>
 								</div>
 								<div class="col-sm-6 spacer ">
 									<label for="cliente">Cliente</label>
 									<div class="input-button">
-										<input required id="frmCliente" autocomplete="off" type="text"
-											class="form-control" ng-model="frmCliente"
+										<input 
+											required id="frmCliente" 
+											autocomplete="off" 
+											type="text"
+											class="form-control" 
+											ng-model="frmCliente"
 											uib-typeahead="teste.nome for teste in getClientesERP($viewValue)"
 											typeahead-on-select="onSelectCli($item, $model, $label)"
 											typeahead-min-lenght="0">
-										<span class="input-group-addon" style="cursor: pointer;"
-											ng-click="limpaCliente()"><i class="glyphicon glyphicon-remove"></i></span>
+										<span 
+											class="input-group-addon" 
+											style="cursor: pointer;" 
+											ng-click="limpaCliente()">
+											<i class="glyphicon glyphicon-remove"></i>
+										</span>
 									</div>
 								</div>
 								<div class="col-sm-6 spacer ">
 									<label for="tabPreco">Tabela de preço</label>
 									<div class="input-button">
-										<input id="frmTabelaPreco" autocomplete="off" type="text" class="form-control"
+										<input 
+											id="frmTabelaPreco" 
+											autocomplete="off" 
+											type="text" 
+											class="form-control"
 											ng-model="tabPreco"
 											uib-typeahead="teste.nome for teste in getTabelaPreco($viewValue)"
 											typeahead-min-lenght="0"
 											ng-disabled="codigoCliente == undefined || codigoCliente == ''">
-										<span class="input-group-addon" style="cursor: pointer;"
-											ng-click="limpaTabPreco()"><i class="glyphicon glyphicon-remove"></i></span>
+										<span 
+											class="input-group-addon" 
+											style="cursor: pointer;"
+											ng-click="limpaTabPreco()">
+											<i class="glyphicon glyphicon-remove"></i>
+										</span>
 									</div>
 								</div>
 								<div class="col-sm-4 spacer ">
 									<label for="frete">Tipo de frete</label>
 									<div class="input-button">
-										<input required id="frmFrete" autocomplete="off" type="text"
-											class="form-control" ng-model="frete"
+										<input 
+											required 
+											id="frmFrete" 
+											autocomplete="off" 
+											type="text"
+											class="form-control" 
+											ng-model="frete"
 											uib-typeahead="teste.tipo + ' - ' + teste.desc for teste in getTipoFrete($viewValue)"
 											typeahead-min-lenght="0"
 											typeahead-on-select="inputsControlFrete($item, $model, $label)">
-										<span class="input-group-addon" style="cursor: pointer;"
-											ng-click="limpaTipoFrete()"><i
-												class="glyphicon glyphicon-remove"></i></span>
+										<span 
+											class="input-group-addon" 
+											style="cursor: pointer;"
+											ng-click="limpaTipoFrete()">
+											<i class="glyphicon glyphicon-remove"></i>
+										</span>
 									</div>
 								</div>
 								<div class="col-sm-4 spacer ">
 									<label for="tabelaFrete">Tabela de frete</label>
 									<div class="input-button">
-										<input ng-required="requiredTabFrete" id="tabTabelaFrete" autocomplete="off"
-											type="text" class="form-control" ng-model="tabelaFrete"
+										<input 
+											ng-required="requiredTabFrete" 
+											id="tabTabelaFrete" 
+											autocomplete="off"
+											type="text" 
+											class="form-control" 
+											ng-model="tabelaFrete"
 											ng-disabled="!habilitado"
 											uib-typeahead="frete.nom for frete in getTabelaFrete($viewValue)"
 											typeahead-on-select="onSelectTabFrete($item, $model, $label)"
 											typeahead-min-lenght="0">
-										<span class="input-group-addon" style="cursor: pointer;"
-											ng-click="limpaTabelaFrete()"><i
-												class="glyphicon glyphicon-remove"></i></span>
+										<span 
+											class="input-group-addon" 
+											style="cursor: pointer;"
+											ng-click="limpaTabelaFrete()">
+											<i class="glyphicon glyphicon-remove"></i>
+										</span>
 									</div>
 								</div>
 								<div class="col-sm-4 spacer ">
 									<label for="totalFrete">Total de frete</label>
-									<input type="text" class="form-control" ng-model="totalFrete" readonly>
+									<input 
+										type="text"
+										class="form-control" 
+										ng-model="totalFrete" 
+										readonly>
 								</div>
 								<div class="col-sm-4 spacer ">
 									<label for="emissaoOrcamento">Emissão do orçamento</label>
-									<input type="date" class="form-control" ng-model="emissaoOrcamento" min="2022-01-01"
+									<input 
+										type="date" 
+										class="form-control" 
+										ng-model="emissaoOrcamento" 
+										min="2022-01-01"
 										readonly>
 								</div>
 								<div class="col-sm-4 spacer ">
 									<label for="validadeOrcamento">Validade do orçamento</label>
-									<input type="date" class="form-control" ng-model="validadeOrcamento"
+									<input 
+										type="date" 
+										class="form-control" 
+										ng-model="validadeOrcamento"
 										min="2022-01-01">
 								</div>
 								<div class="col-sm-4 spacer ">
 									<label for="prevEntregCli">Previsão de entrega do cliente</label>
-									<input type="date" class="form-control" ng-model="prevEntregCli" min="2022-01-01">
+									<input 
+										type="date" 
+										class="form-control" 
+										ng-model="prevEntregCli"
+										min="2022-01-01">
 								</div>
 								<div class="col-sm-6 spacer ">
 									<label for="situacao">Situação</label>
-									<input type="text" class="form-control" ng-model="situacao" readonly>
+									<input 
+										type="text" 
+										class="form-control" 
+										ng-model="situacao" 
+										readonly>
 								</div>
 								<div class="col-sm-6 spacer ">
 									<label for="representante">Representante</label>
-									<input type="text" class="form-control" ng-model="representante" readonly>
+									<input 
+										type="text" 
+										class="form-control" 
+										ng-model="representante" 
+										readonly>
 								</div>
 								<div class="col-sm-6 spacer ">
 									<label for="condPagamento">Condição de pagamento</label>
-									<input type="text" required class="form-control" ng-model="condPagamento" required
+									<input 
+										type="text" 
+										required 
+										class="form-control" 
+										ng-model="condPagamento" 
+										required
 										uib-typeahead="teste.nome for teste in getCondicaoPagamentoERP($viewValue)"
 										typeahead-min-lenght="2">
 								</div>
 								<div class="col-sm-6 spacer ">
 									<label for="formaPagamento">Forma de pagamento</label>
-									<input type="text" required class="form-control" ng-model="formaPagamento" required
+									<input 
+										type="text" 
+										required 
+										class="form-control" 
+										ng-model="formaPagamento" 
+										required
 										uib-typeahead="teste.codExterno + ' - ' + teste.nome for teste in getFormasPagamentoERP($viewValue)"
 										typeahead-min-lenght="3">
 								</div>
 								<div class="col-sm-6 spacer ">
 									<label for="numPedClienteOCPO">Numero pedido do cliente (OC/PO)</label>
-									<input type="text" class="form-control" ng-model="numPedClienteOCPO">
+									<input 
+										type="text" 
+										class="form-control" 
+										ng-model="numPedClienteOCPO">
 								</div>
 								<div class="col-sm-6 spacer ">
 									<label for="observação">Observação</label>
-									<textarea class="form-control spacer-input ng-pristine ng-valid ng-empty ng-touched"
-										ng-model="observacao" rows="1"></textarea>
+									<textarea 
+										class="form-control spacer-input ng-pristine ng-valid ng-empty ng-touched"
+										ng-model="observacao" 
+										rows="1">
+									</textarea>
 								</div>
 
 								<div class="col-sm-12 spacer ">
@@ -365,9 +444,9 @@
 													<th>Emb					  </th>
 													<th>Sub Emb				  </th>
 													<th>Descr. Produto		  </th>
-													<th>Descr. Deriv         </th>
-													<th>Nr. Pedido</th>
-													<th>Seq. Ped</th>
+													<th>Descr. Deriv          </th>
+													<th>Nr. Pedido			  </th>
+													<th>Seq. Ped			  </th>
 												</tr>
 											</thead>
 											<tbody>
@@ -595,7 +674,6 @@
 										</table>
 									</div>
 								</div>
-
 								<div ng-show="exibeHistoricos" class="col-sm-12">
 									<div class="form-row">
 										<div class="col-sm-12 spacer">
@@ -626,7 +704,7 @@
 										</div>
 									</div>
 								</div>
-				</form>
+						</form>
 				<hr class="divider">
 				<!-- Ações sob o formulario -->
 				<div class="row spacer">
@@ -709,14 +787,12 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/angJS/angular-route.min.js"></script>
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/angJS/angular-ui-router.min.js"></script>
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/angJS/angular-cookies.min.js"></script>
-	<script
-		src="https://sistema.clicvenda.com.br/clicVendas/plugins/angular-ui-notification/angular-ui-notification.min.js"></script>
+	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/angular-ui-notification/angular-ui-notification.min.js"></script>
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-bootstrap-tpls-2.5.0.min.js"></script>
 	<script src="https://sistema.clicvenda.com.br/clicVendas/dist/jquery.dataTables.min.js"></script>
 	<script src="https://sistema.clicvenda.com.br/clicVendas/dist/angular-datatables.js"></script>
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/angJS/bootstrap.min.js"></script>
-	<script
-		src="https://sistema.clicvenda.com.br/clicVendas/plugins/angJS/angular-datatables.bootstrap.min.js"></script>
+	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/angJS/angular-datatables.bootstrap.min.js"></script>
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/angJS/angular-datatables.factory.js"></script>
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/angJS/angular-datatables.options.js"></script>
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/angJS/dataTables.buttons.min.js"></script>
@@ -852,7 +928,6 @@
 						$scope.tabelaFrete = ""
 						$scope.totalFrete = ""
 
-
 						//desabilita o campo de tabela de frete
 						$scope.habilitado = false
 
@@ -946,7 +1021,6 @@
 						};
 					}
 
-
 					// requisicao para tabela de preco
 					$scope.getTabelaPreco = async (consulta, opcao) => {
 						let codCli = $scope.codigoCliente
@@ -991,7 +1065,6 @@
 						}, 200);
 					}
 
-
 					// faz o calculo na tabela de produtos para calculo de peso/volume/valorLiquido
 					$scope.calcularProdutos = () => {
 
@@ -1031,7 +1104,6 @@
 							//preco liquido de produto
 							let precoLiquido = parseFloat($rootScope.produtos[i].precoLiquido.replace(',', '.'))
 
-
 							if ((qtd != null && qtd > 0) && $rootScope.produtos[i].qtdm3 != null) {
 
 								//calculando valor liquido
@@ -1056,7 +1128,6 @@
 							}
 						}
 
-
 						$scope.valorPrecoTotal = valorCalculoPrecoTotal.toFixed('2');
 						$scope.valorPrecoTotal = $scope.valorPrecoTotal.replace('.',',')
 						$scope.valorPesoTotal = valorCalculoPesoTotal.toFixed('3');
@@ -1069,7 +1140,6 @@
 					$scope.getInfoTabela = async () => {
 						let codCli = $scope.codigoCliente
 						let tabPreco = $scope.codTpr
-
 						// para fazer o calculo
 						let precoFrete = $scope.totalFrete
 
@@ -1090,7 +1160,6 @@
 							$scope.emb = newResult[i].emb
 							$scope.emb = 0
 						}
-						console.log($scope.emb)
 					}
 
 					//requisicao para condicao de pagamento
@@ -1152,7 +1221,6 @@
 						} catch (err) {
 							console.log("Ocorreu um erro na requisição: ", err);
 						};
-
 					}
 
 					$scope.onSelectForma = function ($item, $model, $label) {
@@ -1186,7 +1254,6 @@
 						} catch (err) {
 							console.log("Ocorreu um erro na requisição: ", err);
 						};
-
 					}
 
 					//funcao para atribuir valores vindo da requisição de clientes 
@@ -1205,7 +1272,6 @@
 							$scope.tabPreco = ""
 						}
 						$scope.condPagamento = { codExterno: $scope.cliente.codCpg, nome: $scope.cliente.desCpg }
-
 					};
 
 					//limpa campo
@@ -1380,11 +1446,9 @@
 					}
 
 					$scope.abreFormulario = ($dados) => {
-
 						//data do dia / data de emissao 
 						var today = new Date();
 						var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-						let newDate = today.setDate(today.getDate() + 30);
 
 						//data fotura +30 dias data de vencimento
 						var future = new Date();
@@ -1395,10 +1459,9 @@
 
 						if ($dados == undefined) {
 							//para um novo pedido
-
 							$rootScope.idDocumento = 0;
 							$scope.pedido = 0,
-								$rootScope.produtos = [];
+							$rootScope.produtos = [];
 							// inputs
 							$scope.codTpr = '';
 							$scope.qtdm3 = '';
@@ -1419,9 +1482,7 @@
 							// codigos padroes da tela malinski
 							$scope.emissaoOrcamento = new Date(date)
 							$scope.validadeOrcamento = new Date(dataEmissao);
-
 							$scope.habilitado = false
-
 							$scope.ofertaPreco = 0; 
 							$scope.valorPrecoTotal = 0;
 							$scope.valorPesoTotal = 0;
@@ -1429,30 +1490,19 @@
 							$scope.valorQuantidadeTotal = 0;
 							//produtos
 							$scope.frete = 'X-Sem Frete';
-
 							$scope.situacao = 'Em digitação';
-
 							$scope.tipoOrcamento = 'Normal';
-
 							$scope.filial = "Filial 8"
-
 							$scope.representante = dadosUserLogado.rNome;
-
 							$scope.obsOportunidade = '';
 							$scope.histOportunidade = '';
 							$rootScope.hashDoc = '';
 							$scope.sincronizado = 'DOCUMENTO_NAO_SINCRONIZADO';
-
 							$scope.dataEmissaoFormat = '';
 							$scope.dataPrevEntregaFormatada = "";
 							// $scope.dataEmissaoErpFormatada	= "";
-
 							$scope.valorTotal = 0;
-
-
-
 						} else {
-
 							//para editar o pedido
 							let docs = $dados.jsonDocs[0];
 							$rootScope.hashDoc = docs.docCtrl;
@@ -1470,62 +1520,42 @@
 							$scope.validadeOrcamento = docs.validadeOrcamento != null ? new Date(docs.validadeOrcamento) : null
 							//emissao de orcamento (date do sistema)
 							$scope.emissaoOrcamento = docs.emissaoOrcamento != null ? new Date(docs.emissaoOrcamento) : null
-
 							$scope.situacao = docs.situacao;
-
 							$scope.prevEntregCli = docs.prevEntregCli != null ? new Date(docs.prevEntregCli) : null
-
 							$scope.representante = docs.representante;
 							$scope.condPagamento = docs.condPagamento;
 							$scope.formaPagamento = docs.formaPagamento;
 							$scope.observacao = docs.observacao;
 							$scope.numPedClienteOCPO = docs.numPedClienteOCPO;
-
 							//dois clientes
 							$scope.frmCliente = docs.cliente;
-
 							$scope.codigoCliente = docs.cliente.codExterno;
 							$scope.nomeCliente = docs.cliente.nome;
-
 							$scope.representante = docs.representante.nome;
-
 							$scope.datEmiERP = docs.datEmiERP;
-
 							$scope.dataEmissaoFormat = docs.datEmiERP != null ? docs.datEmiERP.substr(0, 10) : "";
-
 							$scope.obsOportunidade = '';
 							$scope.histOportunidade = docs.histOportunidade;
-
-
 							$scope.pedido = docs.pedido;
 							$scope.sincronizado = docs.sincronizado;
-
 							$scope.valorTotal = docs.valorTotal;
-
 							/*Informações sobre o produto*/
 							$rootScope.produtos = docs.produtos;
 							$scope.codigoProduto = docs.produtos.codigoProduto;
 							$scope.descricao = docs.produtos.descricao;
 							$scope.codExternoProduto = docs.produtos.codExterno;
-
 							$scope.ofertaPreco = docs.ofertaPreco;
 							$scope.valorPrecoTotal = docs.valorPrecoTotal;
 							$scope.valorPesoTotal = docs.valorPesoTotal;
 							$scope.valorVolumeTotal = docs.valorVolumeTotal;
 							$scope.valorQuantidadeTotal = docs.valorQuantidadeTotal;
-
-
 							$scope.dataPrevEntregaFormatada = new Date($scope.prevEntrega);
 							//$scope.dataPrevEntregaFormatada = $scope.dataPrevEntregaFormatada != "" ? $scope.dataPrevEntregaFormatada.toLocaleDateString('pt-br') : null;
 						};
-
 						$rootScope.changeView($dados);
-
 					};
 
-
 					$scope.calculoValidacaoProdutoERP = async ($dados) => {
-
 						try {
 							// let result = await $scope.executaRequisicaoExterna(
 							// 	{
@@ -1568,92 +1598,76 @@
 					$scope.adicionarProduto = (resultTest) => {
 						$rootScope.produtos.unshift(
 							{
-								qtdm3: resultTest.qtdm3,
-								seq: resultTest.seq,
-								ocpo: resultTest.ocpo,
-								itocpo: resultTest.itocpo,
-								codProCli: resultTest.usu_procli,
-								descrProCli: resultTest.desProdCli,
-								precoVendFOB: resultTest.usu_preliq,
-								precoFrete: resultTest.precoFrete,
-								precoVendaCIF: resultTest.precoVendaCIF,
-
-								qtdPedida: resultTest.qtdPedida,
-
-								seqvpp: resultTest.seqvpp,
-
-								ofertaPreco: resultTest.ofertaPreco,
-
-								precoLiquido: resultTest.precoLiquido,
-								vlrLiquido: resultTest.vlrLiquido,
-								pesoKG: resultTest.pesoKG,
-								volumeM3: resultTest.volumeM3,
-								qtdEmb: resultTest.usu_qtdemb,
-								descEmb: resultTest.descEmb,
-								qtdSubEmb: resultTest.qtdSubEmb,
-								descrSubEmb: resultTest.descrSubEmb,
-								dataPCP: resultTest.dataPCP,
-								dataETD: resultTest.dataETD,
-								acresPreco: resultTest.acresPreco,
-								descontoFin: resultTest.descontoFin,
-								vlrDesconto: resultTest.vlrDesconto,
-								vlrBruto: resultTest.vlrBruto,
-								codPro: resultTest.usu_codpro,
-								derivacao: resultTest.usu_codder,
-								um: resultTest.um,
-								previsaoCli: resultTest.previsaoCli,
-
-								emb: resultTest.emb,
-
-								subEmb: resultTest.usu_subemb,
-								descrProduto: resultTest.descrProd,
-								descrDeriv: resultTest.descDeriv,
-								nrPedido: resultTest.nrPedido,
-								seqPed: resultTest.seqPed
+								qtdm3			: resultTest.qtdm3,
+								seq				: resultTest.seq,
+								ocpo			: resultTest.ocpo,
+								itocpo			: resultTest.itocpo,
+								codProCli		: resultTest.usu_procli,
+								descrProCli		: resultTest.desProdCli,
+								precoVendFOB	: resultTest.usu_preliq,
+								precoFrete		: resultTest.precoFrete,
+								precoVendaCIF	: resultTest.precoVendaCIF,
+								qtdPedida		: resultTest.qtdPedida,
+								seqvpp			: resultTest.seqvpp,
+								ofertaPreco		: resultTest.ofertaPreco,
+								precoLiquido	: resultTest.precoLiquido,
+								vlrLiquido		: resultTest.vlrLiquido,
+								pesoKG			: resultTest.pesoKG,
+								volumeM3		: resultTest.volumeM3,
+								qtdEmb			: resultTest.usu_qtdemb,
+								descEmb			: resultTest.descEmb,
+								qtdSubEmb		: resultTest.qtdSubEmb,
+								descrSubEmb		: resultTest.descrSubEmb,
+								dataPCP			: resultTest.dataPCP,
+								dataETD			: resultTest.dataETD,
+								acresPreco		: resultTest.acresPreco,
+								descontoFin		: resultTest.descontoFin,
+								vlrDesconto		: resultTest.vlrDesconto,
+								vlrBruto		: resultTest.vlrBruto,
+								codPro			: resultTest.usu_codpro,
+								derivacao		: resultTest.usu_codder,
+								um				: resultTest.um,
+								previsaoCli		: resultTest.previsaoCli,
+								emb				: resultTest.emb,
+								subEmb			: resultTest.usu_subemb,
+								descrProduto	: resultTest.descrProd,
+								descrDeriv		: resultTest.descDeriv,
+								nrPedido		: resultTest.nrPedido,
+								seqPed			: resultTest.seqPed
 							}
 						);
 
 						var buscaProduto = angular.element(document.querySelector('#itemProd'));
-
 						$timeout(function () {
 							buscaProduto.blur();
 							$scope.itemProd = '';
-
 							$("table tbody tr:first-child").addClass("new-row-enter");
 							$("table tbody tr:first-child input#quantidadeProdutoAdd").focus();
 						}, 200);
-
 						$timeout(() => {
 							$("table tbody tr:first-child").removeClass("new-row-enter");
 						}, 1000)
-
 					};
 
 					$scope.removerProduto = ($item) => {
 						$rootScope.produtos = $rootScope.produtos.filter(item => item.codExterno !== $item.codExterno && item.codVariacao !== $item.codVariacao);
-
 						$scope.calcularProdutos();
 					};
 
 					$scope.addObservacaoHistorico = () => {
 						/*Data*/
 						var dataAtual = new Date();
-
 						var horas = (dataAtual.getHours() < 10 ? '0' : '') + dataAtual.getHours()
 						var minutos = (dataAtual.getMinutes() < 10 ? '0' : '') + dataAtual.getMinutes()
-
 						let strHistorico = [];
-
 						strHistorico.push({
 							item: $scope.obsOportunidade
 						});
-
 						for (let i = 0; i < strHistorico.length; i++) {
 							$scope.histOportunidade += `
 							- Descrição: ${strHistorico[i].item}
 							- Registrado em: ${dataAtual.toLocaleDateString('pt-BR')} às ${horas}:${minutos}`
 						}
-
 						$scope.obsOportunidade = "";
 					};
 
@@ -1676,11 +1690,9 @@
 
 					// testando o salvamento do pedido 
 					$scope.salvarDocumento = async (rotina) => {
-
 						if($scope.valorPrecoTotal == NaN){
 							console.log("valor vazio")
 						}
-
 						/*
 						Rotinas:
 							1 - Salvar (Mantém apenas no ClicVenda)
@@ -1702,12 +1714,12 @@
 
 						jsonDocs = [{
 							/*Historico*/
-							obsOportunidade: $scope.obsOportunidade,
-							histOportunidade: $scope.histOportunidade,
+							obsOportunidade		: $scope.obsOportunidade,
+							histOportunidade	: $scope.histOportunidade,
 							// infos dos inputs da tela 
-							tipoOrcamento: $scope.tipoOrcamento,
-							filial: $scope.filial,
-							tabPreco: $scope.tabPreco,
+							tipoOrcamento		: $scope.tipoOrcamento,
+							filial				: $scope.filial,
+							tabPreco			: $scope.tabPreco,
 							codTpr: $scope.codTpr,
 							qtdm3: $scope.qtdm3,
 							cliente: $scope.frmCliente,
@@ -1717,9 +1729,7 @@
 							validadeOrcamento: $scope.validadeOrcamento,
 							emissaoOrcamento: $scope.emissaoOrcamento,
 							situacao: $scope.situacao,
-
 							prevEntregCli: $scope.prevEntregCli,
-
 							prevEntregPcp: $scope.prevEntregPcp,
 							representante: $scope.representante,
 							condPagamento: $scope.condPagamento,
@@ -1731,28 +1741,19 @@
 							valorPesoTotal: $scope.valorPesoTotal,
 							valorVolumeTotal:  $scope.valorVolumeTotal,
 							valorQuantidadeTotal: $scope.valorQuantidadeTotal,
-
 							//Metodos
 							docCtrl: hashDoc,
-
 							// pedido final
 							pedido: $scope.pedido,
-
 							sincronizado: $scope.sincronizado == "DOCUMENTO_SINCRONIZADO" ? "DOCUMENTO_SINCRONIZADO" : "DOCUMENTO_NAO_SINCRONIZADO",
-
 							representante: { rId: dadosUserLogado.rCod, nome: dadosUserLogado.rNome },
-
 							datEmiERP: $scope.datEmiERP,
-
 							//Produtos
 							// verificação de quantidade de produtos
-							//FILTRO 
 							produtos: $rootScope.produtos.filter(doc => doc && doc.qtdPedida && doc.qtdPedida > 0),
-
 							valorTotal: parseFloat($scope.valorTotal),
 							//Cliente
 							cliente: { id: $rootScope.cliente.id, codExterno: $rootScope.cliente.codExterno, nome: $rootScope.cliente.nome, cpfCnpjFormat: $rootScope.cliente.cpfCnpjFormat },
-
 						}];
 
 						dados.jsonDocs = JSON.stringify(jsonDocs);
@@ -1763,8 +1764,6 @@
 						if (rotina == 2) {
 							console.log(dados.jsonDocs)
 							let sendToERP = JSON.parse(dados.jsonDocs);
-
-
 							let result = await $scope.executaRequisicaoExterna(
 								{
 									idCvtccnpj 	 : dadosUserLogado.cId,
@@ -1820,7 +1819,6 @@
 						};
 
 						$scope.atualizaTabela();
-
 						$scope.exibeFormulario = false;
 						$scope.exibeListaDocumentos = true;
 					};
@@ -1940,13 +1938,9 @@
 						montaColunas.push(DTColumnBuilder.newColumn(null).withTitle('Data emissão').withOption('sortable', false).withClass('colBtn').withOption('sWidth', '150px').renderWith(function (data, type, row) {
 							var btnhtmlData = '';
 							let dataFormatadaBr = '';
-
 							let dataFormat = row.jsonDocs[0].emissaoOrcamento != undefined ? row.jsonDocs[0].emissaoOrcamento.substr(0, 10) : ""
-							
 							dataFormatadaBr = dataFormat.split('-').reverse().join('/');
-							
 							btnhtmlData += "<div style='font-size:1.0em; color:black;  display:inline-block; vertical-align: middle; cursor:pointer;'>" + dataFormatadaBr + "</div>";
-
 							return btnhtmlData;
 						}));
 
@@ -2055,7 +2049,6 @@
 								$scope.atualizaTabela()
 							}, 250)
 						} else {
-
 							document.getElementById("mySidebar").style.width = "250px";
 							document.getElementById("mySidebar").style.height = "500px";
 							document.getElementById("main").style.marginLeft = "255px";
