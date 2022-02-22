@@ -733,7 +733,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 331 ")
+		alert("teste 333 ")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1047,7 +1047,6 @@
 						for (let i = 0; i < $rootScope.produtos.length; i++) {
 
 							$rootScope.produtos[i].emb = 0
-
 
 							//quantidade
 							let qtd = parseFloat($rootScope.produtos[i].qtdPedida)
@@ -1498,7 +1497,7 @@
 
 							$scope.situacao = docs.situacao;
 
-							$scope.prevEntregCli = docs.prevEntregCli = null ? new Date(docs.prevEntregCli) : ""
+							$scope.prevEntregCli = docs.prevEntregCli != null ? new Date(docs.prevEntregCli) : null
 
 							$scope.representante = docs.representante;
 							$scope.condPagamento = docs.condPagamento;
@@ -1733,7 +1732,7 @@
 							emissaoOrcamento: $scope.emissaoOrcamento,
 							situacao: $scope.situacao,
 
-							prevEntregCli: $scope.prevEntregCli != "" || $scope.prevEntregCli != undefined ? $scope.prevEntregCli : null,
+							prevEntregCli: $scope.prevEntregCli != "" || $scope.prevEntregCli != undefined ? $scope.prevEntregCli : "",
 
 							prevEntregPcp: $scope.prevEntregPcp,
 							representante: $scope.representante,
