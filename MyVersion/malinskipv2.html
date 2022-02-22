@@ -733,7 +733,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 333 ")
+		alert("teste 334 ")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1732,7 +1732,7 @@
 							emissaoOrcamento: $scope.emissaoOrcamento,
 							situacao: $scope.situacao,
 
-							prevEntregCli: $scope.prevEntregCli != "" || $scope.prevEntregCli != undefined ? $scope.prevEntregCli : "",
+							prevEntregCli: $scope.prevEntregCli == null ? $scope.prevEntregCli : "",
 
 							prevEntregPcp: $scope.prevEntregPcp,
 							representante: $scope.representante,
