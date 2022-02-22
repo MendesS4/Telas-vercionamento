@@ -1091,7 +1091,7 @@
 							//quantidade
 							let qtd = parseFloat($rootScope.produtos[i].qtdPedida)
 							//oferta de preco
-							valorOfertaPreco = parseFloat($rootScope.produtos[i].ofertaPreco)
+							valorOfertaPreco = $rootScope.produtos[i].ofertaPreco
 
 							// faz uma veificação para que não salve um campo NaN, campo vazio
 							if (isNaN(valorOfertaPreco)){
