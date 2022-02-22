@@ -732,7 +732,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 316 - alterações de layout")
+		alert("teste 318 PDF")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -971,6 +971,7 @@
 									pFilter: { filtro: {dados} },
 								},
 							);
+							console.log(result)
 
 						} catch (err){
 							console.log("ocorreu um erro na requisição ", err);
@@ -1725,13 +1726,10 @@
 							formaPagamento: $scope.formaPagamento,
 							observacao: $scope.observacao,
 							numPedClienteOCPO: $scope.numPedClienteOCPO,
-
 							valorPrecoTotal: $scope.valorPrecoTotal,
 							valorPesoTotal: $scope.valorPesoTotal,
 							valorVolumeTotal:  $scope.valorVolumeTotal,
 							valorQuantidadeTotal: $scope.valorQuantidadeTotal,
-
-
 							endEntrega: $scope.frmEndEntrega,
 							prevEntrega: $scope.prevEntrega != "" || $scope.prevEntrega != undefined ? $scope.prevEntrega : null,
 
@@ -1797,11 +1795,8 @@
 							}
 						} else {
 
-
 							dados.jsonDocs = JSON.stringify(json);
 							let response = await $http.post('/clicVendas/rest/pedidov2/salvar/', dados);
-
-
 
 							if (rotina == 1) {
 								$scope.messageNotific = 'Registro inserido com sucesso';
@@ -1817,24 +1812,20 @@
 					};
 
 					$scope.limparFiltros = () => {
-
 						$scope.filCliente = '';
 						$scope.filRepresentante = '';
 						$scope.filDataEmissao = '';
 						$scope.filPesquisaGeral = '';
 						$scope.filSincronizado = { nome: "", send: "" };
-
 						$scope.atualizaTabela();
 					};
 
 					$scope.aplicarFiltros = (valor) => {
-
 						$scope.filDataEmissao = $scope.filDataEmissao == "" ? "" : $scope.filDataEmissao.substr(0, 2) + "/" + $scope.filDataEmissao.substr(2, 2) + "/" + $scope.filDataEmissao.substr(4, 7) + " EMI";
 						$scope.filCliente = $scope.filCliente;
 						$scope.filRepresentante = $scope.filRepresentante;
 						$scope.filPesquisaGeral = $scope.filPesquisaGeral;
 						$scope.filSincronizado = $scope.filSincronizado;
-
 						$scope.openNav();
 					};
 
