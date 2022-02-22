@@ -818,40 +818,6 @@
 						$scope.exibeHistoricos = true;
 					};
 
-					$scope.getEndEntrega = function (val) {
-						if (angular.isUndefined($scope.frmCliente) || $scope.frmCliente == "") {
-							$scope.critInfClienteEe = true;
-						} else {
-							$scope.critInfClienteEe = false;
-
-							return $http({
-								method: 'GET',
-								url: '/clicVendas/rest/ClienteEndEntrega/enderecosCliente/' + $rootScope.cliente.id,
-								params: { filtro: val || '' }
-							}).then(
-								function (response) {
-									//Sucesso
-									if (response.data.length == 1) {
-										var ee = response.data[0];
-										$scope.endEntrega = ee;
-										$scope.frmEndEntrega = ee.endereco + ', ' + ee.numero + ', ' + ee.bairro + ', ' + ee.cidade + ', ' + ee.uf + ', ' + ee.cep + ', ' + (ee.complemento || '');
-									}
-
-									return response.data.map(function (item) {
-										return item;
-									});
-								},
-								function (response) {
-								});
-						}
-					};
-					$scope.onSelectEE = function ($item, $model, $label) {
-						$scope.endEntrega = $item;
-					};
-					$scope.limpaEndEntrega = function () {
-						$scope.frmEndEntrega = "";
-						$scope.endEntrega = {};
-					};
 
 					//requisicao para tipo de frete
 					$scope.getTipoFrete = async (consulta) => {
@@ -1438,8 +1404,6 @@
 							$scope.numPedClienteOCPO = '';
 							$scope.frmCliente = '';
 							$scope.codigoCliente = '';
-							$scope.frmEndEntrega = '';
-							$scope.prevEntrega = '';
 							$scope.codigoProduto = '';
 							// codigos padroes da tela malinski
 							$scope.emissaoOrcamento = new Date(date)
@@ -1513,8 +1477,6 @@
 
 							$scope.representante = docs.representante.nome;
 
-							$scope.prevEntrega = docs.prevEntrega != null ? new Date(docs.prevEntrega) : null
-
 							$scope.datEmiERP = docs.datEmiERP;
 
 							$scope.dataEmissaoFormat = docs.datEmiERP != null ? docs.datEmiERP.substr(0, 10) : "";
@@ -1522,7 +1484,6 @@
 							$scope.obsOportunidade = '';
 							$scope.histOportunidade = docs.histOportunidade;
 
-							$scope.frmEndEntrega = docs.endEntrega;
 
 							$scope.pedido = docs.pedido;
 							$scope.sincronizado = docs.sincronizado;
@@ -1608,6 +1569,7 @@
 								seqvpp: resultTest.seqvpp,
 
 								ofertaPreco: resultTest.ofertaPreco,
+
 								precoLiquido: resultTest.precoLiquido,
 								vlrLiquido: resultTest.vlrLiquido,
 								pesoKG: resultTest.pesoKG,
@@ -1749,8 +1711,6 @@
 							valorPesoTotal: $scope.valorPesoTotal,
 							valorVolumeTotal:  $scope.valorVolumeTotal,
 							valorQuantidadeTotal: $scope.valorQuantidadeTotal,
-							endEntrega: $scope.frmEndEntrega,
-							prevEntrega: $scope.prevEntrega != "" || $scope.prevEntrega != undefined ? $scope.prevEntrega : null,
 
 							//Metodos
 							docCtrl: hashDoc,
