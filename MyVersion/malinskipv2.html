@@ -894,7 +894,6 @@
 						$scope.exibeHistoricos = true;
 					};
 
-
 					//requisicao para tipo de frete
 					$scope.getTipoFrete = async (consulta) => {
 						try {
@@ -1128,10 +1127,11 @@
 							}
 						}
 
-						$scope.valorPrecoTotal = valorCalculoPrecoTotal.toFixed('2');
-						$scope.valorPrecoTotal = $scope.valorPrecoTotal.replace('.',',')
-						$scope.valorPesoTotal = valorCalculoPesoTotal.toFixed('3');
-						$scope.valorVolumeTotal = valorCalculoVolumeTotal.toFixed('3');
+						//atribui os valores tratados
+						$scope.valorPrecoTotal 		= valorCalculoPrecoTotal.toFixed('2');
+						$scope.valorPrecoTotal 		= $scope.valorPrecoTotal.replace('.',',')
+						$scope.valorPesoTotal 		= valorCalculoPesoTotal.toFixed('3');
+						$scope.valorVolumeTotal 	= valorCalculoVolumeTotal.toFixed('3');
 						$scope.valorQuantidadeTotal = valorCalculoQuantidadeTotal.toFixed('0');
 
 					}
@@ -1557,27 +1557,6 @@
 
 					$scope.calculoValidacaoProdutoERP = async ($dados) => {
 						try {
-							// let result = await $scope.executaRequisicaoExterna(
-							// 	{
-							// 		idCvtccnpj : dadosUserLogado.cId,
-							// 		numreg	   : 752,
-							// 		pRotina	   : 'calculo',
-							// 		pCodCli    : dadosUserLogado.rId,
-							// 		filter 	   : {valores : $dados}
-							// 	}
-							// );
-
-							//return result /*Verdadeiro ou falso para prosseguir inserção do produto*/
-
-							// let result = {
-							// 	erro: "O produto X está fora da margem de lucro",
-							// 	aprovado:false,
-							// }
-
-							/*Retorna sempre true - 
-								TO DO: Calculo de validação no ERP
-							*/
-
 							result = {
 								erro: "",
 								aprovado: true,
@@ -1720,26 +1699,26 @@
 							tipoOrcamento		: $scope.tipoOrcamento,
 							filial				: $scope.filial,
 							tabPreco			: $scope.tabPreco,
-							codTpr: $scope.codTpr,
-							qtdm3: $scope.qtdm3,
-							cliente: $scope.frmCliente,
-							frete: $scope.frete,
-							totalFrete: $scope.totalFrete,
-							tabelaFrete: $scope.tabelaFrete,
-							validadeOrcamento: $scope.validadeOrcamento,
-							emissaoOrcamento: $scope.emissaoOrcamento,
-							situacao: $scope.situacao,
-							prevEntregCli: $scope.prevEntregCli,
-							prevEntregPcp: $scope.prevEntregPcp,
-							representante: $scope.representante,
-							condPagamento: $scope.condPagamento,
-							formaPagamento: $scope.formaPagamento,
-							observacao: $scope.observacao,
-							numPedClienteOCPO: $scope.numPedClienteOCPO,
-							valorPrecoTotal: $scope.valorPrecoTotal,
-							ofertaPreco: $scope.ofertaPreco, 
-							valorPesoTotal: $scope.valorPesoTotal,
-							valorVolumeTotal:  $scope.valorVolumeTotal,
+							codTpr				: $scope.codTpr,
+							qtdm3				: $scope.qtdm3,
+							cliente				: $scope.frmCliente,
+							frete				: $scope.frete,
+							totalFrete			: $scope.totalFrete,
+							tabelaFrete			: $scope.tabelaFrete,
+							validadeOrcamento	: $scope.validadeOrcamento,
+							emissaoOrcamento	: $scope.emissaoOrcamento,
+							situacao			: $scope.situacao,
+							prevEntregCli		: $scope.prevEntregCli,
+							prevEntregPcp		: $scope.prevEntregPcp,
+							representante		: $scope.representante,
+							condPagamento		: $scope.condPagamento,
+							formaPagamento		: $scope.formaPagamento,
+							observacao			: $scope.observacao,
+							numPedClienteOCPO	: $scope.numPedClienteOCPO,
+							valorPrecoTotal		: $scope.valorPrecoTotal,
+							ofertaPreco			: $scope.ofertaPreco, 
+							valorPesoTotal		: $scope.valorPesoTotal,
+							valorVolumeTotal	:  $scope.valorVolumeTotal,
 							valorQuantidadeTotal: $scope.valorQuantidadeTotal,
 							//Metodos
 							docCtrl: hashDoc,
@@ -1919,14 +1898,12 @@
 								},
 							]);
 
-
 						defPD = {
 							'id': { i: 0, vsbl: true, tlt: 'Nº Pedido', width: '' },
 							'jsonDocs[0].pedido': { i: 1, vsbl: true, tlt: 'Nº Pedido ERP', width: '' },
 							'jsonDocs[0].cliente.nome': { i: 2, vsbl: true, tlt: 'Cliente', width: '' },
 							'jsonDocs[0].valorPrecoTotal': { i: 3, vsbl: true, tlt: 'Valor Total ', width: '' }
 						};
-
 
 						DTDefaultOptions.setLanguageSource('plugins/pt-br.json');
 						var montaColunas = [];
@@ -2093,7 +2070,7 @@
 	}
 
 	.inputNumberTable {
-		width: 20vh
+		width: 20vh;
 	}
 
 	.table>thead>tr>th {
@@ -2103,7 +2080,6 @@
 	#tabelaProdutos {
 		border-radius: 4px;
 		border-top: 1.5px solid rgb(236, 236, 236);
-		;
 	}
 
 	#tabelaProdutos tr>th {
@@ -2124,8 +2100,6 @@
 		background-color: rgb(248, 248, 248);
 		border-radius: 8px;
 	}
-
-
 
 	.panel {
 		width: 68vh;
