@@ -733,7 +733,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 349 ")
+		alert("teste 350 ")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1024,6 +1024,7 @@
 							let qtd = parseFloat($rootScope.produtos[i].qtdPedida)
 							//oferta de preco
 							valorOfertaPreco = parseFloat($rootScope.produtos[i].ofertaPreco)
+
 							if (valorOfertaPreco == ''){
 								console.log("campo vazio")
 							}
@@ -1679,6 +1680,9 @@
 					// testando o salvamento do pedido 
 					$scope.salvarDocumento = async (rotina) => {
 
+						if($scope.valorPrecoTotal == NaN){
+							console.log("valor vazio")
+						}
 
 						/*
 						Rotinas:
