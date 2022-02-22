@@ -809,7 +809,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		//alert("teste 356")
+		alert("teste 357")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1128,6 +1128,7 @@
 						}
 
 						//atribui os valores tratados
+						$scope.ofertaPreco 			= valorOfertaPreco
 						$scope.valorPrecoTotal 		= valorCalculoPrecoTotal.toFixed('2');
 						$scope.valorPrecoTotal 		= $scope.valorPrecoTotal.replace('.',',')
 						$scope.valorPesoTotal 		= valorCalculoPesoTotal.toFixed('3');
@@ -1718,12 +1719,12 @@
 							valorPrecoTotal		: $scope.valorPrecoTotal,
 							ofertaPreco			: $scope.ofertaPreco, 
 							valorPesoTotal		: $scope.valorPesoTotal,
-							valorVolumeTotal	:  $scope.valorVolumeTotal,
+							valorVolumeTotal	: $scope.valorVolumeTotal,
 							valorQuantidadeTotal: $scope.valorQuantidadeTotal,
 							//Metodos
 							docCtrl: hashDoc,
 							// pedido final
-							pedido: $scope.pedido,
+							pedido				: $scope.pedido,
 							sincronizado: $scope.sincronizado == "DOCUMENTO_SINCRONIZADO" ? "DOCUMENTO_SINCRONIZADO" : "DOCUMENTO_NAO_SINCRONIZADO",
 							representante: { rId: dadosUserLogado.rCod, nome: dadosUserLogado.rNome },
 							datEmiERP: $scope.datEmiERP,
