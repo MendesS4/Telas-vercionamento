@@ -733,7 +733,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 325 PDF")
+		alert("teste 326 PDF")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1109,7 +1109,10 @@
 						for (let i = 0; i < newResult.length; i++) {
 							$scope.adicionarProduto(newResult[i])
 							$scope.qtdm3 = newResult[i].qtdm3
+							$scope.emb = newResult[i].emb
+							$scope.emb = 0
 						}
+						console.log($scope.emb)
 					}
 
 					//requisicao para condicao de pagamento
@@ -1622,7 +1625,9 @@
 								derivacao: resultTest.usu_codder,
 								um: resultTest.um,
 								previsaoCli: resultTest.previsaoCli,
+
 								emb: resultTest.emb,
+
 								subEmb: resultTest.usu_subemb,
 								descrProduto: resultTest.descrProd,
 								descrDeriv: resultTest.descDeriv,
@@ -1644,8 +1649,6 @@
 						$timeout(() => {
 							$("table tbody tr:first-child").removeClass("new-row-enter");
 						}, 1000)
-
-						console.log(seqvpp)
 
 					};
 
