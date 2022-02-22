@@ -733,7 +733,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 347 ")
+		alert("teste 348 ")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1011,6 +1011,8 @@
 						// quantidade 
 						let valorCalculoQuantidadeTotal = 0
 
+						let valorOfertaPreco = 0
+
 						//loop para percorrer os produtos na tabela
 						for (let i = 0; i < $rootScope.produtos.length; i++) {
 
@@ -1021,7 +1023,7 @@
 							//quantidade
 							let qtd = parseFloat($rootScope.produtos[i].qtdPedida)
 							//oferta de preco
-							let valorOfertaPreco = parseFloat($rootScope.produtos[i].ofertaPreco)
+							valorOfertaPreco = parseFloat($rootScope.produtos[i].ofertaPreco)
 							//valor do BD
 							let qtdm3 = parseFloat($rootScope.produtos[i].qtdm3.replace(',', '.'))
 							//preco liquido de produto
