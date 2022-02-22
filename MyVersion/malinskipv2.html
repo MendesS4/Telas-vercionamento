@@ -733,7 +733,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 330 ")
+		alert("teste 331 ")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1048,7 +1048,6 @@
 
 							$rootScope.produtos[i].emb = 0
 
-							console.log($rootScope.produtos.emb)
 
 							//quantidade
 							let qtd = parseFloat($rootScope.produtos[i].qtdPedida)
@@ -1083,7 +1082,6 @@
 								valorCalculoQuantidadeTotal += qtd;
 							}
 						}
-						console.log($scope.produtos.emb)
 						$scope.valorPrecoTotal = valorCalculoPrecoTotal.toFixed('2');
 						$scope.valorPesoTotal = valorCalculoPesoTotal.toFixed('3');
 						$scope.valorVolumeTotal = valorCalculoVolumeTotal.toFixed('3');
@@ -1500,7 +1498,7 @@
 
 							$scope.situacao = docs.situacao;
 
-							$scope.prevEntregCli = docs.prevEntregCli != null ? new Date(docs.prevEntregCli) : null
+							$scope.prevEntregCli = docs.prevEntregCli = null ? new Date(docs.prevEntregCli) : ""
 
 							$scope.representante = docs.representante;
 							$scope.condPagamento = docs.condPagamento;
