@@ -733,7 +733,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 338 ")
+		alert("teste 339 ")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1776,6 +1776,7 @@
 						}];
 
 						dados.jsonDocs = JSON.stringify(jsonDocs);
+						console.log(dados.jsonDocs)
 						/*Recebe dados e para que sejam feitas as alterações necessarias*/
 						var json = JSON.parse(dados.jsonDocs);
 
@@ -1793,7 +1794,7 @@
 								},
 							);
 
-							console.log(result)
+							console.log(result.jsonDocs)
 
 							$rootScope.pedidoAprovado = await $scope.calculoValidacaoProdutoERP(sendToERP[0]);
 
