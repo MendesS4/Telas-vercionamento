@@ -733,7 +733,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 356")
+		//alert("teste 356")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1021,6 +1021,7 @@
 							//oferta de preco
 							valorOfertaPreco = parseFloat($rootScope.produtos[i].ofertaPreco)
 
+							// faz uma veificação para que não salve um campo NaN, campo vazio
 							if (isNaN(valorOfertaPreco)){
 								valorOfertaPreco = 0
 							}else{
