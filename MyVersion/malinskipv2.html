@@ -733,7 +733,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 326 PDF")
+		alert("teste 327 PDF")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1046,6 +1046,8 @@
 						//loop para percorrer os produtos na tabela
 						for (let i = 0; i < $rootScope.produtos.length; i++) {
 
+							$rootScope.produtos[i].emb = 0
+
 							//quantidade
 							let qtd = parseFloat($rootScope.produtos[i].qtdPedida)
 							//oferta de preco
@@ -1079,7 +1081,7 @@
 								valorCalculoQuantidadeTotal += qtd;
 							}
 						}
-
+						console.log($rootScope.produtos.emb)
 						$scope.valorPrecoTotal = valorCalculoPrecoTotal.toFixed('2');
 						$scope.valorPesoTotal = valorCalculoPesoTotal.toFixed('3');
 						$scope.valorVolumeTotal = valorCalculoVolumeTotal.toFixed('3');
