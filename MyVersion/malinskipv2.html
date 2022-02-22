@@ -733,7 +733,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 345 ")
+		alert("teste 346 ")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1013,6 +1013,11 @@
 
 						//loop para percorrer os produtos na tabela
 						for (let i = 0; i < $rootScope.produtos.length; i++) {
+
+
+							if ($rootScope.produtos[i].ofertaPreco == ''){
+								console.log("o valor do input esta nulo")
+							}
 
 							$rootScope.produtos[i].emb = 0
 
@@ -1665,6 +1670,8 @@
 
 					// testando o salvamento do pedido 
 					$scope.salvarDocumento = async (rotina) => {
+
+
 						/*
 						Rotinas:
 							1 - Salvar (Mantém apenas no ClicVenda)
