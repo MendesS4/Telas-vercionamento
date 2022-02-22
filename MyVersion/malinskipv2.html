@@ -733,7 +733,7 @@
 	<!-- Scripts importados -->
 	<script>
 		//TESTE DE CONTROLE DE ATT GITHUB
-		alert("teste 341 ")
+		alert("teste 342 ")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1047,7 +1047,7 @@
 								valorCalculoQuantidadeTotal += qtd;
 							}
 						}
-						$scope.valorPrecoTotal = valorCalculoPrecoTotal.toFixed('2');
+						$scope.valorPrecoTotal = valorCalculoPrecoTotal.toFixed('2').replace(',', '.');
 						$scope.valorPesoTotal = valorCalculoPesoTotal.toFixed('3');
 						$scope.valorVolumeTotal = valorCalculoVolumeTotal.toFixed('3');
 						$scope.valorQuantidadeTotal = valorCalculoQuantidadeTotal.toFixed('0');
