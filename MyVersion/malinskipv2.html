@@ -122,15 +122,15 @@
 						<div class="row">
 							<div ng-show="sincronizado === 'DOCUMENTO_SINCRONIZADO'" class="form-group col-md-12">
 								<div style="background-color: #FBFBFB">
-									<div class="col-sm-6">
+									<div class="col-sm-4 spacer">
 										<h5>Cliente</h5>
 										<p>{{frmCliente.nome}}</p>
 									</div>
-									<div class="col-sm-2 spacer">
+									<div class="col-sm-3 spacer">
 										<h5>Data de emissão</h5>
 										<p>{{dataEmissaoFormat}}</p>
 									</div>
-									<div class="col-sm-2 spacer">
+									<div class="col-sm-3 spacer">
 										<h5>Previsão de entrega</h5>
 										<p ng-show="dataPrevEntregaFormatada != 'Invalid Date'">
 											{{dataPrevEntregaFormatada}}</p>
@@ -878,7 +878,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("testes 4")
+		console.log("testes 5")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1236,7 +1236,7 @@
 							},
 						);
 						let newResult = result.resultado
-						console.log(newResult)
+						
 						for (let i = 0; i < newResult.length; i++) {
 							$scope.adicionarProduto(newResult[i])
 							$scope.qtdm3 = newResult[i].qtdm3
@@ -1478,7 +1478,6 @@
 
 					$scope.gravaDocumentoERP = async ($item) => {
 
-						console.log($item)
 
 						let dialog = bootbox.dialog({
 							message: '<div class="alert alert-light popup"role="alert"><p style="font-size:1.0em; font-weight:bold; text-align:center;">Enviando pedido para o ERP...</p></div>',
