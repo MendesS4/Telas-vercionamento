@@ -874,7 +874,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		alert("001")
+		alert("002")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1530,7 +1530,7 @@
 						//data fotura +30 dias data de vencimento
 						var future = new Date();
 						future.setDate(future.getDate() + 30)
-						var dataEmissao = future.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+						var validadeOrcamento = future.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 
 						$scope.habilitarFrete = false
 
@@ -1558,7 +1558,7 @@
 							$scope.codigoProduto = '';
 							// codigos padroes da tela malinski
 							$scope.emissaoOrcamento = new Date(date)
-							$scope.validadeOrcamento = new Date(dataEmissao);
+							$scope.validadeOrcamento = new Date(validadeOrcamento);
 							$scope.habilitado = false
 							$scope.ofertaPreco = 0; 
 							$scope.valorPrecoTotal = 0;
