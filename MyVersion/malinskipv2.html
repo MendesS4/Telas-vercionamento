@@ -883,7 +883,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("teste 003")
+		console.log("teste 004")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1331,7 +1331,8 @@
 									pFilter: { filtro: { filtroCliente: consulta } },
 								},
 							);
-							console.log(result.resultado)
+							console.log(result.resultado.nomRep)
+							console.log(result.resultado.codRep)
 							if (result != undefined && result.resultado != undefined) {
 								return result.resultado.map((item) => {
 									return item
@@ -1541,12 +1542,7 @@
 						var future = new Date();
 						future.setDate(future.getDate() + 30)
 
-						console.log(future)
-
 						var validadeOrcamento = future.getFullYear() + '-' + (future.getMonth() + 1) + '-' + future.getDate();
-						
-
-						console.log(validadeOrcamento)
 
 						$scope.habilitarFrete = false
 
