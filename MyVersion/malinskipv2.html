@@ -883,7 +883,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("teste 004")
+		console.log("teste 005")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1331,7 +1331,7 @@
 									pFilter: { filtro: { filtroCliente: consulta } },
 								},
 							);
-							console.log(result.resultado.nomRep)
+							console.log(result.resultado)
 							console.log(result.resultado.codRep)
 							if (result != undefined && result.resultado != undefined) {
 								return result.resultado.map((item) => {
@@ -1350,8 +1350,12 @@
 						$rootScope.cliente = $item;
 						$scope.codTpr = $item.codTpr
 						$scope.codigoCliente = $rootScope.cliente.codExterno
+						//atribiu tabela de preco
 						$scope.tabPreco = { nome: $scope.cliente.desTpr }
+						//atribui forma de pagamento
 						$scope.formaPagamento = { codExterno: $scope.cliente.codFpg, nome: $scope.cliente.desFpg }
+						//atribui condicao de pagamento
+						$scope.condPagamento = { codExterno: $scope.cliente.codCpg, nome: $scope.cliente.desCpg }
 
 						//validacao de valores vindos
 						if ($item.codFpg == "0") {
@@ -1360,7 +1364,6 @@
 						if ($item.codTpr == " ") {
 							$scope.tabPreco = ""
 						}
-						$scope.condPagamento = { codExterno: $scope.cliente.codCpg, nome: $scope.cliente.desCpg }
 					};
 
 					//limpa campo
