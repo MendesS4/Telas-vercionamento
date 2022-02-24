@@ -140,18 +140,27 @@
 										<h5>Tabela de preço</h5>
 										<p>{{tabPreco.nome}}</p>
 									</div>
-									<div class="col-sm-4 spacer ">
-										<h5>Tipo de Frete</h5>
-										<p>{{tabTipoFrete || 'não informado'}}</p>
+
+									<div class="col-sm-12">
+										<div class="panel panel-default spacer">
+											<div class="panel-heading">Informações sobre o frete</div>
+												<div class="panel-body">
+												<div class="col-sm-4 spacer ">
+													<h5>Tipo de Frete</h5>
+													<p>{{tabTipoFrete || 'não informado'}}</p>
+												</div>
+												<div class="col-sm-4 spacer ">
+													<h5>Tabela de Frete</h5>
+													<p>{{tabFrete || 'não informado'}}</p>
+												</div>
+												<div class="col-sm-4 spacer ">
+													<h5>Total de Frete</h5>
+													<p>{{totalFrete || 'não informado'}}</p>
+												</div>
+											</div>
+										</div>
 									</div>
-									<div class="col-sm-4 spacer ">
-										<h5>Tabela de Frete</h5>
-										<p>{{tabFrete || 'não informado'}}</p>
-									</div>
-									<div class="col-sm-4 spacer ">
-										<h5>Total de Frete</h5>
-										<p>{{totalFrete || 'não informado'}}</p>
-									</div>
+
 									<div class="col-sm-4 spacer">
 										<h5>Emisao do Orçamento</h5>
 										<p>{{dataEmissaoFormat || 'não informado'}}</p>
@@ -1069,7 +1078,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("testes 15")
+		console.log("testes 16")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
