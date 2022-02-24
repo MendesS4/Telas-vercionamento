@@ -878,7 +878,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("testes 2")
+		console.log("testes 3")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1829,9 +1829,13 @@
 						}];
 
 						dados.jsonDocs = JSON.stringify(jsonDocs);
+						console.log(dados.jsonDocs)
+
 						
 						/*Recebe dados e para que sejam feitas as alterações necessarias*/
 						var json = JSON.parse(dados.jsonDocs);
+
+						console.log(json)
 
 						if (rotina == 2) {
 							let sendToERP = JSON.parse(dados.jsonDocs);
