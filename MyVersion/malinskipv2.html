@@ -124,8 +124,7 @@
 								<div style="background-color: #FBFBFB">
 									<div class="col-sm-6">
 										<h5>Cliente</h5>
-										<p>{{frmCliente.nome}}
-										<p>
+										<p>{{frmCliente.nome}}</p>
 									</div>
 									<div class="col-sm-6">
 										<h5>Endereço de entrega</h5>
@@ -884,7 +883,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("teste 018")
+		console.log("testes 1")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1332,8 +1331,6 @@
 									pFilter: { filtro: { filtroCliente: consulta } },
 								},
 							);
-							console.log(result.resultado[0].codRep)
-							console.log(result.resultado[0].nomRep)
 							if (result != undefined && result.resultado != undefined) {
 								return result.resultado.map((item) => {
 									return item
@@ -1353,7 +1350,6 @@
 						$scope.codigoCliente = $rootScope.cliente.codExterno
 
 						//atribui o representante
-						console.log("Representante: ", $item.codRep ," - ", $item.nomRep)
 						$scope.representante = $scope.cliente.nomRep 
 						//atribiu tabela de preco
 						$scope.tabPreco = { nome: $scope.cliente.desTpr }
