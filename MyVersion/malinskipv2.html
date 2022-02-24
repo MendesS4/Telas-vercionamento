@@ -146,51 +146,51 @@
 									</div>
 									<div class="col-sm-4 spacer ">
 										<h5>Tabela de Frete</h5>
-										<p>{{tabFrete}}</p>
+										<p>{{tabFrete || 'não informado'}}</p>
 									</div>
 									<div class="col-sm-4 spacer ">
 										<h5>Total de Frete</h5>
-										<p>{{totalFrete}}</p>
+										<p>{{totalFrete || 'não informado'}}</p>
 									</div>
 									<div class="col-sm-4 spacer">
 										<h5>Emisao do Orçamento</h5>
-										<p>{{dataEmissaoFormat}}</p>
+										<p>{{dataEmissaoFormat || 'não informado'}}</p>
 									</div>
 									<div class="col-sm-4 spacer">
 										<h5>Validade do Orçamento</h5>
-										<p>{{validadeOrcamento}}</p>
+										<p>{{validadeOrcamento || 'não informado'}}</p>
 									</div>
 									<div class="col-sm-4 spacer">
 										<h5>Previsao de entrega do cliente</h5>
-										<p>{{prevEntregCli}}</p>
+										<p>{{prevEntregCli || 'não informado'}}</p>
 									</div>
 									<div class="col-sm-4 spacer">
 										<h5>Situação</h5>
-										<p>{{situacao}}</p>
+										<p>{{situacao || 'não informado'}}</p>
 									</div>
 									<div class="col-sm-4 spacer">
 										<h5>Usuario digitação</h5>
-										<p>{{usuarioDigitacao}}</p>
+										<p>{{usuarioDigitacao || 'não informado'}}</p>
 									</div>
 									<div class="col-sm-4 spacer">
 										<h5>Representante</h5>
-										<p>{{Representante}}</p>
+										<p>{{Representante || 'não informado'}}</p>
 									</div>
 									<div class="col-sm-4 spacer">
 										<h5>Condição de pagamento</h5>
-										<p>{{condPagamento.nome}}</p>
+										<p>{{condPagamento.nome || 'não informado'}}</p>
 									</div>
 									<div class="col-sm-4 spacer">
 										<h5>Forma de pagamento</h5>
-										<p>{{formaPagamento.nome}}</p>
+										<p>{{formaPagamento.nome || 'não informado'}}</p>
 									</div>
 									<div class="col-sm-4 spacer">
 										<h5>Observação</h5>
-										<p>{{observacao}}</p>
+										<p>{{observacao || 'não informado'}}</p>
 									</div>
 									<div class="col-sm-4 spacer">
 										<h5>Total</h5>
-										<p>R${{valorPrecoTotal}}</p>
+										<p>R${{valorPrecoTotal || 'não informado'}}</p>
 									</div>
 								</div>
 								<div style="margin-top: 2%; padding:0;" class="col-sm-12 spacer">
@@ -1069,7 +1069,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("testes 14")
+		console.log("testes 15")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
