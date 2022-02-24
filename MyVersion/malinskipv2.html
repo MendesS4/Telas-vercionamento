@@ -884,7 +884,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("teste 012")
+		console.log("teste 013")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1354,7 +1354,7 @@
 
 						//atribui o representante
 						console.log("Representante: ", $item.codRep ," - ", $item.nomRep)
-						$scope.representante = $scope.cliente.codRep, " - " ,$scope.cliente.nomRep 
+						$scope.representante = $scope.cliente.nomRep 
 						//atribiu tabela de preco
 						$scope.tabPreco = { nome: $scope.cliente.desTpr }
 						//atribui forma de pagamento
