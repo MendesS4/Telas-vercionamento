@@ -884,7 +884,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("teste 014")
+		console.log("teste 015")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1999,9 +1999,19 @@
 						DTDefaultOptions.setLanguageSource('plugins/pt-br.json');
 						var montaColunas = [];
 
+						montaColunas.push(DTColumnBuilder.newColumn(null).withTitle('').withOption('sortable', false).withClass('colBtn').withOption('sWidth', '50px').renderWith(function (data, type, row) {
+							var btnhtml = '';
+							btnhtml += "<div class='glyphicon glyphicon-edit' style='font-size:1.5em; color:var(--cor_principal);  display:inline-block; vertical-align: middle; cursor:pointer;' title='Editar' ng-click='abreFormulario(" + JSON.stringify(row) + ")'></div>";
+							btnhtml += "<div class='glyphicon glyphicon-ban-circle' style='font-size:1.5em; color:var(--cor_principal); display:inline-block; vertical-align: middle; margin-left:5px; cursor:pointer;' title='Cancelar item' ng-click='removerDocumento(" + JSON.stringify(row) + ")' ></div>";
+							btnhtml += "<div class='glyphicon glyphicon-print' style='font-size:1.5em; color:var(--cor_principal);  display:inline-block;  vertical-align: middle; margin-left:5px; cursor:pointer;' title='Imprimir' ng-click='imprimeOrcamento(" + JSON.stringify(row) + ")'></div>";
+
+							return btnhtml;
+						}));
+
 						angular.forEach(defPD, function (value, key) {
 							montaColunas.push(DTColumnBuilder.newColumn(key).withTitle(value.tlt).withOption('visible', value.vsbl).withOption('sortable', false).withOption('sWidth', value.width));
 						});
+
 
 						montaColunas.push(DTColumnBuilder.newColumn(null).withTitle('Data emissão').withOption('sortable', false).withClass('colBtn').withOption('sWidth', '150px').renderWith(function (data, type, row) {
 							var btnhtmlData = '';
@@ -2021,6 +2031,9 @@
 							return btnhtmlValor;
 						}));*/
 
+
+
+
 						montaColunas.push(DTColumnBuilder.newColumn(null).withTitle('Sinc.').withOption('sortable', false).withClass('colBtn').withOption('sWidth', '50px').renderWith(function (data, type, row) {
 							var btnhtml1 = '';
 							if (row.jsonDocs[0].sincronizado == "DOCUMENTO_NAO_SINCRONIZADO") {
@@ -2034,14 +2047,7 @@
 							return btnhtml1;
 						}));
 
-						montaColunas.push(DTColumnBuilder.newColumn(null).withTitle('').withOption('sortable', false).withClass('colBtn').withOption('sWidth', '50px').renderWith(function (data, type, row) {
-							var btnhtml = '';
-							btnhtml += "<div class='glyphicon glyphicon-edit' style='font-size:1.5em; color:var(--cor_principal);  display:inline-block; vertical-align: middle; cursor:pointer;' title='Editar' ng-click='abreFormulario(" + JSON.stringify(row) + ")'></div>";
-							btnhtml += "<div class='glyphicon glyphicon-ban-circle' style='font-size:1.5em; color:var(--cor_principal); display:inline-block; vertical-align: middle; margin-left:5px; cursor:pointer;' title='Cancelar item' ng-click='removerDocumento(" + JSON.stringify(row) + ")' ></div>";
-							btnhtml += "<div class='glyphicon glyphicon-print' style='font-size:1.5em; color:var(--cor_principal);  display:inline-block;  vertical-align: middle; margin-left:5px; cursor:pointer;' title='Imprimir' ng-click='imprimeOrcamento(" + JSON.stringify(row) + ")'></div>";
 
-							return btnhtml;
-						}));
 
 						$scope.dtColumns = montaColunas;
 
