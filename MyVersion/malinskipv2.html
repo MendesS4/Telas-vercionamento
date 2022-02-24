@@ -142,7 +142,7 @@
 									</div>
 									<div class="col-sm-4 spacer ">
 										<h5>Tipo de Frete</h5>
-										<p>{{tabTipoFrete}}</p>
+										<p>{{tabTipoFrete || 'não informado'}}</p>
 									</div>
 									<div class="col-sm-4 spacer ">
 										<h5>Tabela de Frete</h5>
@@ -1069,7 +1069,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("testes 13")
+		console.log("testes 14")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
