@@ -883,7 +883,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("teste 006")
+		console.log("teste 007")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1350,6 +1350,8 @@
 						$rootScope.cliente = $item;
 						$scope.codTpr = $item.codTpr
 						$scope.codigoCliente = $rootScope.cliente.codExterno
+						//atribui o representante
+						console.log("Representante: ", $item.codRep ," - ", $item.nomRep)
 						//atribiu tabela de preco
 						$scope.tabPreco = { nome: $scope.cliente.desTpr }
 						//atribui forma de pagamento
