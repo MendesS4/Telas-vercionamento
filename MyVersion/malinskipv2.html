@@ -185,7 +185,7 @@
 										<p>{{formaPagamento.nome}}</p>
 									</div>
 									<div class="col-sm-4 spacer">
-										<h5>Observação/h5>
+										<h5>Observação</h5>
 										<p>{{observacao}}</p>
 									</div>
 									<div class="col-sm-4 spacer">
@@ -237,39 +237,187 @@
 												</thead>
 												<tbody>
 													<tr ng-repeat="produto in produtos">
-														<td>
-															<div class="col-sm-12">
-																<div ng-show="produto.codVariacao == ''"
-																	class='col-sm-1 thumbnail pull-left' style='margin:0'> <img
-																		class='media-object'
-																		onerror='this.src="images/icon/semimagem.png"'
-																		style='width: 80px;'></div>
-																<div ng-show="produto.codVariacao != ''"
-																	class='col-sm-1 thumbnail pull-left' style='margin:0'> <img
-																		class='media-object'
-																		onerror='this.src="images/icon/semimagem.png"'
-																		style='width: 80px;'></div>
-																<div class="col-sm-11">{{produto.codExterno}} -
-																	{{produto.descricao}} - {{produto.codVariacao}}</div>
+														<td scope="row">
+															<div>
+																{{produto.seq}}
 															</div>
 														</td>
 														<td>
-															{{produto.quantidade}}
+															<div>
+																{{produto.ocpo}}
+															</div>
 														</td>
 														<td>
-															{{produto.valorNegociado | currency:'R$ '}}
+															<div>
+																{{produto.itocpo}}
+															</div>
 														</td>
 														<td>
-															<p
-																ng-show="produto.opcaoDescAcresc === 'DESCONTO' && produto.descAcresc != undefined ">
-																- {{produto.descAcresc}}%</p>
-															<p
-																ng-show="produto.opcaoDescAcresc === 'ACRESCIMO' && produto.descAcresc != undefined">
-																+ {{produto.descAcresc}}%</p>
-															<p ng-show="produto.descAcresc == undefined"></p>
+															<div>
+																{{produto.codProCli}}
+															</div>
 														</td>
 														<td>
-															{{produto.valorTotalItem | currency:'R$ '}}
+															<div>
+																{{produto.descrProCli}}
+															</div>
+														</td>
+														<td>
+															<div>
+															   {{produto.precoVendFOB}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.precoFrete}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.precoVendaCIF}}
+															</div>
+														</td>
+														<td>
+															<div>
+																<input
+																value="0"
+																ng-change="calcularProdutos()"
+																type="number"
+																class="inputNumberTable"
+																ng-model="produto.qtdPedida"
+																typeahead-min-lenght = "1">
+															</div>
+														</td>
+														<td>
+															<div>
+																<input
+																value="0"
+																ng-change="calcularProdutos()"
+																type="number"
+																class="inputNumberTable"
+																ng-model="produto.ofertaPreco"
+																typeahead-min-lenght = "1">
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.precoLiquido}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.vlrLiquido}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.pesoKG}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.volumeM3}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.qtdEmb}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.descEmb}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.qtdSubEmb}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.descrSubEmb}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.dataPCP}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.dataETD}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.acresPreco}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.descontoFin}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.vlrDesconto}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.vlrBruto}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.codPro}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.derivacao}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.um}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.previsaoCli}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.emb}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.subEmb}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.descrProduto}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.descrDeriv}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.nrPedido}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.seqPed}}
+															</div>
 														</td>
 													</tr>
 												</tbody>
@@ -919,7 +1067,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("testes 10")
+		console.log("testes 11")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
