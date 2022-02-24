@@ -154,8 +154,8 @@
 										<p>R${{valorPrecoTotal}}</p>
 									</div>
 									<div class="col-sm-2 spacer">
-										<h5>Representante</h5>
-										<p>{{representante}}</p>
+										<h5>Usuario digitação</h5>
+										<p>{{usuarioDigitacao}}</p>
 									</div>
 								</div>
 								<div style="margin-top: 2%; padding:0;" class="col-sm-12 spacer">
@@ -386,11 +386,11 @@
 										readonly>
 								</div>
 								<div class="col-sm-6 spacer ">
-									<label for="representante">Usuario de digitação</label>
+									<label for="usuarioDigitacao">Usuario de digitação</label>
 									<input 
 										type="text" 
 										class="form-control" 
-										ng-model="representante" 
+										ng-model="usuarioDigitacao" 
 										readonly>
 								</div>
 
@@ -399,6 +399,7 @@
 									<input 
 										type="text" 
 										class="form-control" 
+										ng-model="representante"
 										readonly>
 								</div>
 
@@ -883,7 +884,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("teste 007")
+		console.log("teste 008")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1350,6 +1351,7 @@
 						$rootScope.cliente = $item;
 						$scope.codTpr = $item.codTpr
 						$scope.codigoCliente = $rootScope.cliente.codExterno
+
 						//atribui o representante
 						console.log("Representante: ", $item.codRep ," - ", $item.nomRep)
 						//atribiu tabela de preco
@@ -1565,7 +1567,7 @@
 							$scope.tabelaFrete = '';
 							$scope.prevEntregCli = '';
 							$scope.prevEntregPcp = '';
-							$scope.representante = '';
+							$scope.usuarioDigitacao = '';
 							$scope.condPagamento = '';
 							$scope.formaPagamento = '';
 							$scope.observacao = '';
@@ -1587,7 +1589,7 @@
 							$scope.situacao = 'Em digitação';
 							$scope.tipoOrcamento = 'Normal';
 							$scope.filial = "Filial 8"
-							$scope.representante = dadosUserLogado.rNome;
+							$scope.usuarioDigitacao = dadosUserLogado.rNome;
 							$scope.obsOportunidade = '';
 							$scope.histOportunidade = '';
 							$rootScope.hashDoc = '';
@@ -1616,7 +1618,7 @@
 							$scope.emissaoOrcamento = docs.emissaoOrcamento != null ? new Date(docs.emissaoOrcamento) : null
 							$scope.situacao = docs.situacao;
 							$scope.prevEntregCli = docs.prevEntregCli != null ? new Date(docs.prevEntregCli) : null
-							$scope.representante = docs.representante;
+							$scope.usuarioDigitacao = docs.usuarioDigitacao;
 							$scope.condPagamento = docs.condPagamento;
 							$scope.formaPagamento = docs.formaPagamento;
 							$scope.observacao = docs.observacao;
@@ -1625,7 +1627,7 @@
 							$scope.frmCliente = docs.cliente;
 							$scope.codigoCliente = docs.cliente.codExterno;
 							$scope.nomeCliente = docs.cliente.nome;
-							$scope.representante = docs.representante.nome;
+							$scope.usuarioDigitacao = docs.usuarioDigitacao.nome;
 							$scope.datEmiERP = docs.datEmiERP;
 							$scope.dataEmissaoFormat = docs.datEmiERP != null ? docs.datEmiERP.substr(0, 10) : "";
 							$scope.obsOportunidade = '';
@@ -1805,7 +1807,7 @@
 							situacao			: $scope.situacao,
 							prevEntregCli		: $scope.prevEntregCli,
 							prevEntregPcp		: $scope.prevEntregPcp,
-							representante		: $scope.representante,
+							usuarioDigitacao		: $scope.usuarioDigitacao,
 							condPagamento		: $scope.condPagamento,
 							formaPagamento		: $scope.formaPagamento,
 							observacao			: $scope.observacao,
@@ -1820,7 +1822,7 @@
 							// pedido final
 							pedido				: $scope.pedido,
 							sincronizado: $scope.sincronizado == "DOCUMENTO_SINCRONIZADO" ? "DOCUMENTO_SINCRONIZADO" : "DOCUMENTO_NAO_SINCRONIZADO",
-							representante: { rId: dadosUserLogado.rCod, nome: dadosUserLogado.rNome },
+							usuarioDigitacao: { rId: dadosUserLogado.rCod, nome: dadosUserLogado.rNome },
 							datEmiERP: $scope.datEmiERP,
 							//Produtos
 							// verificação de quantidade de produtos
