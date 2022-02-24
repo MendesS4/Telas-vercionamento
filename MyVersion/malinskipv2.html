@@ -126,11 +126,6 @@
 										<h5>Cliente</h5>
 										<p>{{frmCliente.nome}}</p>
 									</div>
-									<div class="col-sm-6">
-										<h5>Endereço de entrega</h5>
-										<p>{{frmEndEntrega}}</p>
-									</div>
-
 									<div class="col-sm-2 spacer">
 										<h5>Data de emissão</h5>
 										<p>{{dataEmissaoFormat}}</p>
@@ -883,7 +878,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("testes 1")
+		console.log("testes 2")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1241,6 +1236,7 @@
 							},
 						);
 						let newResult = result.resultado
+						console.log(newResult)
 						for (let i = 0; i < newResult.length; i++) {
 							$scope.adicionarProduto(newResult[i])
 							$scope.qtdm3 = newResult[i].qtdm3
