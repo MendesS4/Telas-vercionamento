@@ -131,11 +131,6 @@
 										<p>{{dataEmissaoFormat}}</p>
 									</div>
 									<div class="col-sm-3 spacer">
-										<h5>Previsão de entrega</h5>
-										<p ng-show="dataPrevEntregaFormatada != 'Invalid Date'">
-											{{dataPrevEntregaFormatada}}</p>
-									</div>
-									<div class="col-sm-3 spacer">
 										<h5>Condição de pagamento</h5>
 										<p>{{condPagamento.nome}}</p>
 									</div>
@@ -878,7 +873,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("testes 6")
+		console.log("testes 7")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
