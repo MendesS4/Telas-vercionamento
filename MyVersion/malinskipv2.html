@@ -878,7 +878,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("testes 3")
+		console.log("testes 4")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1477,6 +1477,8 @@
 					};
 
 					$scope.gravaDocumentoERP = async ($item) => {
+
+						console.log($item)
 
 						let dialog = bootbox.dialog({
 							message: '<div class="alert alert-light popup"role="alert"><p style="font-size:1.0em; font-weight:bold; text-align:center;">Enviando pedido para o ERP...</p></div>',
