@@ -884,7 +884,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("teste 013")
+		console.log("teste 014")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1956,6 +1956,7 @@
 							.withOption('bFilter', false)
 							.withOption('searchDelay', 1000)
 							.withOption('scrollY', '100%')
+							.withOption('scrollX', '100%') 
 							.withPaginationType('full_numbers')
 							.withDisplayLength(20)
 							.withDOM('ftrip')
