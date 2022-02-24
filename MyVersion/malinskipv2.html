@@ -386,13 +386,22 @@
 										readonly>
 								</div>
 								<div class="col-sm-6 spacer ">
-									<label for="representante">Representante</label>
+									<label for="representante">Usuario de digitação</label>
 									<input 
 										type="text" 
 										class="form-control" 
 										ng-model="representante" 
 										readonly>
 								</div>
+
+								<div class="col-sm-6 spacer ">
+									<label for="representante">Representante</label>
+									<input 
+										type="text" 
+										class="form-control" 
+										readonly>
+								</div>
+
 								<div class="col-sm-6 spacer ">
 									<label for="condPagamento">Condição de pagamento</label>
 									<input 
@@ -874,7 +883,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("teste 002")
+		console.log("teste 003")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1322,6 +1331,7 @@
 									pFilter: { filtro: { filtroCliente: consulta } },
 								},
 							);
+							console.log(result.resultado)
 							if (result != undefined && result.resultado != undefined) {
 								return result.resultado.map((item) => {
 									return item
