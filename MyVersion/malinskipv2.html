@@ -135,7 +135,7 @@
 										<p>{{tabPreco.nome}}</p>
 									</div>
 									<div class="col-sm-12">
-										<div class="panel panel-default spacer-input">
+										<div class="panel-default spacer-input">
 											<div class="panel-heading">Sobre o orçamento</div>
 												<div class="panel-body">
 													<div class="col-sm-4 spacer-input">
@@ -154,7 +154,7 @@
 										</div>
 									</div>
 									<div class="col-sm-12">
-										<div class="panel panel-default spacer">
+										<div class="panel-default spacer">
 											<div class="panel-heading">Informações sobre o frete</div>
 												<div class="panel-body">
 													<div class="col-sm-4 spacer-input">
@@ -172,22 +172,6 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-sm-6">
-										<div class="panel panel-default spacer">
-											<div class="panel-mid panel-heading">Sobre o pagamento</div>
-												<div class="panel-body">
-													<div class="col-sm-6 spacer-input">
-														<h5>Condição de pagamento</h5>
-														<p>{{condPagamento.nome || 'não informado'}}</p>
-													</div>
-													<div class="col-sm-6 spacer-input">
-														<h5>Forma de pagamento</h5>
-														<p>{{formaPagamento.nome || 'não informado'}}</p>
-													</div>
-												</div>
-											</div>
-									</div>
-
 
 									<div class="col-sm-6">
 										<div class="panel panel-default spacer">
@@ -208,6 +192,25 @@
 												</div>
 											</div>
 									</div>
+
+									<div class="col-sm-6">
+										<div class="panel-default spacer">
+											<div class=" panel-heading">Sobre o pagamento</div>
+												<div class="panel-body">
+													<div class="col-sm-6 spacer-input">
+														<h5>Condição de pagamento</h5>
+														<p>{{condPagamento.nome || 'não informado'}}</p>
+													</div>
+													<div class="col-sm-6 spacer-input">
+														<h5>Forma de pagamento</h5>
+														<p>{{formaPagamento.nome || 'não informado'}}</p>
+													</div>
+												</div>
+											</div>
+									</div>
+
+
+
 									<div class="col-sm-4 spacer">
 										<h5>Previsao de entrega do cliente</h5>
 										<p>{{prevEntregCli || 'não informado'}}</p>
@@ -1102,7 +1105,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("testes 23")
+		console.log("testes 24")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
