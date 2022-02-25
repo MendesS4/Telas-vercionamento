@@ -1117,7 +1117,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("testes 39")
+		console.log("testes 40")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1422,7 +1422,7 @@
 							//valor do BD
 							let qtdm3 = parseFloat($rootScope.produtos[i].qtdm3.replace(',', '.'))
 							//preco liquido de produto
-							let precoLiquido = parseFloat($rootScope.produtos[i].precoVendFOB.replace(',', '.'))
+							let precoLiquido = parseFloat($rootScope.produtos[i].precoLiquido.replace(',', '.'))
 
 							console.log(precoLiquido)
 
@@ -1455,7 +1455,7 @@
 
 						//atribui os valores tratados
 						$scope.ofertaPreco 			= valorOfertaPreco == null ? 0 : valorOfertaPreco;
-						$scope.valorPrecoTotal 		= valorCalculoPrecoTotal.toFixed('2');
+						$scope.valorPrecoTotal 		= valorCalculoPrecoTotal.toFixed('3');
 						$scope.valorPrecoTotal 		= $scope.valorPrecoTotal.replace('.',',')
 						$scope.valorPesoTotal 		= valorCalculoPesoTotal.toFixed('3');
 						$scope.valorVolumeTotal 	= valorCalculoVolumeTotal.toFixed('3');
@@ -1918,7 +1918,7 @@
 					$scope.adicionarProduto = (resultTest) => {
 						$rootScope.produtos.unshift(
 							{
-								preCli          : resultTest.preCli,
+								preCli          : resultTest.precli,
 								qtdm3			: resultTest.qtdm3,
 								seq				: resultTest.seq,
 								ocpo			: resultTest.ocpo,
