@@ -170,7 +170,6 @@
 											</div>
 										</div>
 									</div>
-
 									<div class="col-sm-12">
 										<div class="panel panel-default spacer-input">
 											<div class="panel-heading">Orçamento Feito</div>
@@ -190,23 +189,25 @@
 												</div>
 											</div>
 									</div>
-
-									<div class="col-sm-6">
-										<div class="panel-default spacer">
+									<div class="col-sm-12">
+										<div class="panel panel-default spacer-input">
 											<div class=" panel-heading">Sobre o pagamento</div>
 												<div class="panel-body">
-													<div class="col-sm-3 spacer-input">
+													<div class="col-sm-4 spacer-input">
 														<h5>Condição de pagamento</h5>
 														<p>{{condPagamento.nome || 'não informado'}}</p>
 													</div>
-													<div class="col-sm-3 spacer-input">
+													<div class="col-sm-4 spacer-input">
 														<h5>Forma de pagamento</h5>
 														<p>{{formaPagamento.nome || 'não informado'}}</p>
+													</div>
+													<div class="col-sm-4 spacer-input">
+														<h5>Total</h5>
+														<p>R${{valorPrecoTotal || 'não informado'}}</p>
 													</div>
 												</div>
 											</div>
 									</div>
-
 									<div class="col-sm-4 spacer">
 										<h5>Previsao de entrega do cliente</h5>
 										<p>{{prevEntregCli || 'não informado'}}</p>
@@ -220,10 +221,7 @@
 										<h5>Observação</h5>
 										<p>{{observacao || 'não informado'}}</p>
 									</div>
-									<div class="col-sm-4 spacer">
-										<h5>Total</h5>
-										<p>R${{valorPrecoTotal || 'não informado'}}</p>
-									</div>
+
 								</div>
 								<div style="margin-top: 2%; padding:0;" class="col-sm-12 spacer">
 									<pre>
@@ -1101,7 +1099,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("testes 26")
+		console.log("testes 27")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
