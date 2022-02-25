@@ -1117,7 +1117,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("teste4555555")
+		console.log("teste666666")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -2278,6 +2278,11 @@
 							return btnhtml1;
 						}));
 
+
+						angular.forEach(defPD, function (value, key) {
+							montaColunas.push(DTColumnBuilder.newColumn(key).withTitle(value.tlt).withOption('visible', value.vsbl).withOption('sortable', false).withOption('sWidth', value.width));
+						});
+
 						montaColunas.push(DTColumnBuilder.newColumn(null).withTitle('Valor Total').withOption('sortable', false).withClass('colBtn').withOption('sWidth', '150px').renderWith(function(data, type, row) {
 							var btnhtmlValor = '';
 							let formatedValue = row.jsonDocs[0].valorPrecoTotal!="" ? row.jsonDocs[0].valorPrecoTotal.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) : ""
@@ -2286,10 +2291,6 @@
 										
 							return btnhtmlValor;
 						}));
-
-						angular.forEach(defPD, function (value, key) {
-							montaColunas.push(DTColumnBuilder.newColumn(key).withTitle(value.tlt).withOption('visible', value.vsbl).withOption('sortable', false).withOption('sWidth', value.width));
-						});
 
 
 						montaColunas.push(DTColumnBuilder.newColumn(null).withTitle('Data emissão').withOption('sortable', false).withClass('colBtn').withOption('sWidth', '150px').renderWith(function (data, type, row) {
