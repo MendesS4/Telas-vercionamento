@@ -166,15 +166,15 @@
 										<div class="panel panel-default spacer-input">
 											<div class="panel-heading">Orçamento Feito</div>
 												<div class="panel-body">
-													<div class="col-sm-4 spacer">
+													<div class="col-sm-4 spacer-input">
 														<h5>Usuario digitação</h5>
 														<p>{{usuarioDigitacao || 'não informado'}}</p>
 													</div>
-													<div class="col-sm-4 spacer">
+													<div class="col-sm-4 spacer-input">
 														<h5>Filial</h5>
 														<p>{{filial}}</p>
 													</div>
-													<div class="col-sm-4 spacer">
+													<div class="col-sm-4 spacer-input">
 														<h5>Representante</h5>
 														<p>{{Representante || 'não informado'}}</p>
 													</div>
@@ -222,14 +222,22 @@
 											</div>
 									</div>
 
-									<div class="col-sm-4 spacer">
-										<h5>Situação</h5>
-										<p>{{situacao || 'não informado'}}</p>
-									</div>
-
-									<div class="col-sm-4 spacer">
-										<h5>Observação</h5>
-										<p>{{observacao || 'não informado'}}</p>
+									<div class="col-sm-6">
+										<div class="panel panel-default spacer-input">
+											<div class=" panel-heading">Outros</div>
+												<div class="panel-body">
+													<div class="col-sm-3 spacer">
+														<h5>Situação</h5>
+														<p>{{situacao || 'não informado'}}</p>
+													</div>
+				
+													<div class="col-sm-3 spacer">
+														<h5>Observação</h5>
+														<p>{{observacao || 'não informado'}}</p>
+													</div>
+			
+												</div>
+											</div>
 									</div>
 
 								</div>
@@ -1109,7 +1117,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("testes 28")
+		console.log("testes 29")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
