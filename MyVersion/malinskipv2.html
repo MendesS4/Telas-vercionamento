@@ -138,20 +138,20 @@
 										<p>{{tabPreco.nome}}</p>
 									</div>
 									<div class="col-sm-12 spacer">
-										<div class="panel panel-default spacer">
+										<div class="panel panel-default spacer-input">
 											<div class="panel-heading">Sobre o orçamento</div>
 												<div class="panel-body">
-													<div class="col-sm-4 spacer">
+													<div class="col-sm-4 spacer-input">
 														<h5>Tipo de orçamento</h5>
 														<p>{{tipoOrcamento}}</p>
 													</div>
-													<div class="col-sm-4 spacer-input ">
-														<h5>Tabela de Frete</h5>
-														<p>{{tabFrete || 'não informado'}}</p>
+													<div class="col-sm-4 spacer-input">
+														<h5>Emisao do Orçamento</h5>
+														<p>{{dataEmissaoFormat || 'não informado'}}</p>
 													</div>
-													<div class="col-sm-4 spacer-input ">
-														<h5>Total de Frete</h5>
-														<p>{{totalFrete || 'não informado'}}</p>
+													<div class="col-sm-4 spacer-input">
+														<h5>Validade do Orçamento</h5>
+														<p>{{validadeOrcamento || 'não informado'}}</p>
 													</div>
 											</div>
 										</div>
@@ -164,16 +164,32 @@
 														<h5>Tipo de Frete</h5>
 														<p>{{tabTipoFrete || 'não informado'}}</p>
 													</div>
-													<div class="col-sm-4 spacer-input">
-														<h5>Emisao do Orçamento</h5>
-														<p>{{dataEmissaoFormat || 'não informado'}}</p>
+													<div class="col-sm-4 spacer-input ">
+														<h5>Tabela de Frete</h5>
+														<p>{{tabFrete || 'não informado'}}</p>
 													</div>
-													<div class="col-sm-4 spacer-input">
-														<h5>Validade do Orçamento</h5>
-														<p>{{validadeOrcamento || 'não informado'}}</p>
+													<div class="col-sm-4 spacer-input ">
+														<h5>Total de Frete</h5>
+														<p>{{totalFrete || 'não informado'}}</p>
 													</div>
 											</div>
 										</div>
+									</div>
+
+									<div class="col-sm-12 spacer">
+										<div class="panel panel-default spacer">
+											<div class="panel-heading">Sobre o pagamento</div>
+												<div class="panel-body">
+													<div class="col-sm-3 spacer">
+														<h5>Condição de pagamento</h5>
+														<p>{{condPagamento.nome || 'não informado'}}</p>
+													</div>
+													<div class="col-sm-3 spacer">
+														<h5>Forma de pagamento</h5>
+														<p>{{formaPagamento.nome || 'não informado'}}</p>
+													</div>
+												</div>
+											</div>
 									</div>
 									<div class="col-sm-4 spacer">
 										<h5>Previsao de entrega do cliente</h5>
@@ -190,14 +206,6 @@
 									<div class="col-sm-4 spacer">
 										<h5>Representante</h5>
 										<p>{{Representante || 'não informado'}}</p>
-									</div>
-									<div class="col-sm-4 spacer">
-										<h5>Condição de pagamento</h5>
-										<p>{{condPagamento.nome || 'não informado'}}</p>
-									</div>
-									<div class="col-sm-4 spacer">
-										<h5>Forma de pagamento</h5>
-										<p>{{formaPagamento.nome || 'não informado'}}</p>
 									</div>
 									<div class="col-sm-4 spacer">
 										<h5>Observação</h5>
