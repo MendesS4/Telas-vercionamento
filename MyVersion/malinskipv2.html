@@ -123,12 +123,12 @@
 							<div ng-show="sincronizado === 'DOCUMENTO_SINCRONIZADO'" class="form-group col-md-12">
 								<div style="background-color: #FBFBFB">
 
-									<div class="col-sm-4 spacer ">
+									<div class="col-sm-4 spacer-input ">
 										<h5>Tipo de orçamento</h5>
 										<p>{{tipoOrcamento}}</p>
 									</div>
 
-									<div class="col-sm-4 spacer ">
+									<div class="col-sm-4 spacer">
 										<h5>Filial</h5>
 										<p>{{filial}}</p>
 									</div>
@@ -145,15 +145,15 @@
 										<div class="panel panel-default spacer">
 											<div class="panel-heading">Informações sobre o frete</div>
 												<div class="panel-body">
-													<div class="col-sm-4 spacer ">
+													<div class="col-sm-4 spacer-input ">
 														<h5>Tipo de Frete</h5>
 														<p>{{tabTipoFrete || 'não informado'}}</p>
 													</div>
-													<div class="col-sm-4 spacer ">
+													<div class="col-sm-4 spacer-input ">
 														<h5>Tabela de Frete</h5>
 														<p>{{tabFrete || 'não informado'}}</p>
 													</div>
-													<div class="col-sm-4 spacer ">
+													<div class="col-sm-4 spacer-input ">
 														<h5>Total de Frete</h5>
 														<p>{{totalFrete || 'não informado'}}</p>
 													</div>
@@ -1078,7 +1078,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("testes 18")
+		console.log("testes 19")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -2481,6 +2481,10 @@
 
 	.itens-titulo {
 		margin-top: -15px;
+	}
+
+	.spacer-block {
+		margin-top: 10px;
 	}
 
 	.spacer {
