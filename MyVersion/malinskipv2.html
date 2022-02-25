@@ -793,7 +793,7 @@
 													</td>
 													<td>
 														<div>
-															{{produto.vlrLiquido}}
+															{{produto.vlrLiquido | currency:'R$'}}
 														</div>
 													</td>
 													<td>
@@ -931,7 +931,7 @@
 											<tbody>
 												<tr>
 													<td>
-														{{valorPrecoTotal | currency:'R$'}}
+														{{valorPrecoTotal | currency:'R$ '}}
 													</td>
 													<td>
 														{{valorQuantidadeTotal}}
@@ -1117,7 +1117,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("testes 44")
+		console.log("teste22222")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
