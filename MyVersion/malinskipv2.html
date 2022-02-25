@@ -673,8 +673,6 @@
 											Carregar Produtos </button>
 									</div>
 
-									<!--
-
 									
 									<div class="col-sm-6 spacer ">
 										<label for="searchtxt.descrProCli">Filtrar por descrição</label>
@@ -691,7 +689,7 @@
 											class="form-control" 
 											ng-model="searchtxt.codProCli">
 									</div>
-									-->
+									
 
 
 									<div style="margin-top:5px" class="form-group col-md-12">
@@ -750,14 +748,14 @@
 															</div>
 														</td>
 														<td>
-															<div>
-																{{produto.codProCli}}
-															</div>
+															
+															{{produto.codProCli}}
+															
 														</td>
 														<td>
-															<div>
-																{{produto.descrProCli}}
-															</div>
+															
+															{{produto.descrProCli}}
+															
 														</td>
 														<td>
 															<div>
@@ -1127,7 +1125,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("002")
+		console.log("003")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
