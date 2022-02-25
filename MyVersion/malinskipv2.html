@@ -246,7 +246,6 @@
 											<table style="margin-top: 1%;" id="tabelaProdutos" class="table-bordered">
 												<thead>
 													<tr>
-														<th>Seq.                  </th>
 														<th>OC/PO                 </th>
 														<th>it.OC/PO              </th>
 														<th>Cod.Prod.Cliente      </th>
@@ -284,11 +283,6 @@
 												</thead>
 												<tbody>
 													<tr ng-repeat="produto in produtos">
-														<td scope="row">
-															<div>
-																{{produto.seq}}
-															</div>
-														</td>
 														<td>
 															<div>
 																{{produto.ocpo}}
@@ -686,7 +680,6 @@
 										<table id ="tabelaProdutos" class="table-bordered">
 											<thead>
 												<tr>
-													<th>Seq.                  </th>
 													<th>OC/PO                 </th>
 													<th>it.OC/PO              </th>
 													<th>Cod.Prod.Cliente      </th>
@@ -724,11 +717,6 @@
 											</thead>
 											<tbody>
 												<tr ng-repeat = "produto in produtos">
-													<td scope="row">
-														<div>
-															{{produto.seq}}
-														</div>
-													</td>
 													<td>
 														<div>
 															{{produto.ocpo}}
@@ -1117,7 +1105,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("teste666666")
+		console.log("teste777")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
