@@ -125,10 +125,7 @@
 
 
 
-									<div class="col-sm-4 spacer">
-										<h5>Filial</h5>
-										<p>{{filial}}</p>
-									</div>
+
 									<div class="col-sm-4 spacer">
 										<h5>Cliente</h5>
 										<p>{{frmCliente.nome}}</p>
@@ -176,16 +173,37 @@
 										</div>
 									</div>
 									<div class="col-sm-6">
-										<div class="panel-default spacer">
+										<div class="panel panel-default spacer">
 											<div class="panel-mid panel-heading">Sobre o pagamento</div>
 												<div class="panel-body">
-													<div class="col-sm-3 spacer-input">
+													<div class="col-sm-6 spacer-input">
 														<h5>Condição de pagamento</h5>
 														<p>{{condPagamento.nome || 'não informado'}}</p>
 													</div>
-													<div class="col-sm-3 spacer-input">
+													<div class="col-sm-6 spacer-input">
 														<h5>Forma de pagamento</h5>
 														<p>{{formaPagamento.nome || 'não informado'}}</p>
+													</div>
+												</div>
+											</div>
+									</div>
+
+
+									<div class="col-sm-6">
+										<div class="panel panel-default spacer">
+											<div class="panel-mid panel-heading">Orçamento Feito</div>
+												<div class="panel-body">
+													<div class="col-sm-4 spacer">
+														<h5>Usuario digitação</h5>
+														<p>{{usuarioDigitacao || 'não informado'}}</p>
+													</div>
+													<div class="col-sm-4 spacer">
+														<h5>Filial</h5>
+														<p>{{filial}}</p>
+													</div>
+													<div class="col-sm-4 spacer">
+														<h5>Representante</h5>
+														<p>{{Representante || 'não informado'}}</p>
 													</div>
 												</div>
 											</div>
@@ -198,14 +216,7 @@
 										<h5>Situação</h5>
 										<p>{{situacao || 'não informado'}}</p>
 									</div>
-									<div class="col-sm-4 spacer">
-										<h5>Usuario digitação</h5>
-										<p>{{usuarioDigitacao || 'não informado'}}</p>
-									</div>
-									<div class="col-sm-4 spacer">
-										<h5>Representante</h5>
-										<p>{{Representante || 'não informado'}}</p>
-									</div>
+
 									<div class="col-sm-4 spacer">
 										<h5>Observação</h5>
 										<p>{{observacao || 'não informado'}}</p>
@@ -1091,7 +1102,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("testes 22")
+		console.log("testes 23")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
