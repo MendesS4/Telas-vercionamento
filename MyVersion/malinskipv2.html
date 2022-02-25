@@ -1476,7 +1476,7 @@
 							},
 						);
 						let newResult = result.resultado
-						console.log(newResult)
+						//console.log(newResult)
 						for (let i = 0; i < newResult.length; i++) {
 							$scope.adicionarProduto(newResult[i])
 							$scope.qtdm3 = newResult[i].qtdm3
@@ -2075,13 +2075,13 @@
 						}];
 
 						dados.jsonDocs = JSON.stringify(jsonDocs);
-						console.log(dados.jsonDocs)
+						//console.log(dados.jsonDocs)
 
 						
 						/*Recebe dados e para que sejam feitas as alterações necessarias*/
 						var json = JSON.parse(dados.jsonDocs);
 
-						console.log(json)
+						//console.log(json)
 
 						if (rotina == 2) {
 							let sendToERP = JSON.parse(dados.jsonDocs);
