@@ -469,452 +469,453 @@
 									</pre>
 								</div>
 							</div>
-							<div style="margin-top:-25px" ng-show="sincronizado != 'DOCUMENTO_SINCRONIZADO' "
-								class="form-group col-md-12">
-								<div class="col-sm-6 spacer ">
-									<label for="tipoOrcamento">Tipo de orçamento</label>
-									<input 
-										type="text" 
-										class="form-control" 
-										ng-model="tipoOrcamento" 
-										readonly>
-								</div>
-								<div class="col-sm-6 spacer ">
-									<label for="filial">Filial</label>
-									<input 
-										type="text" 
-										class="form-control" 
-										ng-model="filial" 
-										readonly>
-								</div>
-								<div class="col-sm-6 spacer ">
-									<label for="cliente">Cliente</label>
-									<div class="input-button">
+
+								<div style="margin-top:-25px" ng-show="sincronizado != 'DOCUMENTO_SINCRONIZADO' "
+									class="form-group col-md-12">
+									<div class="col-sm-6 spacer ">
+										<label for="tipoOrcamento">Tipo de orçamento</label>
 										<input 
-											required id="frmCliente" 
-											autocomplete="off" 
+											type="text" 
+											class="form-control" 
+											ng-model="tipoOrcamento" 
+											readonly>
+									</div>
+									<div class="col-sm-6 spacer ">
+										<label for="filial">Filial</label>
+										<input 
+											type="text" 
+											class="form-control" 
+											ng-model="filial" 
+											readonly>
+									</div>
+									<div class="col-sm-6 spacer ">
+										<label for="cliente">Cliente</label>
+										<div class="input-button">
+											<input 
+												required id="frmCliente" 
+												autocomplete="off" 
+												type="text"
+												class="form-control" 
+												ng-model="frmCliente"
+												uib-typeahead="teste.nome for teste in getClientesERP($viewValue)"
+												typeahead-on-select="onSelectCli($item, $model, $label)"
+												typeahead-min-lenght="0">
+											<span 
+												class="input-group-addon" 
+												style="cursor: pointer;" 
+												ng-click="limpaCliente()">
+												<i class="glyphicon glyphicon-remove"></i>
+											</span>
+										</div>
+									</div>
+									<div class="col-sm-6 spacer ">
+										<label for="tabPreco">Tabela de preço</label>
+										<div class="input-button">
+											<input 
+												id="frmTabelaPreco" 
+												autocomplete="off" 
+												type="text" 
+												class="form-control"
+												ng-model="tabPreco"
+												uib-typeahead="teste.nome for teste in getTabelaPreco($viewValue)"
+												typeahead-min-lenght="0"
+												ng-disabled="codigoCliente == undefined || codigoCliente == ''">
+											<span 
+												class="input-group-addon" 
+												style="cursor: pointer;"
+												ng-click="limpaTabPreco()">
+												<i class="glyphicon glyphicon-remove"></i>
+											</span>
+										</div>
+									</div>
+									<div class="col-sm-4 spacer ">
+										<label for="frete">Tipo de frete</label>
+										<div class="input-button">
+											<input 
+												required 
+												id="frmFrete" 
+												autocomplete="off" 
+												type="text"
+												class="form-control" 
+												ng-model="frete"
+												uib-typeahead="teste.tipo + ' - ' + teste.desc for teste in getTipoFrete($viewValue)"
+												typeahead-min-lenght="0"
+												typeahead-on-select="inputsControlFrete($item, $model, $label)">
+											<span 
+												class="input-group-addon" 
+												style="cursor: pointer;"
+												ng-click="limpaTipoFrete()">
+												<i class="glyphicon glyphicon-remove"></i>
+											</span>
+										</div>
+									</div>
+									<div class="col-sm-4 spacer ">
+										<label for="tabelaFrete">Tabela de frete</label>
+										<div class="input-button">
+											<input 
+												ng-required="requiredTabFrete" 
+												id="tabTabelaFrete" 
+												autocomplete="off"
+												type="text" 
+												class="form-control" 
+												ng-model="tabelaFrete"
+												ng-disabled="!habilitado"
+												uib-typeahead="frete.nom for frete in getTabelaFrete($viewValue)"
+												typeahead-on-select="onSelectTabFrete($item, $model, $label)"
+												typeahead-min-lenght="0">
+											<span 
+												class="input-group-addon" 
+												style="cursor: pointer;"
+												ng-click="limpaTabelaFrete()">
+												<i class="glyphicon glyphicon-remove"></i>
+											</span>
+										</div>
+									</div>
+									<div class="col-sm-4 spacer ">
+										<label for="totalFrete">Total de frete</label>
+										<input 
 											type="text"
 											class="form-control" 
-											ng-model="frmCliente"
-											uib-typeahead="teste.nome for teste in getClientesERP($viewValue)"
-											typeahead-on-select="onSelectCli($item, $model, $label)"
-											typeahead-min-lenght="0">
-										<span 
-											class="input-group-addon" 
-											style="cursor: pointer;" 
-											ng-click="limpaCliente()">
-											<i class="glyphicon glyphicon-remove"></i>
-										</span>
+											ng-model="totalFrete" 
+											readonly>
 									</div>
-								</div>
-								<div class="col-sm-6 spacer ">
-									<label for="tabPreco">Tabela de preço</label>
-									<div class="input-button">
+									<div class="col-sm-4 spacer ">
+										<label for="emissaoOrcamento">Emissão do orçamento</label>
 										<input 
-											id="frmTabelaPreco" 
-											autocomplete="off" 
+											type="date" 
+											class="form-control" 
+											ng-model="emissaoOrcamento" 
+											min="2022-01-01"
+											readonly>
+									</div>
+									<div class="col-sm-4 spacer ">
+										<label for="validadeOrcamento">Validade do orçamento</label>
+										<input 
+											type="date" 
+											class="form-control" 
+											ng-model="validadeOrcamento"
+											min="2022-01-01">
+									</div>
+									<div class="col-sm-4 spacer ">
+										<label for="prevEntregCli">Previsão de entrega do cliente</label>
+										<input 
+											type="date" 
+											class="form-control" 
+											ng-model="prevEntregCli"
+											min="2022-01-01">
+									</div>
+									<div class="col-sm-6 spacer ">
+										<label for="situacao">Situação</label>
+										<input 
 											type="text" 
-											class="form-control"
-											ng-model="tabPreco"
-											uib-typeahead="teste.nome for teste in getTabelaPreco($viewValue)"
-											typeahead-min-lenght="0"
-											ng-disabled="codigoCliente == undefined || codigoCliente == ''">
-										<span 
-											class="input-group-addon" 
-											style="cursor: pointer;"
-											ng-click="limpaTabPreco()">
-											<i class="glyphicon glyphicon-remove"></i>
-										</span>
+											class="form-control" 
+											ng-model="situacao" 
+											readonly>
 									</div>
-								</div>
-								<div class="col-sm-4 spacer ">
-									<label for="frete">Tipo de frete</label>
-									<div class="input-button">
+									<div class="col-sm-6 spacer ">
+										<label for="usuarioDigitacao">Usuario de digitação</label>
 										<input 
+											type="text" 
+											class="form-control" 
+											ng-model="usuarioDigitacao" 
+											readonly>
+									</div>
+
+									<div class="col-sm-6 spacer ">
+										<label for="representante">Representante</label>
+										<input 
+											type="text" 
+											class="form-control" 
+											ng-model="representante"
+											readonly>
+									</div>
+
+									<div class="col-sm-6 spacer ">
+										<label for="condPagamento">Condição de pagamento</label>
+										<input 
+											type="text" 
 											required 
-											id="frmFrete" 
-											autocomplete="off" 
-											type="text"
 											class="form-control" 
-											ng-model="frete"
-											uib-typeahead="teste.tipo + ' - ' + teste.desc for teste in getTipoFrete($viewValue)"
-											typeahead-min-lenght="0"
-											typeahead-on-select="inputsControlFrete($item, $model, $label)">
-										<span 
-											class="input-group-addon" 
-											style="cursor: pointer;"
-											ng-click="limpaTipoFrete()">
-											<i class="glyphicon glyphicon-remove"></i>
-										</span>
+											ng-model="condPagamento" 
+											required
+											uib-typeahead="teste.nome for teste in getCondicaoPagamentoERP($viewValue)"
+											typeahead-min-lenght="2">
 									</div>
-								</div>
-								<div class="col-sm-4 spacer ">
-									<label for="tabelaFrete">Tabela de frete</label>
-									<div class="input-button">
+									<div class="col-sm-6 spacer ">
+										<label for="formaPagamento">Forma de pagamento</label>
 										<input 
-											ng-required="requiredTabFrete" 
-											id="tabTabelaFrete" 
-											autocomplete="off"
+											type="text" 
+											required 
+											class="form-control" 
+											ng-model="formaPagamento" 
+											required
+											uib-typeahead="teste.codExterno + ' - ' + teste.nome for teste in getFormasPagamentoERP($viewValue)"
+											typeahead-min-lenght="3">
+									</div>
+									<div class="col-sm-6 spacer ">
+										<label for="numPedClienteOCPO">Numero pedido do cliente (OC/PO)</label>
+										<input 
 											type="text" 
 											class="form-control" 
-											ng-model="tabelaFrete"
-											ng-disabled="!habilitado"
-											uib-typeahead="frete.nom for frete in getTabelaFrete($viewValue)"
-											typeahead-on-select="onSelectTabFrete($item, $model, $label)"
-											typeahead-min-lenght="0">
-										<span 
-											class="input-group-addon" 
-											style="cursor: pointer;"
-											ng-click="limpaTabelaFrete()">
-											<i class="glyphicon glyphicon-remove"></i>
-										</span>
+											ng-model="numPedClienteOCPO">
 									</div>
-								</div>
-								<div class="col-sm-4 spacer ">
-									<label for="totalFrete">Total de frete</label>
-									<input 
-										type="text"
-										class="form-control" 
-										ng-model="totalFrete" 
-										readonly>
-								</div>
-								<div class="col-sm-4 spacer ">
-									<label for="emissaoOrcamento">Emissão do orçamento</label>
-									<input 
-										type="date" 
-										class="form-control" 
-										ng-model="emissaoOrcamento" 
-										min="2022-01-01"
-										readonly>
-								</div>
-								<div class="col-sm-4 spacer ">
-									<label for="validadeOrcamento">Validade do orçamento</label>
-									<input 
-										type="date" 
-										class="form-control" 
-										ng-model="validadeOrcamento"
-										min="2022-01-01">
-								</div>
-								<div class="col-sm-4 spacer ">
-									<label for="prevEntregCli">Previsão de entrega do cliente</label>
-									<input 
-										type="date" 
-										class="form-control" 
-										ng-model="prevEntregCli"
-										min="2022-01-01">
-								</div>
-								<div class="col-sm-6 spacer ">
-									<label for="situacao">Situação</label>
-									<input 
-										type="text" 
-										class="form-control" 
-										ng-model="situacao" 
-										readonly>
-								</div>
-								<div class="col-sm-6 spacer ">
-									<label for="usuarioDigitacao">Usuario de digitação</label>
-									<input 
-										type="text" 
-										class="form-control" 
-										ng-model="usuarioDigitacao" 
-										readonly>
-								</div>
-
-								<div class="col-sm-6 spacer ">
-									<label for="representante">Representante</label>
-									<input 
-										type="text" 
-										class="form-control" 
-										ng-model="representante"
-										readonly>
-								</div>
-
-								<div class="col-sm-6 spacer ">
-									<label for="condPagamento">Condição de pagamento</label>
-									<input 
-										type="text" 
-										required 
-										class="form-control" 
-										ng-model="condPagamento" 
-										required
-										uib-typeahead="teste.nome for teste in getCondicaoPagamentoERP($viewValue)"
-										typeahead-min-lenght="2">
-								</div>
-								<div class="col-sm-6 spacer ">
-									<label for="formaPagamento">Forma de pagamento</label>
-									<input 
-										type="text" 
-										required 
-										class="form-control" 
-										ng-model="formaPagamento" 
-										required
-										uib-typeahead="teste.codExterno + ' - ' + teste.nome for teste in getFormasPagamentoERP($viewValue)"
-										typeahead-min-lenght="3">
-								</div>
-								<div class="col-sm-6 spacer ">
-									<label for="numPedClienteOCPO">Numero pedido do cliente (OC/PO)</label>
-									<input 
-										type="text" 
-										class="form-control" 
-										ng-model="numPedClienteOCPO">
-								</div>
-								<div class="col-sm-6 spacer ">
-									<label for="observação">Observação</label>
-									<textarea 
-										class="form-control spacer-input ng-pristine ng-valid ng-empty ng-touched"
-										ng-model="observacao" 
-										rows="1">
-									</textarea>
-								</div>
-
-								<div class="col-sm-12 spacer ">
-									<button class="btn btn_grid btn_cor_padrao" ng-click="getInfoTabela()" required>
-										Carregar Produtos </button>
-								</div>
-
-								<div class="col-sm-6 spacer ">
-									<label for="searchtxt.descrProCli">Filtrar por descrição</label>
-									<input 
-										type="text" 
-										class="form-control" 
-										ng-model="searchtxt.descricao">
-								</div>
-
-								<div class="col-sm-6 spacer ">
-									<label for="searchtxt.codProCli">Filtrar por codigo de produto</label>
-									<input 
-										type="text" 
-										class="form-control" 
-										ng-model="searchtxt.codProCli">
-								</div>
-
-
-								<div style="margin-top:5px" class="form-group col-md-12">
-									<div style="padding:0;" class="col-xl-12 spacer">
-										<!--Pre para barra de rolagem inferior -->
-										<pre>
-										<div class="scroll-div">
-										<table id ="tabelaProdutos" class="table-bordered">
-											<thead>
-												<tr>
-													<th>OC/PO                 </th>
-													<th>it.OC/PO              </th>
-													<th>Cod.Prod.Cliente      </th>
-													<th>Descr.Produto.Cliente </th>
-													<th>Preço Venda(FOB)      </th>
-													<th>Preço do Frete        </th>
-													<th>Preço da venda(CIF)   </th>
-													<th>QTD.Pedida            </th>
-													<th>%Oferta Preço         </th>
-													<th>Preço Liquido         </th>
-													<th>Vlr.Liquido           </th>
-													<th>Peso(KG)              </th>
-													<th>Volume(M3)            </th>
-													<th>Qtd Emb               </th>
-													<th>Desc Emb              </th>
-													<th>Qtd.Sub.Emb           </th>
-													<th>Descr.Sub Emb         </th>
-													<th>Data(PCP)             </th>
-													<th>Data(ETD)             </th>
-													<th>%Acres.Preço          </th>
-													<th>%Desconto Fin         </th>
-													<th>Vlr. Desconto         </th>
-													<th>Vlr. Bruto            </th>
-													<th>Cod.Pro               </th>
-													<th>Deriv                 </th>
-													<th>UM                    </th>
-													<th>Previsao do cliente   </th>
-													<th>Emb					  </th>
-													<th>Sub Emb				  </th>
-													<th>Descr. Produto		  </th>
-													<th>Descr. Deriv          </th>
-													<th>Nr. Pedido			  </th>
-													<th>Seq. Ped			  </th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr ng-repeat = "produto in produtos | filter : searchtxt">
-													<td>
-														<div>
-															{{produto.ocpo}}
-														</div>
-													</td>
-													<td>
-														<div>
-															{{produto.itocpo}}
-														</div>
-													</td>
-													<td>
-														<div>
-															{{produto.codProCli}}
-														</div>
-													</td>
-													<td>
-														<div>
-															{{produto.descrProCli}}
-														</div>
-													</td>
-													<td>
-														<div>
-														   {{produto.precoVendFOB}}
-														</div>
-													</td>
-													<td>
-														<div>
-															{{produto.precoFrete}}
-														</div>
-													</td>
-													<td>
-														<div>
-															{{produto.precoVendaCIF}}
-														</div>
-													</td>
-													<td>
-														<div>
-															<input
-															value="0"
-															ng-change="calcularProdutos()"
-															type="number"
-															class="inputNumberTable"
-															ng-model="produto.qtdPedida"
-															typeahead-min-lenght = "1">
-														</div>
-													</td>
-													<td>
-														<div>
-															<input
-															value="0"
-															ng-change="calcularProdutos()"
-															type="number"
-															class="inputNumberTable"
-															ng-model="produto.ofertaPreco"
-															typeahead-min-lenght = "1">
-														</div>
-													</td>
-													<td>
-														<div>
-															{{produto.precoLiquido}}
-														</div>
-													</td>
-													<td>
-														<div>
-															{{produto.vlrLiquido | currency:'R$'}}
-														</div>
-													</td>
-													<td>
-														<div>
-															{{produto.pesoKG}}
-														</div>
-													</td>
-													<td>
-														<div>
-															{{produto.volumeM3}}
-														</div>
-													</td>
-													<td>
-														<div>
-															{{produto.qtdEmb}}
-														</div>
-													</td>
-													<td>
-														<div>
-															{{produto.descEmb}}
-														</div>
-													</td>
-													<td>
-														<div>
-															{{produto.qtdSubEmb}}
-														</div>
-													</td>
-													<td>
-														<div>
-															{{produto.descrSubEmb}}
-														</div>
-													</td>
-													<td>
-														<div>
-															{{produto.dataPCP}}
-														</div>
-													</td>
-													<td>
-														<div>
-															{{produto.dataETD}}
-														</div>
-													</td>
-													<td>
-														<div>
-															{{produto.acresPreco}}
-														</div>
-													</td>
-													<td>
-														<div>
-															{{produto.descontoFin}}
-														</div>
-													</td>
-													<td>
-														<div>
-															{{produto.vlrDesconto}}
-														</div>
-													</td>
-													<td>
-														<div>
-															{{produto.vlrBruto}}
-														</div>
-													</td>
-													<td>
-														<div>
-															{{produto.codPro}}
-														</div>
-													</td>
-													<td>
-														<div>
-															{{produto.derivacao}}
-														</div>
-													</td>
-													<td>
-														<div>
-															{{produto.um}}
-														</div>
-													</td>
-													<td>
-														<div>
-															{{produto.previsaoCli}}
-														</div>
-													</td>
-													<td>
-														<div>
-															{{produto.emb}}
-														</div>
-													</td>
-													<td>
-														<div>
-															{{produto.subEmb}}
-														</div>
-													</td>
-													<td>
-														<div>
-															{{produto.descrProduto}}
-														</div>
-													</td>
-													<td>
-														<div>
-															{{produto.descrDeriv}}
-														</div>
-													</td>
-													<td>
-														<div>
-															{{produto.nrPedido}}
-														</div>
-													</td>
-													<td>
-														<div>
-															{{produto.seqPed}}
-														</div>
-													</td>
-												</tr>
-											</tbody>
-										</table>
+									<div class="col-sm-6 spacer ">
+										<label for="observação">Observação</label>
+										<textarea 
+											class="form-control spacer-input ng-pristine ng-valid ng-empty ng-touched"
+											ng-model="observacao" 
+											rows="1">
+										</textarea>
 									</div>
+
+									<div class="col-sm-12 spacer ">
+										<button class="btn btn_grid btn_cor_padrao" ng-click="getInfoTabela()" required>
+											Carregar Produtos </button>
+									</div>
+
+									<div class="col-sm-6 spacer ">
+										<label for="searchtxt.descrProCli">Filtrar por descrição</label>
+										<input 
+											type="text" 
+											class="form-control" 
+											ng-model="searchtxt.descrProCli">
+									</div>
+
+									<div class="col-sm-6 spacer ">
+										<label for="searchtxt.codProCli">Filtrar por codigo de produto</label>
+										<input 
+											type="number" 
+											class="form-control" 
+											ng-model="searchtxt.codProCli">
+									</div>
+
+
+									<div style="margin-top:5px" class="form-group col-md-12">
+										<div style="padding:0;" class="col-xl-12 spacer">
+											<!--Pre para barra de rolagem inferior -->
+											<pre>
+											<div class="scroll-div">
+											<table id ="tabelaProdutos" class="table-bordered">
+												<thead>
+													<tr>
+														<th>OC/PO                 </th>
+														<th>it.OC/PO              </th>
+														<th>Cod.Prod.Cliente      </th>
+														<th>Descr.Produto.Cliente </th>
+														<th>Preço Venda(FOB)      </th>
+														<th>Preço do Frete        </th>
+														<th>Preço da venda(CIF)   </th>
+														<th>QTD.Pedida            </th>
+														<th>%Oferta Preço         </th>
+														<th>Preço Liquido         </th>
+														<th>Vlr.Liquido           </th>
+														<th>Peso(KG)              </th>
+														<th>Volume(M3)            </th>
+														<th>Qtd Emb               </th>
+														<th>Desc Emb              </th>
+														<th>Qtd.Sub.Emb           </th>
+														<th>Descr.Sub Emb         </th>
+														<th>Data(PCP)             </th>
+														<th>Data(ETD)             </th>
+														<th>%Acres.Preço          </th>
+														<th>%Desconto Fin         </th>
+														<th>Vlr. Desconto         </th>
+														<th>Vlr. Bruto            </th>
+														<th>Cod.Pro               </th>
+														<th>Deriv                 </th>
+														<th>UM                    </th>
+														<th>Previsao do cliente   </th>
+														<th>Emb					  </th>
+														<th>Sub Emb				  </th>
+														<th>Descr. Produto		  </th>
+														<th>Descr. Deriv          </th>
+														<th>Nr. Pedido			  </th>
+														<th>Seq. Ped			  </th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr ng-repeat = "produto in produtos | filter : searchtxt">
+														<td>
+															<div>
+																{{produto.ocpo}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.itocpo}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.codProCli}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.descrProCli}}
+															</div>
+														</td>
+														<td>
+															<div>
+															{{produto.precoVendFOB}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.precoFrete}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.precoVendaCIF}}
+															</div>
+														</td>
+														<td>
+															<div>
+																<input
+																value="0"
+																ng-change="calcularProdutos()"
+																type="number"
+																class="inputNumberTable"
+																ng-model="produto.qtdPedida"
+																typeahead-min-lenght = "1">
+															</div>
+														</td>
+														<td>
+															<div>
+																<input
+																value="0"
+																ng-change="calcularProdutos()"
+																type="number"
+																class="inputNumberTable"
+																ng-model="produto.ofertaPreco"
+																typeahead-min-lenght = "1">
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.precoLiquido}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.vlrLiquido | currency:'R$'}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.pesoKG}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.volumeM3}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.qtdEmb}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.descEmb}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.qtdSubEmb}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.descrSubEmb}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.dataPCP}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.dataETD}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.acresPreco}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.descontoFin}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.vlrDesconto}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.vlrBruto}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.codPro}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.derivacao}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.um}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.previsaoCli}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.emb}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.subEmb}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.descrProduto}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.descrDeriv}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.nrPedido}}
+															</div>
+														</td>
+														<td>
+															<div>
+																{{produto.seqPed}}
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
 									</pre>
 										<table>
 											<thead>
@@ -1122,7 +1123,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("teste888")
+		console.log("teste999")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
