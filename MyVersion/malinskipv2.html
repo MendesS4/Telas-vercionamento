@@ -1117,7 +1117,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("testes 40")
+		console.log("testes 41")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1424,26 +1424,27 @@
 							//preco liquido de produto
 							let precoLiquido = parseFloat($rootScope.produtos[i].precoLiquido.replace(',', '.'))
 
-							console.log(precoLiquido)
+							//console.log(precoLiquido)
 
 							if ((qtd != null && qtd > 0) && $rootScope.produtos[i].qtdm3 != null) {
 
 								//calculando valor liquido
 								vlrLiquido = qtd * precoLiquido
-								console.log(vlrLiquido)
+								//console.log(vlrLiquido)
 								$rootScope.produtos[i].vlrLiquido = vlrLiquido;
 								
 								//calculando o desconto com a oferta de preco
 								vlrLiquido = vlrLiquido - (vlrLiquido * (valorOfertaPreco / 100));
+								console.log(vlrLiquido)
 
 								// calculando volume
 								volumeM3 = qtd * qtdm3;
-								console.log(volumeM3)
+								//console.log(volumeM3)
 								$rootScope.produtos[i].volumeM3 = volumeM3.toFixed('3');
 
 								//calculando peso 
 								peso = volumeM3 * 790
-								console.log(peso)
+								//console.log(peso)
 								$rootScope.produtos[i].pesoKG = peso.toFixed('3');
 
 								valorCalculoPrecoTotal += vlrLiquido;
