@@ -1458,8 +1458,12 @@
 
 						//atribui os valores tratados
 						$scope.ofertaPreco 			= valorOfertaPreco == null ? 0 : valorOfertaPreco;
-						$scope.valorPrecoTotal 		= valorCalculoPrecoTotal.toFixed('3');
-						$scope.valorPrecoTotal 		= $scope.valorPrecoTotal.replace('.',',')
+
+						$scope.valorPrecoTotal 		= valorCalculoPrecoTotal //.toFixed('3');
+						//$scope.valorPrecoTotal 		= $scope.valorPrecoTotal.replace('.',',')
+
+						$scope.valorPrecototalFormat =  
+
 						$scope.valorPesoTotal 		= valorCalculoPesoTotal.toFixed('3');
 						$scope.valorVolumeTotal 	= valorCalculoVolumeTotal.toFixed('3');
 						$scope.valorQuantidadeTotal = valorCalculoQuantidadeTotal.toFixed('0');
