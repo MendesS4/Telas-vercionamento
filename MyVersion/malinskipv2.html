@@ -672,6 +672,23 @@
 										Carregar Produtos </button>
 								</div>
 
+								<div class="col-sm-6 spacer ">
+									<label for="searchtxt.descrProCli">Filtrar por descrição</label>
+									<input 
+										type="text" 
+										class="form-control" 
+										ng-model="searchtxt.descricao">
+								</div>
+
+								<div class="col-sm-6 spacer ">
+									<label for="searchtxt.codProCli">Filtrar por codigo de produto</label>
+									<input 
+										type="text" 
+										class="form-control" 
+										ng-model="searchtxt.codProCli">
+								</div>
+
+
 								<div style="margin-top:5px" class="form-group col-md-12">
 									<div style="padding:0;" class="col-xl-12 spacer">
 										<!--Pre para barra de rolagem inferior -->
@@ -716,7 +733,7 @@
 												</tr>
 											</thead>
 											<tbody>
-												<tr ng-repeat = "produto in produtos">
+												<tr ng-repeat = "produto in produtos | filter : searchtxt">
 													<td>
 														<div>
 															{{produto.ocpo}}
@@ -1105,7 +1122,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("teste777")
+		console.log("teste888")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
