@@ -1031,7 +1031,7 @@
 								class="btn btn_grid btn-success" 
 								title="O pedido será finalizado e enviado ao ERP"
 								ng-disabled="produtos.length == 0 || cadastroPedido.$error.required || isLoading"
-								ng-show="pedido == 0 " 
+								ng-show="pedido == 0" 
 								ng-click="finalizarDocumento()"> 
 								Finalizar 
 							</button>
@@ -1047,7 +1047,8 @@
 							<button 
 								class="btn btn_grid btn_cor_padrao"
 								title="O pedido será salvo. Voce ainda poderá editar e finalizar o pedido."
-								ng-disabled="cadastroPedido.$error.required || isLoading" 
+								ng-disabled="cadastroPedido.$error.required || isLoading "
+								ng-show="pedido == 0" 
 								ng-click="salvarDocumento(1)">
 								Salvar
 							</button>
@@ -1116,7 +1117,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("testes 32")
+		console.log("testes 33")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
