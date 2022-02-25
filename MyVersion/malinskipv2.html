@@ -1117,7 +1117,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("testes 37")
+		console.log("testes 38")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1422,7 +1422,7 @@
 							//valor do BD
 							let qtdm3 = parseFloat($rootScope.produtos[i].qtdm3.replace(',', '.'))
 							//preco liquido de produto
-							let precoLiquido = parseFloat($rootScope.produtos[i].precoLiquido.replace(',', '.'))
+							let precoLiquido = parseFloat($rootScope.produtos[i].precoVendFOB.replace(',', '.'))
 
 							console.log(precoLiquido)
 
@@ -1439,12 +1439,12 @@
 								// calculando volume
 								volumeM3 = qtd * qtdm3;
 								console.log(volumeM3)
-								$rootScope.produtos[i].volumeM3 = volumeM3;
+								$rootScope.produtos[i].volumeM3 = volumeM3.toFixed('3');
 
 								//calculando peso 
 								peso = volumeM3 * 790
 								console.log(peso)
-								$rootScope.produtos[i].pesoKG = peso;
+								$rootScope.produtos[i].pesoKG = pesopeso.toFixed('3');
 
 								valorCalculoPrecoTotal += vlrLiquido;
 								valorCalculoVolumeTotal += volumeM3;
@@ -1918,6 +1918,7 @@
 					$scope.adicionarProduto = (resultTest) => {
 						$rootScope.produtos.unshift(
 							{
+								preCli          : resultTest.preCli,
 								qtdm3			: resultTest.qtdm3,
 								seq				: resultTest.seq,
 								ocpo			: resultTest.ocpo,
