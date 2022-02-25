@@ -1443,7 +1443,7 @@
 								
 								//calculando o desconto com a oferta de preco
 								vlrLiquido = vlrLiquido - (vlrLiquido * (valorOfertaPreco / 100));
-								console.log(vlrLiquido)
+								//console.log(vlrLiquido)
 
 								$rootScope.produtos[i].vlrLiquido = vlrLiquido.toFixed('3');
 
@@ -1853,6 +1853,9 @@
 							$scope.dataPrevEntregaFormatada = "";
 							// $scope.dataEmissaoErpFormatada	= "";
 							$scope.valorTotal = 0;
+
+							//filtro 
+
 						} else {
 							//para editar o pedido
 							let docs = $dados.jsonDocs[0];
