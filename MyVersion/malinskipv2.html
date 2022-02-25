@@ -123,10 +123,7 @@
 							<div ng-show="sincronizado === 'DOCUMENTO_SINCRONIZADO'" class="form-group col-md-12">
 								<div style="background-color: #FBFBFB">
 
-									<div class="col-sm-4 spacer-input ">
-										<h5>Tipo de orçamento</h5>
-										<p>{{tipoOrcamento}}</p>
-									</div>
+
 
 									<div class="col-sm-4 spacer">
 										<h5>Filial</h5>
@@ -140,14 +137,13 @@
 										<h5>Tabela de preço</h5>
 										<p>{{tabPreco.nome}}</p>
 									</div>
-
 									<div class="col-sm-12 spacer">
 										<div class="panel panel-default spacer">
-											<div class="panel-heading">Informações sobre o frete</div>
+											<div class="panel-heading">Sobre o orçamento</div>
 												<div class="panel-body">
-													<div class="col-sm-4 spacer-input ">
-														<h5>Tipo de Frete</h5>
-														<p>{{tabTipoFrete || 'não informado'}}</p>
+													<div class="col-sm-4 spacer">
+														<h5>Tipo de orçamento</h5>
+														<p>{{tipoOrcamento}}</p>
 													</div>
 													<div class="col-sm-4 spacer-input ">
 														<h5>Tabela de Frete</h5>
@@ -160,14 +156,24 @@
 											</div>
 										</div>
 									</div>
-
-									<div class="col-sm-4 spacer">
-										<h5>Emisao do Orçamento</h5>
-										<p>{{dataEmissaoFormat || 'não informado'}}</p>
-									</div>
-									<div class="col-sm-4 spacer">
-										<h5>Validade do Orçamento</h5>
-										<p>{{validadeOrcamento || 'não informado'}}</p>
+									<div class="col-sm-12 spacer">
+										<div class="panel panel-default spacer">
+											<div class="panel-heading">Informações sobre o frete</div>
+												<div class="panel-body">
+													<div class="col-sm-4 spacer-input">
+														<h5>Tipo de Frete</h5>
+														<p>{{tabTipoFrete || 'não informado'}}</p>
+													</div>
+													<div class="col-sm-4 spacer-input">
+														<h5>Emisao do Orçamento</h5>
+														<p>{{dataEmissaoFormat || 'não informado'}}</p>
+													</div>
+													<div class="col-sm-4 spacer-input">
+														<h5>Validade do Orçamento</h5>
+														<p>{{validadeOrcamento || 'não informado'}}</p>
+													</div>
+											</div>
+										</div>
 									</div>
 									<div class="col-sm-4 spacer">
 										<h5>Previsao de entrega do cliente</h5>
