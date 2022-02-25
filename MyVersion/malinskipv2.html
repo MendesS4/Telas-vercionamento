@@ -134,7 +134,7 @@
 													</div>
 													<div class="col-sm-4 spacer-input">
 														<h5>Emisao do Orçamento</h5>
-														<p>{{dataEmissaoFormat || 'não informado'}}</p>
+														<p>{{dataValidadeEmiFormat || 'não informado'}}</p>
 													</div>
 													<div class="col-sm-4 spacer-input">
 														<h5>Validade do Orçamento</h5>
@@ -1116,7 +1116,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("testes 30")
+		console.log("testes 31")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1862,8 +1862,12 @@
 							$scope.codigoCliente = docs.cliente.codExterno;
 							$scope.nomeCliente = docs.cliente.nome;
 							$scope.usuarioDigitacao = docs.usuarioDigitacao.nome;
+
 							$scope.datEmiERP = docs.datEmiERP;
 							$scope.dataEmissaoFormat = docs.datEmiERP != null ? docs.datEmiERP.substr(0, 10) : "";
+
+							$scope.dataValidadeEmiFormat =  docs.emissaoOrcamento != null ?  docs.emissaoOrcamento.substr(0,10) : "";
+
 							$scope.obsOportunidade = '';
 							$scope.histOportunidade = docs.histOportunidade;
 							$scope.pedido = docs.pedido;
