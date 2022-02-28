@@ -1119,7 +1119,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("tests 027")
+		console.log("tests 028")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1537,7 +1537,7 @@
 								valorCalculoQuantidadeTotal += qtd;
 
 								console.log($rootScope.produtos[i].ofertaPreco)
-								$rootScope.produtos[i].ofertaPreco = $rootScope.produtos[i].ofertaPreco =! undefined ? $rootScope.produtos[i].ofertaPreco : 0
+								$rootScope.produtos[i].ofertaPreco = $rootScope.produtos[i].ofertaPreco === null ? 0 : $rootScope.produtos[i].ofertaPreco
 								
 							}
 						}
