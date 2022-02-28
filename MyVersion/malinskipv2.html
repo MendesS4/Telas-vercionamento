@@ -1117,7 +1117,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("tests 011")
+		console.log("tests 012")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -2109,6 +2109,13 @@
 							console.log("oferta de preco esta vazia")
 							console.log($scope.ofertaPreco)
 						}
+
+						if ($scope.ofertaPreco == 0){
+							console.log("oferta de preco esta com zero")
+							console.log($scope.ofertaPreco)
+						}
+
+
 
 
 						console.log($scope.ofertaPreco)
