@@ -436,35 +436,48 @@
 												<tr class="cchild">
 													<td colspan ="12">
 														<div class="col-sm-6">
-															<div class="col-sm-12 spacer">
-																<label>Produto</label>	
-																<div>
-																	{{produto.descricao}}
+
+															<div class="panel panel-default spacer">
+
+																<div class="panel-heading">Informa��es sobre o Produto</div>
+
+																<div class="panel-body">
+
+																	<div class="col-sm-12 spacer">
+																		<label>Produto</label>	
+																		<div>
+																			{{produto.descricao}}
+																		</div>
+																	</div>		
+																	
+																	<div class="col-sm-12 spacer"> 
+																		<label>Deriva��o</label>												
+																		{{produto.codVariacao}}
+																	</div>
+																	
+																	<div class="col-sm-6 spacer">
+																		<label for="tipoVendaItem">Transa��o do produto</label>
+																		<div class="input-group spacer">
+																			<input type="text" ng-model="produto.tipoVendaItem" name="tipoVendaItem" id="tipoVendaItem" placeholder="Selecione uma transa��o para este item" uib-typeahead="tipven.nome for tipven in getTipoVendaERP($viewValue)" typeahead-loading="loadingTipVen" typeahead-no-results="noResultsTipVen"  typeahead-on-select="onSelectTransacaoPro($item, $model, $label)" class="form-control" autocomplete="off" typeahead-min-length="0">
+																			<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaTipoVendaItem()"><i class="glyphicon glyphicon-remove"></i></span>
+																		</div>
+										
+																	</div>
+																	<div class="col-sm-6 spacer ">
+																		<label for="prevEntregaItem">Data de entrega do item </label>
+																		<input type="text" ui-mask="99/99/9999" class="form-control spacer" name="prevEntregaItem" ng-model="produto.prevEntregaItem" id="prevEntregaItem">
+																	</div>
+																	<div class="col-sm-12 spacer">
+																		<label for="obsItem">Observa��o</label>
+																		<textarea class="form-control spacer-input"  ng-model="produto.obsItem" placeholder="M�ximo de 250 caracteres" id="obsItem" rows="5"></textarea>
+																	</div>
+																
 																</div>
-															</div>		
-															
-															<div class="col-sm-12 spacer"> 
-																<label>Deriva��o</label>												
-																{{produto.codVariacao}}
+
 															</div>
-															
-															<div class="col-sm-6 spacer">
-																<label for="tipoVendaItem">Transa��o do produto</label>
-																<div class="input-group spacer">
-																	<input type="text" ng-model="produto.tipoVendaItem" name="tipoVendaItem" id="tipoVendaItem" placeholder="Selecione uma transa��o para este item" uib-typeahead="tipven.nome for tipven in getTipoVendaERP($viewValue)" typeahead-loading="loadingTipVen" typeahead-no-results="noResultsTipVen"  typeahead-on-select="onSelectTransacaoPro($item, $model, $label)" class="form-control" autocomplete="off" typeahead-min-length="0">
-																	<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaTipoVendaItem()"><i class="glyphicon glyphicon-remove"></i></span>
-																</div>
-								
-															</div>
-															<div class="col-sm-6 spacer ">
-																<label for="prevEntregaItem">Data de entrega do item </label>
-																<input type="text" ui-mask="99/99/9999" class="form-control spacer" name="prevEntregaItem" ng-model="produto.prevEntregaItem" id="prevEntregaItem">
-															</div>
-															<div class="col-sm-12 spacer">
-																<label for="obsItem">Observa��o</label>
-																<textarea class="form-control spacer-input"  ng-model="produto.obsItem" placeholder="M�ximo de 250 caracteres" id="obsItem" rows="5"></textarea>
-															</div>
+
 														</div>
+
 														<div class="col-sm-6">
 
 															<div class="panel panel-default spacer">
@@ -996,7 +1009,7 @@
 
 <script>
 
-	console.log("testes 001")
+	console.log("testes 002")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
