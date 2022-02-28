@@ -1119,7 +1119,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("tests 018")
+		console.log("tests 019")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1497,7 +1497,7 @@
 							valorOfertaPreco = $rootScope.produtos[i].ofertaPreco
 
 							// faz uma veificação para que não salve um campo NaN, campo vazio
-							if (isNaN(valorOfertaPreco)){
+							if (valorOfertaPreco == null ){
 								console.log(valorOfertaPreco)
 								console.log("chegou na verificação NAN")
 								valorOfertaPreco = 0
