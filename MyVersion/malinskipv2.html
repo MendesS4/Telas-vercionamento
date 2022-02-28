@@ -797,6 +797,7 @@
 														<td>
 															<div>
 																<input
+																required
 																value="0"
 																ng-change="calcularProdutos()"
 																type="number"
@@ -1118,7 +1119,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("tests 016")
+		console.log("tests 017")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -2003,7 +2004,7 @@
 								seqvpp			: resultTest.seqvpp,
 								idxpre			: resultTest.idxpre,
 
-								ofertaPreco		: resultTest.ofertaPreco != null ? 
+								ofertaPreco		: resultTest.ofertaPreco,
 								precoLiquido	: resultTest.precoLiquido,
 								vlrLiquido		: resultTest.vlrLiquido,
 								pesoKG			: resultTest.pesoKG,
