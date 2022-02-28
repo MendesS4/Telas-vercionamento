@@ -1119,7 +1119,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("tests 028")
+		console.log("tests 029")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1500,12 +1500,10 @@
 
 							console.log($rootScope.produtos[i].ofertaPreco)
 
-							// faz uma veificação para que não salve um campo NaN, campo vazio
-							if (valorOfertaPreco == null ){
-								//console.log(valorOfertaPreco)
-								//console.log("chegou na verificação NAN")
-								valorOfertaPreco = 0
-							}else{}
+							valorOfertaPreco = 0
+
+							console.log(valorOfertaPreco)
+
 							//valor do BD
 							let qtdm3 = parseFloat($rootScope.produtos[i].qtdm3.replace(',', '.'))
 
@@ -1536,6 +1534,7 @@
 								valorCalculoPesoTotal += peso;
 								valorCalculoQuantidadeTotal += qtd;
 
+								console.log(valorOfertaPreco)
 								console.log($rootScope.produtos[i].ofertaPreco)
 								$rootScope.produtos[i].ofertaPreco = $rootScope.produtos[i].ofertaPreco === null ? 0 : $rootScope.produtos[i].ofertaPreco
 								
@@ -1543,7 +1542,6 @@
 						}
 
 						//atribui os valores tratados
-						$scope.ofertaPreco 			= valorOfertaPreco == null ? 0 : valorOfertaPreco;
 						$scope.valorPrecoTotal 		= valorCalculoPrecoTotal 
 						$scope.valorPesoTotal 		= valorCalculoPesoTotal.toFixed('3');
 						$scope.valorVolumeTotal 	= valorCalculoVolumeTotal.toFixed('3');
