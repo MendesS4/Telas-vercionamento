@@ -1119,7 +1119,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("tests 019")
+		console.log("tests 020")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1485,7 +1485,9 @@
 						// oferta de preco
 						let valorOfertaPreco = 0
 
+						
 						//loop para percorrer os produtos na tabela
+						
 						for (let i = 0; i < $rootScope.produtos.length; i++) {
 
 							$rootScope.produtos[i].emb = 0
@@ -1498,8 +1500,8 @@
 
 							// faz uma veificação para que não salve um campo NaN, campo vazio
 							if (valorOfertaPreco == null ){
-								console.log(valorOfertaPreco)
-								console.log("chegou na verificação NAN")
+								//console.log(valorOfertaPreco)
+								//console.log("chegou na verificação NAN")
 								valorOfertaPreco = 0
 							}else{}
 							//valor do BD
@@ -1531,6 +1533,9 @@
 								valorCalculoVolumeTotal += volumeM3;
 								valorCalculoPesoTotal += peso;
 								valorCalculoQuantidadeTotal += qtd;
+
+								$rootScope.produtos[i].ofertaPreco =! null ? $rootScope.produtos[i].ofertaPreco : 0
+								console.log($rootScope.produtos[i].ofertaPreco)
 							}
 						}
 
