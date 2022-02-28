@@ -1117,7 +1117,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("tests 009")
+		console.log("tests 010")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -2162,8 +2162,11 @@
 
 						dados.jsonDocs = JSON.stringify(jsonDocs);
 
-						
-						
+						if ($scope.ofertaPreco == null || $scope.ofertaPreco == undefined){
+							console.log("oferta de preco esta vazia")
+							console.log($scope.ofertaPreco)
+						}
+	
 						/*Recebe dados e para que sejam feitas as alterações necessarias*/
 						var json = JSON.parse(dados.jsonDocs);
 
