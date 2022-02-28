@@ -1117,7 +1117,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("tests 010")
+		console.log("tests 011")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -2111,7 +2111,8 @@
 						}
 
 
-					
+						console.log($scope.ofertaPreco)
+
 						jsonDocs = [{
 							/*Historico*/
 							obsOportunidade		: $scope.obsOportunidade,
