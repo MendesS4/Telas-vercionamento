@@ -1483,7 +1483,7 @@
 						// quantidade 
 						let valorCalculoQuantidadeTotal = 0
 						// oferta de preco
-						let valorOfertaPreco = 0
+						
 
 						
 						//loop para percorrer os produtos na tabela
@@ -1491,17 +1491,13 @@
 						for (let i = 0; i < $rootScope.produtos.length; i++) {
 
 							$rootScope.produtos[i].emb = 0
-
+							
 							//quantidade
 							let qtd = parseFloat($rootScope.produtos[i].qtdPedida)
 
 							//oferta de preco
-							valorOfertaPreco = $rootScope.produtos[i].ofertaPreco
-
+							let valorOfertaPreco = parseFloat($rootScope.produtos[i].ofertaPreco)
 							console.log($rootScope.produtos[i].ofertaPreco)
-
-							valorOfertaPreco = 0
-
 							console.log(valorOfertaPreco)
 
 							//valor do BD
