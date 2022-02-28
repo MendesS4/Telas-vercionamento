@@ -808,6 +808,7 @@
 														<td>
 															<div>
 																<input
+																required
 																value="0"
 																ng-change="calcularProdutos()"
 																type="number"
@@ -1117,7 +1118,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("tests 015")
+		console.log("tests 016")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1496,6 +1497,7 @@
 
 							// faz uma veificação para que não salve um campo NaN, campo vazio
 							if (isNaN(valorOfertaPreco)){
+								console.log(valorOfertaPreco)
 								console.log("chegou na verificação NAN")
 								valorOfertaPreco = 0
 							}else{}
@@ -2000,7 +2002,8 @@
 								qtdPedida		: resultTest.qtdPedida,
 								seqvpp			: resultTest.seqvpp,
 								idxpre			: resultTest.idxpre,
-								ofertaPreco		: resultTest.ofertaPreco,
+
+								ofertaPreco		: resultTest.ofertaPreco != null ? 
 								precoLiquido	: resultTest.precoLiquido,
 								vlrLiquido		: resultTest.vlrLiquido,
 								pesoKG			: resultTest.pesoKG,
