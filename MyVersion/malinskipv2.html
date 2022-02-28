@@ -1119,7 +1119,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("tests 022")
+		console.log("tests 023")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -2092,6 +2092,7 @@
 
 					// testando o salvamento do pedido 
 					$scope.salvarDocumento = async (rotina) => {
+						$scope.calcularProdutos()
 						if($scope.valorPrecoTotal == NaN){
 							console.log("valor vazio")
 						}
@@ -2128,7 +2129,7 @@
 
 						console.log($scope.ofertaPreco)
 
-						$scope.calcularProdutos()
+						
 
 						jsonDocs = [{
 							/*Historico*/
