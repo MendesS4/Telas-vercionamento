@@ -515,23 +515,40 @@
 															<div class="panel panel-default spacer">
 																<div class="panel-heading">Estoque</div>
 																	<div class="panel-body">
-																		<div ng-repeat="deposito in produto.depositos">
-																			<p>
-																				{{deposito.deposito}}
-																			</p>
-																			<p>
-																				{{deposito.estoque}}
-																			</p>
-																			<p>
-																				{{deposito.reserva}}
-																			</p>
-																			<p>
-																				{{deposito.prefatura}}
-																			</p>
-																			<p>
-																				{{deposito.disponivel}}
-																			</p>
-																		</div>
+																		<table>
+																			<thead>
+																				<tr>
+																					<th>Deposito</th>
+																					<th>Estoque</th>
+																					<th>Reserva</th>
+																					<th>Prefatura</th>
+																					<th>Disponivel</th>
+																				</tr>
+																			</thead>
+																			<tbody>
+
+																				<tr ng-repeat="deposito in produto.depositos">
+																					<td>
+																						{{deposito.deposito}}
+																					</td>
+																					<td>
+																						{{deposito.estoque}}
+																					</td>
+																					<td>
+																						{{deposito.reserva}}
+																					</td>
+																					<td>
+																						{{deposito.prefatura}}
+																					</td>
+																					<td>
+																						{{deposito.disponivel}}
+																					</td>
+																				</tr>
+
+																			</tbody>
+																		</table>
+
+
 
 																	</div>
 															</div>
@@ -1036,7 +1053,7 @@
 
 <script>
 
-	console.log("testes 016")
+	console.log("testes 017")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
