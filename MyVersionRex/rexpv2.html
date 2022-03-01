@@ -517,7 +517,19 @@
 																<div class="panel-heading">Estoque</div>
 																	<div class="panel-body">
 																		<p>
+																			{{produto.deposito}}
+																		</p>
+																		<p>
 																			{{produto.estoque}}
+																		</p>
+																		<p>
+																			{{produto.reserva}}
+																		</p>
+																		<p>
+																			{{produto.prefatura}}
+																		</p>
+																		<p>
+																			{{produto.disponivel}}
 																		</p>
 																	</div>
 															</div>
@@ -1023,7 +1035,7 @@
 
 <script>
 
-	console.log("testes 009")
+	console.log("testes 010")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
