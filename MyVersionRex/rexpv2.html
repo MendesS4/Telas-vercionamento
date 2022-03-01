@@ -1023,7 +1023,7 @@
 
 <script>
 
-	console.log("testes 006")
+	console.log("testes 007")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -2016,8 +2016,11 @@ angular
 					valorFaixa2			: parseFloat($item.valorFaixa2),
 					valorFaixa3			: parseFloat($item.valorFaixa3),
 					valorFaixa4			: parseFloat($item.valorFaixa4),
+					depositos			: $item.depositos,
 				}
 			);
+
+			console.log($rootScope.produtos.depositos)
 			
 			var buscaProduto		= angular.element(document.querySelector('#itemProd'));
 			
