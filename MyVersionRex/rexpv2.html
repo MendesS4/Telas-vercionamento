@@ -353,7 +353,6 @@
 										<i class="glyphicon glyphicon-remove"></i> Sem Resultados
 									</div>	
 								</div>
-							
 
 								<div style="margin-top:5px" class="form-group col-md-12">
 									<div style="padding:0;" class="col-sm-12 spacer">
@@ -1024,7 +1023,7 @@
 
 <script>
 
-	console.log("testes 003")
+	console.log("testes 004")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -1783,7 +1782,7 @@ angular
 					}
 				);
 				
-				console.log(result);
+				console.log(result.resultado[0].depositos);
 										
 				if(result != undefined && result.resultado != undefined){
 					return result.resultado.slice(0, 8).map((item)=>{
