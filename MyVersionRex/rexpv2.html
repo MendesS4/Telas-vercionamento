@@ -516,7 +516,7 @@
 																<div class="panel-heading">Estoque</div>
 																	<div class="panel-body">
 																		<table>
-																			<thead>
+																			<thead id="tabelaDeposito" class="table-bordered">
 																				<tr>
 																					<th>Deposito</th>
 																					<th>Estoque</th>
@@ -2549,11 +2549,14 @@ angular
 	th, td, a{
 		font-size: 12px;
 		white-space: nowrap;
+		padding-right: 6vh;
+		padding-left: 2vh
 	}
 
 	th{
 		background-color: #FAFAFA;
 		border-radius: 2px;
+		padding: 1vh;
 	}
 
 	.dataTables_wrapper .dataTables_info{
