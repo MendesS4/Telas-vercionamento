@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html ng-app="appV2">
-
 <head>
 	<meta charset="utf-8" />
 	<!-- Imports CSS-->
@@ -17,24 +16,18 @@
 	<link rel="stylesheet" href="https://sistema.clicvenda.com.br/clicVendas/plugins/font-awesome/css/all.min.css">
 	<link rel="stylesheet" href="https://sistema.clicvenda.com.br/clicVendas/plugins/angCSS/buttons.dataTables.min.css">
 	<!-- Imports CSS-->
-
 	<!-- View -->
 </head>
-
 <body>
 	<div class="container" ng-controller="MainController">
-
 		<!--Primeira pagina-->
 		<div ng-show="exibeListaDocumentos">
-
 			<!-- Sidebar Menu FILTRO -->
 			<div id="mySidebar" class="sidebar">
-
 				<div class="header-filtro-tabela">
 					<p style="text-align: center; color:white; font-weight: 900; ">Filtro<span ng-click="openNav()"
 							style="color: white; margin-left:70%" class="glyphicon glyphicon-minus"></span></p>
 				</div>
-
 				<form style="margin-top:5px">
 					<div class="form-group">
 						<label for="filFornecedores">Pesquisar</label>
@@ -48,7 +41,6 @@
 							aria-describedby=" "
 							placeholder="Digite a palavra chave. Ex: '123'">
 					</div>
-
 					<div class="form-group">
 						<label for="filCliente">Cliente</label>
 						<input 
@@ -61,7 +53,6 @@
 							aria-describedby=" " 
 							placeholder=" ">
 					</div>
-
 					<div class="form-group">
 						<label for="filCarteira">Data Emissão</label>
 						<input 
@@ -74,7 +65,6 @@
 							ng-model="filDataEmissao" 
 							aria-describedby=" ">
 					</div>
-
 					<div class="form-group">
 						<label for="projeto">Sincronização</label>
 						<input 
@@ -90,7 +80,6 @@
 							typeahead-on-select="onSelectFilSincronizacao($item, $model, $label)">
 					</div>
 				</form>
-
 				<div class="text-center" style="height: 50px;">
 					<div class="btn-group">
 						<button class="btn btn_grid btn_cor_padrao" ng-click="aplicarFiltros()"> Buscar </button>
@@ -99,10 +88,8 @@
 						<button class="btn btn_grid btn_cor_padrao" ng-click="limparFiltros();"> Limpar </button>
 					</div>
 				</div>
-
 			</div>
 			<!--Sidebar Menu FILTRO-->
-
 			<!-- Tabela -->
 			<div id="main">
 				<!-- Tabela Simplificada -->
@@ -112,12 +99,9 @@
 				</div>
 			</div>
 			<!-- Tabela -->
-
 		</div>
 		<!--Primeira pagina-->
-
 		<!-- FORM NOVO DOCUMENTO -->
-
 		<div ng-show="exibeFormulario">
 			<!-- Header formulario -->
 			<div class="divider-titulo row">
@@ -135,7 +119,6 @@
 				</div>
 			</div>
 			<!-- Header formulario -->
-
 			<!-- Capa do pedido -->
 			<div class="row">
 				<form name="cadastroPedido">
@@ -144,7 +127,6 @@
 						<div class="row">
 							<div ng-show="sincronizado === 'DOCUMENTO_SINCRONIZADO'" class="form-group col-md-12">
 								<div style="background-color: #FBFBFB">
-
 									<div class="col-sm-12">
 										<div class="panel panel-default spacer-input">
 											<div class="panel-heading">Sobre o orçamento</div>
@@ -221,7 +203,6 @@
 												</div>
 											</div>
 									</div>
-
 									<div class="col-sm-12">
 										<div class="panel panel-default spacer-input">
 											<div class=" panel-heading">Sobre o cliente</div>
@@ -238,11 +219,9 @@
 														<h5>Tabela de preço</h5>
 														<p>{{tabPreco.nome}}</p>
 													</div>
-				
 												</div>
 											</div>
 									</div>
-
 									<div class="col-sm-6">
 										<div class="panel panel-default spacer-input">
 											<div class=" panel-heading">Outros</div>
@@ -255,11 +234,9 @@
 														<h5>Observação</h5>
 														<p>{{observacao || 'não informado'}}</p>
 													</div>
-			
 												</div>
 											</div>
 									</div>
-
 								</div>
 								<!--Tabela onde mostra os produtos-->
 								<div style="margin-top: 2%; padding:0;" class="col-sm-12 spacer">
@@ -491,7 +468,6 @@
 									</pre>
 								</div>
 							</div>
-
 								<div style="margin-top:-25px" ng-show="sincronizado != 'DOCUMENTO_SINCRONIZADO' "
 									class="form-group col-md-12">
 									<div class="col-sm-6 spacer ">
@@ -642,7 +618,6 @@
 											ng-model="usuarioDigitacao" 
 											readonly>
 									</div>
-
 									<div class="col-sm-6 spacer ">
 										<label for="representante">Representante</label>
 										<input 
@@ -651,7 +626,6 @@
 											ng-model="representante"
 											readonly>
 									</div>
-
 									<div class="col-sm-6 spacer ">
 										<label for="condPagamento">Condição de pagamento</label>
 										<input 
@@ -689,13 +663,10 @@
 											rows="1">
 										</textarea>
 									</div>
-
 									<div class="col-sm-12 spacer ">
 										<button class="btn btn_grid btn_cor_padrao" ng-click="getInfoTabela()" required>
 											Carregar Produtos </button>
 									</div>
-
-									
 									<div class="col-sm-6 spacer ">
 										<label for="searchtxt.descrProCli">Filtrar por descrição</label>
 										<input 
@@ -711,8 +682,6 @@
 											class="form-control" 
 											ng-model="searchtxt.codProCli">
 									</div>
-									
-
 									<!--Tabela onde mostra os produtos para orçamento-->
 									<div style="margin-top:5px" class="form-group col-md-12">
 										<div style="padding:0;" class="col-xl-12 spacer">
@@ -983,7 +952,6 @@
 							</div>
 						</form>
 					</div>
-					
 				<hr class="divider">
 				<div ng-show="exibeHistoricos" class="col-sm-12">
 					<div class="form-row">
@@ -1016,7 +984,6 @@
 					</div>
 				</div>
 				<!-- Ações sob o formulario -->
-
 				<div class="row spacer">
 					<div class="pull-right" style="padding-right: 35px; margin-top:10px">
 						<div class="btn-group">
@@ -1119,11 +1086,9 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		//console.log("tests 037")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
-			//boa sorte :D
 			.controller("MainController",
 				function (DTOptionsBuilder, DTColumnDefBuilder, DTColumnBuilder, DTDefaultOptions, $scope, $rootScope, $compile, $http, $timeout, $window) {
 
@@ -1184,8 +1149,6 @@
 
 							} else {
 								$scope.tipoFormulario = $dados.jsonDocs[0].sincronizado === 'DOCUMENTO_SINCRONIZADO' ? 'Pedido ERP Nº ' + $dados.jsonDocs[0].pedido : "Pedido Nº " + $dados.id
-								//$dados.jsonDocs[0].pedido != '' ? 'Pedido Nº '+ $dados.jsonDocs[0].pedido : 'Edição';
-
 								$scope.inputDesabilitado = true;
 								$scope.permiteEditar = false;
 							};
@@ -1494,13 +1457,11 @@
 
 							//oferta de preco
 							let valorOfertaPreco = parseFloat($rootScope.produtos[i].ofertaPreco)
-							//console.log($rootScope.produtos[i].ofertaPreco)
-							//console.log(valorOfertaPreco)
 
 							if (isNaN(valorOfertaPreco)){
-								console.log("chegou no Nan")
+								
 								valorOfertaPreco = 0
-								//console.log(valorOfertaPreco)
+								
 							}
 
 							//valor do BD
@@ -1531,19 +1492,8 @@
 								valorCalculoVolumeTotal += volumeM3;
 								valorCalculoPesoTotal += peso;
 								valorCalculoQuantidadeTotal += qtd;
-
-								//console.log(valorOfertaPreco)
-								//console.log($rootScope.produtos[i].ofertaPreco)
-
-
-								//$rootScope.produtos[i].ofertaPreco = $rootScope.produtos[i].ofertaPreco === null ? 0 : $rootScope.produtos[i].ofertaPreco
 								
 							}
-
-							//if($rootScope.produtos[i].ofertaPreco == null){
-									//$rootScope.produtos[i].ofertaPreco = 0
-								//}
-								//console.log($rootScope.produtos[i].ofertaPreco)
 						}
 
 						//atribui os valores tratados
@@ -1551,7 +1501,6 @@
 						$scope.valorPesoTotal 		= valorCalculoPesoTotal.toFixed('3');
 						$scope.valorVolumeTotal 	= valorCalculoVolumeTotal.toFixed('3');
 						$scope.valorQuantidadeTotal = valorCalculoQuantidadeTotal.toFixed('0');
-
 
 					}
 
@@ -1873,108 +1822,101 @@
 
 						if ($dados == undefined) {
 							//para um novo pedido
-							$rootScope.idDocumento = 0;
-							$scope.pedido = 0,
-							$rootScope.produtos = [];
+							$rootScope.idDocumento 		= 0;
+							$scope.pedido 				= 0,
+							$rootScope.produtos 		= [];
 							// inputs
-							$scope.codTpr = '';
-							$scope.representante = '';
-							$scope.qtdm3 = '';
-							$scope.tabPreco = '';
-							$scope.frmCliente = '';
-							$scope.totalFrete = '';
-							$scope.tabelaFrete = '';
-							$scope.prevEntregCli = '';
-							$scope.prevEntregPcp = '';
-							$scope.usuarioDigitacao = '';
-							$scope.condPagamento = '';
-							$scope.formaPagamento = '';
-							$scope.observacao = '';
-							$scope.numPedClienteOCPO = '';
-							$scope.frmCliente = '';
-							$scope.codigoCliente = '';
-							$scope.codigoProduto = '';
+							$scope.codTpr 				= '';
+							$scope.representante 		= '';
+							$scope.qtdm3 				= '';
+							$scope.tabPreco 			= '';
+							$scope.frmCliente 			= '';
+							$scope.totalFrete 			= '';
+							$scope.tabelaFrete 			= '';
+							$scope.prevEntregCli 		= '';
+							$scope.prevEntregPcp 		= '';
+							$scope.usuarioDigitacao 	= '';
+							$scope.condPagamento 		= '';
+							$scope.formaPagamento 		= '';
+							$scope.observacao 			= '';
+							$scope.numPedClienteOCPO 	= '';
+							$scope.frmCliente 			= '';
+							$scope.codigoCliente 		= '';
+							$scope.codigoProduto 		= '';
 							// codigos padroes da tela malinski
-							$scope.emissaoOrcamento = new Date(date)
-							$scope.validadeOrcamento = new Date(validadeOrcamento);
-							$scope.habilitado = false
-							$scope.ofertaPreco = 0; 
-							$scope.valorPrecoTotal = 0;
-							$scope.valorPesoTotal = 0;
-							$scope.valorVolumeTotal = 0;
+							$scope.emissaoOrcamento 	= new Date(date)
+							$scope.validadeOrcamento 	= new Date(validadeOrcamento);
+							$scope.habilitado 			= false
+							$scope.ofertaPreco 			= 0; 
+							$scope.valorPrecoTotal 		= 0;
+							$scope.valorPesoTotal		= 0;
+							$scope.valorVolumeTotal 	= 0;
 							$scope.valorQuantidadeTotal = 0;
 							//produtos
-							$scope.frete = 'X-Sem Frete';
-							$scope.situacao = 'Em digitação';
-							$scope.tipoOrcamento = 'Normal';
-							$scope.filial = "Filial 8"
-							$scope.usuarioDigitacao = dadosUserLogado.rNome;
-							$scope.obsOportunidade = '';
-							$scope.histOportunidade = '';
-							$rootScope.hashDoc = '';
-							$scope.sincronizado = 'DOCUMENTO_NAO_SINCRONIZADO';
-							$scope.dataEmissaoFormat = '';
+							$scope.frete 				= 'X-Sem Frete';
+							$scope.situacao 			= 'Em digitação';
+							$scope.tipoOrcamento 		= 'Normal';
+							$scope.filial 				= "Filial 8"
+							$scope.usuarioDigitacao		= dadosUserLogado.rNome;
+							$scope.obsOportunidade		= '';
+							$scope.histOportunidade 	= '';
+							$rootScope.hashDoc 			= '';
+							$scope.sincronizado 		= 'DOCUMENTO_NAO_SINCRONIZADO';
+							$scope.dataEmissaoFormat 	= '';
 							$scope.dataPrevEntregaFormatada = "";
-							// $scope.dataEmissaoErpFormatada	= "";
-							$scope.valorTotal = 0;
-
-							//filtro 
+							$scope.valorTotal 			= 0;
 
 						} else {
 							//para editar o pedido
-							let docs = $dados.jsonDocs[0];
-							$rootScope.hashDoc = docs.docCtrl;
-							$rootScope.idDocumento = $dados.id;
-							$rootScope.cliente = docs.cliente;
-							$scope.tipoOrcamento = docs.tipoOrcamento;
-							$scope.filial = docs.filial;
-							$scope.tabPreco = docs.tabPreco;
-							$scope.codTpr = docs.codTpr
-							$scope.representante = docs.representante;
-							$scope.qtdm3 = docs.qtdm3
-							$scope.frmCliente = docs.frmCliente;
-							$scope.frete = docs.frete;
-							$scope.totalFrete = docs.totalFrete;
-							$scope.tabelaFrete = docs.tabelaFrete;
-							$scope.validadeOrcamento = docs.validadeOrcamento != null ? new Date(docs.validadeOrcamento) : null
+							let docs 					= $dados.jsonDocs[0];
+							$rootScope.hashDoc 			= docs.docCtrl;
+							$rootScope.idDocumento 		= $dados.id;
+							$rootScope.cliente 			= docs.cliente;
+							$scope.tipoOrcamento 		= docs.tipoOrcamento;
+							$scope.filial 				= docs.filial;
+							$scope.tabPreco 			= docs.tabPreco;
+							$scope.codTpr 				= docs.codTpr
+							$scope.representante 		= docs.representante;
+							$scope.qtdm3 				= docs.qtdm3
+							$scope.frmCliente 			= docs.frmCliente;
+							$scope.frete 				= docs.frete;
+							$scope.totalFrete 			= docs.totalFrete;
+							$scope.tabelaFrete 			= docs.tabelaFrete;
+							$scope.validadeOrcamento 	= docs.validadeOrcamento != null ? new Date(docs.validadeOrcamento) : null
 							//emissao de orcamento (date do sistema)
-							$scope.emissaoOrcamento = docs.emissaoOrcamento != null ? new Date(docs.emissaoOrcamento) : null
-							$scope.situacao = docs.situacao;
-							$scope.prevEntregCli = docs.prevEntregCli != null ? new Date(docs.prevEntregCli) : null
-							$scope.usuarioDigitacao = docs.usuarioDigitacao;
-							$scope.condPagamento = docs.condPagamento;
-							$scope.formaPagamento = docs.formaPagamento;
-							$scope.observacao = docs.observacao;
-							$scope.numPedClienteOCPO = docs.numPedClienteOCPO;
+							$scope.emissaoOrcamento 	= docs.emissaoOrcamento != null ? new Date(docs.emissaoOrcamento) : null
+							$scope.situacao 			= docs.situacao;
+							$scope.prevEntregCli 		= docs.prevEntregCli != null ? new Date(docs.prevEntregCli) : null
+							$scope.usuarioDigitacao 	= docs.usuarioDigitacao;
+							$scope.condPagamento 		= docs.condPagamento;
+							$scope.formaPagamento 		= docs.formaPagamento;
+							$scope.observacao 			= docs.observacao;
+							$scope.numPedClienteOCPO 	= docs.numPedClienteOCPO;
 							//dois clientes
-							$scope.frmCliente = docs.cliente;
-							$scope.codigoCliente = docs.cliente.codExterno;
-							$scope.nomeCliente = docs.cliente.nome;
-							$scope.usuarioDigitacao = docs.usuarioDigitacao.nome;
-
-							$scope.datEmiERP = docs.datEmiERP;
-							$scope.dataEmissaoFormat = docs.datEmiERP != null ? docs.datEmiERP.substr(0, 10) : "";
-
+							$scope.frmCliente 			= docs.cliente;
+							$scope.codigoCliente 		= docs.cliente.codExterno;
+							$scope.nomeCliente 			= docs.cliente.nome;
+							$scope.usuarioDigitacao 	= docs.usuarioDigitacao.nome;
+							$scope.datEmiERP 			= docs.datEmiERP;
+							$scope.dataEmissaoFormat 	= docs.datEmiERP != null ? docs.datEmiERP.substr(0, 10) : "";
 							$scope.dataValidadeEmiFormat =  docs.emissaoOrcamento != null ?  docs.emissaoOrcamento.substr(0,10) : "";
-
-							$scope.obsOportunidade = '';
-							$scope.histOportunidade = docs.histOportunidade;
-							$scope.pedido = docs.pedido;
-							$scope.sincronizado = docs.sincronizado;
-							$scope.valorTotal = docs.valorTotal;
+							$scope.obsOportunidade 		= '';
+							$scope.histOportunidade 	= docs.histOportunidade;
+							$scope.pedido 				= docs.pedido;
+							$scope.sincronizado 		= docs.sincronizado;
+							$scope.valorTotal 			= docs.valorTotal;
 							/*Informações sobre o produto*/
-							$rootScope.produtos = docs.produtos;
-							$scope.codigoProduto = docs.produtos.codigoProduto;
-							$scope.descricao = docs.produtos.descricao;
-							$scope.codExternoProduto = docs.produtos.codExterno;
-							$scope.ofertaPreco = docs.ofertaPreco;
-							$scope.valorPrecoTotal = docs.valorPrecoTotal;
-							$scope.valorPesoTotal = docs.valorPesoTotal;
-							$scope.valorVolumeTotal = docs.valorVolumeTotal;
+							$rootScope.produtos 		= docs.produtos;
+							$scope.codigoProduto 		= docs.produtos.codigoProduto;
+							$scope.descricao 			= docs.produtos.descricao;
+							$scope.codExternoProduto 	= docs.produtos.codExterno;
+							$scope.ofertaPreco 			= docs.ofertaPreco;
+							$scope.valorPrecoTotal 		= docs.valorPrecoTotal;
+							$scope.valorPesoTotal 		= docs.valorPesoTotal;
+							$scope.valorVolumeTotal 	= docs.valorVolumeTotal;
 							$scope.valorQuantidadeTotal = docs.valorQuantidadeTotal;
-							$scope.prevEntrega = $scope.prevEntrega != "" ? $scope.prevEntrega : null; 
+							$scope.prevEntrega 			= $scope.prevEntrega != "" ? $scope.prevEntrega : null; 
 							$scope.dataPrevEntregaFormatada = $scope.prevEntrega != "" ? new Date($scope.prevEntrega) : null;
-							//$scope.dataPrevEntregaFormatada = $scope.dataPrevEntregaFormatada != "" ? $scope.dataPrevEntregaFormatada.toLocaleDateString('pt-br') : null;
 						};
 						$rootScope.changeView($dados);
 					};
@@ -2014,7 +1956,6 @@
 								qtdPedida		: resultTest.qtdPedida,
 								seqvpp			: resultTest.seqvpp,
 								idxpre			: resultTest.idxpre,
-
 								ofertaPreco		: resultTest.ofertaPreco,
 								precoLiquido	: resultTest.precoLiquido,
 								vlrLiquido		: resultTest.vlrLiquido,
@@ -2078,7 +2019,6 @@
 					};
 
 					$scope.finalizarDocumento = () => {
-
 						bootbox.confirm({
 							message: '<div class="alert alert-light" "role="alert"><p style="text-center; font-size:1.0em; text-align:center; padding:5px;">Confirma a finalização do pedido?</p></div>',
 							closeButton: false,
@@ -2117,23 +2057,6 @@
 						if ($scope.prevEntregCli == null || $scope.prevEntregCli == undefined){
 							$scope.prevEntregCli = ""
 						}
-
-						if ($scope.ofertaPreco == null || $scope.ofertaPreco == undefined){
-							console.log("oferta de preco esta vazia")
-							//console.log($scope.ofertaPreco)
-						}
-
-						if ($scope.ofertaPreco == 0){
-							console.log("oferta de preco esta com zero")
-							//console.log($scope.ofertaPreco)
-						}else{
-							console.log("esta vazio")
-							//console.log($scope.ofertaPreco)
-						}
-
-						//console.log($scope.ofertaPreco)
-
-						
 
 						jsonDocs = [{
 							/*Historico*/
@@ -2181,11 +2104,8 @@
 
 						dados.jsonDocs = JSON.stringify(jsonDocs);
 
-	
 						/*Recebe dados e para que sejam feitas as alterações necessarias*/
 						var json = JSON.parse(dados.jsonDocs);
-
-						//console.log(json)
 
 						if (rotina == 2) {
 							let sendToERP = JSON.parse(dados.jsonDocs);
@@ -2349,8 +2269,8 @@
 							'id': 									{ i: 0, vsbl: true, tlt: 'Nº Pedido', 				width: '' },
 							'jsonDocs[0].pedido': 					{ i: 1, vsbl: true, tlt: 'Nº Pedido ERP', 			width: '' },
 							'jsonDocs[0].cliente.nome': 			{ i: 2, vsbl: true, tlt: 'Cliente', 				width: '' },
-							'jsonDocs[0].usuarioDigitacao.nome': 	{ i: 4, vsbl: true, tlt: 'Usuario de digitação ', 	width: '' },
-							'jsonDocs[0].representante':			{ i: 5, vsbl: true, tlt: 'Representate', 			width: '' }
+							'jsonDocs[0].usuarioDigitacao.nome': 	{ i: 3, vsbl: true, tlt: 'Usuario de digitação ', 	width: '' },
+							'jsonDocs[0].representante':			{ i: 4, vsbl: true, tlt: 'Representate', 			width: '' }
 						};
 
 						DTDefaultOptions.setLanguageSource('plugins/pt-br.json');
@@ -2380,7 +2300,6 @@
 							return btnhtml1;
 						}));
 
-
 						angular.forEach(defPD, function (value, key) {
 							montaColunas.push(DTColumnBuilder.newColumn(key).withTitle(value.tlt).withOption('visible', value.vsbl).withOption('sortable', false).withOption('sWidth', value.width));
 						});
@@ -2404,7 +2323,6 @@
 							btnhtmlData += "<div style='font-size:1.0em; color:black;  display:inline-block; vertical-align: middle; cursor:pointer;'>" + dataFormatadaBr + "</div>";
 							return btnhtmlData;
 						}));
-
 
 						$scope.dtColumns = montaColunas;
 
