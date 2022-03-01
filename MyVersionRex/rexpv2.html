@@ -511,17 +511,18 @@
 															</div>
 														</div>
 
-
 														<div class="col-sm-12">
 															<div class="panel panel-default spacer">
 																<div class="panel-heading">Estoque</div>
 																	<div class="panel-body">
-																		<p>
-																			{{produto.depositos.deposito}}
-																		</p>
+																		<div ng-repeat="deposito in produto.depositos">
+																			<p>
+																				{{depositos.deposito}}
+																			</p>
+																		</div>
+
 																	</div>
 															</div>
-
 
 														</div>
 
@@ -1023,7 +1024,7 @@
 
 <script>
 
-	console.log("testes 013")
+	console.log("testes 014")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -2016,7 +2017,9 @@ angular
 					valorFaixa2			: parseFloat($item.valorFaixa2),
 					valorFaixa3			: parseFloat($item.valorFaixa3),
 					valorFaixa4			: parseFloat($item.valorFaixa4),
+
 					depositos			: $item.depositos,
+
 				}
 			);
 
