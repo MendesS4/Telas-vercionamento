@@ -551,7 +551,7 @@
 																			<tfoot>
 																				<tr>
 																				  <td>VALORES TOTAIS: </td>
-																				  <td>TOTAL: {{valorEstoque}}</td>
+																				  <td>TOTAL: {{valorTotalEstoque}}</td>
 																				  <td>TOTAL: {{valorReserva}}</td> 
 																				  <td>TOTAL: {{valorPrefatura}}</td>
 																				  <td>TOTAL: {{valorDisponivel}}</td>
@@ -1061,7 +1061,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 053")
+	console.log("testes 054")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -1969,7 +1969,7 @@ angular
 			let valorReserva = 0
 			let valorDisponivel = 0
 
-			valorTotalEstoque = 0
+			$scope.valorTotalEstoque = 0
 
 			for(let i=0; i < $rootScope.produtos.length; i++){
 				
