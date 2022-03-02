@@ -1061,7 +1061,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 043")
+	console.log("testes 044")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -1984,8 +1984,9 @@ angular
 						valorDisponivel 	+= parseFloat(arrayDepositos[j].disponivel);
 
 						console.log(valorEstoque)
-						parseFloat(valorEstoque)
+						valorEstoque =  parseFloat(valorEstoque)
 						console.log(valorEstoque)
+						console.log(typeof(valorEstoque))
 						//console.log(valorPrefatura)
 						//console.log(valorReserva)
 						//console.log(valorDisponivel)
@@ -2012,7 +2013,7 @@ angular
 					
 					ValorFaixa	=  parseFloat($rootScope.produtos[i].valorFaixa);
 					
-					console.log(ValorFaixa);
+					//console.log(ValorFaixa);
 					
 					if(ValorFaixa != null && ValorFaixa > 0){
 						valorTotalItem 	= parseFloat($rootScope.produtos[i].quantidade) * ValorFaixa
