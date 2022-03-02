@@ -1062,7 +1062,7 @@
 
 <script>
 
-	console.log("testes 033")
+	console.log("testes 034")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -1963,6 +1963,11 @@ angular
 
 			// calculos totais de tabela de estoque
 
+			let valorEstoque = 0
+			let valorPrefatura = 0
+			let valorReserva = 0
+			let valorDisponivel = 0
+
 			for(let i=0; i < $rootScope.produtos.length; i++){
 				
 				//atribuindo valores das tabelas
@@ -1974,16 +1979,24 @@ angular
 
 					for(let j=0; j < arrayDepositos.length; j++){
 
-						$scope.valorEstoque 	+= arrayDepositos[j].estoque;
-						$scope.valorPrefatura 	+= arrayDepositos[j].prefatura;
-						$scope.valorReserva		+= arrayDepositos[j].reserva;
-						$scope.valorDisponivel 	+= arrayDepositos[j].disponivel
+						valorEstoque 	+= arrayDepositos[j].estoque;
+						valorPrefatura 	+= arrayDepositos[j].prefatura;
+						valorReserva		+= arrayDepositos[j].reserva;
+						valorDisponivel 	+= arrayDepositos[j].disponivel
 						console.log(valorEstoque, j)
 						console.log(valorReserva, j)
 						console.log(valorPrefatura, j)
 						console.log(valorDisponivel, j)
 
 					}
+
+					
+						$scope.valorEstoque 	= valorEstoque
+						$scope.valorPrefatura 	= valorPrefatura
+						$scope.valorReserva		= valorReserva
+						$scope.valorDisponivel 	= valorDisponivel
+
+
 					//valorEstoque 	= $rootScope.produtos[i].depositos[i].estoque;
 					//valorReserva 	= $rootScope.produtos[i].depositos[i].reserva;
 					//valorPrefatura 	= $rootScope.produtos[i].depositos[i].prefatura;
