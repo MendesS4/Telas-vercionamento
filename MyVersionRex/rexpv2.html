@@ -553,7 +553,7 @@
 																				  <td>VALORES TOTAIS: </td>
 																				  <td>TOTAL: {{valorTotalEstoque}}</td>
 																				  <td>TOTAL: {{valorReserva}}</td> 
-																				  <td>TOTAL: {{valorPrefatura}}</td>
+																				  <td>TOTAL: {{valorTotalPrefatura}}</td>
 																				  <td>TOTAL: {{valorDisponivel}}</td>
 																				</tr>
 																			  </tfoot>
@@ -1061,7 +1061,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 055")
+	console.log("testes 056")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -1970,6 +1970,7 @@ angular
 			let valorDisponivel = 0
 
 			let valorTotalEstoque = 0
+			let valorTotalPrefatura = 0
 
 			for(let i=0; i < $rootScope.produtos.length; i++){
 				
@@ -1995,12 +1996,14 @@ angular
 						console.log(valorEstoque)
 
 						valorTotalEstoque += valorEstoque
-
 						console.log(valorTotalEstoque)
 
+						valorPrefatura 	= arrayDepositos[j].prefatura;
+						valorPrefatura = valorPrefatura.replace(",",".")
+						valorPrefatura = parseFloat(valorPrefatura)
+						valorTotalPrefatura += valorPrefatura
 
 
-						valorPrefatura 		+= parseFloat(arrayDepositos[j].prefatura);
 						valorReserva		+= parseFloat(arrayDepositos[j].reserva); 
 						valorDisponivel 	+= parseFloat(arrayDepositos[j].disponivel);
 
@@ -2019,6 +2022,7 @@ angular
 
 					}
 						$scope.valorTotalEstoque = valorTotalEstoque
+						$scope.valorTotalPrefatura = valorTotalPrefatura
 
 						$scope.valorEstoque 	= valorEstoque
 						$scope.valorPrefatura 	= valorPrefatura
