@@ -1985,25 +1985,15 @@ angular
 
 					for(let j=0; j < arrayDepositos.length; j++){
 
-						valorEstoque = arrayDepositos[j].estoque
-						console.log(valorEstoque)
-
-						valorEstoque = valorEstoque.replace(",",".") 
-						console.log(valorEstoque)
-
-						valorEstoque = parseFloat(valorEstoque)
-						console.log(valorEstoque)
-
-						valorEstoque = valorEstoque
-						console.log(valorEstoque)
-
-						valorTotalEstoque += valorEstoque
-						console.log(valorTotalEstoque)
+						valorEstoque 		= arrayDepositos[j].estoque
+						valorEstoque 		= valorEstoque.replace(",",".") 
+						valorEstoque 		= parseFloat(valorEstoque)
+						valorTotalEstoque 	+= valorEstoque
 
 						valorPrefatura 		= arrayDepositos[j].prefatura;
-						valorPrefatura 		= valorPrefatura.replace(",",".")
-						valorPrefatura 		= parseFloat(valorPrefatura)
-						valorTotalPrefatura += valorPrefatura
+						valorPrefatura 		 = valorPrefatura.replace(",",".")
+						valorPrefatura 		 = parseFloat(valorPrefatura)
+						valorTotalPrefatura  += valorPrefatura
 
 						valorReserva 		= arrayDepositos[j].reserva; 
 						valorReserva 		= valorReserva.replace(",",".")
