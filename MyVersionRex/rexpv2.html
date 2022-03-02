@@ -1061,9 +1061,8 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 059")
-	console.log("teste")
-		console.log("AAAAAAAA")
+
+	console.log("testes 060")
 	
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
@@ -1852,6 +1851,10 @@ angular
 		};
 
 		$scope.abreFormulario = ($dados) =>{
+
+
+			var today = new Date();
+			var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 			//console.log($dados)
 			if($dados == undefined){
 				$scope.tipoFrete				= '';
@@ -1893,7 +1896,7 @@ angular
 				$rootScope.hashDoc				= '';
 				$scope.sincronizado				= 'DOCUMENTO_NAO_SINCRONIZADO';
 				$scope.dataEmissaoFormat		= '';
-				$scope.dataPrevEntregaFormatada	= "";
+				$scope.dataPrevEntregaFormatada	= new Date(date);
 				// $scope.dataEmissaoErpFormatada	= "";
 
 				$scope.valorTotal				= 0;
