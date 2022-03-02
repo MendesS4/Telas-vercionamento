@@ -1064,7 +1064,7 @@
 
 <script>
 
-	console.log("testes 027")
+	console.log("testes 028")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -1973,12 +1973,19 @@ angular
 				
 				//atribuindo valores das tabelas
 
-				valorEstoque = $rootScope.produtos[i].depositos[i].deposito
-				console.log(valorEstoque)
-
-
 				if(($rootScope.produtos[i].quantidade != null && $rootScope.produtos[i].quantidade > 0) && $rootScope.produtos[i].valorNegociado != null){
-										
+
+					valorEstoque 	= $rootScope.produtos[i].depositos[i].estoque;
+					valorReserva 	= $rootScope.produtos[i].depositos[i].reserva;
+					valorPrefatura 	= $rootScope.produtos[i].depositos[i].prefatura;
+					valorDisponivel = $rootScope.produtos[i].depositos[i].disponivel;
+
+					console.log(valorEstoque)
+					console.log(valorReserva)
+					console.log(valorPrefatura)
+					console.log(valorDisponivel)
+
+					
 					ValorFaixa	=  parseFloat($rootScope.produtos[i].valorFaixa);
 					
 					console.log(ValorFaixa);
