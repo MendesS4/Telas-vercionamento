@@ -1064,7 +1064,7 @@
 
 <script>
 
-	console.log("testes 024")
+	console.log("testes 025")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -1962,10 +1962,21 @@ angular
 			let descontoAcresc 	= 0;
 			let calcDescAcresc	= 0;
 			let ValorFaixa		= 0;
-			
-			
+
+			// calculos totais de tabela de estoque
+			let valorEstoque 	= 0;
+			let valorReserva 	= 0;
+			let valorPrefatura 	= 0;
+			let valorDisponivel = 0;
+
 			for(let i=0; i < $rootScope.produtos.length; i++){
 				
+				//atribuindo valores das tabelas
+
+				valorEstoque = $rootScope.produtos[i].depositos
+				console.log(valorEstoque)
+
+
 				if(($rootScope.produtos[i].quantidade != null && $rootScope.produtos[i].quantidade > 0) && $rootScope.produtos[i].valorNegociado != null){
 										
 					ValorFaixa	=  parseFloat($rootScope.produtos[i].valorFaixa);
