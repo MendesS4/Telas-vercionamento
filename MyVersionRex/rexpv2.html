@@ -1062,7 +1062,7 @@
 
 <script>
 
-	console.log("testes 034")
+	console.log("testes 035")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -1979,22 +1979,20 @@ angular
 
 					for(let j=0; j < arrayDepositos.length; j++){
 
-						valorEstoque 	+= arrayDepositos[j].estoque;
-						valorPrefatura 	+= arrayDepositos[j].prefatura;
-						valorReserva		+= arrayDepositos[j].reserva;
-						valorDisponivel 	+= arrayDepositos[j].disponivel
+						valorEstoque 		+= parseFloat(arrayDepositos[j].estoque.replace('.',''));
+						valorPrefatura 		+= parseFloat(arrayDepositos[j].prefatura.replace('.',''));
+						valorReserva		+= parseFloat(arrayDepositos[j].reserva.replace('.','')); 
+						valorDisponivel 	+= parseFloat(arrayDepositos[j].disponivel.replace('.',''));
 						console.log(valorEstoque, j)
 						console.log(valorReserva, j)
 						console.log(valorPrefatura, j)
 						console.log(valorDisponivel, j)
 
 					}
-
-					
-						$scope.valorEstoque 	= valorEstoque
-						$scope.valorPrefatura 	= valorPrefatura
-						$scope.valorReserva		= valorReserva
-						$scope.valorDisponivel 	= valorDisponivel
+						$scope.valorEstoque 	= valorEstoque.toFixed(2)
+						$scope.valorPrefatura 	= valorPrefatura.toFixed(2)
+						$scope.valorReserva		= valorReserva.toFixed(2)
+						$scope.valorDisponivel 	= valorDisponivel.toFixed(2)
 
 
 					//valorEstoque 	= $rootScope.produtos[i].depositos[i].estoque;
