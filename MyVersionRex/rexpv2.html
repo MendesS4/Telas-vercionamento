@@ -46,12 +46,12 @@
 					</div>
 																			
 					<div class="form-group">
-						<label for="filCarteira">Data Emiss�o</label>
+						<label for="filCarteira">Data Emissão</label>
 						<input type="text" style="width: 220px;" ui-mask="99/99/9999" class="form-control spacer-input" autocomplete="off" id="filDataEmissao" ng-model="filDataEmissao" aria-describedby=" ">
 					</div>
 
 					<div class="form-group">
-						<label for="projeto">Sincroniza��o</label>
+						<label for="projeto">Sincronização</label>
 						<input type="text" style="width: 220px;" class="form-control spacer-input" ng-value="filSincronizado.nome" ng-model="filSincronizado" id="filSincronizado" uib-typeahead="(sincronizado.nome) for sincronizado in getFilScinronizacao($viewValue)"  autocomplete="off" typeahead-min-length="0" typeahead-on-select="onSelectFilSincronizacao($item, $model, $label)">
 					</div>
 									
@@ -89,7 +89,7 @@
 				<div class="spacer titulo vcenter col-sm-12">
 					<div class="col-sm-6 itens-titulo">
 						<button class="btn btn_acao_header btn_cor_padrao" ng-click="changeView()"><span class="glyphicon glyphicon-menu-left"></span>  Voltar</button>
-						<button style="text-align: center; width: 120px;" class="btn btn_acao_header btn_cor_padrao" ng-hide="exibeHistoricos" ng-click="abreHistoricos()"><span class="glyphicon glyphicon-list-alt"></span> Hist�rico </button>
+						<button style="text-align: center; width: 120px;" class="btn btn_acao_header btn_cor_padrao" ng-hide="exibeHistoricos" ng-click="abreHistoricos()"><span class="glyphicon glyphicon-list-alt"></span> Histórico </button>
 					</div>
 
 					<div class="col-sm-6">
@@ -117,20 +117,20 @@
 										<p>{{frmCliente.nome}}<p>
 									</div>
 									<div class="col-sm-6">
-										<h5>Endere�o de entrega</h5>
+										<h5>Endereço de entrega</h5>
 										<p>{{frmEndEntrega}}</p>
 									</div>
 
 									<div class="col-sm-2 spacer">
-										<h5>Data de emiss�o</h5>
+										<h5>Data de emissão</h5>
 										<p>{{dataEmissaoFormat}}</p>
 									</div>
 									<div class="col-sm-2 spacer">
-										<h5>Previs�o de entrega</h5>
+										<h5>Previsão de entrega</h5>
 										<p ng-show="dataPrevEntregaFormatada != 'Invalid Date'" >{{dataPrevEntregaFormatada}}</p>
 									</div>
 									<div class="col-sm-2 spacer">
-										<h5>Condi��o de pagamento</h5>
+										<h5>Condição de pagamento</h5>
 										<p>{{condPagamento.nome}}</p>
 									</div>
 									<div class="col-sm-2 spacer">
@@ -155,7 +155,7 @@
 												<th>Produto</th>
 												<th>Quantidade</th>
 												<th>Valor und.</th>
-												<th>Desc. / Acr�sc.</th>
+												<th>Desc. / Acrésc.</th>
 												<th>Total item</th>
 											</tr>
 										</thead>
@@ -200,9 +200,9 @@
 								</div>
 								
 								<div class="col-sm-4 spacer">
-									<label for="tipoVenda">Tipo de Venda / Transa��o <span style="color: red;" ng-show="cadastroPedido.tipoVenda.$error.required">*</span></label>
+									<label for="tipoVenda">Tipo de Venda / Transação <span style="color: red;" ng-show="cadastroPedido.tipoVenda.$error.required">*</span></label>
 									<div class="input-group spacer">
-										<input type="text" ng-model="tipoVenda" name="tipoVenda" required id="tipoVenda" placeholder="Informe o tipo de Venda / Transa��o" uib-typeahead="tipven.codExterno + ' - ' + tipven.nome for tipven in getTipoVendaERP($viewValue)" typeahead-loading="loadingTipVen" typeahead-no-results="noResultsTipVen"  typeahead-on-select="onSelectTransacaoERP($item, $model, $label)" class="form-control" autocomplete="off" typeahead-min-length="0">
+										<input type="text" ng-model="tipoVenda" name="tipoVenda" required id="tipoVenda" placeholder="Informe o tipo de Venda / Transação" uib-typeahead="tipven.codExterno + ' - ' + tipven.nome for tipven in getTipoVendaERP($viewValue)" typeahead-loading="loadingTipVen" typeahead-no-results="noResultsTipVen"  typeahead-on-select="onSelectTransacaoERP($item, $model, $label)" class="form-control" autocomplete="off" typeahead-min-length="0">
 										
 										<!-- <input type="text" ng-model="condPagamento" name="condPagamento" required id="condPagamento" placeholder="Informe a condi��o de pagamento" uib-typeahead="cond.nome for cond in getCondicaoPagamentoERP($viewValue)" typeahead-loading="loadingCond" typeahead-no-results="noResultsCond"  typeahead-on-select="onSelectCond($item, $model, $label)" class="form-control" autocomplete="off" typeahead-min-length="0"> -->
 
@@ -213,7 +213,7 @@
 								
 								<div class="col-sm-4 spacer ">
 									<label for="predCliente">Pedido / O.C. do Cliente </label>
-									<input type="text" placeholder="N�mero do pedido do cliente" class="form-control spacer" name="predCliente" ng-model="predCliente" id="predCliente">
+									<input type="text" placeholder="Número do pedido do cliente" class="form-control spacer" name="predCliente" ng-model="predCliente" id="predCliente">
 								</div>
 								
 								<div class="col-sm-2 spacer ">
@@ -227,7 +227,7 @@
 								</div>
 								
 								<div class="col-sm-4 spacer ">
-									<label for="representante">Respons�vel</label>
+									<label for="representante">Responsável</label>
 									<input type="text" readonly class="form-control spacer" ng-model="representante" id="representante">
 								</div>
 								
@@ -255,9 +255,9 @@
 								</div>
 								
 								<div class="col-sm-6 spacer">
-									<label for="frmEndEntrega">Endere�o de entrega</label>
+									<label for="frmEndEntrega">Endereço de entrega</label>
 									<div class="input-group spacer">
-										<input type="text" ng-model="frmEndEntrega" name="frmEndEntrega" placeholder="Informe o endere�o de entrega" uib-typeahead="ee.EndEnt for ee in getEnderecoEntregaERP($viewValue)" typeahead-loading="loadingEE" typeahead-no-results="noResultsEE"  typeahead-on-select="onSelectEndEnt($item, $model, $label)" class="form-control"  autocomplete="off" typeahead-min-length="0">
+										<input type="text" ng-model="frmEndEntrega" name="frmEndEntrega" placeholder="Informe o endereço de entrega" uib-typeahead="ee.EndEnt for ee in getEnderecoEntregaERP($viewValue)" typeahead-loading="loadingEE" typeahead-no-results="noResultsEE"  typeahead-on-select="onSelectEndEnt($item, $model, $label)" class="form-control"  autocomplete="off" typeahead-min-length="0">
 										<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaEndEnt()"><i class="glyphicon glyphicon-remove"></i></span>
 									</div>
 								</div>
@@ -275,14 +275,14 @@
 								</div>
 								
 								<div class="col-sm-2 spacer ">
-									<label for="prevEntrega">Previs�o de entrega </label>
+									<label for="prevEntrega">Previsão de entrega </label>
 									<input type="date" class="form-control spacer" name="prevEntrega" ng-model="prevEntrega" id="prevEntrega">
 								</div>
 							
 								<div class="col-sm-6 spacer">
-									<label for="condPagamento">Condi��o de pagamento <span style="color: red;" ng-show="cadastroPedido.condPagamento.$error.required">*</span></label>
+									<label for="condPagamento">Condição de pagamento <span style="color: red;" ng-show="cadastroPedido.condPagamento.$error.required">*</span></label>
 									<div class="input-group spacer">
-										<input type="text" ng-model="condPagamento" name="condPagamento" required id="condPagamento" placeholder="Informe a condi��o de pagamento" uib-typeahead="cond.codCpg + ' - ' + cond.desCpg for cond in getCondicaoPagamentoERP($viewValue)" typeahead-loading="loadingCond" typeahead-no-results="noResultsCond"  typeahead-on-select="onSelectCond($item, $model, $label)" class="form-control" autocomplete="off" typeahead-min-length="0">
+										<input type="text" ng-model="condPagamento" name="condPagamento" required id="condPagamento" placeholder="Informe a condição de pagamento" uib-typeahead="cond.codCpg + ' - ' + cond.desCpg for cond in getCondicaoPagamentoERP($viewValue)" typeahead-loading="loadingCond" typeahead-no-results="noResultsCond"  typeahead-on-select="onSelectCond($item, $model, $label)" class="form-control" autocomplete="off" typeahead-min-length="0">
 										
 										<!-- <input type="text" ng-model="condPagamento" name="condPagamento" required id="condPagamento" placeholder="Informe a condi��o de pagamento" uib-typeahead="cond.nome for cond in getCondicaoPagamentoERP($viewValue)" typeahead-loading="loadingCond" typeahead-no-results="noResultsCond"  typeahead-on-select="onSelectCond($item, $model, $label)" class="form-control" autocomplete="off" typeahead-min-length="0"> -->
 
@@ -302,7 +302,7 @@
 								
 								
 								<div class="col-sm-6 spacer ">
-									<label for="opcoes">Op��es </label>
+									<label for="opcoes">Opções </label>
 									<div class="input-group spacer">
 										<form>
 											<label class="checkbox-inline">
@@ -312,7 +312,7 @@
 											  <input type="checkbox"  ng-value="true" ng-model="emitePPAP" id="emitePPAP" value="emitePPAP"> Emite PPAP
 											</label>
 											<label class="checkbox-inline">
-											  <input type="checkbox"  ng-value="true" ng-model="mantemSaldo" id="mantemSaldo" value="mantemSaldo"> Mant�m Saldo
+											  <input type="checkbox"  ng-value="true" ng-model="mantemSaldo" id="mantemSaldo" value="mantemSaldo"> Mantém Saldo
 											</label>
 											<label class="checkbox-inline">
 											  <input type="checkbox"  ng-value="true" ng-model="aceitaParcial" id="aceitaParcial" value="aceitaParcial"> Aceita Recebimento Parcial
@@ -322,30 +322,30 @@
 								</div>
 								
 								<div class="col-sm-2 spacer ">
-									<label for="valMinFat">Valor M�n Faturamento </label>
+									<label for="valMinFat">Valor Mín Faturamento </label>
 									<input type="text" placeholder=" " class="form-control spacer" name="valMinFat" ng-model="valMinFat" id="valMinFat">
 								</div>
 								
 								<div class="col-sm-2 spacer ">
-									<label for="valMinDup">Valor M�nimo Duplicata </label>
+									<label for="valMinDup">Valor Mánimo Duplicata </label>
 									<input type="text" placeholder=" " class="form-control spacer" name="valMinDup" ng-model="valMinDup" id="valMinDup">
 								</div>
 								
 								<div class="col-sm-2 spacer ">
-									<label for="validade">Validade Or�amento </label>
+									<label for="validade">Validade Orçamento </label>
 									<input type="text" placeholder=" " class="form-control spacer" name="validade" ng-model="validade" id="validade">
 								</div>
 								
 								<div class="col-sm-12 spacer">
-									<label for="obsPed">Observa��o</label>
-									<textarea class="form-control spacer-input"  ng-model="obsPed" placeholder="M�ximo de 250 caracteres" id="obsPed" rows="3"></textarea>
+									<label for="obsPed">Observação</label>
+									<textarea class="form-control spacer-input"  ng-model="obsPed" placeholder="Máximo de 250 caracteres" id="obsPed" rows="3"></textarea>
 								</div>
 								
 
 								<div style="margin-top:1.5%" class="col-sm-12">
 									<label class="spacer" for="codPro">Adicionar Produto</label>
 									<div class="input-group spacer">
-										<input type="text" ng-model="itemProd" name="itemProd" id="itemProd" placeholder="Informe o nome do produto desejado..." uib-typeahead="retorno.codExterno + ' - ' + retorno.nome + ' - ' + retorno.codVariacao  + ' | Tab. Pre�o - ' + retorno.codTpr for retorno in getProdutosERP($viewValue)" typeahead-loading="loadingProd" typeahead-no-results="noResults"  typeahead-on-select="adicionarProduto($item, $model, $label)" class="form-control" autocomplete="off" typeahead-min-length="3" typeahead-template-url="templateAutoCompleteProduto" >
+										<input type="text" ng-model="itemProd" name="itemProd" id="itemProd" placeholder="Informe o nome do produto desejado..." uib-typeahead="retorno.codExterno + ' - ' + retorno.nome + ' - ' + retorno.codVariacao  + ' | Tab. Preço - ' + retorno.codTpr for retorno in getProdutosERP($viewValue)" typeahead-loading="loadingProd" typeahead-no-results="noResults"  typeahead-on-select="adicionarProduto($item, $model, $label)" class="form-control" autocomplete="off" typeahead-min-length="3" typeahead-template-url="templateAutoCompleteProduto" >
 										<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaProduto()"><i class="glyphicon glyphicon-remove"></i></span>
 									</div>
 									<i ng-show="loadingProd" class="glyphicon glyphicon-refresh"></i>
@@ -364,7 +364,7 @@
 													<th>Produto</th>
 													<th>Quantidade</th>
 													<th>Unid. Medida</th>
-													<th>Pre�o Bruto</th>
+													<th>Preço Bruto</th>
 													<th>Faixa 1</th>
 													<th>Faixa 2</th>
 													<th>Faixa 3</th>
@@ -438,7 +438,7 @@
 
 															<div class="panel panel-default spacer">
 
-																<div class="panel-heading">Informa��es sobre o Produto</div>
+																<div class="panel-heading">Informações sobre o Produto</div>
 
 																<div class="panel-body">
 
@@ -450,14 +450,14 @@
 																	</div>		
 																	
 																	<div class="col-sm-12 spacer"> 
-																		<label>Deriva��o</label>												
+																		<label>Derivação</label>												
 																		{{produto.codVariacao}}
 																	</div>
 																	
 																	<div class="col-sm-6 spacer">
-																		<label for="tipoVendaItem">Transa��o do produto</label>
+																		<label for="tipoVendaItem">Transação do produto</label>
 																		<div class="input-group spacer">
-																			<input type="text" ng-model="produto.tipoVendaItem" name="tipoVendaItem" id="tipoVendaItem" placeholder="Selecione uma transa��o para este item" uib-typeahead="tipven.nome for tipven in getTipoVendaERP($viewValue)" typeahead-loading="loadingTipVen" typeahead-no-results="noResultsTipVen"  typeahead-on-select="onSelectTransacaoPro($item, $model, $label)" class="form-control" autocomplete="off" typeahead-min-length="0">
+																			<input type="text" ng-model="produto.tipoVendaItem" name="tipoVendaItem" id="tipoVendaItem" placeholder="Selecione uma transação para este item" uib-typeahead="tipven.nome for tipven in getTipoVendaERP($viewValue)" typeahead-loading="loadingTipVen" typeahead-no-results="noResultsTipVen"  typeahead-on-select="onSelectTransacaoPro($item, $model, $label)" class="form-control" autocomplete="off" typeahead-min-length="0">
 																			<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaTipoVendaItem()"><i class="glyphicon glyphicon-remove"></i></span>
 																		</div>
 										
@@ -467,8 +467,8 @@
 																		<input type="text" ui-mask="99/99/9999" class="form-control spacer" name="prevEntregaItem" ng-model="produto.prevEntregaItem" id="prevEntregaItem">
 																	</div>
 																	<div class="col-sm-12 spacer">
-																		<label for="obsItem">Observa��o</label>
-																		<textarea class="form-control spacer-input"  ng-model="produto.obsItem" placeholder="M�ximo de 250 caracteres" id="obsItem" rows="5"></textarea>
+																		<label for="obsItem">Observação</label>
+																		<textarea class="form-control spacer-input"  ng-model="produto.obsItem" placeholder="Máximo de 250 caracteres" id="obsItem" rows="5"></textarea>
 																	</div>
 																
 																</div>
@@ -480,16 +480,16 @@
 														<div class="col-sm-6">
 
 															<div class="panel panel-default spacer">
-															  <div class="panel-heading">Informa��es adicionais</div>
+															  <div class="panel-heading">Informações adicionais</div>
 															  <div class="panel-body">
 															  
 																<div class="col-sm-6 spacer ">
-																	<label for="numPedCliItem">N�m. Pedido Cliente </label>
+																	<label for="numPedCliItem">Núm. Pedido Cliente </label>
 																	<input type="text" placeholder=" " class="form-control spacer" name="numPedCliItem" ng-model="produto.numPedCliItem" id="numPedCliItem">
 																</div>
 																
 																<div class="col-sm-6 spacer ">
-																	<label for="numPedCliItem">C�d. Produto Cliente </label>
+																	<label for="numPedCliItem">Cód. Produto Cliente </label>
 																	<input type="text" placeholder=" " class="form-control spacer" name="codPedCliItem" ng-model="produto.codPedCliItem" id="codPedCliItem">
 																</div>
 															
@@ -551,10 +551,10 @@
 																			<tfoot>
 																				<tr>
 																				  <td>VALORES TOTAIS: </td>
-																				  <td>TOTAL: {{valorTotalEstoque}}</td>
-																				  <td>TOTAL: {{valorTotalReserva}}</td> 
-																				  <td>TOTAL: {{valorTotalPrefatura}}</td>
-																				  <td>TOTAL: {{valorTotalDisponivel}}</td>
+																				  <td> {{valorTotalEstoque}}</td>
+																				  <td> {{valorTotalReserva}}</td> 
+																				  <td> {{valorTotalPrefatura}}</td>
+																				  <td> {{valorTotalDisponivel}}</td>
 																				</tr>
 																			  </tfoot>
 																		</table>
@@ -585,7 +585,7 @@
 					<div ng-show="exibeHistoricos" class="col-sm-12">
 						<div class="form-row">
 							<div class="col-sm-12 spacer">
-									<label for="histOportunidade">Hist�rico</label>
+									<label for="histOportunidade">Histórico</label>
 									<textarea readonly class="form-control spacer-input" ng-disabled="inputDesabilitado" ng-model="histOportunidade" id="histOportunidade" rows="10"></textarea>
 							</div>
 						</div>
@@ -596,7 +596,7 @@
 						</div>
 						<div class="form-row">
 							<div class="col-sm-11 spacer">
-								<label for="obsOportunidade">Observa��o</label>
+								<label for="obsOportunidade">Observação</label>
 								<textarea class="form-control spacer-input"  ng-model="obsOportunidade" id="obsOportunidade" rows="3"></textarea>
 							</div>
 							<div class="col-sm-1 spacer" style="padding-top: 30px;">
@@ -618,13 +618,13 @@
 			<div class="row spacer">
 				<div class="pull-right" style="padding-right: 10px;">
 					<div class="btn-group">
-						<button class="btn btn_grid btn-success" title="O pedido ser� finalizado e enviado ao ERP" ng-disabled="produtos.length == 0 || cadastroPedido.$error.required || isLoading" ng-show="pedido == 0 " ng-click="finalizarDocumento()"> Finalizar </button>
+						<button class="btn btn_grid btn-success" title="O pedido será finalizado e enviado ao ERP" ng-disabled="produtos.length == 0 || cadastroPedido.$error.required || isLoading" ng-show="pedido == 0 " ng-click="finalizarDocumento()"> Finalizar </button>
 					</div>	
 					<div class="btn-group">
 						<button class="btn" ng-click="changeView()"> Cancelar </button>
 					</div>
 					<div class="btn-group">
-						<button class="btn btn_grid btn_cor_padrao" title="O pedido ser� salvo. Voc� ainda poder� editar e finalizar o pedido." ng-disabled="produtos.length == 0 || cadastroPedido.$error.required || isLoading" ng-click="salvarDocumento(1)"> Salvar </button>
+						<button class="btn btn_grid btn_cor_padrao" title="O pedido será salvo. Você ainda poderá editar e finalizar o pedido." ng-disabled="produtos.length == 0 || cadastroPedido.$error.required || isLoading" ng-click="salvarDocumento(1)"> Salvar </button>
 					</div>	
 				</div>
 			</div>
@@ -659,7 +659,7 @@
 							</div>
 							<div class="col-sm-11">
 								<div class="input-group">
-									<input type="text" ng-model="codProEst" name="codProEst"id="codProEst" placeholder="Localize o produto por c�digo, nome ou refer�ncia" uib-typeahead="retorno.produto.codErp + ' - ' + retorno.produto.descricao for retorno in getEstoqueProdutoERP($viewValue)" typeahead-loading="loadingEst" typeahead-no-results="noResults"  typeahead-on-select="onSelectDadosEstoque($item, $model, $label)" class="form-control" autocomplete="off" typeahead-min-length="3" >
+									<input type="text" ng-model="codProEst" name="codProEst"id="codProEst" placeholder="Localize o produto por cédigo, nome ou referência" uib-typeahead="retorno.produto.codErp + ' - ' + retorno.produto.descricao for retorno in getEstoqueProdutoERP($viewValue)" typeahead-loading="loadingEst" typeahead-no-results="noResults"  typeahead-on-select="onSelectDadosEstoque($item, $model, $label)" class="form-control" autocomplete="off" typeahead-min-length="3" >
 									<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaProdutoEstoque()"><i class="glyphicon glyphicon-remove"></i></span>
 								</div>
 							</div>
@@ -684,10 +684,10 @@
 						</div>
 						<div class="panel-body">
 							<div class="form-group col-md-4">
-								<label class="spacer" for="codProEst">Deriva��o:</label> {{produtoEstoque.produto.derivacao}}
+								<label class="spacer" for="codProEst">Derivação:</label> {{produtoEstoque.produto.derivacao}}
 							</div>
 							<div class="form-group col-md-4">
-								<label class="spacer" for="codProEst">Pre�o Bruto:</label> {{produtoEstoque.produto.precoBruto}}
+								<label class="spacer" for="codProEst">Preço Bruto:</label> {{produtoEstoque.produto.precoBruto}}
 							</div>
 							<div class="form-group col-md-4">
 								<label class="spacer" for="codProEst"> Peso:</label> {{produtoEstoque.produto.peso}}	
@@ -699,10 +699,10 @@
 								<label class="spacer" for="codProEst">Qtd. Embalagem:</label> {{produtoEstoque.produto.qtdEmb}}	
 							</div>
 							<div class="form-group col-md-4">
-								<label class="spacer" for="codProEst">C�digo Sapiens:</label> {{produtoEstoque.produto.codErp}}	
+								<label class="spacer" for="codProEst">Código Sapiens:</label> {{produtoEstoque.produto.codErp}}	
 							</div>
 							<div class="form-group col-md-4">
-								<label class="spacer" for="codProEst">Classifica��o Fiscal:</label> {{produtoEstoque.produto.claFiscal}}	
+								<label class="spacer" for="codProEst">Classificação Fiscal:</label> {{produtoEstoque.produto.claFiscal}}	
 							</div>
 						
 					
@@ -712,18 +712,18 @@
 								
 									<div class="panel panel-default">
 										<!-- Default panel contents -->
-										<div class="panel-heading">Dep�sitos</div>
-										<div class="panel-body">Estoque do produto por dep�sito</div>
+										<div class="panel-heading">Depósitos</div>
+										<div class="panel-body">Estoque do produto por depósito</div>
 
 										<!-- Table -->
 										<table id ="tabelaDepositos" class="table">
 											<thead>
 												<tr>
-													<th>Dep�sito</th>
+													<th>Depósito</th>
 													<th>Estoque</th>
 													<th>Res. Pedidos</th>
-													<th>Res. Pr�-Fatura</th>
-													<th>Tot. Dispon�vel</th>
+													<th>Res. Pré-Fatura</th>
+													<th>Tot. Disponível</th>
 												</tr>
 											</thead>
 											<tbody>
@@ -774,7 +774,7 @@
 									
 									<div class="panel panel-default">
 										<!-- Default panel contents -->
-										<div class="panel-heading">Ordens de Produ��o do Produto</div>
+										<div class="panel-heading">Ordens de Produção do Produto</div>
 										<div class="panel-body"></div>
 
 										<!-- Table -->
@@ -782,7 +782,7 @@
 											<thead>
 												<tr>
 													<th>Numero OP</th>
-													<th>Emiss�o</th>
+													<th>Emissão</th>
 													<th>Prev. Ini</th>
 													<th>Prev. Fim</th>
 													<th>Realiz. Ini</th>
@@ -790,7 +790,7 @@
 													<th>Qtde Prev</th>
 													<th>Qtde Realiz</th>
 													<th>Saldo</th>
-													<th>Situa��o</th>
+													<th>Situação</th>
 												</tr>
 											</thead>
 											<tbody>
@@ -914,7 +914,7 @@
 								<div style="padding:0;" class="col-sm-12 spacer">
 									<div class="panel panel-default">
 										<!-- Default panel contents -->
-										<div class="panel-heading">Deriva��es do Produto
+										<div class="panel-heading">Derivações do Produto
 										</div>
 										
 										<div class="panel-body">
@@ -924,14 +924,14 @@
 										<table id ="tabelaDerivacoes" class="table">
 											<thead>
 												<tr>
-													<th>C�digo</th>
-													<th>Deriva��o</th>
+													<th>Código</th>
+													<th>Derivação</th>
 													<th>Matriz [04]</th>
 													<th>MG [12]</th>
 													<th>Consignado</th>
 													<th>Res. Pedidos</th>
-													<th>Res. Pr�-Fat.</th>
-													<th>Dispon�vel</th>
+													<th>Res. Pré-Fat.</th>
+													<th>Disponível</th>
 												</tr>
 											</thead>
 											<tbody>
@@ -1020,10 +1020,10 @@
 							<div class="col-md-12">Estoque: {{match.model.qtdeEstoque}}</div>				
 						</div>				
 						<div class="row">
-							<div class="col-md-12">Pre�o: {{match.model.preco}}</div>				
+							<div class="col-md-12">Preço: {{match.model.preco}}</div>				
 						</div>
 						<div class="row">
-							<div class="col-md-12">Tab. Pre�o: {{match.model.codTpr}}</div>				
+							<div class="col-md-12">Tab. Preço: {{match.model.codTpr}}</div>				
 						</div>												
 					</td>
 				</tr>
@@ -1061,7 +1061,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 058")
+	//console.log("testes 058")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -1139,7 +1139,7 @@ angular
 					$scope.$apply();
 
 				}else{
-					$scope.tipoFormulario = $dados.jsonDocs[0].sincronizado === 'DOCUMENTO_SINCRONIZADO' ? 'Pedido ERP N� '+ $dados.jsonDocs[0].pedido : "Pedido N� "+$dados.id
+					$scope.tipoFormulario = $dados.jsonDocs[0].sincronizado === 'DOCUMENTO_SINCRONIZADO' ? 'Pedido ERP Nº '+ $dados.jsonDocs[0].pedido : "Pedido Nº "+$dados.id
 										
 					$scope.inputDesabilitado  = true;
 					$scope.permiteEditar	  = false;
@@ -1301,7 +1301,7 @@ angular
 					return [];
 				}
 			}catch(err){
-				console.log("Ocorreu um erro na requisi��o: ", err);
+				console.log("Ocorreu um erro na requisição: ", err);
 			};
 
 		}
@@ -1332,7 +1332,7 @@ angular
 					return [];
 				}
 			}catch(err){
-				console.log("Ocorreu um erro na requisi��o: ", err);
+				console.log("Ocorreu um erro na requisição: ", err);
 			};
 
 		}
@@ -1340,14 +1340,14 @@ angular
 		// Carrega dados de Estoque 
 		
 		$scope.onSelectDadosEstoque = ($item) =>{
-			console.log("XXX");
-			console.log($item);
+			//console.log("XXX");
+			//console.log($item);
 			
 			$scope.produtoEstoque = $item;
 			$scope.calcularTotalEstoqueDepositos();
 			$scope.calcularTotalEstoqueDerivacoes();
 			
-			console.log($scope.produtoEstoque);
+			//console.log($scope.produtoEstoque);
 		}
 		
 		//Nova fun��o para calcular os totais de produtos da consulta de estoque
@@ -1374,7 +1374,7 @@ angular
 				}
 			}
 			
-			console.log(valorEstoque);
+			//console.log(valorEstoque);
 			$scope.somaTotalEstoque = valorEstoque.toFixed(2);
 			
 			$scope.somaTotalReserva = valorReserva.toFixed(2);
@@ -1449,7 +1449,7 @@ angular
 			
 			let result = await $scope.getEstoqueProdutoERP(codDer);
 			console.log('result teste');
-			console.log(result);
+			//console.log(result);
 			$scope.onSelectDadosEstoque(result[0]);
 			
 			$scope.codProEst = result[0].produto.codErp + " - " + result[0].produto.descricao;
@@ -1486,14 +1486,14 @@ angular
 		
 				if(result != undefined && result.resultado != undefined){
 					return result.resultado.map((item)=>{
-						console.log(item);
+						//console.log(item);
 						return item
 					})
 				}else{
 					return [];
 				}
 			}catch(err){
-				console.log("Ocorreu um erro na requisi��o: ", err);
+				console.log("Ocorreu um erro na requisição: ", err);
 			};
 
 		}
@@ -1540,7 +1540,7 @@ angular
 					return [];
 				}
 			}catch(err){
-				console.log("Ocorreu um erro na requisi��o: ", err);
+				console.log("Ocorreu um erro na requisição: ", err);
 			};
 
 		}
@@ -1577,7 +1577,7 @@ angular
 					return [];
 				}
 			}catch(err){
-				console.log("Ocorreu um erro na requisi��o: ", err);
+				console.log("Ocorreu um erro na requisição: ", err);
 			};
 
 		}
@@ -1613,7 +1613,7 @@ angular
 					return [];
 				}
 			}catch(err){
-				console.log("Ocorreu um erro na requisi��o: ", err);
+				console.log("Ocorreu um erro na requisição: ", err);
 			};
 
 		}
@@ -1671,7 +1671,7 @@ angular
 		$scope.getFilScinronizacao = () =>{
 			$scope.listaFilSincronizacao = [ 
 				{
-					nome: 'N�o sincronizados',
+					nome: 'Não sincronizados',
 					send: "DOCUMENTO_NAO_SINCRONIZADO"
 				},
 				{
@@ -1679,7 +1679,7 @@ angular
 					send: "DOCUMENTO_SINCRONIZADO"
 				},
 				{
-					nome: 'Falha na sincroniza��o',
+					nome: 'Falha na sincronização',
 					send: 'ERRO: '
 				},
 			];
@@ -1693,12 +1693,12 @@ angular
 		/*Tempo limite para fun��es*/
 		const setAsyncTimeout = (cb, timeout = 0) => new Promise((resolve, reject) => {
 			cb(resolve);
-			setTimeout(() => reject('A requisi��o demorou muito para responder, por favor tente novamente mais tarde.'), timeout);
+			setTimeout(() => reject('A requisição demorou muito para responder, por favor tente novamente mais tarde.'), timeout);
 		});
 
 		$scope.executaRequisicaoExterna = async ($json, timeLimit = 15) => {
 		
-			console.log($json);
+			//console.log($json);
 			
 			try {
 				let response;
@@ -1709,11 +1709,11 @@ angular
 								
 				}, timeLimit * 1000); // limite em segundos
 			
-				console.log(response);
+				//console.log(response);
 				return response.data;
 			}catch(err){
-				$scope.geraNotificacao("N�o foi poss�vel se comunicar com o ERP. "+err+"", 5000, 'danger')
-				console.error('[Timeout] N�o foi poss�vel se comunicar com o ERP.', err);
+				$scope.geraNotificacao("Não foi possível se comunicar com o ERP. "+err+"", 5000, 'danger')
+				console.error('[Timeout] Não foi possível se comunicar com o ERP.', err);
 			};
 		};
 
@@ -1803,7 +1803,7 @@ angular
 				$scope.geraNotificacao('O pedido '+result+' foi gravado com sucesso no ERP.', 2000, 'success')
 			}else{
 				dialog.modal('hide');
-				$scope.geraNotificacao('Houve uma falha na grava��o do pedido.',2000, 'danger');
+				$scope.geraNotificacao('Houve uma falha na gravação do pedido.',2000, 'danger');
 			};
 							
 			return result
@@ -1822,7 +1822,7 @@ angular
 					}
 				);
 				
-				console.log(result.resultado[0].depositos);
+				//console.log(result.resultado[0].depositos);
 										
 				if(result != undefined && result.resultado != undefined){
 					return result.resultado.slice(0, 8).map((item)=>{
@@ -1832,7 +1832,7 @@ angular
 					return [];
 				}
 			}catch(err){
-				console.log("Ocorreu um erro na requisi��o: ", err);
+				console.log("Ocorreu um erro na requisição: ", err);
 			};
 
 		}
@@ -1849,7 +1849,7 @@ angular
 		};
 
 		$scope.abreFormulario = ($dados) =>{
-			console.log($dados)
+			//console.log($dados)
 			if($dados == undefined){
 				$scope.tipoFrete				= '';
 				
@@ -2005,45 +2005,14 @@ angular
 						valorDisponivel 	  = parseFloat(valorDisponivel)
 						valorTotalDisponivel += valorDisponivel
 
-
-						//console.log(valorPrefatura)
-						
-						//valorEstoque =  parseFloat(valorEstoque)
-						//console.log(valorEstoque)
-						//console.log(typeof(valorEstoque))
-
-						//console.log(valorPrefatura)
-						//console.log(valorReserva)
-						//console.log(valorDisponivel)
-						//console.log(valorReserva, j)
-						//console.log(valorPrefatura, j)
-						//onsole.log(valorDisponivel, j)
-
 					}
 						$scope.valorTotalDisponivel = valorTotalDisponivel
 						$scope.valorTotalEstoque = valorTotalEstoque
 						$scope.valorTotalPrefatura = valorTotalPrefatura
 						$scope.valorTotalReserva = valorTotalReserva 
-
-						$scope.valorEstoque 	= valorEstoque
-						$scope.valorPrefatura 	= valorPrefatura
-						$scope.valorReserva		= valorReserva
-						$scope.valorDisponivel 	= valorDisponivel
-
-
-					//valorEstoque 	= $rootScope.produtos[i].depositos[i].estoque;
-					//valorReserva 	= $rootScope.produtos[i].depositos[i].reserva;
-					//valorPrefatura 	= $rootScope.produtos[i].depositos[i].prefatura;
-					//valorDisponivel = $rootScope.produtos[i].depositos[i].disponivel;
-
-					//console.log(valorEstoque)
-					//console.log(valorReserva)
-					//console.log(valorPrefatura)
-					//console.log(valorDisponivel)
 					
 					ValorFaixa	=  parseFloat($rootScope.produtos[i].valorFaixa);
 					
-					//console.log(ValorFaixa);
 					
 					if(ValorFaixa != null && ValorFaixa > 0){
 						valorTotalItem 	= parseFloat($rootScope.produtos[i].quantidade) * ValorFaixa
@@ -2105,13 +2074,13 @@ angular
 				return $rootScope.pedidoAprovado
 
 			}catch(err){
-				console.log("Ocorreu um erro na requisi��o: ", err);
+				console.log("Ocorreu um erro na requisição: ", err);
 			};
 		}
 		
 		
 		$scope.adicionarProduto = ($item) =>{
-			console.log($item)
+			//console.log($item)
 			$rootScope.produtos.unshift(
 				{ 
 					descricao			: $item.nome,
@@ -2136,7 +2105,7 @@ angular
 				}
 			);
 
-			console.log($rootScope.produtos)
+			//console.log($rootScope.produtos)
 			
 			var buscaProduto		= angular.element(document.querySelector('#itemProd'));
 			
@@ -2156,8 +2125,8 @@ angular
 		};
 
 		$scope.removerProduto = ($item) => {
-			console.log($item.codExterno);
-			console.log($item.codVariacao);
+			//console.log($item.codExterno);
+			//console.log($item.codVariacao);
 			//$rootScope.produtos = $rootScope.produtos.filter(item => item.codExterno !== $item.codExterno && item.codVariacao !== $item.codVariacao);
 			$rootScope.produtos = $rootScope.produtos.filter(item => item.codExterno+"_"+item.codVariacao !== $item.codExterno+"_"+$item.codVariacao);
 
@@ -2181,7 +2150,7 @@ angular
 				$scope.histOportunidade += `
 				
 - Descri��o: ${strHistorico[i].item}
-- Registrado em: ${dataAtual.toLocaleDateString('pt-BR')} �s ${horas}:${minutos}`
+- Registrado em: ${dataAtual.toLocaleDateString('pt-BR')} ás ${horas}:${minutos}`
 			}
 		
 			$scope.obsOportunidade = "";
@@ -2190,7 +2159,7 @@ angular
 		$scope.finalizarDocumento = () => {
 			
 			bootbox.confirm({
-				message:'<div class="alert alert-light" "role="alert"><p style="text-center; font-size:1.0em; text-align:center; padding:5px;">Confirma a finaliza��o do pedido?</p></div>',
+				message:'<div class="alert alert-light" "role="alert"><p style="text-center; font-size:1.0em; text-align:center; padding:5px;">Confirma a finalização do pedido?</p></div>',
 				closeButton: false,
 				callback: function(confirmacao){
 					if (confirmacao){
@@ -2218,7 +2187,7 @@ angular
 			$scope.messageNotific	= '';
 			
 			dados.cnpj 				= {id: dadosUserLogado.cId};
-			console.log($scope.tipoFrete, "tp")
+			//console.log($scope.tipoFrete, "tp")
 			jsonDocs = [{
 				/*Historico*/
 				obsOportunidade	: $scope.obsOportunidade,
@@ -2277,7 +2246,7 @@ angular
 				$rootScope.pedidoAprovado	= await $scope.calculoValidacaoProdutoERP(sendToERP[0]);
 
 				if(!$rootScope.pedidoAprovado.aprovado){
-					$scope.geraNotificacao("O pedido n�o foi aprovado: "+$rootScope.pedidoAprovado.erro, 2500, 'warning')
+					$scope.geraNotificacao("O pedido não foi aprovado: "+$rootScope.pedidoAprovado.erro, 2500, 'warning')
 					json[0].sincronizado = "ERRO: "+$rootScope.pedidoAprovado.erro;
 					json[0].pedido		 = 0;
 				}else{
@@ -2430,8 +2399,8 @@ angular
 			]);	
 
 
-			defPD = {	'id'								:	{i:0, vsbl: true,	tlt: 'N� Pedido',   	width:''	},
-						'jsonDocs[0].pedido'				:	{i:1, vsbl: true,	tlt: 'N� Pedido ERP',	width:''	},
+			defPD = {	'id'								:	{i:0, vsbl: true,	tlt: 'Nº Pedido',   	width:''	},
+						'jsonDocs[0].pedido'				:	{i:1, vsbl: true,	tlt: 'Nº Pedido ERP',	width:''	},
 						'jsonDocs[0].cliente.nome'			:	{i:1, vsbl: true,	tlt: 'Cliente',			width:''	},
 				};
 
@@ -2443,7 +2412,7 @@ angular
 				montaColunas.push(DTColumnBuilder.newColumn(key).withTitle(value.tlt).withOption('visible', value.vsbl).withOption('sortable', false).withOption('sWidth', value.width));
 			});
 
-			montaColunas.push(DTColumnBuilder.newColumn(null).withTitle('Data emiss�o').withOption('sortable', false).withClass('colBtn').withOption('sWidth', '150px').renderWith(function(data, type, row) {
+			montaColunas.push(DTColumnBuilder.newColumn(null).withTitle('Data emissão').withOption('sortable', false).withClass('colBtn').withOption('sWidth', '150px').renderWith(function(data, type, row) {
 				var btnhtmlData 	  = '';
 
 				let dataFormat= row.jsonDocs[0].datEmiERP != undefined ? row.jsonDocs[0].datEmiERP.substr(0,10) : ""
@@ -2465,9 +2434,9 @@ angular
 			montaColunas.push(DTColumnBuilder.newColumn(null).withTitle('Sinc.').withOption('sortable', false).withClass('colBtn').withOption('sWidth', '50px').renderWith(function(data, type, row) {
 				var btnhtml1 = '';				
 				if(row.jsonDocs[0].sincronizado == "DOCUMENTO_NAO_SINCRONIZADO"){
-					btnhtml1 += "<div class='glyphicon glyphicon-ok-sign' title='Aguardando finaliza��o' disabled style='font-size:1.5em; color:grey;  display:inline-block; vertical-align: middle; cursor:pointer;'></div>";
+					btnhtml1 += "<div class='glyphicon glyphicon-ok-sign' title='Aguardando finalização' disabled style='font-size:1.5em; color:grey;  display:inline-block; vertical-align: middle; cursor:pointer;'></div>";
 				}else if(row.jsonDocs[0].sincronizado  === "DOCUMENTO_SINCRONIZADO"){
-					btnhtml1 += "<div class='glyphicon glyphicon-ok-sign' title='Pedido sincronizado - N�"+row.jsonDocs[0].pedido+"' style='font-size:1.5em; color:green;  display:inline-block; vertical-align: middle; cursor:pointer;'></div>";
+					btnhtml1 += "<div class='glyphicon glyphicon-ok-sign' title='Pedido sincronizado - Nº"+row.jsonDocs[0].pedido+"' style='font-size:1.5em; color:green;  display:inline-block; vertical-align: middle; cursor:pointer;'></div>";
 				}else if(row.jsonDocs[0].sincronizado != "DOCUMENTO_NAO_SINCRONIZADO" && row.jsonDocs[0].sincronizado != "DOCUMENTO_SINCRONIZADO") {
 					btnhtml1 += "<div class='glyphicon glyphicon-exclamation-sign' title='"+row.jsonDocs[0].sincronizado+"' disabled style='font-size:1.5em; color:#D0C84F;  display:inline-block; vertical-align: middle; cursor:pointer;'></div>";
 				}
@@ -2521,10 +2490,10 @@ angular
 			var id = $dados.id;
 
 			if($dados.jsonDocs[0].pedido != 0 &&  !isNaN(parseInt($dados.jsonDocs[0].pedido))){
-				$scope.geraNotificacao("Este pedido j� est� no ERP, n�o � poss�vel exclu�-lo.", 2500, 'warning');
+				$scope.geraNotificacao("Este pedido já está no ERP, não é possível excluí-lo.", 2500, 'warning');
 			}else{
 				bootbox.confirm({
-					message:'<div class="alert alert-light" "role="alert"><p style="text-center; font-size:1.0em; text-align:center; padding:5px;">Confirma a exclus�o do pedido?</p></div>',
+					message:'<div class="alert alert-light" "role="alert"><p style="text-center; font-size:1.0em; text-align:center; padding:5px;">Confirma a exclusão do pedido?</p></div>',
 					closeButton: false,
 					onHidden: function(e) {
 						$scope.atualizaTabela();
