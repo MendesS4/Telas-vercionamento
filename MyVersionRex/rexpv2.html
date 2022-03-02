@@ -1061,7 +1061,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 049")
+	console.log("testes 050")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -1981,11 +1981,15 @@ angular
 					for(let j=0; j < arrayDepositos.length; j++){
 
 						valorEstoque 	= arrayDepositos[j].estoque.replace(".",",")
+						console.log(valorEstoque)
 
 						valorEstoque = valorEstoque.replace(",",".") 
 						console.log(valorEstoque)
 
 						valorEstoque = parseFloat(valorEstoque)
+						console.log(valorEstoque)
+
+						valorEstoque += valorEstoque
 						console.log(valorEstoque)
 
 						valorPrefatura 		+= parseFloat(arrayDepositos[j].prefatura);
