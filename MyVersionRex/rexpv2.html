@@ -1061,7 +1061,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 047")
+	console.log("testes 048")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -1402,6 +1402,7 @@ angular
 
 				if($scope.produtoEstoque.produto.derivacoes[i].matriz != null ){
 					valorMatriz += parseFloat($scope.produtoEstoque.produto.derivacoes[i].matriz.replace('.',''));
+					
 				}
 				
 				if($scope.produtoEstoque.produto.derivacoes[i].mg != null ){
@@ -1421,6 +1422,7 @@ angular
 				}
 			}
 			
+
 			$scope.somaTotalMatriz 			= valorMatriz.toFixed(2);
 			$scope.somaTotalMg 				= valorMg.toFixed(2);
 			$scope.somaTotalConsignado 		= valorConsignado.toFixed(2);
@@ -1978,8 +1980,9 @@ angular
 
 					for(let j=0; j < arrayDepositos.length; j++){
 
-						valorEstoque 		= arrayDepositos[j].estoque.replace(".",",")
+						valorEstoque 	= arrayDepositos[j].estoque.replace(".",",")
 
+						valorEstoque = valorEstoque.replace(",",".") 
 
 						valorPrefatura 		+= parseFloat(arrayDepositos[j].prefatura);
 						valorReserva		+= parseFloat(arrayDepositos[j].reserva); 
