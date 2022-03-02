@@ -1061,7 +1061,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 054")
+	console.log("testes 055")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -1969,7 +1969,7 @@ angular
 			let valorReserva = 0
 			let valorDisponivel = 0
 
-			$scope.valorTotalEstoque = 0
+			let valorTotalEstoque = 0
 
 			for(let i=0; i < $rootScope.produtos.length; i++){
 				
@@ -2018,6 +2018,8 @@ angular
 						//onsole.log(valorDisponivel, j)
 
 					}
+						$scope.valorTotalEstoque = valorTotalEstoque
+
 						$scope.valorEstoque 	= valorEstoque
 						$scope.valorPrefatura 	= valorPrefatura
 						$scope.valorReserva		= valorReserva
