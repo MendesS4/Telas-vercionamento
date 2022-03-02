@@ -551,15 +551,13 @@
 																			<tfoot>
 																				<tr>
 																				  <td>VALORES TOTAIS: </td>
-																				  <td>TOTAL</td>
-																				  <td>TOTAL</td>
-																				  <td>TOTAL</td>
-																				  <td>TOTAL</td>
+																				  <td>TOTAL: {{valorEstoque}}</td>
+																				  <td>TOTAL: {{valorReserva}}</td> 
+																				  <td>TOTAL: {{valorPrefatura}}</td>
+																				  <td>TOTAL: {{valorDisponivel}}</td>
 																				</tr>
 																			  </tfoot>
 																		</table>
-
-
 
 																	</div>
 															</div>
@@ -1964,12 +1962,6 @@ angular
 			let ValorFaixa		= 0;
 
 			// calculos totais de tabela de estoque
-			let valorEstoque 	= 0;
-			let valorReserva 	= 0;
-			let valorPrefatura 	= 0;
-			let valorDisponivel = 0;
-
-			let arrayDepositos
 
 			for(let i=0; i < $rootScope.produtos.length; i++){
 				
@@ -1982,10 +1974,10 @@ angular
 
 					for(let j=0; j < arrayDepositos.length; j++){
 
-						valorEstoque 	= arrayDepositos[j].estoque;
-						valorPrefatura 	= arrayDepositos[j].prefatura;
-						valorReserva	= arrayDepositos[j].reserva;
-						valorDisponivel = arrayDepositos[j].disponivel
+						$scope.valorEstoque 	+= arrayDepositos[j].estoque;
+						$scope.valorPrefatura 	+= arrayDepositos[j].prefatura;
+						$scope.valorReserva		+= arrayDepositos[j].reserva;
+						$scope.valorDisponivel 	+= arrayDepositos[j].disponivel
 						console.log(valorEstoque, j)
 						console.log(valorReserva, j)
 						console.log(valorPrefatura, j)
