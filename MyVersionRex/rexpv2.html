@@ -1061,7 +1061,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	//console.log("testes 058")
+	console.log("testes 059")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -1985,7 +1985,7 @@ angular
 
 					for(let j=0; j < arrayDepositos.length; j++){
 
-						valorEstoque 		= arrayDepositos[j].estoque
+						valorEstoque 		= arrayDepositos[j].estoque;
 						valorEstoque 		= valorEstoque.replace(",",".") 
 						valorEstoque 		= parseFloat(valorEstoque)
 						valorTotalEstoque 	+= valorEstoque
@@ -2242,6 +2242,8 @@ angular
 			
 			if(rotina == 2){					
 				let sendToERP 				= JSON.parse(dados.jsonDocs);
+
+				console.log(sendToERP)
 
 				$rootScope.pedidoAprovado	= await $scope.calculoValidacaoProdutoERP(sendToERP[0]);
 
