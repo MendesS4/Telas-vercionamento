@@ -552,9 +552,9 @@
 																				<tr>
 																				  <td>VALORES TOTAIS: </td>
 																				  <td>TOTAL: {{valorTotalEstoque}}</td>
-																				  <td>TOTAL: {{valorReserva}}</td> 
+																				  <td>TOTAL: {{valorTotalReserva}}</td> 
 																				  <td>TOTAL: {{valorTotalPrefatura}}</td>
-																				  <td>TOTAL: {{valorDisponivel}}</td>
+																				  <td>TOTAL: {{valorTotalDisponivel}}</td>
 																				</tr>
 																			  </tfoot>
 																		</table>
@@ -1061,7 +1061,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 056")
+	console.log("testes 057")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -1971,6 +1971,8 @@ angular
 
 			let valorTotalEstoque = 0
 			let valorTotalPrefatura = 0
+			let valorTotalReserva = 0
+			let valorTotalDisponivel = 0
 
 			for(let i=0; i < $rootScope.produtos.length; i++){
 				
@@ -1998,14 +2000,21 @@ angular
 						valorTotalEstoque += valorEstoque
 						console.log(valorTotalEstoque)
 
-						valorPrefatura 	= arrayDepositos[j].prefatura;
-						valorPrefatura = valorPrefatura.replace(",",".")
-						valorPrefatura = parseFloat(valorPrefatura)
+						valorPrefatura 		= arrayDepositos[j].prefatura;
+						valorPrefatura 		= valorPrefatura.replace(",",".")
+						valorPrefatura 		= parseFloat(valorPrefatura)
 						valorTotalPrefatura += valorPrefatura
 
+						valorReserva 		= arrayDepositos[j].reserva; 
+						valorReserva 		= valorReserva.replace(",",".")
+						valorReserva 		= parseFloat(valorReserva)
+						valorTotalReserva 	+= valorReserva
 
-						valorReserva		+= parseFloat(arrayDepositos[j].reserva); 
-						valorDisponivel 	+= parseFloat(arrayDepositos[j].disponivel);
+						valorDisponivel 	  = arrayDepositos[j].reserva; 
+						valorDisponivel 	  = valorDisponivel.replace(",",".")
+						valorDisponivel 	  = parseFloat(valorDisponivel)
+						valorTotalDisponivel += valorDisponivel
+
 
 						//console.log(valorPrefatura)
 						
@@ -2021,8 +2030,10 @@ angular
 						//onsole.log(valorDisponivel, j)
 
 					}
+						$scope.valorTotalDisponivel = valorTotalDisponivel
 						$scope.valorTotalEstoque = valorTotalEstoque
 						$scope.valorTotalPrefatura = valorTotalPrefatura
+						$scope.valorTotalReserva = valorTotalReserva 
 
 						$scope.valorEstoque 	= valorEstoque
 						$scope.valorPrefatura 	= valorPrefatura
