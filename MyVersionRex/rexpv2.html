@@ -1061,7 +1061,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 052")
+	console.log("testes 053")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -1969,6 +1969,8 @@ angular
 			let valorReserva = 0
 			let valorDisponivel = 0
 
+			valorTotalEstoque = 0
+
 			for(let i=0; i < $rootScope.produtos.length; i++){
 				
 				//atribuindo valores das tabelas
@@ -1980,7 +1982,7 @@ angular
 
 					for(let j=0; j < arrayDepositos.length; j++){
 
-						valorEstoque 	= arrayDepositos[j].estoque
+						valorEstoque = arrayDepositos[j].estoque
 						console.log(valorEstoque)
 
 						valorEstoque = valorEstoque.replace(",",".") 
@@ -1991,6 +1993,12 @@ angular
 
 						valorEstoque = valorEstoque
 						console.log(valorEstoque)
+
+						valorTotalEstoque += valorEstoque
+
+						console.log(valorTotalEstoque)
+
+
 
 						valorPrefatura 		+= parseFloat(arrayDepositos[j].prefatura);
 						valorReserva		+= parseFloat(arrayDepositos[j].reserva); 
