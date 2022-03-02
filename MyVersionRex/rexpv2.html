@@ -1062,7 +1062,7 @@
 
 <script>
 
-	console.log("testes 060")
+	console.log("testes 061")
 	
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
@@ -1872,6 +1872,7 @@ angular
 				$scope.redespacho				= '';
 				$scope.predCliente				= '';
 				$scope.pedMoeda					= '';
+
 				$scope.predDatEmi				= new Date().toLocaleDateString('pt-br');
 				$scope.transportadora			= '';
 				$scope.valFrete					= '';
@@ -1887,7 +1888,7 @@ angular
 				$scope.tipoFreteCif				= '';
 				$scope.tipoFrenteFob			= '';
 
-				$scope.prevEntrega				= '';
+				$scope.prevEntrega				= new Date(date);
 				$scope.codigoProduto			= '';				
 				$scope.representante			= dadosUserLogado.rNome;
 				$scope.datEmiERP				= '';
@@ -1896,7 +1897,7 @@ angular
 				$rootScope.hashDoc				= '';
 				$scope.sincronizado				= 'DOCUMENTO_NAO_SINCRONIZADO';
 				$scope.dataEmissaoFormat		= '';
-				$scope.dataPrevEntregaFormatada	= new Date(date);
+				$scope.dataPrevEntregaFormatada	= '';
 				// $scope.dataEmissaoErpFormatada	= "";
 
 				$scope.valorTotal				= 0;
@@ -1922,6 +1923,8 @@ angular
 				$scope.frmEndEntrega		= docs.endEntrega;
 				$scope.pedido				= docs.pedido;
 				$scope.sincronizado			= docs.sincronizado;
+
+				$scope.previsaoEntregra		= docs.previsaoEntregra;
 
 				$scope.tipoVenda			= docs.tipoVenda;
 				$scope.redespacho			= docs.redespacho;
