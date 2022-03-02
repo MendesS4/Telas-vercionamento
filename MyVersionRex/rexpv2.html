@@ -1061,7 +1061,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 037")
+	console.log("testes 038")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -1982,10 +1982,12 @@ angular
 						valorPrefatura 		+= parseFloat(arrayDepositos[j].prefatura);
 						valorReserva		+= parseFloat(arrayDepositos[j].reserva); 
 						valorDisponivel 	+= parseFloat(arrayDepositos[j].disponivel);
-						console.log(valorEstoque, j)
-						console.log(valorReserva, j)
-						console.log(valorPrefatura, j)
-						console.log(valorDisponivel, j)
+
+
+						console.log(typeof(valorEstoque))
+						//console.log(valorReserva, j)
+						//console.log(valorPrefatura, j)
+						//onsole.log(valorDisponivel, j)
 
 					}
 						$scope.valorEstoque 	= valorEstoque
