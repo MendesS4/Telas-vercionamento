@@ -1064,7 +1064,7 @@
 
 <script>
 
-	console.log("testes 031")
+	console.log("testes 032")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -1982,11 +1982,14 @@ angular
 
 					for(let j=0; j < arrayDepositos.length; j++){
 
-						console.log("esta no loop")
-						valorEstoque = arrayDepositos[j].estoque;
-						valorPrefatura = arrayDepositos[j].prefatura
-						console.log("valor do estoque + valor do j(loop) ", valorEstoque, j)
-						console.log(valorPrefatura)
+						valorEstoque 	= arrayDepositos[j].estoque;
+						valorPrefatura 	= arrayDepositos[j].prefatura;
+						valorReserva	= arrayDepositos[j].reserva;
+						valorDisponivel = arrayDepositos[j].disponivel
+						console.log(valorEstoque, j)
+						console.log(valorPrefatura, j)
+						console.log(valorReserva, j)
+						console.log(valorDisponivel, j)
 
 					}
 					//valorEstoque 	= $rootScope.produtos[i].depositos[i].estoque;
