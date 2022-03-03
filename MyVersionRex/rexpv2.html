@@ -584,7 +584,7 @@
 																				</tr>
 																			</thead>
 																			<tbody>
-																				<tr ng-repeat="acabamento in produto.acabamento">
+																				<tr ng-repeat="acabamento in produto.acabamentos">
 																					<td>
 																						{{acabamento.codigo}}
 																					</td>
@@ -1105,7 +1105,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 097")
+	console.log("testes 098")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -2154,23 +2154,16 @@ angular
 
 
 		$scope.verificaProduto = ($item) =>{
-			console.log("chegou na função")
-			console.log($item)
 			$scope.itemProd = "";
-			console.log($item.$msgErro)
-			console.log($item.tipoErro)
-
 			if($item.tipoErro == "BLOQUEIA"){
-				console.log("foi bloqueado")
+			
 				alert($item.msgErro)
 			}else if($item.tipoErro == "AVISA"){
-				console.log("aviso")
+			
 				alert($item.msgErro)
 				$scope.adicionarProduto($item)
 			}else{
-				console.log($item.msgErro)
-				console.log("passou direto LIBERADO")
-				console.log("monta o produto")
+
 				$scope.adicionarProduto($item)
 			}
 
