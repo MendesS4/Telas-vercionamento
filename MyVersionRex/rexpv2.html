@@ -1054,7 +1054,7 @@
 
 <script>
 
-	console.log("testes 077")
+	console.log("testes 078")
 	
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
@@ -1813,6 +1813,8 @@ angular
 
 		$scope.getProdutosERP = async (consulta) => {
 			console.log($scope.prevEntrega)
+			console.log($scope.dateTest)
+
 			try{
 				let result = await $scope.executaRequisicaoExterna(
 					{
@@ -1860,7 +1862,7 @@ angular
 
 
 			$scope.todayTest = new Date();
-			$scope.dateTest =   $scope.todayTest.getDate() + '/' + ($scope.todayTest.getMonth() + 1) + '/' + $scope.todayTest.getFullYear();
+			$scope.dateTest =  $scope.todayTest.getDate() + '/' + ($scope.todayTest.getMonth() + 1) + '/' + $scope.todayTest.getFullYear();
 			console.log($scope.dateTest)
 
 			$scope.dateTeste = new Date($scope.dateTest)
