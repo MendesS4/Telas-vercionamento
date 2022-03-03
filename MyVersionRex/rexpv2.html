@@ -1054,7 +1054,7 @@
 
 <script>
 
-	console.log("testes 078")
+	console.log("testes 079")
 	
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
@@ -1812,8 +1812,19 @@ angular
 		};
 
 		$scope.getProdutosERP = async (consulta) => {
+			//data vem do input data de entrega 
 			console.log($scope.prevEntrega)
+
+			//tratamento para data ir correta 
+
+
+			$scope.todayTest = new Date();
+			$scope.prevEntrega =  $scope.todayTest.getDate() + '/' + ($scope.todayTest.getMonth() + 1) + '/' + $scope.todayTest.getFullYear();
 			console.log($scope.dateTest)
+
+
+
+			console.log($scope.prevEntrega)
 
 			try{
 				let result = await $scope.executaRequisicaoExterna(
