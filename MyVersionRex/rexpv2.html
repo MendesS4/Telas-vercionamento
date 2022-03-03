@@ -1054,7 +1054,7 @@
 
 <script>
 
-	console.log("testes 086")
+	console.log("testes 087")
 	
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
@@ -2117,35 +2117,39 @@ angular
 					console.log("aviso")
 					alert($item.msgErro)
 				}else{
+					console.log($item.msgErro)
 					console.log("passou direto LIBERADO")
 					console.log("monta o produto")
-				}
+
+					$rootScope.produtos.unshift(
+						{ 
+							descricao			: $item.nome,
+							codigoProduto		: $item.id,
+							codVariacao			: $item.codVariacao,
+							codExterno			: $item.codExterno,
+							opcaoDescAcresc		: 'DESCONTO',
+							quantidade			: 1,
+							valorNegociado		: parseFloat($item.preco),
+							precoTabela			: $item.preco,
+							unidMedida			: $item.unimed,
+							estoque				: $item.qtdeEstoque,
+							codTpr				: $item.codTpr,
+							hashDoc				: '',
+							valorFaixa1			: parseFloat($item.valorFaixa1),
+							valorFaixa2			: parseFloat($item.valorFaixa2),
+							valorFaixa3			: parseFloat($item.valorFaixa3),
+							valorFaixa4			: parseFloat($item.valorFaixa4),
+
+							depositos			: $item.depositos,
+
+						}
+					);
+
+			}
 
 
 			//console.log($item)
-			$rootScope.produtos.unshift(
-				{ 
-					descricao			: $item.nome,
-					codigoProduto		: $item.id,
-					codVariacao			: $item.codVariacao,
-					codExterno			: $item.codExterno,
-					opcaoDescAcresc		: 'DESCONTO',
-					quantidade			: 1,
-					valorNegociado		: parseFloat($item.preco),
-					precoTabela			: $item.preco,
-					unidMedida			: $item.unimed,
-					estoque				: $item.qtdeEstoque,
-					codTpr				: $item.codTpr,
-					hashDoc				: '',
-					valorFaixa1			: parseFloat($item.valorFaixa1),
-					valorFaixa2			: parseFloat($item.valorFaixa2),
-					valorFaixa3			: parseFloat($item.valorFaixa3),
-					valorFaixa4			: parseFloat($item.valorFaixa4),
-
-					depositos			: $item.depositos,
-
-				}
-			);
+			
 
 			//console.log($rootScope.produtos)
 			
