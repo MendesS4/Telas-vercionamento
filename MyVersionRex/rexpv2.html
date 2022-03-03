@@ -1054,7 +1054,7 @@
 
 <script>
 
-	console.log("testes 072")
+	console.log("testes 073")
 	
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
@@ -1858,8 +1858,10 @@ angular
 			var today = new Date();
 			var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 
-			$scope.dateTeste = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-			console.log($scope.dateTeste.toLocaleDateString('pt-br'))
+
+			$scope.todayTest = new Date();
+			$scope.dateTest = todayTest.getFullYear() + '-' + (todayTest.getMonth() + 1) + '-' + todayTest.getDate();
+			console.log($scope.dateTeste)
 
 			//console.log($dados)
 			if($dados == undefined){
