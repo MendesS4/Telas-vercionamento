@@ -1054,7 +1054,7 @@
 
 <script>
 
-	console.log("testes 089")
+	console.log("testes 090")
 	
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
@@ -2118,12 +2118,12 @@ angular
 			}else if($item.tipoErro == "AVISA"){
 				console.log("aviso")
 				alert($item.msgErro)
-				adicionarProduto($item)
+				$scope.adicionarProduto($item)
 			}else{
 				console.log($item.msgErro)
 				console.log("passou direto LIBERADO")
 				console.log("monta o produto")
-				adicionarProduto($item)
+				$scope.adicionarProduto($item)
 			}
 
 
