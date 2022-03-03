@@ -1054,7 +1054,7 @@
 
 <script>
 
-	console.log("testes 066")
+	console.log("testes 067")
 	
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
@@ -1812,6 +1812,7 @@ angular
 		};
 
 		$scope.getProdutosERP = async (consulta) => {
+			console.log($scope.prevEntrega)
 			try{
 				let result = await $scope.executaRequisicaoExterna(
 					{
@@ -1820,6 +1821,7 @@ angular
 						pRotina	   : 'filtrarProduto',
 						pCodCli    : dadosUserLogado.rId,
 						pCliente   : $scope.nomeCliente.codExterno,
+						pDatEnt    : $scope.prevEntrega,
 						pFilter    : {filtro:{filtroProd : consulta}},
 					}
 				);
