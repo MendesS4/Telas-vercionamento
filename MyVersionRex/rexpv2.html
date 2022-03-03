@@ -1054,7 +1054,7 @@
 
 <script>
 
-	console.log("testes 083")
+	console.log("testes 084")
 	
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
@@ -1836,23 +1836,13 @@ angular
 				console.log(result.resultado[0].msgErro);
 				console.log(result.resultado[0].tipoErro);
 
-				if(result.resultado[0].tipoErro == "BLOQUEIA"){
-					console.log("foi bloqueado")
-					alert(result.resultado[0].msgErro)
-				}else if(result.resultado[0].tipoErro == "AVISA"){
-					console.log("aviso")
-					alert(result.resultado[0].msgErro)
-				}else{
-					console.log("passou direto LIBERADO")
 					if(result != undefined && result.resultado != undefined){
 						return result.resultado.slice(0, 8).map((item)=>{
 							return item
 						})
 					}else{
 						return [];
-					}
-
-				}				
+					}				
 
 			}catch(err){
 				console.log("Ocorreu um erro na requisição: ", err);
@@ -2119,6 +2109,23 @@ angular
 		
 		
 		$scope.adicionarProduto = ($item) =>{
+
+			console.log($item)
+			console.log($item.$msgErro)
+			console.log($item.tipoErro)
+
+			if($item.tipoErro == "BLOQUEIA"){
+					console.log("foi bloqueado")
+					alert($item.msgErro)
+				}else if($item.tipoErro == "AVISA"){
+					console.log("aviso")
+					alert($item.msgErro)
+				}else{
+					console.log("passou direto LIBERADO")
+					console.log("monta o produto")
+				}
+
+
 			//console.log($item)
 			$rootScope.produtos.unshift(
 				{ 
