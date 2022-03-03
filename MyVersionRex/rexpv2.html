@@ -585,30 +585,30 @@
 																			</thead>
 																			<tbody>
 
-																				<tr ng-repeat="acabamentos in produto.acabamento">
+																				<tr ng-repeat="acabamento in produto.acabamentos">
 																					<td>
-																						{{acabamentos.codigo}
+																						{{acabamento.codigo}
 																					</td>
 																					<td>
-																						{{acabamentos.consignado}}
+																						{{acabamento.consignado}}
 																					</td>
 																					<td>
-																						{{acabamentos.derivação}}
+																						{{acabamento.derivação}}
 																					</td>
 																					<td>
-																						{{acabamentos.disponivel}}
+																						{{acabamento.disponivel}}
 																					</td>
 																					<td>
-																						{{acabamentos.matriz}}
+																						{{acabamento.matriz}}
 																					</td>
 																					<td>
-																						{{acabamentos.mg}}
+																						{{acabamento.mg}}
 																					</td>
 																					<td>
-																						{{acabamentos.resPedidos}}
+																						{{acabamento.resPedidos}}
 																					</td>
 																					<td>
-																						{{acabamentos.resPreFat}}
+																						{{acabamento.resPreFat}}
 																					</td>
 																				</tr>
 
@@ -2213,7 +2213,7 @@ angular
 							valorFaixa3			: parseFloat($item.valorFaixa3),
 							valorFaixa4			: parseFloat($item.valorFaixa4),
 
-							acabamento			: $item.acabamento,
+							acabamentos			: $item.acabamentos,
 
 							depositos			: $item.depositos,
 
@@ -2732,7 +2732,7 @@ angular
 	th{
 		background-color: #FAFAFA;
 		border-radius: 2px;
-		padding-right: 34vh;
+		padding-right: 17vh;
 	}
 
 	.dataTables_wrapper .dataTables_info{
