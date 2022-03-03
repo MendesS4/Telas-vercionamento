@@ -345,7 +345,7 @@
 								<div style="margin-top:1.5%" class="col-sm-12">
 									<label class="spacer" for="codPro">Adicionar Produto</label>
 									<div class="input-group spacer">
-										<input type="text" ng-model="itemProd" name="itemProd" id="itemProd" placeholder="Informe o nome do produto desejado..." uib-typeahead="retorno.codExterno + ' - ' + retorno.nome + ' - ' + retorno.codVariacao  + ' | Tab. Preço - ' + retorno.codTpr for retorno in getProdutosERP($viewValue)" typeahead-loading="loadingProd" typeahead-no-results="noResults"  typeahead-on-select="adicionarProduto($item, $model, $label)" class="form-control" autocomplete="off" typeahead-min-length="3" typeahead-template-url="templateAutoCompleteProduto" >
+										<input type="text" ng-model="itemProd" name="itemProd" id="itemProd" placeholder="Informe o nome do produto desejado..." uib-typeahead="retorno.codExterno + ' - ' + retorno.nome + ' - ' + retorno.codVariacao  + ' | Tab. Preço - ' + retorno.codTpr for retorno in getProdutosERP($viewValue)" typeahead-loading="loadingProd" typeahead-no-results="noResults"  typeahead-on-select="verificaProduto($item, $model, $label)" class="form-control" autocomplete="off" typeahead-min-length="3" typeahead-template-url="templateAutoCompleteProduto" >
 										<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaProduto()"><i class="glyphicon glyphicon-remove"></i></span>
 									</div>
 									<i ng-show="loadingProd" class="glyphicon glyphicon-refresh"></i>
@@ -1054,7 +1054,7 @@
 
 <script>
 
-	console.log("testes 087")
+	console.log("testes 088")
 	
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
@@ -2102,18 +2102,41 @@ angular
 				console.log("Ocorreu um erro na requisição: ", err);
 			};
 		}
+
+
+
+		$scope.verificaProduto = ($item) =>{
+			console.log("chegou na função")
+			console.log($item)
+
+			console.log($item.$msgErro)
+			console.log($item.tipoErro)
+
+			if($item.tipoErro == "BLOQUEIA"){
+				console.log("foi bloqueado")
+				alert($item.msgErro)
+			}else if($item.tipoErro == "AVISA"){
+				console.log("aviso")
+				alert($item.msgErro)
+			}else{
+				console.log($item.msgErro)
+				console.log("passou direto LIBERADO")
+				console.log("monta o produto")
+			}
+
+
+		}
 		
 		
 		$scope.adicionarProduto = ($item) =>{
 
 			console.log($item)
-			console.log($item.$msgErro)
-			console.log($item.tipoErro)
+
 
 			if($item.tipoErro == "BLOQUEIA"){
 					console.log("foi bloqueado")
 					alert($item.msgErro)
-				}else if($item.tipoErro == "AVISA"){
+				}else if($item.tipoErro == "AVISA" && $item.msgErro == ""){
 					console.log("aviso")
 					alert($item.msgErro)
 				}else{
