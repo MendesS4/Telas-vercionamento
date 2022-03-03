@@ -584,7 +584,6 @@
 																				</tr>
 																			</thead>
 																			<tbody>
-
 																				<tr ng-repeat="acabamento in produto.acabamentos">
 																					<td>
 																						{{acabamento.codigo}
@@ -1107,7 +1106,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 093")
+	console.log("testes 094")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -2056,7 +2055,7 @@ angular
 
 				if(($rootScope.produtos[i].quantidade != null && $rootScope.produtos[i].quantidade > 0) && $rootScope.produtos[i].valorNegociado != null){
 
-					for(let j=0; j < arrayDepositos.length; j++){
+					/*for(let j=0; j < arrayDepositos.length; j++){
 
 						valorEstoque 		= arrayDepositos[j].estoque;
 						valorEstoque 		= valorEstoque.replace(",",".") 
@@ -2078,11 +2077,13 @@ angular
 						valorDisponivel 	  = parseFloat(valorDisponivel)
 						valorTotalDisponivel += valorDisponivel
 
-					}
-						$scope.valorTotalDisponivel = valorTotalDisponivel
+
+					}*/
+
+					/*	 $scope.valorTotalDisponivel = valorTotalDisponivel
 						$scope.valorTotalEstoque = valorTotalEstoque
 						$scope.valorTotalPrefatura = valorTotalPrefatura
-						$scope.valorTotalReserva = valorTotalReserva 
+						$scope.valorTotalReserva = valorTotalReserva */
 					
 					ValorFaixa	=  parseFloat($rootScope.produtos[i].valorFaixa);
 					
