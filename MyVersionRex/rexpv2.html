@@ -584,30 +584,30 @@
 																				</tr>
 																			</thead>
 																			<tbody>
-																				<tr ng-repeat="acabamento in produtos.acabamentos">
+																				<tr ng-repeat="x in produto.acabamentos">
 																					<td>
-																						{{acabamento.codigo}}
+																						{{x.codigo}}
 																					</td>
 																					<td>
-																						{{acabamento.consignado}}
+																						{{x.consignado}}
 																					</td>
 																					<td>
-																						{{acabamento.derivação}}
+																						{{x.derivação}}
 																					</td>
 																					<td>
-																						{{acabamento.disponivel}}
+																						{{x.disponivel}}
 																					</td>
 																					<td>
-																						{{acabamento.matriz}}
+																						{{x.matriz}}
 																					</td>
 																					<td>
-																						{{acabamento.mg}}
+																						{{x.mg}}
 																					</td>
 																					<td>
-																						{{acabamento.resPedidos}}
+																						{{x.resPedidos}}
 																					</td>
 																					<td>
-																						{{acabamento.resPreFat}}
+																						{{x.resPreFat}}
 																					</td>
 																				</tr>
 																			</tbody>
@@ -1105,7 +1105,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 099")
+	console.log("testes 100")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -2175,7 +2175,6 @@ angular
 
 			console.log($item)
 
-
 			if($item.tipoErro == "BLOQUEIA"){
 					console.log("foi bloqueado")
 					alert($item.msgErro)
@@ -2187,9 +2186,7 @@ angular
 					console.log("passou direto LIBERADO")
 					console.log("monta o produto")
 
-
 					$rootScope.produtos.unshift(
-						
 						{ 
 							descricao			: $item.nome,
 							codigoProduto		: $item.id,
@@ -2215,7 +2212,7 @@ angular
 						}
 					);
 
-					console.log($rootScope.produtos.acabamentos)
+					console.log($rootScope.produtos)
 
 			}
 
