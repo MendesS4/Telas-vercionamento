@@ -585,30 +585,30 @@
 																			</thead>
 																			<tbody>
 
-																				<tr ng-repeat="acabamento in produto.acabamento">
+																				<tr ng-repeat="acabamentos in produto.acabamento">
 																					<td>
-																						{{acabamento.codigo}
+																						{{acabamentos.codigo}
 																					</td>
 																					<td>
-																						{{acabamento.consignado}}
+																						{{acabamentos.consignado}}
 																					</td>
 																					<td>
-																						{{acabamento.derivação}}
+																						{{acabamentos.derivação}}
 																					</td>
 																					<td>
-																						{{acabamento.disponivel}}
+																						{{acabamentos.disponivel}}
 																					</td>
 																					<td>
-																						{{acabamento.matriz}}
+																						{{acabamentos.matriz}}
 																					</td>
 																					<td>
-																						{{acabamento.mg}}
+																						{{acabamentos.mg}}
 																					</td>
 																					<td>
-																						{{acabamento.resPedidos}}
+																						{{acabamentos.resPedidos}}
 																					</td>
 																					<td>
-																						{{acabamento.resPreFat}}
+																						{{acabamentos.resPreFat}}
 																					</td>
 																				</tr>
 
@@ -1107,7 +1107,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 092")
+	console.log("testes 093")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -2692,7 +2692,7 @@ angular
 	}
 
 	tr{
-		height: 55px;
+		height: 45px;
 	}
 
 	.table>thead>tr>th {
