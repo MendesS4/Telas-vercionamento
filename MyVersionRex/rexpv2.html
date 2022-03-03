@@ -1054,7 +1054,7 @@
 
 <script>
 
-	console.log("testes 082")
+	console.log("testes 083")
 	
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
@@ -1838,10 +1838,10 @@ angular
 
 				if(result.resultado[0].tipoErro == "BLOQUEIA"){
 					console.log("foi bloqueado")
-					alert(msgErro)
+					alert(result.resultado[0].msgErro)
 				}else if(result.resultado[0].tipoErro == "AVISA"){
 					console.log("aviso")
-					alert(msgErro)
+					alert(result.resultado[0].msgErro)
 				}else{
 					console.log("passou direto LIBERADO")
 					if(result != undefined && result.resultado != undefined){
@@ -1852,8 +1852,7 @@ angular
 						return [];
 					}
 
-				}
-										
+				}				
 
 			}catch(err){
 				console.log("Ocorreu um erro na requisição: ", err);
