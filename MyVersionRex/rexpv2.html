@@ -586,9 +586,6 @@
 																			<tbody>
 																				<tr ng-repeat="x in produto.acabamentos">
 																					<td>
-																						TESTE
-																					</td>
-																					<td>
 																						{{x.codigo}}
 																					</td>
 																					<td>
@@ -596,6 +593,21 @@
 																					</td>
 																					<td>
 																						{{x.derivacao}}
+																					</td>
+																					<td>
+																						{{x.disponivel}}
+																					</td>
+																					<td>
+																						{{x.matriz}}
+																					</td>
+																					<td>
+																						{{x.mg}}
+																					</td>
+																					<td>
+																						{{x.resPedidos}}
+																					</td>
+																					<td>
+																						{{x.resPreFat}}
 																					</td>
 																				</tr>
 																			</tbody>
@@ -1088,7 +1100,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 114")
+	console.log("testes 115")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
