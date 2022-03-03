@@ -1054,7 +1054,7 @@
 
 <script>
 
-	console.log("testes 076")
+	console.log("testes 077")
 	
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
@@ -1860,7 +1860,7 @@ angular
 
 
 			$scope.todayTest = new Date();
-			$scope.dateTest = $scope.todayTest.getFullYear() + '-' + ($scope.todayTest.getMonth() + 1) + '-' + $scope.todayTest.getDate();
+			$scope.dateTest =   $scope.todayTest.getDate() + '/' + ($scope.todayTest.getMonth() + 1) + '/' + $scope.todayTest.getFullYear();
 			console.log($scope.dateTest)
 
 			$scope.dateTeste = new Date($scope.dateTest)
