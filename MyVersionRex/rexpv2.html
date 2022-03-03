@@ -1054,7 +1054,7 @@
 
 <script>
 
-	console.log("testes 065")
+	console.log("testes 066")
 	
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
@@ -1493,10 +1493,17 @@ angular
 
 		}
 
-		$scope.onSelectCliente = function ($item, $model, $label) {					
+		$scope.onSelectCliente = function ($item, $model, $label) {	
+
+			
+
 			$scope.nomeCliente = $item;	
 			$rootScope.cliente = $item;	
+
 			$scope.tipoVenda = {codExterno: $scope.nomeCliente.codTns, nome: $scope.nomeCliente.nomeTns};
+
+			$scope.transportadora = {codExterno: $scope.nomeCliente.codTra, nome: $scope.nomeCliente.nomTra};
+
 			$scope.frmEndEntrega = $scope.nomeCliente.endCli;
 			$scope.condPagamento = {codCpg: $scope.nomeCliente.codCpg, desCpg: $scope.nomeCliente.desCpg };
 			$scope.formaPagamento = {codFpg: $scope.nomeCliente.codFpg, desFpg: $scope.nomeCliente.desFpg };
