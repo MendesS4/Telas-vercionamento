@@ -586,7 +586,7 @@
 																			<tbody>
 																				<tr ng-repeat="acabamento in produto.acabamento">
 																					<td>
-																						{{acabamento.codigo}
+																						{{acabamento.codigo}}
 																					</td>
 																					<td>
 																						{{acabamento.consignado}}
@@ -610,7 +610,6 @@
 																						{{acabamento.resPreFat}}
 																					</td>
 																				</tr>
-
 																			</tbody>
 																		</table>
 																		
@@ -1106,7 +1105,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 095")
+	console.log("testes 096")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -2195,7 +2194,9 @@ angular
 					console.log("passou direto LIBERADO")
 					console.log("monta o produto")
 
+
 					$rootScope.produtos.unshift(
+						
 						{ 
 							descricao			: $item.nome,
 							codigoProduto		: $item.id,
@@ -2220,6 +2221,8 @@ angular
 
 						}
 					);
+
+					console.log($rootScope.produtos)
 
 			}
 
