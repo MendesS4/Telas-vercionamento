@@ -528,7 +528,6 @@
 																				</tr>
 																			</thead>
 																			<tbody>
-
 																				<tr ng-repeat="deposito in produto.depositos">
 																					<td>
 																						{{deposito.deposito}}
@@ -548,16 +547,73 @@
 																				</tr>
 																			</tbody>
 																		</table>
-
 																	</div>
 															</div>
-
 														</div>
-
 														<div class="col-sm-12">
 															<div class="panel panel-default spacer">
 																<div class="panel-heading">Acabamento</div>
 																	<div class="panel-body">
+																		<table>
+																			<thead>
+																				<tr>
+																					<th>
+																						Codigo
+																					</th>
+																					<th>
+																						consignado
+																					</th>
+																					<th>
+																						derivação
+																					</th>
+																					<th>
+																						disponivel
+																					</th>
+																					<th>
+																						matriz
+																					</th>
+																					<th>
+																						mg
+																					</th>
+																					<th>
+																						resPedidos
+																					</th>
+																					<th>
+																						resPreFat
+																					</th>
+																				</tr>
+																			</thead>
+																			<tbody>
+
+																				<tr ng-repeat="acabamento in produto.acabamento">
+																					<td>
+																						{{acabamento.codigo}
+																					</td>
+																					<td>
+																						{{acabamento.consignado}}
+																					</td>
+																					<td>
+																						{{acabamento.derivação}}
+																					</td>
+																					<td>
+																						{{acabamento.disponivel}}
+																					</td>
+																					<td>
+																						{{acabamento.matriz}}
+																					</td>
+																					<td>
+																						{{acabamento.mg}}
+																					</td>
+																					<td>
+																						{{acabamento.resPedidos}}
+																					</td>
+																					<td>
+																						{{acabamento.resPreFat}}
+																					</td>
+																				</tr>
+
+																			</tbody>
+																		</table>
 																		
 																	</div>
 
@@ -706,8 +762,6 @@
 								<label class="spacer" for="codProEst">Classificação Fiscal:</label> {{produtoEstoque.produto.claFiscal}}	
 							</div>
 						
-					
-					
 							<div style="margin-top:5px" class="form-group col-md-12">
 								<div style="padding:0;" class="col-sm-12 spacer">
 								
@@ -1053,9 +1107,7 @@
 <!-- Scripts importados -->	
 
 <script>
-
-	console.log("testes 091")
-	
+	console.log("testes 092")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -1813,13 +1865,9 @@ angular
 
 		$scope.getProdutosERP = async (consulta) => {
 			//data vem do input data de entrega 
-			console.log($scope.prevEntrega)
 			//tratamento para data ir correta 
 			$scope.todayTest = new Date();
 			$scope.prevEntrega =  $scope.todayTest.getDate() + '/' + ($scope.todayTest.getMonth() + 1) + '/' + $scope.todayTest.getFullYear();
-			console.log($scope.dateTest)
-			console.log($scope.prevEntrega)
-
 			try{
 				let result = await $scope.executaRequisicaoExterna(
 					{
@@ -2164,6 +2212,8 @@ angular
 							valorFaixa2			: parseFloat($item.valorFaixa2),
 							valorFaixa3			: parseFloat($item.valorFaixa3),
 							valorFaixa4			: parseFloat($item.valorFaixa4),
+
+							acabamento			: $item.acabamento,
 
 							depositos			: $item.depositos,
 
