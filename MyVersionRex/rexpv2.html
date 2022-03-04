@@ -1100,7 +1100,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 123")
+	console.log("testes 124")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -1858,11 +1858,12 @@ angular
 
 		$scope.getProdutosERP = async (consulta) => {
 			//data vem do input data de entrega 
+			console.log($scope.prevEntrega)
 			//tratamento para data ir correta 
 			//$scope.todayTest = new Date();
 			//$scope.prevEntrega =  $scope.todayTest.getDate() + '/' + ($scope.todayTest.getMonth() + 1) + '/' + $scope.todayTest.getFullYear();
 
-			console.log($scope.prevEntrega)
+			
 			try{
 				let result = await $scope.executaRequisicaoExterna(
 					{
@@ -2170,7 +2171,9 @@ angular
 		
 		$scope.adicionarProduto = ($item) =>{
 
-			$scope.prevEntregaItem = $item.datEnt
+			//$scope.prevEntregaItem = $item.datEnt
+
+			console.log($scope.prevEntregaItem)
 
 			console.log($item.datEnt)
 
@@ -2183,7 +2186,6 @@ angular
 					console.log("aviso")
 					alert($item.msgErro)
 				}else{
-					console.log($item.msgErro)
 					console.log("passou direto LIBERADO")
 					console.log("monta o produto")
 
@@ -2206,6 +2208,8 @@ angular
 							valorFaixa2			: parseFloat($item.valorFaixa2),
 							valorFaixa3			: parseFloat($item.valorFaixa3),
 							valorFaixa4			: parseFloat($item.valorFaixa4),
+
+							prevEntregaItem		: $item.datEnt,
 
 							acabamentos			: $item.acabamento,
 
