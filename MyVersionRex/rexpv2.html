@@ -1100,7 +1100,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 140")
+	console.log("testes 141")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -2190,6 +2190,10 @@ angular
 			console.log(prevEntregFormat)
 
 			prevEntregFormat = new Date(prevEntregFormat)
+
+			console.log(prevEntregFormat)
+
+			prevEntregFormat = prevEntregFormat.toLocaleDateString('pt-br')
 
 			console.log(prevEntregFormat)
 
