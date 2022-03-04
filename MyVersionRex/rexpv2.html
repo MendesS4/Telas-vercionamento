@@ -210,6 +210,7 @@
 									</div>
 								</div>
 								
+								
 								<div class="col-sm-4 spacer ">
 									<label for="predCliente">Pedido / O.C. do Cliente </label>
 									<input type="text" placeholder="Número do pedido do cliente" class="form-control spacer" name="predCliente" ng-model="predCliente" id="predCliente">
@@ -1099,7 +1100,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 155")
+	console.log("testes 140")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -1842,7 +1843,6 @@ angular
 					numreg	   : 750,
 					pRotina	   : 'criarPedidoERP',
 					pCodCli    : dadosUserLogado.rId,
-					pCodRep	   : dadosUserLogado.rCod,
 					pDocumento : {documento : $item}
 				},
 				20//limite tempo		
@@ -2182,50 +2182,22 @@ angular
 		}
 		
 		$scope.adicionarProduto = ($item) =>{
+
 			console.log($item.datEnt)
 
 			let prevEntregFormat = $item.datEnt
+
 			console.log(prevEntregFormat)
 
 			prevEntregFormat = new Date(prevEntregFormat)
+
 			console.log(prevEntregFormat)
-			var a =  (prevEntregFormat.getDate() + '-' + prevEntregFormat.getMonth() + 1) + '-' + prevEntregFormat.getFullYear();
 
-			console.log(a)
+			$scope.prevEntregaItem = prevEntregFormat
 
-					/*
-						var today = new Date();
-						var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+			console.log($scope.prevEntregaItem)
 
-						//data fotura +30 dias data de vencimento
-						var future = new Date();
-						future.setDate(future.getDate() + 30)
-
-						var validadeOrcamento = future.getFullYear() + '-' + (future.getMonth() + 1) + '-' + future.getDate();
-
-					*/
-
-			$scope.prevEntregaItem = new Date(a)
-			//console.log($scope.prevEntregaItem)
-
-
-			//a = a.toLocaleDateString('pt-br')
-
-			//prevEntregFormat = prevEntregFormat.toLocaleDateString('en-US')
-			//console.log(prevEntregFormat)
-
-			//prevEntregFormat = prevEntregFormat.toLocaleDateString('pt-br')
-			//console.log(prevEntregFormat)
-
-			//prevEntregFormat = new Date(prevEntregFormat)
-			//console.log(prevEntregFormat)
-
-			//prevEntregFormat = prevEntregFormat.toLocaleDateString('pt-br')
-			//console.log(prevEntregFormat)
-
-			
-
-			
+			$scope.prevEntrega = $item.datEnt
 
 			if($item.tipoErro == "BLOQUEIA"){
 					console.log("foi bloqueado")
