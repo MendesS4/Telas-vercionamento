@@ -1100,7 +1100,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 136")
+	console.log("testes 137")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -2187,11 +2187,13 @@ angular
 
 			let prevEntregFormat = $item.datEnt
 
-			prevEntregFormat = new Date (prevEntregFormat)
+			prevEntregFormat = new Date(prevEntregFormat)
 
 			console.log(prevEntregFormat)
 
 			$scope.prevEntregaItem = prevEntregFormat
+
+			console.log($scope.prevEntregaItem)
 
 			//$scope.prevEntrega = $item.datEnt
 
@@ -2202,8 +2204,8 @@ angular
 					console.log("aviso")
 					alert($item.msgErro)
 				}else{
-					console.log("passou direto LIBERADO")
-					console.log("monta o produto")
+					//console.log("passou direto LIBERADO")
+					//console.log("monta o produto")
 
 					$rootScope.produtos.unshift(
 						{ 
