@@ -2188,11 +2188,14 @@ angular
 
 			prevEntregFormat = new Date(prevEntregFormat)
 			console.log(prevEntregFormat)
-			var a =  prevEntregFormat.getDate() + '-' + (prevEntregFormat.getMonth() + 1) + '-' + prevEntregFormat.getFullYear();
 
+			var a =  prevEntregFormat.getDate() + '-' + (prevEntregFormat.getMonth() + 1) + '-' + prevEntregFormat.getFullYear();
 			console.log(a)
 
-			$scope.prevEntregaItem = new Date(a)
+			a = a.toLocaleDateString('pt-br')
+			console.log(a)
+
+			//$scope.prevEntregaItem = new Date(a)
 
 			if($item.tipoErro == "BLOQUEIA"){
 					console.log("foi bloqueado")
