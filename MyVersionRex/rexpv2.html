@@ -1100,7 +1100,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 130")
+	console.log("testes 131")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -1540,12 +1540,12 @@ angular
 
 		$scope.onSelectCliente = function ($item, $model, $label) {	
 
-			if ($scope.nomeCliente.nomTra == ""){
-				$scope.transportadora = ""
-			}else{
+			//if ($scope.nomeCliente.nomTra == ""){
+				//$scope.transportadora = ""
+			//}else{
 				$scope.transportadora = {codExterno: $scope.nomeCliente.codTra, nome: $scope.nomeCliente.nomTra};
 
-			}
+			//}
 
 			$scope.nomeCliente = $item;	
 			$rootScope.cliente = $item;	
