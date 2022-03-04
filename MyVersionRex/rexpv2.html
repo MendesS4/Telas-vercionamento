@@ -1099,7 +1099,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 163")
+	console.log("testes 164")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -2193,11 +2193,11 @@ angular
 			let prevEntregFormat = $item.datEnt
 			console.log(prevEntregFormat)
 
-			prevEntregFormat = new Date(prevEntregFormat)
+			prevEntregFormat = new Date(prevEntregFormat).toLocaleDateString('pt-br')
 			console.log(prevEntregFormat)
 
-			prevEntregFormat = prevEntregFormat.toLocaleDateString('pt-br')
-			console.log(prevEntregFormat)
+			//prevEntregFormat = prevEntregFormat.toLocaleDateString('pt-br')
+			//console.log(prevEntregFormat)
 
 
 			//$scope.prevEntregaItem = prevEntregFormat
