@@ -1099,7 +1099,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 159")
+	console.log("testes 160")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -2186,16 +2186,20 @@ angular
 			let prevEntregFormat = $item.datEnt
 			console.log(prevEntregFormat)
 
+
 			prevEntregFormat = new Date(prevEntregFormat)
 			console.log(prevEntregFormat)
 
+			prevEntregFormat = prevEntregFormat.toLocaleDateString('pt-br')
+			console.log(prevEntregFormat)
+
+			/*
 			var a = prevEntregFormat.getDate() + '-' + (prevEntregFormat.getMonth() + 1) + '-' +   prevEntregFormat.getFullYear();
 			console.log(a)
 
-			//a = a.toLocaleDateString('pt-br')
-			//console.log(a)
-
 			$scope.prevEntregaItem = new Date(a)
+
+			*/
 
 			if($item.tipoErro == "BLOQUEIA"){
 					console.log("foi bloqueado")
