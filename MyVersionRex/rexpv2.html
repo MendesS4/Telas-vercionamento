@@ -1099,7 +1099,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 162")
+	console.log("testes 155")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -1539,18 +1539,19 @@ angular
 
 		$scope.onSelectCliente = function ($item, $model, $label) {	
 
+			//if ($scope.nomeCliente.nomTra == ""){
+				//$scope.transportadora = ""
+			//}else{
+				
+
+			//}
+
 			$scope.nomeCliente = $item;	
 			$rootScope.cliente = $item;	
 
 			$scope.tipoVenda = {codExterno: $scope.nomeCliente.codTns, nome: $scope.nomeCliente.nomeTns};
 
-			if($scope.nomeCliente.codTra == "0"){
-				console.log("chegou no if")
-				$scope.transportadora = ""
-			}else{
-				console.log("else")
-				$scope.transportadora = {codExterno: $scope.nomeCliente.codTra, nome: $scope.nomeCliente.nomTra};
-			}
+			$scope.transportadora = {codExterno: $scope.nomeCliente.codTra, nome: $scope.nomeCliente.nomTra};
 
 			$scope.frmEndEntrega = $scope.nomeCliente.endCli;
 			$scope.condPagamento = {codCpg: $scope.nomeCliente.codCpg, desCpg: $scope.nomeCliente.desCpg };
@@ -2185,21 +2186,46 @@ angular
 
 			let prevEntregFormat = $item.datEnt
 			console.log(prevEntregFormat)
+
 			prevEntregFormat = new Date(prevEntregFormat)
-			
 			console.log(prevEntregFormat)
-			//$scope.prevEntregaItem = prevEntregFormat
+			var a =  (prevEntregFormat.getDate() + '-' + prevEntregFormat.getMonth() + 1) + '-' + prevEntregFormat.getFullYear();
 
-			prevEntregFormat = prevEntregFormat.toLocaleDateString('pt-br')
-			console.log(prevEntregFormat)
-
-			$scope.prevEntregaItem = prevEntregFormat
-
-			/*
-			var a = prevEntregFormat.getDate() + '-' + (prevEntregFormat.getMonth() + 1) + '-' +   prevEntregFormat.getFullYear();
 			console.log(a)
+
+					/*
+						var today = new Date();
+						var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+
+						//data fotura +30 dias data de vencimento
+						var future = new Date();
+						future.setDate(future.getDate() + 30)
+
+						var validadeOrcamento = future.getFullYear() + '-' + (future.getMonth() + 1) + '-' + future.getDate();
+
+					*/
+
 			$scope.prevEntregaItem = new Date(a)
-			*/
+			//console.log($scope.prevEntregaItem)
+
+
+			//a = a.toLocaleDateString('pt-br')
+
+			//prevEntregFormat = prevEntregFormat.toLocaleDateString('en-US')
+			//console.log(prevEntregFormat)
+
+			//prevEntregFormat = prevEntregFormat.toLocaleDateString('pt-br')
+			//console.log(prevEntregFormat)
+
+			//prevEntregFormat = new Date(prevEntregFormat)
+			//console.log(prevEntregFormat)
+
+			//prevEntregFormat = prevEntregFormat.toLocaleDateString('pt-br')
+			//console.log(prevEntregFormat)
+
+			
+
+			
 
 			if($item.tipoErro == "BLOQUEIA"){
 					console.log("foi bloqueado")
@@ -2208,6 +2234,8 @@ angular
 					console.log("aviso")
 					alert($item.msgErro)
 				}else{
+					//console.log("passou direto LIBERADO")
+					//console.log("monta o produto")
 
 					$rootScope.produtos.unshift(
 						{ 
@@ -2239,10 +2267,13 @@ angular
 					);
 
 					//console.log($rootScope.produtos)
+
 			}
+
 
 			//console.log($item)
 			
+
 			//console.log($rootScope.produtos)
 			
 			var buscaProduto		= angular.element(document.querySelector('#itemProd'));
