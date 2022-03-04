@@ -1100,7 +1100,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 131")
+	console.log("testes 132")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -1543,7 +1543,7 @@ angular
 			//if ($scope.nomeCliente.nomTra == ""){
 				//$scope.transportadora = ""
 			//}else{
-				$scope.transportadora = {codExterno: $scope.nomeCliente.codTra, nome: $scope.nomeCliente.nomTra};
+				
 
 			//}
 
@@ -1551,6 +1551,8 @@ angular
 			$rootScope.cliente = $item;	
 
 			$scope.tipoVenda = {codExterno: $scope.nomeCliente.codTns, nome: $scope.nomeCliente.nomeTns};
+
+			$scope.transportadora = {codExterno: $scope.nomeCliente.codTra, nome: $scope.nomeCliente.nomTra};
 
 			$scope.frmEndEntrega = $scope.nomeCliente.endCli;
 			$scope.condPagamento = {codCpg: $scope.nomeCliente.codCpg, desCpg: $scope.nomeCliente.desCpg };
