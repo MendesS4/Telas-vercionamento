@@ -1100,7 +1100,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 135")
+	console.log("testes 136")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -2191,6 +2191,8 @@ angular
 
 			console.log(prevEntregFormat)
 
+			$scope.prevEntregaItem = prevEntregFormat
+
 			//$scope.prevEntrega = $item.datEnt
 
 			if($item.tipoErro == "BLOQUEIA"){
@@ -2223,7 +2225,7 @@ angular
 							valorFaixa3			: parseFloat($item.valorFaixa3),
 							valorFaixa4			: parseFloat($item.valorFaixa4),
 
-							prevEntregaItem		: $item.datEnt,
+							//prevEntregaItem		: $item.datEnt,
 
 							acabamentos			: $item.acabamento,
 
