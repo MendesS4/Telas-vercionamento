@@ -1100,7 +1100,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 121")
+	console.log("testes 122")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -1900,13 +1900,14 @@ angular
 
 		$scope.abreFormulario = ($dados) =>{
 
-
 			var today = new Date();
 			var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 
-
 			$scope.todayTest = new Date();
 			$scope.dateTest =  $scope.todayTest.getDate() + '/' + ($scope.todayTest.getMonth() + 1) + '/' + $scope.todayTest.getFullYear();
+			console.log($scope.dateTest)
+
+			$scope.dateTest =   ($scope.todayTest.getMonth() + 1) + '-' +  $scope.todayTest.getDate() + '-' + $scope.todayTest.getFullYear();
 			console.log($scope.dateTest)
 
 			$scope.dateTeste = new Date($scope.dateTest)
@@ -2165,12 +2166,12 @@ angular
 
 		}
 		
-		
 		$scope.adicionarProduto = ($item) =>{
 
 			$scope.prevEntregaItem = $item.datEnt
 
 			console.log($item.datEnt)
+
 			console.log($item)
 
 			if($item.tipoErro == "BLOQUEIA"){
