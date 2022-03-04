@@ -1100,7 +1100,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 127")
+	console.log("testes 128")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -1860,12 +1860,14 @@ angular
 			//data vem do input data de entrega 
 			console.log($scope.prevEntrega)
 
+			let variavelAuxiliar = $scope.prevEntrega
+
 			//tratamento para data ir correta 
-			$scope.prevEntrega = $scope.prevEntrega.substr(0,14);
+			variavelAuxiliar = variavelAuxiliar.substr(0,14);
 
 			//$scope.prevEntrega =  $scope.todayTest.getDate() + '/' + ($scope.todayTest.getMonth() + 1) + '/' + $scope.todayTest.getFullYear();
 
-			console.log($scope.prevEntrega)
+			console.log(variavelAuxiliar)
 			
 			try{
 				let result = await $scope.executaRequisicaoExterna(
