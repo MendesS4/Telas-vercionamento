@@ -1100,7 +1100,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 126")
+	console.log("testes 127")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -1859,10 +1859,13 @@ angular
 		$scope.getProdutosERP = async (consulta) => {
 			//data vem do input data de entrega 
 			console.log($scope.prevEntrega)
+
 			//tratamento para data ir correta 
-			//$scope.todayTest = new Date();
+			$scope.prevEntrega = $scope.prevEntrega.substr(0,14);
+
 			//$scope.prevEntrega =  $scope.todayTest.getDate() + '/' + ($scope.todayTest.getMonth() + 1) + '/' + $scope.todayTest.getFullYear();
 
+			console.log($scope.prevEntrega)
 			
 			try{
 				let result = await $scope.executaRequisicaoExterna(
@@ -2175,13 +2178,13 @@ angular
 
 			//console.log($scope.prevEntregaItem)
 
-			console.log($item.datEnt)
+			//console.log($item.datEnt)
 
-			$item.datEnt = $item.datEnt.substr(0,18)
+			$item.datEnt = $item.datEnt.substr(0,14)
 
-			console.log($item.datEnt)
+			//console.log($item.datEnt)
 		
-			console.log($item)
+			//console.log($item)
 
 			if($item.tipoErro == "BLOQUEIA"){
 					console.log("foi bloqueado")
