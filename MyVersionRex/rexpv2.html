@@ -1100,7 +1100,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 129")
+	console.log("testes 130")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -1540,14 +1540,17 @@ angular
 
 		$scope.onSelectCliente = function ($item, $model, $label) {	
 
-			
+			if ($scope.nomeCliente.nomTra == ""){
+				$scope.transportadora = ""
+			}else{
+				$scope.transportadora = {codExterno: $scope.nomeCliente.codTra, nome: $scope.nomeCliente.nomTra};
+
+			}
 
 			$scope.nomeCliente = $item;	
 			$rootScope.cliente = $item;	
 
 			$scope.tipoVenda = {codExterno: $scope.nomeCliente.codTns, nome: $scope.nomeCliente.nomeTns};
-
-			$scope.transportadora = {codExterno: $scope.nomeCliente.codTra, nome: $scope.nomeCliente.nomTra};
 
 			$scope.frmEndEntrega = $scope.nomeCliente.endCli;
 			$scope.condPagamento = {codCpg: $scope.nomeCliente.codCpg, desCpg: $scope.nomeCliente.desCpg };
@@ -2176,13 +2179,20 @@ angular
 		
 		$scope.adicionarProduto = ($item) =>{
 
+			console.log($item.datEnt)
+
+			let variavelAuxiliar = $item.datEnt
+
+			variavelAuxiliar = new Date(variavelAuxiliar)
+
+			console.log(variavelAuxiliar)
+
 			//$scope.prevEntregaItem = $item.datEnt
 
 			//console.log($scope.prevEntregaItem)
 
-			//console.log($item.datEnt)
 
-			$item.datEnt = $item.datEnt.substr(0,14)
+			//$item.datEnt = $item.datEnt.substr(0,14)
 
 			//console.log($item.datEnt)
 		
