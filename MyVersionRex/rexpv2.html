@@ -1100,7 +1100,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 133")
+	console.log("testes 134")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -2185,6 +2185,8 @@ angular
 
 			console.log($item.datEnt)
 
+			$scope.prevEntrega = $item.datEnt
+
 			if($item.tipoErro == "BLOQUEIA"){
 					console.log("foi bloqueado")
 					alert($item.msgErro)
@@ -2224,7 +2226,7 @@ angular
 						}
 					);
 
-					console.log($rootScope.produtos)
+					//console.log($rootScope.produtos)
 
 			}
 
