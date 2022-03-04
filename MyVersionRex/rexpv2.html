@@ -1099,7 +1099,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 168")
+	console.log("testes 162")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -2179,49 +2179,27 @@ angular
 
 
 		}
-
-
-
-
-
-
-
 		
 		$scope.adicionarProduto = ($item) =>{
 			console.log($item.datEnt)
 
 			let prevEntregFormat = $item.datEnt
+			console.log(prevEntregFormat)
+			prevEntregFormat = new Date(prevEntregFormat)
+			
+			console.log(prevEntregFormat)
+			//$scope.prevEntregaItem = prevEntregFormat
+
+			prevEntregFormat = prevEntregFormat.toLocaleDateString('pt-br')
+			console.log(prevEntregFormat)
 
 			$scope.prevEntregaItem = prevEntregFormat
 
-			//console.log(prevEntregFormat)
-
-			//prevEntregFormat = new Date(prevEntregFormat).toLocaleString('pt-BR', {day: '2-digit', month:'2-digit'})
-			//console.log(prevEntregFormat)
-
-
-			//prevEntregFormat = prevEntregFormat.toLocaleDateString('pt-br')
-			//console.log(prevEntregFormat)
-
-
-			//$scope.prevEntregaItem = prevEntregFormat
-
-			//$scope.prevEntregaItem = prevEntregFormat
-		
-			//var a = prevEntregFormat.getDate() + '-' + (prevEntregFormat.getMonth() + 1) + '-' +   prevEntregFormat.getFullYear();
-			//console.log(a)
-
-			//$scope.prevEntregaItem = new Date(a)
-			
-
-
-
-
-
-
-
-
-
+			/*
+			var a = prevEntregFormat.getDate() + '-' + (prevEntregFormat.getMonth() + 1) + '-' +   prevEntregFormat.getFullYear();
+			console.log(a)
+			$scope.prevEntregaItem = new Date(a)
+			*/
 
 			if($item.tipoErro == "BLOQUEIA"){
 					console.log("foi bloqueado")
