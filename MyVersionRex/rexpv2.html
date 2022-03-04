@@ -1100,7 +1100,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 132")
+	console.log("testes 133")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -1865,14 +1865,16 @@ angular
 			//data vem do input data de entrega 
 			console.log($scope.prevEntrega)
 
+			$scope.prevEntrega = $scope.prevEntrega.toLocaleDateString('pt-br')
+
+			console.log($scope.prevEntrega)
+
 			//let variavelAuxiliar = $scope.prevEntrega
 
 			//tratamento para data ir correta 
 			//variavelAuxiliar = variavelAuxiliar.substr(0,14);
 
 			//$scope.prevEntrega =  $scope.todayTest.getDate() + '/' + ($scope.todayTest.getMonth() + 1) + '/' + $scope.todayTest.getFullYear();
-
-			console.log(variavelAuxiliar)
 			
 			try{
 				let result = await $scope.executaRequisicaoExterna(
@@ -2182,23 +2184,6 @@ angular
 		$scope.adicionarProduto = ($item) =>{
 
 			console.log($item.datEnt)
-
-			let variavelAuxiliar = $item.datEnt
-
-			variavelAuxiliar = new Date(variavelAuxiliar)
-
-			console.log(variavelAuxiliar)
-
-			//$scope.prevEntregaItem = $item.datEnt
-
-			//console.log($scope.prevEntregaItem)
-
-
-			//$item.datEnt = $item.datEnt.substr(0,14)
-
-			//console.log($item.datEnt)
-		
-			//console.log($item)
 
 			if($item.tipoErro == "BLOQUEIA"){
 					console.log("foi bloqueado")
