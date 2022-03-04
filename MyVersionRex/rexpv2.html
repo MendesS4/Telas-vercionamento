@@ -1099,7 +1099,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 168")
+	console.log("testes 169")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -1864,7 +1864,7 @@ angular
 			//data vem do input data de entrega 
 			console.log($scope.prevEntrega)
 
-			$scope.prevEntrega = $scope.prevEntrega.toLocaleDateString('pt-br')
+			//$scope.prevEntrega = $scope.prevEntrega.toLocaleDateString('pt-br')
 
 			console.log($scope.prevEntrega)
 
@@ -2161,76 +2161,22 @@ angular
 			};
 		}
 
-
-
 		$scope.verificaProduto = ($item) =>{
-			$scope.itemProd = "";
+			console.log("entrou no onSelect")
 			if($item.tipoErro == "BLOQUEIA"){
-			
 				alert($item.msgErro)
 			}else if($item.tipoErro == "AVISA"){
-			
 				alert($item.msgErro)
 				$scope.adicionarProduto($item)
 			}else{
-
 				$scope.adicionarProduto($item)
 			}
-
-
 		}
-
-
-
-
-
-
-
-		
 		$scope.adicionarProduto = ($item) =>{
+			console.log("estou no onSelect")
 			console.log($item.datEnt)
-
-			let prevEntregFormat = $item.datEnt
-			console.log(prevEntregFormat)
-
-			prevEntregFormat = new Date(prevEntregFormat).toLocaleString('pt-BR', {day: '2-digit', month:'2-digit'})
-			console.log(prevEntregFormat)
-
-
-			//prevEntregFormat = prevEntregFormat.toLocaleDateString('pt-br')
-			//console.log(prevEntregFormat)
-
-
-			//$scope.prevEntregaItem = prevEntregFormat
-
-			//$scope.prevEntregaItem = prevEntregFormat
-		
-			//var a = prevEntregFormat.getDate() + '-' + (prevEntregFormat.getMonth() + 1) + '-' +   prevEntregFormat.getFullYear();
-			//console.log(a)
-
-			//$scope.prevEntregaItem = new Date(a)
-			
-
-
-
-
-
-
-
-
-
-
-			if($item.tipoErro == "BLOQUEIA"){
-					console.log("foi bloqueado")
-					alert($item.msgErro)
-				}else if($item.tipoErro == "AVISA" && $item.msgErro == ""){
-					console.log("aviso")
-					alert($item.msgErro)
-				}else{
-
 					$rootScope.produtos.unshift(
 						{ 
-
 							descricao			: $item.nome,
 							codigoProduto		: $item.id,
 							codVariacao			: $item.codVariacao,
@@ -2247,25 +2193,11 @@ angular
 							valorFaixa2			: parseFloat($item.valorFaixa2),
 							valorFaixa3			: parseFloat($item.valorFaixa3),
 							valorFaixa4			: parseFloat($item.valorFaixa4),
-
-							//prevEntregaItem		: $item.datEnt,
-
 							acabamentos			: $item.acabamento,
-
 							depositos			: $item.depositos,
-
 						}
 					);
-
-					//console.log($rootScope.produtos)
-			}
-
-			//console.log($item)
-			
-			//console.log($rootScope.produtos)
-			
 			var buscaProduto		= angular.element(document.querySelector('#itemProd'));
-			
 			$timeout(function () {
 				buscaProduto.blur();
 				$scope.itemProd = '';
