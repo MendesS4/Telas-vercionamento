@@ -1100,7 +1100,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 122")
+	console.log("testes 123")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -1859,8 +1859,10 @@ angular
 		$scope.getProdutosERP = async (consulta) => {
 			//data vem do input data de entrega 
 			//tratamento para data ir correta 
-			$scope.todayTest = new Date();
-			$scope.prevEntrega =  $scope.todayTest.getDate() + '/' + ($scope.todayTest.getMonth() + 1) + '/' + $scope.todayTest.getFullYear();
+			//$scope.todayTest = new Date();
+			//$scope.prevEntrega =  $scope.todayTest.getDate() + '/' + ($scope.todayTest.getMonth() + 1) + '/' + $scope.todayTest.getFullYear();
+
+			console.log($scope.prevEntrega)
 			try{
 				let result = await $scope.executaRequisicaoExterna(
 					{
@@ -1900,18 +1902,18 @@ angular
 
 		$scope.abreFormulario = ($dados) =>{
 
-			var today = new Date();
-			var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+			//var today = new Date();
+			//var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 
-			$scope.todayTest = new Date();
-			$scope.dateTest =  $scope.todayTest.getDate() + '/' + ($scope.todayTest.getMonth() + 1) + '/' + $scope.todayTest.getFullYear();
-			console.log($scope.dateTest)
+			//$scope.todayTest = new Date();
+			//$scope.dateTest =  $scope.todayTest.getDate() + '/' + ($scope.todayTest.getMonth() + 1) + '/' + $scope.todayTest.getFullYear();
+			//console.log($scope.dateTest)
 
-			$scope.dateTest =   ($scope.todayTest.getMonth() + 1) + '-' +  $scope.todayTest.getDate() + '-' + $scope.todayTest.getFullYear();
-			console.log($scope.dateTest)
+			//$scope.dateTest =   ($scope.todayTest.getMonth() + 1) + '-' +  $scope.todayTest.getDate() + '-' + $scope.todayTest.getFullYear();
+			//console.log($scope.dateTest)
 
-			$scope.dateTeste = new Date($scope.dateTest)
-			console.log($scope.dateTeste)
+			//$scope.dateTeste = new Date($scope.dateTest)
+			//console.log($scope.dateTeste)
 
 			//console.log($dados)
 			if($dados == undefined){
@@ -1946,7 +1948,7 @@ angular
 				$scope.tipoFreteCif				= '';
 				$scope.tipoFrenteFob			= '';
 
-				$scope.prevEntrega				= new Date(date);
+				$scope.prevEntrega				= new Date();
 				$scope.codigoProduto			= '';				
 				$scope.representante			= dadosUserLogado.rNome;
 				$scope.datEmiERP				= '';
