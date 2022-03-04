@@ -1100,7 +1100,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 141")
+	console.log("testes 142")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -2193,15 +2193,13 @@ angular
 
 			console.log(prevEntregFormat)
 
-			prevEntregFormat = prevEntregFormat.toLocaleDateString('pt-br')
+			prevEntregFormat = prevEntregFormat.toLocaleDateString('en-US')
 
 			console.log(prevEntregFormat)
 
 			$scope.prevEntregaItem = prevEntregFormat
 
 			console.log($scope.prevEntregaItem)
-
-			$scope.prevEntrega = $item.datEnt
 
 			if($item.tipoErro == "BLOQUEIA"){
 					console.log("foi bloqueado")
