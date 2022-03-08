@@ -131,15 +131,15 @@
 											</div>
 											<div class="col-sm-3">
 												<h5>Previsão de entrega</h5>
-												<p ng-show="dataPrevEntrega" >{{dataPrevEntregaFormatada}}</p>
+												<p ng-show="dataPrevEntrega" >{{dataPrevEntregaFormatada || "Não Informado"}}</p>
 											</div>
 											<div class="col-sm-3">
 												<h5>Condição de pagamento</h5>
-												<p>{{condPagamento.nome}}</p>
+												<p>{{condPagamento.desCpg || "Não Informado "}}</p>
 											</div>
 											<div class="col-sm-3">
 												<h5>Forma de pagamento</h5>
-												<p>{{formaPagamento.nome}}</p>
+												<p>{{formaPagamento.desFpg}}</p>
 											</div>
 											<div class="col-sm-3">
 												<h5>Total</h5>
@@ -1108,7 +1108,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 184")
+	console.log("testes 185")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
