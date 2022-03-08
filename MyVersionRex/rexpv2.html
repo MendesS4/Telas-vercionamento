@@ -179,10 +179,10 @@
 													{{produto.quantidade}}
 												</td>
 												<td>
-													{{produto.valorNegociado | currency:'R$ '}}
+													{{produto.valorNegociado | currency:'R$'}}
 												</td>
 												<td>
-													{{}}
+													{{produto.valorFaixa | currency:'R$'}}
 												</td>
 												<td>
 													<p ng-show="produto.opcaoDescAcresc === 'DESCONTO' && produto.descAcresc != undefined ">- {{produto.descAcresc}}%</p>
@@ -1108,7 +1108,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 183")
+	console.log("testes 184")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
