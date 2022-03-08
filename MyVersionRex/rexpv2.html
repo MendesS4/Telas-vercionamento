@@ -113,7 +113,7 @@
 							<div ng-show="sincronizado === 'DOCUMENTO_SINCRONIZADO'" class="form-group col-md-12">
 								<div style="background-color: #FBFBFB">
 									<div class="panel panel-default spacer">
-										<div class="panel-heading">Informações adicionais</div>
+										<div class="panel-heading">Informações do pedido</div>
 										<div class="panel-body">
 											
 											<div class="col-sm-3">
@@ -161,6 +161,7 @@
 												<th>Produto</th>
 												<th>Quantidade</th>
 												<th>Valor und.</th>
+												<th>Faixa</th>
 												<th>Desc. / Acrésc.</th>
 												<th>Total item</th>
 											</tr>
@@ -179,6 +180,9 @@
 												</td>
 												<td>
 													{{produto.valorNegociado | currency:'R$ '}}
+												</td>
+												<td>
+													{{}}
 												</td>
 												<td>
 													<p ng-show="produto.opcaoDescAcresc === 'DESCONTO' && produto.descAcresc != undefined ">- {{produto.descAcresc}}%</p>
@@ -1104,7 +1108,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 182")
+	console.log("testes 183")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
