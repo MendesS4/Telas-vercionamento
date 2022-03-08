@@ -46,12 +46,12 @@
 					</div>
 																			
 					<div class="form-group">
-						<label for="filCarteira">Data EmissÃ£o</label>
+						<label for="filCarteira">Data Emissão</label>
 						<input type="text" style="width: 220px;" ui-mask="99/99/9999" class="form-control spacer-input" autocomplete="off" id="filDataEmissao" ng-model="filDataEmissao" aria-describedby=" ">
 					</div>
 
 					<div class="form-group">
-						<label for="projeto">SincronizaÃ§Ã£o</label>
+						<label for="projeto">Sincronização</label>
 						<input type="text" style="width: 220px;" class="form-control spacer-input" ng-value="filSincronizado.nome" ng-model="filSincronizado" id="filSincronizado" uib-typeahead="(sincronizado.nome) for sincronizado in getFilScinronizacao($viewValue)"  autocomplete="off" typeahead-min-length="0" typeahead-on-select="onSelectFilSincronizacao($item, $model, $label)">
 					</div>
 									
@@ -112,40 +112,46 @@
 							
 							<div ng-show="sincronizado === 'DOCUMENTO_SINCRONIZADO'" class="form-group col-md-12">
 								<div style="background-color: #FBFBFB">
-									<div class="col-sm-6">
-										<h5>Cliente</h5>
-										<p>{{frmCliente.nome}}<p>
-									</div>
-									<div class="col-sm-6">
-										<h5>EndereÃ§o de entrega</h5>
-										<p>{{frmEndEntrega}}</p>
-									</div>
+									<div class="panel panel-default spacer">
+										<div class="panel-heading">Informações adicionais</div>
+										<div class="panel-body">
+											
+											<div class="col-sm-6">
+												<h5>Cliente</h5>
+												<p>{{frmCliente.nome}}<p>
+											</div>
+											<div class="col-sm-6">
+												<h5>Endereço de entrega</h5>
+												<p>{{frmEndEntrega}}</p>
+											</div>
 
-									<div class="col-sm-2 spacer">
-										<h5>Data de emissÃ£o</h5>
-										<p>{{dataEmissaoFormat}}</p>
+											<div class="col-sm-2 spacer">
+												<h5>Data de emissão</h5>
+												<p>{{dataEmissaoFormat}}</p>
+											</div>
+											<div class="col-sm-2 spacer">
+												<h5>Previsão de entrega</h5>
+												<p ng-show="dataPrevEntrega" >{{dataPrevEntrega}}</p>
+											</div>
+											<div class="col-sm-2 spacer">
+												<h5>Condição de pagamento</h5>
+												<p>{{condPagamento.nome}}</p>
+											</div>
+											<div class="col-sm-2 spacer">
+												<h5>Forma de pagamento</h5>
+												<p>{{formaPagamento.nome}}</p>
+											</div>
+											<div class="col-sm-2 spacer">
+												<h5>Total</h5>
+												<p>{{valorTotal | currency:'R$ '}}</p>
+											</div>	
+											<div class="col-sm-2 spacer">
+												<h5>Representante</h5>
+												<p>{{representante}}</p>
+											</div>
+
+										</div>
 									</div>
-									<div class="col-sm-2 spacer">
-										<h5>PrevisÃ£o de entrega</h5>
-										<p ng-show="dataPrevEntrega" >{{dataPrevEntrega}}</p>
-									</div>
-									<div class="col-sm-2 spacer">
-										<h5>CondiÃ§Ã£o de pagamento</h5>
-										<p>{{condPagamento.nome}}</p>
-									</div>
-									<div class="col-sm-2 spacer">
-										<h5>Forma de pagamento</h5>
-										<p>{{formaPagamento.nome}}</p>
-									</div>
-									<div class="col-sm-2 spacer">
-										<h5>Total</h5>
-										<p>{{valorTotal | currency:'R$ '}}</p>
-									</div>	
-									<div class="col-sm-2 spacer">
-										<h5>Representante</h5>
-										<p>{{representante}}</p>
-									</div>
-									
 								</div>
 								
 								<div style="margin-top: 2%; padding:0;" class="col-sm-12 spacer">
@@ -344,7 +350,7 @@
 								<div style="margin-top:1.5%" class="col-sm-12">
 									<label class="spacer" for="codPro">Adicionar Produto</label>
 									<div class="input-group spacer">
-										<input type="text" ng-model="itemProd" name="itemProd" id="itemProd" placeholder="Informe o nome do produto desejado..." uib-typeahead="retorno.codExterno + ' - ' + retorno.nome + ' - ' + retorno.codVariacao  + ' | Tab. PreÃ§o - ' + retorno.codTpr for retorno in getProdutosERP($viewValue)" typeahead-loading="loadingProd" typeahead-no-results="noResults"  typeahead-on-select="verificaProduto($item, $model, $label)" class="form-control" autocomplete="off" typeahead-min-length="3" typeahead-template-url="templateAutoCompleteProduto" >
+										<input type="text" ng-model="itemProd" name="itemProd" id="itemProd" placeholder="Informe o nome do produto desejado..." uib-typeahead="retorno.codExterno + ' - ' + retorno.nome + ' - ' + retorno.codVariacao  + ' | Tab. Preço - ' + retorno.codTpr for retorno in getProdutosERP($viewValue)" typeahead-loading="loadingProd" typeahead-no-results="noResults"  typeahead-on-select="verificaProduto($item, $model, $label)" class="form-control" autocomplete="off" typeahead-min-length="3" typeahead-template-url="templateAutoCompleteProduto" >
 										<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaProduto()"><i class="glyphicon glyphicon-remove"></i></span>
 									</div>
 									<i ng-show="loadingProd" class="glyphicon glyphicon-refresh"></i>
@@ -363,7 +369,7 @@
 													<th>Produto</th>
 													<th>Quantidade</th>
 													<th>Unid. Medida</th>
-													<th>PreÃ§o Bruto</th>
+													<th>Preço Bruto</th>
 													<th>Faixa 1</th>
 													<th>Faixa 2</th>
 													<th>Faixa 3</th>
@@ -456,7 +462,7 @@
 																	<div class="col-sm-6 spacer">
 																		<label for="tipoVendaItem">Transação do produto</label>
 																		<div class="input-group spacer">
-																			<input type="text" ng-model="produto.tipoVendaItem" name="tipoVendaItem" id="tipoVendaItem" placeholder="Selecione uma transaÃ§Ã£o para este item" uib-typeahead="tipven.nome for tipven in getTipoVendaERP($viewValue)" typeahead-loading="loadingTipVen" typeahead-no-results="noResultsTipVen"  typeahead-on-select="onSelectTransacaoPro($item, $model, $label)" class="form-control" autocomplete="off" typeahead-min-length="0">
+																			<input type="text" ng-model="produto.tipoVendaItem" name="tipoVendaItem" id="tipoVendaItem" placeholder="Selecione uma transasão para este item" uib-typeahead="tipven.nome for tipven in getTipoVendaERP($viewValue)" typeahead-loading="loadingTipVen" typeahead-no-results="noResultsTipVen"  typeahead-on-select="onSelectTransacaoPro($item, $model, $label)" class="form-control" autocomplete="off" typeahead-min-length="0">
 																			<span class="input-group-addon" style="cursor: pointer;" ng-click="limpaTipoVendaItem()"><i class="glyphicon glyphicon-remove"></i></span>
 																		</div>
 										
@@ -556,28 +562,28 @@
 																		<thead>
 																			<tr>
 																				<th>
-																					Codigo
+																					Código
 																				</th>
 																				<th>
-																					consignado
+																					Consignado
 																				</th>
 																				<th>
-																					derivação
+																					Derivação
 																				</th>
 																				<th>
-																					disponivel
+																					Dísponivel
 																				</th>
 																				<th>
-																					matriz
+																					Matriz
 																				</th>
 																				<th>
-																					mg
+																					MG
 																				</th>
 																				<th>
-																					resPedidos
+																					ResPedidos
 																				</th>
 																				<th>
-																					resPreFat
+																					ResPreFat
 																				</th>
 																			</tr>
 																		</thead>
@@ -633,7 +639,7 @@
 					<div ng-show="exibeHistoricos" class="col-sm-12">
 						<div class="form-row">
 							<div class="col-sm-12 spacer">
-									<label for="histOportunidade">HistÃ³rico</label>
+									<label for="histOportunidade">Histórico</label>
 									<textarea readonly class="form-control spacer-input" ng-disabled="inputDesabilitado" ng-model="histOportunidade" id="histOportunidade" rows="10"></textarea>
 							</div>
 						</div>
@@ -644,7 +650,7 @@
 						</div>
 						<div class="form-row">
 							<div class="col-sm-11 spacer">
-								<label for="obsOportunidade">ObservaÃ§Ã£o</label>
+								<label for="obsOportunidade">Observação</label>
 								<textarea class="form-control spacer-input"  ng-model="obsOportunidade" id="obsOportunidade" rows="1"></textarea>
 							</div>
 							<div class="col-sm-1 spacer" style="padding-top: 30px;">
@@ -1098,7 +1104,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 178")
+	console.log("testes 179")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
