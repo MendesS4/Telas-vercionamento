@@ -131,7 +131,7 @@
 											</div>
 											<div class="col-sm-3">
 												<h5>Previsão de entrega</h5>
-												<p ng-show="dataPrevEntrega" >{{dataPrevEntregaFormatada || "Não Informado"}}</p>
+												<p>{{dataPrevEntregaFormatada || "Não Informado"}}</p>
 											</div>
 											<div class="col-sm-3">
 												<h5>Condição de pagamento</h5>
@@ -1108,7 +1108,7 @@
 <!-- Scripts importados -->	
 
 <script>
-	console.log("testes 185")
+	console.log("testes 186")
 var dadosUserLogado = parent.dadosUserLogadoPersonalizado();	
 
 angular
@@ -2059,9 +2059,12 @@ angular
 				$scope.codigoProduto		= docs.produtos.codigoProduto;
 				$scope.descricao			= docs.produtos.descricao;
 				$scope.codExternoProduto	= docs.produtos.codExterno;
-			
+
+				
 
 				$scope.dataPrevEntregaFormatada = new Date($scope.prevEntrega);
+
+
 				$scope.dataPrevEntregaFormatada = $scope.dataPrevEntregaFormatada != "" ? $scope.dataPrevEntregaFormatada.toLocaleDateString('pt-br') : null;
 			};
 			
