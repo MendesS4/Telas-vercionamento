@@ -1086,7 +1086,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("006")
+		console.log("007")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1478,8 +1478,7 @@
 
 							if ((qtd != null && qtd > 0) && $rootScope.produtos[i].qtdm3 != null) {
 
-								testeConta = testeConta - (testeConta * (valorOfertaPreco / 100))
-								console.log(testeConta)
+								
 
 								//calculando valor liquido
 								vlrLiquido = qtd * precoLiquido
@@ -1499,6 +1498,14 @@
 								//calculando peso 
 								peso = volumeM3 * 790
 								$rootScope.produtos[i].pesoKG = peso.toFixed('3');
+
+								precoLiquido = precoLiquido - (precoLiquido * (valorOfertaPreco / 100))
+								console.log(precoLiquido)
+								$rootScope.produtos[i].precoLiquido = precoLiquido;
+
+
+
+
 
 								valorCalculoPrecoTotal += vlrLiquido;
 								valorCalculoVolumeTotal += volumeM3;
