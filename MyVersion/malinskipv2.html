@@ -1086,7 +1086,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("006")
+		//console.log("006")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1471,7 +1471,7 @@
 
 							//preco liquido de produto
 							let precoLiquido = parseFloat($rootScope.produtos[i].precoLiquido.replace(',', '.'))
-							console.log("preço liquido: ",precoLiquido)
+							//console.log("preço liquido: ",precoLiquido)
 
 							//let testeConta = parseFloat($rootScope.produtos[i].precoLiquido.replace(',', '.'))
 							//testeConta = testeConta - (testeConta * (25 / 100));
@@ -1482,11 +1482,11 @@
 								//calculando valor liquido
 								vlrLiquido = qtd * precoLiquido
 								$rootScope.produtos[i].vlrLiquido = vlrLiquido;
-								console.log("valor liquido quantidade * preco: ",vlrLiquido)
+								//console.log("valor liquido quantidade * preco: ",vlrLiquido)
 								
 								//calculando o desconto com a oferta de preco
 								vlrLiquido = vlrLiquido - (vlrLiquido * (valorOfertaPreco / 100));
-								console.log("vlrLiquido com o desconto de 25%",vlrLiquido)
+								//console.log("vlrLiquido com o desconto de 25%",vlrLiquido)
 
 								$rootScope.produtos[i].vlrLiquido = vlrLiquido;
 
