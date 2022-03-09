@@ -1086,7 +1086,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("005")
+		console.log("006")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1330,6 +1330,7 @@
 					$scope.imprimeOrcamento = async($item) => {
 
 						let dados  = $item != undefined ? $item : $scope.pedidoInfos
+						console.log(dados)
 						let dialog = bootbox.dialog({
 
 							message: '<div class="alert alert-light popup"role="alert"><p style="font-size:1.0em; font-weight:bold; text-align:center;">Gerando relátorio...</p></div>',
