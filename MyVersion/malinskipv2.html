@@ -1086,7 +1086,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("004")
+		console.log("005")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1487,7 +1487,7 @@
 								vlrLiquido = vlrLiquido - (vlrLiquido * (valorOfertaPreco / 100));
 								console.log("vlrLiquido com o desconto de 25%",vlrLiquido)
 
-								$rootScope.produtos[i].vlrLiquido = vlrLiquido.toFixed('5');
+								$rootScope.produtos[i].vlrLiquido = vlrLiquido;
 
 								// calculando volume
 								volumeM3 = qtd * qtdm3;
