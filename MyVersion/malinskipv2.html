@@ -1086,7 +1086,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("005")
+		//console.log("005")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1481,11 +1481,11 @@
 								//calculando valor liquido
 								vlrLiquido = qtd * precoLiquido
 								$rootScope.produtos[i].vlrLiquido = vlrLiquido.toFixed('6');
-								console.log("valor liquido quantidade * preco: ",vlrLiquido)
+								//console.log("valor liquido quantidade * preco: ",vlrLiquido)
 								
 								//calculando o desconto com a oferta de preco
 								vlrLiquido = vlrLiquido - (vlrLiquido * (valorOfertaPreco / 100));
-								console.log("vlrLiquido com o desconto de 25%",vlrLiquido)
+								//console.log("vlrLiquido com o desconto de 25%",vlrLiquido)
 
 								$rootScope.produtos[i].vlrLiquido = vlrLiquido;
 
