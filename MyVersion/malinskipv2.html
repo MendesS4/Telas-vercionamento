@@ -1086,7 +1086,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("009")
+		console.log("010")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1469,7 +1469,7 @@
 							let qtdm3 = parseFloat($rootScope.produtos[i].qtdm3.replace(',', '.'))
 
 							//preco liquido de produto
-							let precoLiquido = parseFloat($rootScope.produtos[i].precoLiquido(',', '.'))
+							let precoLiquido = parseFloat($rootScope.produtos[i].precoLiquido.replace(',', '.'))
 							//console.log("preço liquido: ",precoLiquido)
 
 							//let testeConta = parseFloat($rootScope.produtos[i].precoLiquido.replace(',', '.'))
