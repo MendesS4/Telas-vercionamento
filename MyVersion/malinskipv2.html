@@ -1086,7 +1086,7 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("009")
+		console.log("010")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1486,6 +1486,10 @@
 								let calculoTeste = 0
 								calculoTeste = precoLiquido - (precoLiquido * (valorOfertaPreco/100))
 								console.log(calculoTeste)
+
+								let valorFinal = 0
+								valorFinal = qtd * calculoTeste
+								console.log(valorFinal)
 								// vlrLiquido = precoLiquido * qtd 
 
 								//calculando valor liquido
