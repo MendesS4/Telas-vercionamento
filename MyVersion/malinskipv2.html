@@ -1086,7 +1086,6 @@
 	<script src="https://sistema.clicvenda.com.br/clicVendas/plugins/ui-mask-master/dist/mask.min.js"></script>
 	<!-- Scripts importados -->
 	<script>
-		console.log("015")
 		var dadosUserLogado = parent.dadosUserLogadoPersonalizado();
 		angular
 			.module("appV2", ['ngRoute', 'ngSanitize', 'ui.bootstrap', 'datatables', 'datatables.buttons', 'ui.mask'])
@@ -1480,41 +1479,16 @@
 							if ((qtd != null && qtd > 0) && $rootScope.produtos[i].qtdm3 != null) {
 
 
-								//calcular preco liquido com desconto
-								//console.log(precoLiquido)
-								//console.log(valorOfertaPreco)
-
 								precoLiquido = precoLiquido - (precoLiquido * (valorOfertaPreco/100))
 								precoLiquido = precoLiquido.toFixed(3)
 								console.log(precoLiquido)
 
-								//$rootScope.produtos[i].precoLiquido = precoLiquido;
-
-		
 								vlrLiquido = qtd * precoLiquido
 								 
 								console.log(vlrLiquido)
 								// vlrLiquido = precoLiquido * qtd 
 
-								//calculando valor liquido
-								//vlrLiquido = qtd * precoLiquido
 								$rootScope.produtos[i].vlrLiquido = vlrLiquido;
-								//console.log("valor liquido quantidade * preco: ",vlrLiquido)
-								
-								//calculando o desconto com a oferta de preco
-								//vlrLiquido = vlrLiquido - (vlrLiquido * (valorOfertaPreco / 100));
-								//console.log("vlrLiquido com o desconto de 25%",vlrLiquido)
-
-								//$rootScope.produtos[i].vlrLiquido = vlrLiquido;
-
-
-
-
-
-
-
-
-
 
 								// calculando volume
 								volumeM3 = qtd * qtdm3;
